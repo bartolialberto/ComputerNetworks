@@ -1,0 +1,995 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/2%20-%20DNS/Appunti_DNS/">
+      
+      
+        <link rel="prev" href="../Approfondimenti/">
+      
+      
+        <link rel="next" href="../../3%20-%20Web/Approfondimenti/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>DNS - Reti di Calcolatori e Principi di Cybersecurity - University of Trieste</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dns" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" class="md-header__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reti di Calcolatori e Principi di Cybersecurity - University of Trieste
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DNS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" class="md-nav__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Reti di Calcolatori e Principi di Cybersecurity - University of Trieste
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Argomenti del Corso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          1   Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          1   Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Appunti_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          2   DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2   DNS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        DNS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    Functionality
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zones" class="md-nav__link">
+    Zones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterative-name-resolution" class="md-nav__link">
+    Iterative name resolution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replication" class="md-nav__link">
+    Replication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching" class="md-nav__link">
+    Caching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-managing-a-domain" class="md-nav__link">
+    Creating and managing a domain
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating and managing a domain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registrants-and-registrars" class="md-nav__link">
+    Registrants and registrars
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-identity-of-registrars-and-whois" class="md-nav__link">
+    Real identity of registrars and WHOIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          3   Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          3   Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Appunti_Web/" class="md-nav__link">
+        Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/The%20Big%20Brother/" class="md-nav__link">
+        The Big Brother
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          4   Email
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          4   Email
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Appunti_Email/" class="md-nav__link">
+        Email
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          5   IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          5   IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Appunti_IP/" class="md-nav__link">
+        IP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          6   Network Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          6   Network Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security/" class="md-nav__link">
+        Network Security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/How%20Colab%20Notebooks%20Work/" class="md-nav__link">
+        How Colab Notebooks work
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/Web%20Server%20Tests/" class="md-nav__link">
+        Web Server Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    Functionality
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zones" class="md-nav__link">
+    Zones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterative-name-resolution" class="md-nav__link">
+    Iterative name resolution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replication" class="md-nav__link">
+    Replication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching" class="md-nav__link">
+    Caching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-managing-a-domain" class="md-nav__link">
+    Creating and managing a domain
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating and managing a domain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registrants-and-registrars" class="md-nav__link">
+    Registrants and registrars
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-identity-of-registrars-and-whois" class="md-nav__link">
+    Real identity of registrars and WHOIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dns">DNS</h1>
+<h2 id="functionality">Functionality</h2>
+<p>The DNS (Domain Name System) is an <em>infrastructure </em>that implements a <em>name table</em>. This table is used for identifying a piece of textual information, called a <em>value</em>, by means of a <em>domain name</em>. Each row of the name table is called a <em>resource record </em>(<em>RR</em>) and <em>maps </em>(or <em>translates</em>) a domain name to a value. A domain name is a sequence of strings called <em>labels </em>and separated by the dot character (‘.’).</p>
+<p>The infrastructure consists of thousands of servers distributed across the world that interact among themselves. These servers are called <em>name servers</em>. A process that needs to obtain the value associated with a given domain name sends a <em>request </em>containing that domain name to its <em>default name server</em> and receives back a <em>response </em>containing the RR with the specified domain name. The IP address of the default name server is specified in the configuration of a host. Usually all hosts in the same organization have the same default name servers.</p>
+<p>The term DNS is used with several different meanings. It may denote either the <em>infrastructure</em>,  or a <em>server</em> of the infrastructure, or <em>the protocol</em> used by name servers.</p>
+<p>In the following we will use the term “name” as a shorthand for “domain name”.</p>
+<p>The name table contains, in addition to the name and value columns, a <em>type</em> column. Each RR is thus composed of three <em>fields</em>: name, type, value. The type field may assume a small set of values defined by the DNS protocol:
+* A is for a RR that maps the name to an <em>IP address</em> (i.e., the value field is an IP address).
+* CNAME is for a RR that maps the name to an <em>alias for that name</em> (i.e., the value of this RR will be the name of another RR).
+* MX is for a RR that maps the <em>name of an email domain</em> to the <em>name of the mail server responsible for that email domain</em> (i.e., the former is the name field while the latter is the value field).</p>
+<p>There may be multiple RR with the same name and different type (e.g., one RR of type A, another of type MX). There may also be multiple RR with the same name <em>and </em>the same type (e.g., one RR of type A that maps a name to a certain IP address and another RR of type A that maps that name to a different IP address).</p>
+<p>A request contains a pair <name, type>, i.e., it does not contain only a name. A response contains <em>all</em> the RRs matching the request (or an error code in case no such RR exists). RRs of type CNAME match <em>any</em> type specified in the request.</p>
+<p>The set of all RRs with the same name is called a <em>domain</em>.</p>
+<p>The set of all domains that exist in the Internet may be conceptually organized as a tree called <em>domain tree</em>. Each node of the domain tree is associated with a domain and contains a label. The domain associated with a given node is the one whose name is obtained by concatenating all the labels along the path from that node to the root of the tree, left to right and separated by the dot character (‘.’).</p>
+<p>The label of the root of the domain tree is the dot character ‘.’. It follows that all names terminate with the dot character. The user interface of programs usually hide the terminating dot character.</p>
+<p>The domain tree is an abstract and idealized representation of all the existing domains. This representation does not include types and values of the RRs contained in each domain, nor does it include the number of RRs contained in each domain.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="zones">Zones</h3>
+<p>The name table does not exist in its entirety anywhere. Each name server contains a set of RRs of the name table, i.e., the name table is <em>distributed</em>. The distribution of the name table is based on the domain tree, as follows.</p>
+<p>The domain tree is partitioned in <em>zones</em>. All domains of the same zone are stored on the same name server, that is the <em>name server of the zone</em>.</p>
+<p>A zone is a partition of the domain tree rooted at a domain and that extends below that domain, either until leaf nodes of the domain tree or until the root of another zone. The root of the domain tree is a zone. All the children of the root (top level domains, TLD) are also zones.</p>
+<p>Intuitively, one may think of a zone as of a subtree of the domain tree. This definition is not fully precise because the mathematical definition of a subtree consists of <em>all </em>the descendants of the root of the subtree, while in this case one or more of those descendants could be root of other zones.</p>
+<p>The domain that is the root of a zone must contain a RR of type NS. A RR of this type maps the <em>name of a zone</em> to the <em>name of the name server of that zone</em>. The name of the name server of a zone may or may not be in that zone.</p>
+<p>In order to contact the name server of a zone Z1, it is necessary to obtain two RRs: the RR of type NS mapping the name of Z1 to the name of a name server; and, the RR of type A mapping the name of that name server to the corresponding IP address.</p>
+<p>Notes:
+* The domain tree representation does not include its partitioning in zones (the fact that a domain is the root of a zone is described by the existence of a RR of type NS within that domain, but RRs are not part of a domain tree representation).
+* The domain tree representation does not include name servers.
+* A name server may be name server of one or more different zones.</p>
+<p>As already observed, all domains of a zone are stored on the name server of that zone. Certain RRs <em>must </em>be stored <em>also </em>on <em>other </em>name servers, as follows:
+1. The pair of RRs of types NS/A for the root zone must be stored on every name server.
+2. The pair of RRs of types NS/A for zone Z1 must be stored on the name server of the zone above Z1 (actually, in case the name of the name server is not in Z1, then this constraint applies only to the NS RR and it does not apply to the A RR; this special case is beyond the scope of the course: we may forget about this special case and assume that NS/A pairs for Z1 are always stored in the zone above Z1).
+These RRs are called <em>glue information</em>. These requirements must be satisfied to guarantee that, for any possible name, it is always possible to contact the server that is certainly able to respond to a request for that name.</p>
+<h3 id="iterative-name-resolution">Iterative name resolution</h3>
+<p>A common configuration for organizations that have a name server N is as follows:
+1. N acts as the default name server for all hosts internal to the organization.
+2. Any DNS outbound traffic not originated by N is blocked at the organization boundary.
+3. Any DNS inbound traffic not directed to N is blocked at the organization boundary.
+4. All hosts in the organization (i.e., all processes that have to translate a domain name) send their requests to N and ask it to perform a <em>recursive </em>resolution. This means that, in case N does not know the required RR, N locates the server where the required RR is stored, obtains the RR and responds with the required RR.
+5. N executes recursive resolutions only for DNS requests originated by hosts internal to its organization.
+Configurations of this kind allow organizations to centralize the monitoring of all name resolutions originated within the organization, as well as the blocking of selected name resolutions. Rules 2 and 3 are implemented at the IP networking layer.</p>
+<p>The procedure executed at step 4 above by N for obtaining a RR that is not locally available is called <em>iterative name resolution</em>. This procedure consists in navigating along name servers starting from the name server of the root zone, based on the domain name itself (one label at a time, right to left) and using the glue information appropriately. (we omit the details). The name resolution procedure, thus, is guaranteed to complete after contacting a very small number of name servers.</p>
+<h3 id="replication">Replication</h3>
+<p>The name server of a zone must be <em>replicated</em>. That is, each zone must have multiple name servers each storing a copy of all RRs of that zone. This requirement ensures that failure or unreachability of a name server does not make a full zone, and all zones below that zone, not accessible.</p>
+<p>One of the name servers of a zone is called <em>primary</em>; the other name servers are called <em>secondary</em>. When a RR has to be modified, it is modified only at the primary by the zone administrator; secondary name servers contact the primary name server periodically to be notified of all changes to RRs of the zone (including creation and deletion).</p>
+<p>At a given instant, thus, different replicas for a zone could have different RRs for that zone. This feature is intrinsic into the DNS functioning. When a response contains a RR, the content of that RR does not have any information enabling to tell whether that RR is the most up-to-date copy.</p>
+<p>All name servers of a zone must be described by NS/A pairs, that is, there must be one such pair for each name server replica; the NS RR will have the same name in all pairs but different value. The requirements for the glue information apply to all these RRs.</p>
+<p>Replicas of a zone are equivalent among themselves in the sense that RRs of type NS describing the name servers of that zone do not tell which name server is the primary.</p>
+<h3 id="caching">Caching</h3>
+<p>Each name server maintains a local copy of all RRs that has seen in the past. This local copy is called <em>cache. </em>The cache is used for constructing responses. When a name server receives a request, it first analyzes the cache; the name server sends a request to a name server only in case the cache does not allow answering the request.</p>
+<p>A RR may not remain in a cache indefinitely but it must be deleted after a time interval whose length is contained in the RR itself, in a column called <em>TimeToLive (TTL)</em>.</p>
+<p>A response obtained from a cache is called <em>non authoritative</em> and is flagged as such. In this case, the TTL of the returned RR is decremented of the time interval already spent in the cache. A response obtained from one of the name servers of the corresponding zone is called <em>authoritative</em>.</p>
+<p>Notes:
+* The name server of a zone does not know how many copies of the RRs of that zone exist in the DNS caches distributed across the Internet.
+* When a RR is updated, the update is not immediately reflected to the copies of that RR possibly stored in DNS caches.
+* If the TTL value for a RR at the primary is T seconds, then it is guaranteed that all copies of that RRs will disappear everywhere after at most T seconds.</p>
+<h2 id="creating-and-managing-a-domain">Creating and managing a domain</h2>
+<h3 id="registrants-and-registrars">Registrants and registrars</h3>
+<p>The entity (person, company or organization) that owns a domain name is called <em>registrant</em>. The registrant has the right to choose types and values of RRs in the domain, as well as the right to create subdomains of that domain.</p>
+<p>The entity that actually creates domain names upon requests by registrants is called <em>registrar</em>. A registrar can only create domains in a set of predefined zones with which it has established technical and business relationships. A registrar may allow other organizations, called <em>resellers</em>, to sell domain names on its behalf. For the purpose of this discussion, resellers are equivalent to registrars.</p>
+<p>The technical and business interactions between registrant and registrar are not part of the DNS protocol. The technical means for ensuring that a domain name can only be managed by its registrant are not part of the DNS protocol. Usually a registrant interacts with a registrar and operates on the RRs it owns by means of a web application.</p>
+<p>The RRs of the newly created domain will be stored in name servers managed by the registrar itself. Of course, there will be not be a new set of nameservers for each created domain: the same set of nameservers will store the RRs for all the created domains.</p>
+<p>The RRs of the newly created domain usually include one of type NS. Creating a domain thus usually involves creating a zone with the name of the domain. The nameservers of that zone will be managed by the registrar, as observed above.</p>
+<p>As observed above, a registrar can only create domains in a set of predefined zones with which it has established technical and business relationships. Usually, those zones are top-level domains (TLD). A registrant may thus create only domains that are second level (i.e., children of a TLD).</p>
+<p>A TLD often introduces some TLD-specific constraints on the domains that can be created. For example, there could be certain domain names that cannot be bought by any registrar (e.g., internet.it) or domain names that can be bought only by certain registrars (e.g., parlamento.it). These constraints are of normative nature and have no underlying technical reason.</p>
+<p>In general, there can be no zones “below” a domain created by a registrant. Creation of new zones in a subtree rooted at a domain created by a registrant requires specific business arrangements with registrars. The University of Trieste (registrant of domain units.it) has one of those arrangements with the .it registrar (i.e., it is possible to create zones “below” units.it, such as inginf.units.it)..</p>
+<h3 id="real-identity-of-registrars-and-whois">Real identity of registrars and WHOIS</h3>
+<p>A registrar must maintain the association between each domain name it has created and the corresponding registrants. This information is stored outside of the DNS in a distributed infrastructure called WHOIS. This infrastructure can be queried programmatically in a variety of ways. Many freely accessible <a href="https://www.google.it/search?q=whois+lookup">web applications</a>, for example, take a domain name as input and return the corresponding WHOIS information that describes the registrant, the date of domain name creation and so on.</p>
+<p>A registrant is identified by means of a string. In practice, there is a very weak connection between that string and the entity which actually created the domain name. In other words, it is very easy for an entity to obfuscate or falsify its real identity. The underlying reason is because creation of a domain name occurs through a web application, thus an entity may insert any string for describing itself as a registrant. The only connection with the real identity will be through the payment transaction, but this can be obfuscated or falsified easily, for example by using an anonymous payment method or a stolen credit card number.</p>
+<p>The internals of the WHOIS infrastructure (e.g., links among WHOIS servers, procedure for finding the IP address of the server which knows the registrant for a given domain name, WHOIS protocol) are not part of this course.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>

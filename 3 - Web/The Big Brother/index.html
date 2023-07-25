@@ -1,0 +1,1156 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/3%20-%20Web/The%20Big%20Brother/">
+      
+      
+        <link rel="prev" href="../Appunti_Web/">
+      
+      
+        <link rel="next" href="../../4%20-%20Email/Approfondimenti/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>The Big Brother - Reti di Calcolatori e Principi di Cybersecurity - University of Trieste</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-tracking-and-user-profiling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" class="md-header__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reti di Calcolatori e Principi di Cybersecurity - University of Trieste
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Big Brother
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" class="md-nav__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Reti di Calcolatori e Principi di Cybersecurity - University of Trieste
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Argomenti del Corso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          1   Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          1   Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Appunti_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          2   DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2   DNS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti_DNS/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          3   Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          3   Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appunti_Web/" class="md-nav__link">
+        Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          The Big Brother
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        The Big Brother
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-tracking-and-user-profiling" class="md-nav__link">
+    User tracking and user profiling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-big-brothers" class="md-nav__link">
+    The Big Brother(s)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-organizations-browsing-histories" class="md-nav__link">
+    Tracking organizations: Browsing histories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-organizations-making-decisions" class="md-nav__link">
+    Profiling organizations: Making decisions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-profiling-more-data" class="md-nav__link">
+    User profiling: more data
+  </a>
+  
+    <nav class="md-nav" aria-label="User profiling: more data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-identity-of-users" class="md-nav__link">
+    Real identity of users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#even-more-data" class="md-nav__link">
+    Even more data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-tracking-more-data" class="md-nav__link">
+    User tracking: more data
+  </a>
+  
+    <nav class="md-nav" aria-label="User tracking: more data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merging-browser-histories" class="md-nav__link">
+    Merging browser histories
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging browser histories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-fingerprinting" class="md-nav__link">
+    Browser fingerprinting
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser fingerprinting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unexpected-effects" class="md-nav__link">
+    Unexpected effects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticated-histories" class="md-nav__link">
+    Authenticated histories
+  </a>
+  
+    <nav class="md-nav" aria-label="Authenticated histories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unexpected-effects_1" class="md-nav__link">
+    Unexpected Effects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-tracking-techniques" class="md-nav__link">
+    Other tracking techniques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influencing-user-behavior-a-big-problem" class="md-nav__link">
+    Influencing user behavior (A Big Problem)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          4   Email
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          4   Email
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Appunti_Email/" class="md-nav__link">
+        Email
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          5   IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          5   IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Appunti_IP/" class="md-nav__link">
+        IP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          6   Network Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          6   Network Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security/" class="md-nav__link">
+        Network Security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/How%20Colab%20Notebooks%20Work/" class="md-nav__link">
+        How Colab Notebooks work
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/Web%20Server%20Tests/" class="md-nav__link">
+        Web Server Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-tracking-and-user-profiling" class="md-nav__link">
+    User tracking and user profiling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-big-brothers" class="md-nav__link">
+    The Big Brother(s)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-organizations-browsing-histories" class="md-nav__link">
+    Tracking organizations: Browsing histories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-organizations-making-decisions" class="md-nav__link">
+    Profiling organizations: Making decisions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-profiling-more-data" class="md-nav__link">
+    User profiling: more data
+  </a>
+  
+    <nav class="md-nav" aria-label="User profiling: more data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-identity-of-users" class="md-nav__link">
+    Real identity of users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#even-more-data" class="md-nav__link">
+    Even more data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-tracking-more-data" class="md-nav__link">
+    User tracking: more data
+  </a>
+  
+    <nav class="md-nav" aria-label="User tracking: more data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merging-browser-histories" class="md-nav__link">
+    Merging browser histories
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging browser histories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-fingerprinting" class="md-nav__link">
+    Browser fingerprinting
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser fingerprinting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unexpected-effects" class="md-nav__link">
+    Unexpected effects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticated-histories" class="md-nav__link">
+    Authenticated histories
+  </a>
+  
+    <nav class="md-nav" aria-label="Authenticated histories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unexpected-effects_1" class="md-nav__link">
+    Unexpected Effects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-tracking-techniques" class="md-nav__link">
+    Other tracking techniques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influencing-user-behavior-a-big-problem" class="md-nav__link">
+    Influencing user behavior (A Big Problem)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<p>This material is no longer part of the course.</p>
+<p>I think it is quite important for understanding many issues in our everyday life. Thus, I have decided to leave it publicly available.</p>
+<hr />
+<h2 id="user-tracking-and-user-profiling">User tracking and user profiling</h2>
+<p><em>User tracking</em> is the act of collecting the sequence of URLs visited by a user. <em>User profiling</em> is the act of constructing a model of a user (called a <em>profile</em>) based on information about that user. The information obtained by user tracking is one of the many ingredients used for user profiling. User profiling is widely used for making <em>decisions </em>about users. A typical decision is choosing which content to display or recommend to a user, given his/her profile.</p>
+<p>User tracking and user profiling are a pervasive phenomenon on the web, with strong and deep effects on the society. We  consider only the technical aspects of this activity.</p>
+<p>User tracking is implemented in many ways. One of the most pervasive mechanisms is identical to the one of site analytics: a website that allows tracking its users must contain resources located on other websites and fetched automatically by browsers; returning browsers are detected by cookies (called third-party cookies).</p>
+<p>There are many different interaction patterns between the actors involved in user tracking and user profiling. We consider a simple model that captures the essential aspects of those interactions, as follows.
+* <em>Tracking </em>organizations perform user tracking.
+* <em>Profiling </em>organizations:
+ * Construct a model of each user (called a <em>profile</em>) based on information provided by tracking organizations.
+ * Offer a service for displaying a given content to users that match a specified profile.
+* <em>Advertising </em>organizations use the service offered by profiling organizations, i.e., they specify a content and their desired profile of users that should see that content.
+We do not detail what a profile actually is and leave this notion defined intuitively.</p>
+<p>Behavior and incentives of the actors involved are driven by money:
+* advertising organizations pay profiling organizations (for displaying content to users matching the desired profile);
+* profiling organizations pay tracking organizations (for obtaining information useful for profiling);
+* tracking organizations pay websites (for allowing user tracking);
+* profiling organizations pay websites (for displaying content).</p>
+<p>The money that a website receives for allowing user tracking and displaying content selected by profiling organizations is often the only reason why a website exists. From a different point of view, <strong>users do not pay for “free” websites with money. Users pay these websites giving them the right to track their browsing activity.</strong></p>
+<p>In reality, an organization may play multiple roles of the model assumed here. Google, Facebook and Twitter, for example, are both tracking organizations and profiling organizations; the tracking information that they collect is not provided to other organizations. Amazon is a profiling organization and an advertising organization: it decides which item to recommend to a user (i.e., which content to display) based on the profile of that user. Tracking, profiling and advertising activities that occur in practice follow a number of different and complex patterns. Mapping all those patterns to the model assumed here may be difficult. The same consideration applies to the flow of money and incentives.</p>
+<h2 id="the-big-brothers">The Big Brother(s)</h2>
+<p><em>Nearly all</em> websites include resources located on other websites that have the <em>only </em>aim of performing user tracking. Furthermore, a website usually includes resources from <em>many </em>tracking organizations. For example, the web magazine “Vice” includes resources from 85 tracking organizations whose name begins with “A” (the interested reader may count all the remaining ones autonomously). The equivalent figure for “Triesteprima” is 35.</p>
+<p>A profiling organization may obtain data from many tracking organizations. A profiling organization may cooperate with other profiling organizations in order to augment the amount of information about a user thereby increasing the accuracy of the corresponding profile.</p>
+<p>There is a myriad of tracking, profiling, advertising organizations. In practice, <em>every </em>action that a user performs on <em>any </em>website or Internet-connected device is tracked by many different organizations and is used for profiling that user.</p>
+<p>The term “action” must be intended in its widest possible meaning, not only as the act of visiting a URL. Search queries, videos watched, songs listened, “likes”, comments on posts, purchases on ecommerce sites or on PayPal, vocal orders to smart loudspeakers, locations visited with a GPS-enabled smartphone, installation and usage of smartphone apps are just some of the many meanings of the term action. In this course we will consider only browsing histories, that is, visited URLs.</p>
+<p>The General Data Protection Regulation (GDPR) in Europe dictates that each website must inform its users of the corresponding tracking organizations and of the usage made by those organizations of the corresponding information.</p>
+<h2 id="tracking-organizations-browsing-histories">Tracking organizations: Browsing histories</h2>
+<p>Let T be a tracking organization. Let W be a website whose visits are to be tracked by T. The key requirements for implementing user tracking are identical to those for implementing analytics and can be implemented in the same way, that is, by including in all web pages of W a resource to be fetched from T automatically.</p>
+<p>Functionalities of the form “share”/ “like” / “tweet” are usually implemented with resources that allow user tracking (e.g., an image on a web page of W that the browser is instructed to fetch from T).</p>
+<p>The tracking resources of T cannot be present on all websites. Thus, any tracking organization may collect only an <em>approximation </em>(a subsequence) of the sequence of URLs visited by a user. The accuracy of the approximation depends on the set of websites tracked by T. This set should be as large as possible and should contain websites visited by as many users as possible.</p>
+<p>Some tracking organizations are able to track visits to a very large portion of the WWW and are thus able to collect very good approximations of the sequences of URLs visited by users. Google and Facebook are examples of those organizations.</p>
+<p>The information collected by a tracking organization can be modelled as a set of <em>browsing histories</em>. A browsing history is a sequence of URL coupled with a cookie identifier. This identifier is not necessarily associated with a username at some website.</p>
+<h2 id="profiling-organizations-making-decisions">Profiling organizations: Making decisions</h2>
+<p>Let P be a profiling organization. P receives an HTTP request and selects the specific content to include in the HTTP response based on the profile of the user that sent that request. The content may be displayed either on P or on other websites that host resources provided by P (that is, the HTTP request may be sent by a browser that is visiting either P or another website).</p>
+<p>The content is a resource that may be located either on P or on the website of an advertising organization (in which case P will send a redirection response).</p>
+<p>Choosing a content based on a user profile is a form of <em>decision </em>about the corresponding user. P constructs a user profile from all the information available about that user. The browsing history obtained from tracking organizations is just one of the many ingredients that may be used by P. The accuracy of a user profile depends, in general, on the quantity and nature of the available information. Intuitively, the more information is available, the more accurate the profile. We do not analyze how information can be actually exploited for constructing user profiles (<em>machine learning</em> is an important tool in this area). This is a complex and broad topic that is not part of this course. Similarly, we do not analyze how to choose a content based on a profile.</p>
+<p>Let T be a tracking organization that provides browsing histories to P. A fundamental problem consists in linking the cookie identifier used by T to the cookie identifier used by P. We consider two cases:
+1. P and T are the same organization.
+2. P has a local copy of the browsing histories collected by T.</p>
+<p>In case 1 the linking procedure is trivial because the cookie identifiers at P and at T are the same: the browser sends a request to P; if the request does not contain a cookie then T has no history available; otherwise, the cookie identifies the history at T to be used for taking the decision.</p>
+<p>In case 2 the linking procedure may be realized as follows (this procedure is often called <em>cookie syncing</em>).
+* The browser sends a request to P.
+* P forces the browser to fetch a resource from T.
+* The browser sends a request to T.
+* T creates a cookie-t (if the request does not contain a cookie) and redirects the browser to a predefined URL in P; T will include in the redirection URL a query string containing the value of cookie-t;
+* The browser sends a request to P.
+* P may now match cookie-p with cookie-t (of course, if cookie-t has been just created then there will be no history available for that cookie).</p>
+<p>Note that browsing histories need not to be associated with the <em>real identity</em> of the user to be useful. All that is needed is the ability of linking cookie-t (identifier of a browsing history) to cookie-p (identifier of the user about which a decision is made).</p>
+<h1 id="user-profiling-more-data">User profiling: more data</h1>
+<p>Some profiling organizations associate <em>usernames </em>with users and implement authenticated sessions. The username of a user may not have any relation to the real identity of the user. We denote those organizations as <em>pseudonymous </em>profiling organizations. Google, Apple, Facebook and Twitter are examples of those organizations.</p>
+<p>Pseudonymous profiling organizations construct a profile of each username. The profile is constructed based on the available browsing histories of that username and on any other information that can be linked to that username. Some information is often provided by users voluntarily (for example, age, country, preferred language, email address, family composition, job, marital status and alike). Other information is collected by the profiling organization automatically.</p>
+<p>Many pseudonymous profiling organizations collect information about usernames by offering “free” services and observing the usage of those services by each username. Google, Apple, Facebook, Twitter are all examples of those organizations. <strong>Users do not pay for thee “free” services with money. Users pay these services by giving them the right to observe their usage of those services and exploit the corresponding information.</strong></p>
+<h2 id="real-identity-of-users">Real identity of users</h2>
+<p>Note that user profiles need not to be associated with the real identity of the user to be useful. All that is needed is the ability of linking the user profile used for making a decision (choosing the content to show) to the user to which that decision will be applied (which user will see that content). Whether the user is identified with a cookie, a username, a pseudonym or a real identity is irrelevant.</p>
+<p>Some organizations are potentially able to determine the real identity of their users, because of the quantity and nature of information they have available for each username. Google and Facebook are the key examples. Note that much of such information is provided by users voluntarily, perhaps without realizing it.</p>
+<p>The fact that an organization may potentially link usernames to real identities does not imply that it actually does. In fact, an organization has usually no reason for doing so. The interest of the organization is collecting as much information about each user as possible, because this potentially augments the quality of its decisions. Real identities are not necessary and provide very little additional value, if any.</p>
+<h2 id="even-more-data">Even more data</h2>
+<p>A profiling organization may cooperate with other profiling organizations in the attempt of augmenting the information available for constructing user profiles. To this end, the cooperating organizations must be able to detect the respective sets of information that may be associated with the same user.</p>
+<p>Many heuristics are used for this purpose. These heuristics are not perfect: they may fail to detect all information of the same user and may attribute pieces of information to the same user erroneously. Despite their imperfection, these merging heuristics are highly useful and widely used.</p>
+<p>A simple, common and very powerful heuristic is based on the <em>email address</em>. Many websites require users to provide their email address. Users often provide their email address to many different organizations. Those organizations can match the respective information based on the email address. Facebook is one of the profiling organizations that make use of this heuristic.</p>
+<p>Another class of heuristic is based on <em>advertising identifiers</em>. These identifiers are meant to identify each user univocally across all organizations, in order to simplify matching information about the same users. The technical details by which advertising identifiers are exchanged across organizations depend on the specific scenario. Each Android smartphone has an advertising identifier. All Android apps associate each installation with the corresponding advertising identifier. Data collected by those apps, advertisements displayed by those apps, <em>payments </em>and <em>purchases </em>made by those apps are all linked by these identifiers. The same occurs in the iPhone ecosystem, with a different identifier.</p>
+<h1 id="user-tracking-more-data">User tracking: more data</h1>
+<h2 id="merging-browser-histories">Merging browser histories</h2>
+<p>A browsing history is associated with a cookie identifier. A tracking organization may have many different histories that are actually originated by the same user:
+* A user may use multiple devices.
+* A cookie may expire.
+* A browser may discard cookies.
+* Each incognito window generates its own history, different from the normal window and different from other incognito windows.</p>
+<p>A tracking organization may attempt to detect histories originated by the same user in order to merge those histories together. The resulting history will provide much more information about the corresponding user.</p>
+<p>Tracking organizations use many heuristics for attempting to detect histories of the same user. These heuristics are not perfect: they may fail to detect all histories of the same user and may attribute different histories to the same user erroneously. Despite their imperfection, these merging heuristics are highly useful and widely used.</p>
+<p>The heuristics for merging browser histories are mostly based on:
+* Detecting histories that originated from the same device. Histories from the same device are merged together[^1] .
+* Detecting histories that can be attributed to the same username. Histories from the same username are merged together.</p>
+<p>We describe some of these heuristics in the following sections. We do not enter into the details of whether these heuristics are legally permitted and only describe their technical feasibility.</p>
+<h3 id="browser-fingerprinting">Browser fingerprinting</h3>
+<p>Browser fingerprinting is a heuristic for detecting histories originated from the same browser.</p>
+<p>A tracking organization T may collect several pieces of information about the browser that sent the HTTP Request (browser type, preferred language, timezone, operating system version, geographical region of the IP address, screen resolution, sets of installed fonts and so on). This information may be collected from the HTTP request header and by scripts sent by T for execution on the browser. This set of information can be synthesized in a compact form called <em>fingerprint</em>.</p>
+<p>A fingerprint often identifies a browser uniquely, in the sense that:
+* the fingerprint of a browser will change very rarely;
+* any two browsers that contact T will have different fingerprints.</p>
+<p>T associates each history with the fingerprint of the corresponding browser and merges all histories with the same fingerprint.</p>
+<p>Consider histories that are not associated with any form of username (those histories are analyzed in the next section). Histories with the same fingerprint will be merged together even if the corresponding browser has been used by different users. This fact may harm the quality of the resulting history. However, a browser tends to be used by a single user most of the time, thus the overall quality of all the available histories is much improved.</p>
+<p>Similar techniques can be used for <em>device </em>fingerprinting, which allows merging histories from all browsers on the same device. Device fingerprinting is technically simple to do on smartphones.</p>
+<h4 id="unexpected-effects">Unexpected effects</h4>
+<p>This heuristics is very powerful because it allows merging <em>all histories from the same browser</em>.</p>
+<p>In particular, a user <em>cannot </em>prevent the merging by<em> discarding cookies</em> nor by using the<em> incognito mode</em>. Histories of an incognito tab can thus be coupled with histories of normal tabs and the user cannot prevent this fact.</p>
+<h3 id="authenticated-histories">Authenticated histories</h3>
+<p>Consider histories collected by a tracking organization that is also a pseudonymous profiling organization. Google, Facebook, Apple and Twitter are examples of those organizations.</p>
+<p>Let uP denote one such organization. While a user is authenticated on uP with username U, uP will associate the corresponding history with U. uP will thus have two kinds of browsing histories:
+* histories associated with a cookie identifier (anonymous histories);
+* histories associated with a cookie identifier <em>and </em>a username (authenticated histories);</p>
+<p>The organization will group all authenticated histories of the same username together.</p>
+<p>Authenticated histories of the same username may be originated on different devices. Common scenarios in this respect are the following:
+* PC and Android smartphone (Google)
+* Mac and iPhone smartphone (Apple)
+* PC and dedicated app installed on a smartphone (Facebook, Twitter, Spotify and so on).
+In all these cases, uP collects a single authenticated history across multiple devices of the same user.</p>
+<h4 id="unexpected-effects_1">Unexpected Effects</h4>
+<p>When a user logs in on uP from a certain device, uP may be able to attribute to the corresponding username one or more <em>anonymous </em>histories of that device. In other words, uP may track <em>even URLs visited</em> <em>while not logged in on uP</em> and even in <em>browsing sessions that have already terminated</em>. The details are explained below.</p>
+<p>Consider an anonymous history. If the user logs in on uP, then the history becomes authenticated and associated with a username. Note that:
+* The history will include <em>all </em>the URLs, even those visited <em>before authenticating</em>.
+* Even if the user logs out from uP, uP may keep the session open (the cookie may remain valid); in this case uP may continue to record the visited URLs even <em>after logging out</em>.</p>
+<p>Consider a set SH of anonymous histories on the same browser (those histories could correspond to a set of navigations executed in incognito mode tabs already closed). Assume uP implements browser fingerprinting. In this case uP is able to merge all the histories in SH together. If the user logs in on uP at least once on that browser, then uP may associate <em>all </em>these histories with the username.</p>
+<h2 id="other-tracking-techniques">Other tracking techniques</h2>
+<p>Google may collect the <em>full </em>browsing history of Chrome users and associate those histories with the corresponding Google username. The above observations about anonymous histories obviously apply to this case.</p>
+<p>Websites that contain links to other websites may construct browser histories by recording clicks on those links (the links will be implemented by a redirection from the website). Facebook, Twitter, websites for URL shortening, search engines may exploit this technique.</p>
+<p>The above techniques do not require the presence of any resource on the tracked websites.</p>
+<h1 id="influencing-user-behavior-a-big-problem">Influencing user behavior (A Big Problem)</h1>
+<p>Some users may be concerned that an organization can determine their real identity. Users should be much more concerned that an organization has a lot of information that can be used to <em>make decisions </em>about them and try to <em>influence </em>their behavior.</p>
+<p>For example, a profiling organization could know that I am particularly interested in a certain illness and decide to show me positive but unfounded articles about that illness. Or, the organization could know that I am particularly interested in a certain potential problem and decide to show me articles claiming that the problem will never occur; or that the problem will certainly occur. Or, the organization could know that I have a specific political orientation and decide to show me only content that consolidate my orientation (for example, by making me angry toward specific groups of people and alike).</p>
+<p>The profiling organization could even perform those actions as a service, requested and paid for by other advertising organizations. Perhaps organizations that act before political elections and represent the interests of foreign countries.</p>
+<p>Note that these examples are not hypothetical. Also note that these examples do not require the ability to identify users by their real identities. All that is needed is the ability of linking the user profile used for making a decision (choosing the content to show) to the user to which that decision will be applied (which user will see that content). Whether the user is identified with a cookie, a username, a pseudonym or a real identity is irrelevant.</p>
+<p>The issues briefly outlined in this section have strong and deep implications for modern societies, not widely understood yet.</p>
+<p>[^1]: We omit the details for coping with the fact that a device could be used by multiple users and only remark that browsing histories need not be fully complete nor fully precise to be useful.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>

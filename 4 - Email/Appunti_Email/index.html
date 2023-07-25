@@ -1,0 +1,958 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/4%20-%20Email/Appunti_Email/">
+      
+      
+        <link rel="prev" href="../Approfondimenti/">
+      
+      
+        <link rel="next" href="../../5%20-%20IP/Appunti_IP/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>Email - Reti di Calcolatori e Principi di Cybersecurity - University of Trieste</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#email" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" class="md-header__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reti di Calcolatori e Principi di Cybersecurity - University of Trieste
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Email
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" class="md-nav__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Reti di Calcolatori e Principi di Cybersecurity - University of Trieste
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Argomenti del Corso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          1   Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          1   Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Appunti_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          2   DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2   DNS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti_DNS/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          3   Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          3   Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Appunti_Web/" class="md-nav__link">
+        Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/The%20Big%20Brother/" class="md-nav__link">
+        The Big Brother
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          4   Email
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          4   Email
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Email
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Email
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    Functionality
+  </a>
+  
+    <nav class="md-nav" aria-label="Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mail-client-e-mail-server" class="md-nav__link">
+    Mail client e mail server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mailbox" class="md-nav__link">
+    Mailbox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-format" class="md-nav__link">
+    Email format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mail-servers-smtp-and-pop" class="md-nav__link">
+    Mail servers: SMTP and POP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mail-client-configuration-and-behavior" class="md-nav__link">
+    Mail client: configuration and behavior
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mail-server-common-configuration" class="md-nav__link">
+    Mail server: common configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          5   IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          5   IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Appunti_IP/" class="md-nav__link">
+        IP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          6   Network Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          6   Network Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security/" class="md-nav__link">
+        Network Security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/How%20Colab%20Notebooks%20Work/" class="md-nav__link">
+        How Colab Notebooks work
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/Web%20Server%20Tests/" class="md-nav__link">
+        Web Server Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    Functionality
+  </a>
+  
+    <nav class="md-nav" aria-label="Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mail-client-e-mail-server" class="md-nav__link">
+    Mail client e mail server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mailbox" class="md-nav__link">
+    Mailbox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-format" class="md-nav__link">
+    Email format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mail-servers-smtp-and-pop" class="md-nav__link">
+    Mail servers: SMTP and POP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mail-client-configuration-and-behavior" class="md-nav__link">
+    Mail client: configuration and behavior
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mail-server-common-configuration" class="md-nav__link">
+    Mail server: common configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="email">Email</h1>
+<h2 id="functionality">Functionality</h2>
+<h3 id="mail-client-e-mail-server">Mail client e mail server</h3>
+<p>The email system consists of many thousands of <em>mail transfer agents (MTA)</em> distributed across the world that interact among themselves. MTAs are informally called <em>mail servers</em> and in this document they will be referred to as such. Users interact with the email system through programs called <em>mail user agents (MUA)</em>.</p>
+<p>MUAs may take several forms:
+1. The MUA is a program, called <em>mail client</em>, running on the user device. Users interact with the mail client directly.
+2. The MUA is a web application that provides a graphical interface to a mail client accessed by the web server. Users interact with the mail client indirectly, through a browser running on the user device.
+Apps running on smartphones or tablets are equivalent to the browser of case 2. In the rest of this document we will refer to case 1.</p>
+<h3 id="mailbox">Mailbox</h3>
+<p>A <em>mailbox </em>is a container of email messages (briefly, <em>emails</em>). It is located on a mail server and has a globally unique identifier called <em>email address</em>. An email address has the form <code>mailboxName@emailDomainName</code>. An <em>email domain </em>is the set of all mailboxes with identical <code>emailDomainName</code>. All mailboxes of the same email domain are located on the same mail server. A mail server may be responsible for more than one email domain. Of course, the <code>mailboxName</code> must be unique within each email domain.</p>
+<p>An email has a <em>sender </em>email address and a <em>destination </em>email address. The email is prepared on a mail client and then it is given to a mail server. This mail server will interact with other mail servers for delivering the email, i.e., for depositing the email in the mailbox identified by the destination email address. The user that can access this mailbox may then retrieve the email with a mail client. The sending mailbox (the one identified by the sender email address) does <em>not </em>contain anything about emails sent from that email address, in particular, it does not contain emails sent from that email address.</p>
+<p>A mail client is associated with a mailbox (it may be associated with more mailboxes but this fact does not alter the following discussion). It stores locally a copy of all emails sent from and received by the corresponding email address. When a mail client has retrieved an email from the mail server, it may or may not delete the email from the mailbox on the mail server. A mail client also provides functionalities for editing, searching, archiving and so on.</p>
+<p>In principle, a mail client could send an email by contacting directly the mail server where the destination mailbox is located. In practice, a mail client <em>always </em>sends <em>all </em>emails by contacting “its own” mail server, i.e., the one associated with the sender email address.</p>
+<h3 id="email-format">Email format</h3>
+<p>The email format is specified by a dedicated protocol (RFC 822). An email is composed of two parts separated by an empty line.</p>
+<p>The first part (<em>header</em>) of an email is a set of lines (<em>email headers</em>) of the form <code>name:value</code>. The allowed names and values, along with their meaning, is specified in the protocol. Email headers are inserted by the sending mail client, by mail servers, by the receiving mail client. Some email headers are used by mail clients while other email headers are used only for debugging, administrative or forensic reasons.</p>
+<p>The second part (<em>body</em>) of an email is a sequence of bytes that represent the main part of the message, i.e., text, images and any other information that composes the message.</p>
+<p>RFC 822 specifies that emails can only contain ASCII characters and that mail servers must clear to zero the most significant bit of every byte. This specification implies that emails cannot transport non-ASCII characters or non textual information (images, audio, video and so on), because common representations for such kinds of information use all bits and mail servers modify those bits. In order to transport such information in the body of an email, a dedicated protocol has been developed that is not part of this course. In brief, the information must first be converted into a format RFC 822 compliant and a description of the conversion applied must be inserted into the header. Such a conversion guarantees that mail servers will not modify the email content. The recipient of the email will analyze the header and apply the inverse conversion before presenting the body to the user. These operations are executed by mail clients. Mail servers need not be aware of these conversions.</p>
+<p>RFC 822 does not have any notion of email attachment. In order to implement email attachments a dedicated protocol (MIME) has been developed that is not part of this course. In brief, attachments are converted into a sequence of bytes RFC 822 compliant and inserted into the email body; a dedicated header describes the presence of attachments in the body; the body is represented in a way that makes it possible to split the sequence in its composing parts, along with a description of the conversion applied to each part and the corresponding filename. The recipient of the email will analyze the header and apply the corresponding separations and conversions, as appropriate. These operations are executed by mail clients. Mail servers need not be aware of MIME.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="mail-servers-smtp-and-pop">Mail servers: SMTP and POP</h3>
+<p>The DNS must contain a RR of type MX that translates the <em>name of an email domain</em> to the <em>name of a mail server</em>. This mail server stores all the mailboxes for that email domain. The DNS does not contain any information about mailbox names.</p>
+<p>Let MS be a mail server and let MD be the corresponding email domain (MS may be the mail server for more than one mail domain, but this fact is irrelevant to this discussion). We say that a mailbox is <em>local </em>to MS if the email address of that mailbox belongs to MD.</p>
+<p>The sending of an email occurs by connecting with a mail server and interacting with that mail server by means of the <em>SMTP </em>protocol. If the email is local to the mail server, then the mail server will deliver the email; otherwise, the mail server will relay the email to the mail server where the destination mailbox is stored (the behavior of a mail server for emails addressed at mailboxes that are not local is actually more complex, as clarified below). To this end, the mail server executes the following steps:
+1. Obtain the name of the destination email domain from the destination email address.
+2. Obtain the name of the destination mail server with a DNS request of type MX.
+3. Obtain the IP address of the destination mail server with a DNS of type A.
+4. Connect with the destination mail server and execute an SMTP interaction for sending the email.
+Note that, at step 4, the sending mail server operates as a client.</p>
+<p>A mailbox may receive emails from any sender in the world. A mail server will thus accept <em>any </em>SMTP request for depositing an email into a local mailbox. In other words, when a mail server receives an SMTP request for depositing an email into a local mailbox, the mail server will <em>always </em>execute that request. In particular, the mail server will not check the identity of the entity at the other end of the connection.</p>
+<p>Reading access to the content of a mailbox occurs by connecting to the mail server where that mailbox is located and interacting with that mail server by means of the <em>POP</em> protocol (the IMAP protocol, not part of this course, can also be used for this purpose). A POP mail server allows access to a given mailbox only if the entity at the other end of the connection sends the <em>password</em> associated with that mailbox. The allowed operations are listing the content of the mailbox, retrieving (reading) emails, deleting emails.</p>
+<h3 id="mail-client-configuration-and-behavior">Mail client: configuration and behavior</h3>
+<p>A mail client must be configured with:
+1. email address;
+2. username and password;
+3. name of the mail server that manages the mail domain of the mailbox.
+The username is, in practice, the mailbox name, i.e., the part of the email address that precedes the ‘@’ character. The name of the mail server is often redundant as it can be obtained from the mail address (it is mandatory only in certain cases, not considered in this course).</p>
+<p>Mail clients implemented as programs running on user devices must be configured by users, while those implemented as a web application are configured by the administrator of the web application itself.</p>
+<p>Let MD be the mail domain of the mailbox of a mail client. A mail client sends <em>all</em> the emails to the mail server specified in configuration: those addressed at mailboxes in MD and those addressed at mailboxes in other mail domains. The mail server will deliver emails addressed at mailboxes in MD and relay the emails addressed at mailboxes in other mail domains. This structuring allows organizations to centralize the monitoring of all mail traffic of the organization and simplifies the implementation of mail clients. Note that with this common scenario, thus, a mail client always connect with a single mail server.</p>
+<h3 id="mail-server-common-configuration">Mail server: common configuration</h3>
+<p>A common configuration for organizations that have a mail server M is as follows:
+1. Any SMTP outbound traffic not originated by M is blocked at the organization boundary.
+2. Any SMTP inbound traffic not directed to M is blocked at the organization boundary.
+3. M relays emails <em>only </em>for mail clients of its organization.
+Rules 1 and 2 are implemented at the IP networking layer. Rule 3 is necessary for saving computation, storage and networking costs.</p>
+<p>Implementation of rule 3 requires the ability for an SMTP mail server to determine whether the process at the other end of the connection is a mail client of its organization or not. This can be done as follows: The SMTP mail server uses an extended version of the SMTP protocol in which the other end of the connection may authenticate itself by means of a password (SMTP with authentication). This password is, in practice, the same password used for accessing to the mailbox with the POP protocol. The details of this extension are not part of this course.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>

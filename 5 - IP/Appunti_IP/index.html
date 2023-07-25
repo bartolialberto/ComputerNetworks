@@ -1,0 +1,1252 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/5%20-%20IP/Appunti_IP/">
+      
+      
+        <link rel="prev" href="../../4%20-%20Email/Appunti_Email/">
+      
+      
+        <link rel="next" href="../../6%20-%20Network%20Security/Approfondimenti/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>IP - Reti di Calcolatori e Principi di Cybersecurity - University of Trieste</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ip" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" class="md-header__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reti di Calcolatori e Principi di Cybersecurity - University of Trieste
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" class="md-nav__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity - University of Trieste" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Reti di Calcolatori e Principi di Cybersecurity - University of Trieste
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Argomenti del Corso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          1   Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          1   Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Appunti_Introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          2   DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2   DNS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti_DNS/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          3   Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          3   Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Appunti_Web/" class="md-nav__link">
+        Web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/The%20Big%20Brother/" class="md-nav__link">
+        The Big Brother
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          4   Email
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          4   Email
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Appunti_Email/" class="md-nav__link">
+        Email
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          5   IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          5   IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        IP
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-numbers" class="md-nav__link">
+    Network numbers
+  </a>
+  
+    <nav class="md-nav" aria-label="Network numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignment-to-networks" class="md-nav__link">
+    Assignment to networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allocation-and-distribution" class="md-nav__link">
+    Allocation and distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-the-owner" class="md-nav__link">
+    Identifying the owner
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-configuration" class="md-nav__link">
+    Node configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Node configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip-configuration" class="md-nav__link">
+    IP configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-vs-dynamic-configuration" class="md-nav__link">
+    Static vs dynamic configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-a-packet" class="md-nav__link">
+    Sending a packet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-resolution-protocol-arp" class="md-nav__link">
+    Address Resolution Protocol (ARP)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#router" class="md-nav__link">
+    Router
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-a-packet" class="md-nav__link">
+    Routing a packet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-within-an-organization" class="md-nav__link">
+    Routing within an organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-outside-of-an-organization" class="md-nav__link">
+    Routing outside of an organization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewall" class="md-nav__link">
+    Firewall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewall-rules" class="md-nav__link">
+    Firewall rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-considerations" class="md-nav__link">
+    Practical considerations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          6   Network Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          6   Network Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Approfondimenti/" class="md-nav__link">
+        Approfondimenti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security/" class="md-nav__link">
+        Network Security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Labs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Labs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/How%20Colab%20Notebooks%20Work/" class="md-nav__link">
+        How Colab Notebooks work
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/Web%20Server%20Tests/" class="md-nav__link">
+        Web Server Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-numbers" class="md-nav__link">
+    Network numbers
+  </a>
+  
+    <nav class="md-nav" aria-label="Network numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignment-to-networks" class="md-nav__link">
+    Assignment to networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allocation-and-distribution" class="md-nav__link">
+    Allocation and distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-the-owner" class="md-nav__link">
+    Identifying the owner
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-configuration" class="md-nav__link">
+    Node configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Node configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip-configuration" class="md-nav__link">
+    IP configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-vs-dynamic-configuration" class="md-nav__link">
+    Static vs dynamic configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    Routing
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-a-packet" class="md-nav__link">
+    Sending a packet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-resolution-protocol-arp" class="md-nav__link">
+    Address Resolution Protocol (ARP)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#router" class="md-nav__link">
+    Router
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-a-packet" class="md-nav__link">
+    Routing a packet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-within-an-organization" class="md-nav__link">
+    Routing within an organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-outside-of-an-organization" class="md-nav__link">
+    Routing outside of an organization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewall" class="md-nav__link">
+    Firewall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewall-rules" class="md-nav__link">
+    Firewall rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-considerations" class="md-nav__link">
+    Practical considerations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ip">IP</h1>
+<h2 id="network-numbers">Network numbers</h2>
+<h3 id="definition">Definition</h3>
+<p>The IP address space is partitioned in intervals called <em>network numbers</em>.</p>
+<p>The <em>length</em> and <em>starting address</em> of a network number must satisfy these constraints:
+1. Length must be a power of 2.
+2. Let 2^k be the length of the network number. The binary representation of the starting address must have the k rightmost bits equal to 0.</p>
+<p>Let 2^k be the length of a network number. The following claims follow from the definition of network number and the properties of binary representations.
+* The smallest IP address in a network number has the k rightmost bits equal to 0.
+* The largest IP address in a network number has the k rightmost bits equal to 1.
+* Any two IP addresses in the same network number are identical in the 32-k leftmost bits and different in the k rightmost bits.</p>
+<h3 id="assignment-to-networks">Assignment to networks</h3>
+<p>A network number may be <em>assigned</em> to a network, which means that hosts in that network have an IP address in that network number.</p>
+<p>We make the following assumptions:
+1. <em>There is a one-to-one correspondence between networks and assigned network numbers.</em> That is, each network is assigned only one network number and each assigned network number is assigned to only one network.
+2. <em>Assigned network numbers do not overlap</em>.</p>
+<p>These assumptions imply that the number of hosts in a given network cannot be greater than the length of the corresponding network number; and, unused IP addresses of a network number cannot be used for hosts of other networks.</p>
+<p>In practice, there may be assignments that violate assumption 1 (a network may be assigned multiple network numbers; a network number may be used by hosts in multiple networks) and/or  assumption 2 (an assigned network number may overlap with one or more other assigned network numbers, either partly or completely). These scenarios are not considered in this course and we will always assume that these assumptions are satisfied.</p>
+<h3 id="allocation-and-distribution">Allocation and distribution</h3>
+<p>A network number may be partitioned in two or more network numbers. The corresponding procedure is called <em>subnetting</em>.</p>
+<p>A network number may be <em>allocated </em>to an organization, which means that the organization has exclusive use of IP addresses in that network number.</p>
+<p>Let N be a network number allocated to organization. The organization may obtain several network numbers from N by means of subnetting and then:
+1. allocate the resulting network numbers to other organizations; or,
+2. assign the resulting network numbers to its networks.
+Note that N is allocated but is not assigned.</p>
+<p>The definition of network numbers and their distribution to networks occurs in a hierarchical way, as follows.
+* <em>IANA (Internet Assigned Numbers Authority)</em> is an organization that manages the entire IP address space. It has partitioned the address space in network numbers by means of subnetting and has allocated the resulting network numbers to 5 organizations called <em>Regional Internet Registries (RIRs)</em>, one for each continent.
+* Each RIR has partitioned its network numbers through subnetting and has allocated the resulting network numbers to organizations called <em>Local Internet Registries (LIRs)</em>. LIRs may be either enterprises, or academic institutions, or Internet Service Providers. A LIR must be located in the same continent as the corresponding RIR.
+* Each LIR has partitioned its network numbers through subnetting and then:
+ * Enterprise/academic institutions: It has assigned the resulting network numbers to its networks.
+ * Internet Service Providers: It has allocated the resulting network numbers to its customers.
+   * Residential customers usually take only one IP address (which corresponds to a network number of length 4, that is the smaller length available).
+   * Other customers may take a larger network number, obtain smaller network numbers through subnetting and assign those to their networks.</p>
+<p>A fundamental property of the above framework is that allocations and assignments are managed in a completely <em>local</em> way. That is, let N be a network number allocated to organization X:
+- X may decide locally how to use N (how to apply subnetting, whether to allocate or assign the resulting network numbers, to which organizations or networks);
+- X need not inform any other organization of how X uses N.</p>
+<p>In the earliest years of the Internet, the role of the IANA was played by a single researcher (Jon Postel). In some cases, a RIR does not allocate network numbers directly to LIRs; a RIR may allocate network numbers to a <em>National Internet Registry (NIR)</em> that manages allocation to all LIRs of the corresponding country.</p>
+<h3 id="identifying-the-owner">Identifying the owner</h3>
+<p>Each organization in the hierarchy must maintain a local description of the allocation of each network number.</p>
+<p>The collection of the databases at all the organizations make it possible to determine the organization to which a specific network number has been allocated: information at the IANA identifies the RIR; information at the RIR  identifies the LIR; if the LIR is an ISP, information at the LIR identifies the customer.</p>
+<p>The information associated with a network number in each database is expressed in a standard format. A protocol called WHOIS describes this format and the network protocol for querying each database.</p>
+<p>Many programs, as well as freely accessible <a href="https://www.google.it/search?q=whois+lookup">web applications</a>, take an IP address and return the corresponding WHOIS record describing the owner of that address (an enterprise, academic institution or ISP).
+.
+When an IP address is owned by an ISP, the information publicly available through WHOIS does not allow identifying the customer that has been allocated that address. Such information must be maintained by the LIR internally, though, and must be made available to the public authority if required.</p>
+<p>IP geolocation services are usually based on the information available through WHOIS and associate geographical coordinates to that information based on service-specific technology, independent of the IP protocol.</p>
+<h2 id="node-configuration">Node configuration</h2>
+<h3 id="ip-configuration">IP configuration</h3>
+<p>A node connected to an IP network, in particular, connected to the Internet, must be provided with:
+1. IP address;
+2. network number;
+3. IP address of the <em>default gateway</em>.
+The default gateway is a router connected to the same network as the node; the node will send to this router all packets whose destination is not in the network of the node.</p>
+<p>The network number is specified indirectly, by means of a 32-bit sequence composed of a sequence of 1 bits followed by a sequence of 0 bits. Such a sequence is called <em>subnet mask</em>. The length of the network number is the length of the sequence of 1 bits in the subnet mask. The starting address of the network number is the result of the binary AND between the IP address of the node and the subnet mask.</p>
+<p>In practice, a node must be provided also with the IP address of a DNS server.</p>
+<h3 id="static-vs-dynamic-configuration">Static vs dynamic configuration</h3>
+<p>Static configuration: The IP configuration is provided by the user, with information provided by a network administrator. In this case the information is stored in the operating system and is immutable, that is, the node will always have the same IP configuration.</p>
+<p>Dynamic configuration: The IP configuration is provided by a dedicated <em>configuration server</em> automatically. In this case the information has a limited temporal validity and the node may have different IP configurations across its lifetime.</p>
+<p>Routers and servers usually have static configuration. User devices may have either static or dynamic configuration, but dynamic configuration is much more prevalent.
+Dynamic configuration may occur with a variety of technologies and protocols. The following paragraph describes a possible procedure for dynamic configuration. Such a description is an oversimplification: it does <strong>not </strong>exist in the reality and the real procedure is different. In this course we will only consider this oversimplified description.</p>
+<p>A configuration server must be in the same network as the device to be configured dynamically. The protocol for interacting with the configuration server is DHCP. The device broadcasts a DHCP request message encapsulated in a frame. The configuration server allocates an IP address to the requesting device and responds with a DHCP response message encapsulated in a frame addressed to that device. The DHCP response message contains all the configuration information.
+Note that if a configuration server was not in the same network as the device to be configured, then the device would not be able to send a frame to the configuration server (a device without IP configuration can only communicate with nodes in its network; it cannot communicate with nodes in other networks).</p>
+<h2 id="routing">Routing</h2>
+<h3 id="sending-a-packet">Sending a packet</h3>
+<p>Let S be a node configured with IP-s, SM-s, IP-gw. The IP layer of S (briefly, IP@S) sends a packet P addressed to IP-d as follows (we denote the network address associated with IP address IP-x as Phys(IP-x)).</p>
+<ol>
+<li>IP@S encapsulates P as the payload of a frame.</li>
+<li>If       IP-d is in the same network as IP-s
+Then        IP@S sends the frame to Phys(IP-d)
+Otherwise   IP@S sends the frame to Phys(IP-gw).</li>
+</ol>
+<p>IP@S translates IP addresses to network addresses by means of the ARP protocol.</p>
+<p>IP@S cannot execute the test “If IP-d is in the same network as IP-s” because IP@S does not have local knowledge of the set of IP addresses in its network.</p>
+<p>IP@S executes instead the test “(IP-d AND SM-s) == (IP-s AND SM-s)” that can be executed locally and provides the same result. To prove that the two tests are equivalent observe what follows:
+* IP-d and IP-s are in the same network ⇔ IP-d and IP-s are in the same network number: this follows from the assumption “<em>There is a one-to-one correspondence between networks and assigned network numbers”.</em>
+* IP-d and IP-s are in the same network number ⇔  (IP-d AND SM-s) == (IP-s AND SM-s): the proof of this claim is in the Appendix and is based on the assumption “<em>Assigned network numbers do not overlap”</em>.</p>
+<h3 id="address-resolution-protocol-arp">Address Resolution Protocol (ARP)</h3>
+<p>Let S be a node with IP address IP-s. S may need to know the network address of the node D with IP address IP-d. In this course we assume that this need may arise only if D is in the same network as S. ARP allows S to determine Phys(IP-d), as follows.</p>
+<p>The software layer that implements ARP is placed at the same abstraction level as IP. When IP@S needs to know Phys(IP-d), IP@S obtains this information from ARP@S. The module ARP@S maintains a table, called <em>ARP cache</em>, that maps IP addresses to Ethernet addresses. This table is maintained in a<em> fully automatic</em> way, with the following rules.</p>
+<ol>
+<li>When ARP@S needs Phys(IP-d) and this information is not in the ARP cache, it broadcasts a frame in the ARP protocol. The payload of this frame is an ARP request and describes both the requested information and who is requesting that information. We denote ARP requests with the self-explaining notation “(IP-s, Eth-s, IP-d, ?)”.</li>
+<li>When ARP@R receives an ARP request, it adds to its ARP cache the mapping describing the sender, i.e. “IP-s, Eth-s”.</li>
+<li>If the ARP request is for the IP address of the receiving node, then the receiving node also responds to the sender of the request with a frame in the ARP protocol. The payload of this frame is an ARP response and describes both endpoints. We denote ARP responses with the self-explaining notation “(IP-d, Eth-d, IP-s, Eth-s)” (the first pair is an ARP message always describes the sender of the message).</li>
+<li>When a node connects to the Internet, the node sends a <em>gratuitous ARP</em>. A gratuitous ARP is an ARP request for the IP address of the sending node, i.e.,  “(IP-s, Eth-s, IP-s, ?)”. If the network is configured correctly, no ARP response should arrive. We do not discuss the handling of responses to a gratuitous ARP.</li>
+</ol>
+<p>Since ARP requests are transmitted to a broadcast address, they are received by every node in the network. Each node in the network will thus execute step 2 (and only one node will execute step 2-a). Note that a gratuitous ARP not only allows detecting possible misconfigurations, it also inserts an entry for the connecting node into all the ARP caches in the network.</p>
+<p>An ARP cache cannot contain two entries for the same IP address (this is an oversimplification that does not occur in certain real scenarios). In case of multiple, conflicting information for the same IP address, only the most recent one is retained. Thus, an ARP request sent by a given IP address will overwrite all entries in the network that describe any previous usage of that IP address by another node.</p>
+<p>An ARP entry must be periodically refreshed. A node that has not received, for a predefined time interval, any IP or ARP traffic proving that an entry is still valid, will remove that entry.</p>
+<p>ARP entries may be defined statically by an administrator. Statically defined ARP entries are always present in the ARP cache of the corresponding node and are never removed (they need not be refreshed). Unless stated otherwise, in this course we will not consider statically defined entries.</p>
+<p>The above description of ARP is focussed on the mapping from IP addresses to Ethernet addresses, which is the only case of interest in this course. ARP allows more general forms of mapping and supports many different kinds of addresses. For this reason, the technical literature often uses other terminologies: logical or virtual addresses (IP, in our case); physical or hardware addresses (Ethernet, in our case).</p>
+<h3 id="router">Router</h3>
+<p>Let R be a router, i.e., a node with multiple network interfaces. Each interface has a local identifier, an IP address and a subnet mask. The IP layer of R (briefly, IP@R) handles a packet P addressed to IP-d as follows.</p>
+<p>R has a <em>routing table</em>. The routing table is an immutable data structure provided by the administrator. The routing table has a <em>range </em>column that contains a network number and an <em>action </em>column that describes how to handle a packet addressed to that network number. The possible actions are:
+* <em>Deliver</em>, if R has an interface connected to the network at which the corresponding range has been assigned. The action contains the identifier of that interface. In this case R sends the frame on that interface and addresses the frame to IP-d.
+* <em>Route</em>, otherwise. The action contains the identifier of an interface and the IP address of another router connected to the network of that interface, say IP-r. In this case R sends the frame on that interface and addresses the frame to Phys(IP-r).</p>
+<p>When handling a packet P addressed to IP-D (i.e., when <em>routing </em>a packet), IP@R proceeds as follows:
+1. Determine the rows of the routing table whose range includes IP-d;
+2. If exactly one row is found, then execute the action in that row.
+3. Otherwise, if multiple rows are found, then execute the action in the row whose range is smaller (i.e., the more specific rule).
+4. Otherwise, if no row is found, then discard P.
+IP@R translates IP addresses to network addresses by means of the ARP protocol.</p>
+<p>Note that if the union of all ranges does not include all the network numbers that exist in the internetwork, then packets addressed at ranges not described by the routing table will be discarded.</p>
+<p>Of course, assuming that a routing table must contain one row for each network number that exists in the Internet is not realistic: even leaving storage and computation issues aside, a router administrator cannot have knowledge of all the network numbers worldwide. In practice, a router administrator can only have knowledge of the network numbers that exists within the organization where the router is placed. There is thus the problem of how to describe all the network numbers that are external to the organization. Such a description is necessary because, without such a description, packets addressed to the outside of the organization would be discarded.</p>
+<p>The range column of a routing table may contain a special value that describes <em>all </em>the network numbers not described by the other rows. We denote this special value by the term “<em>default</em>”. A row with this special value thus allows to describe all the network numbers that are external to an organization. The corresponding action will route packets toward a router closer to the outside of the organization (or to the ISP, if the router is on the border of the organization).</p>
+<h3 id="routing-a-packet">Routing a packet</h3>
+<p>An endpoint may belong to a residential customer, a non-residential customer, an enterprise, an academic institution. For simplifying the discussion and without loss of generality, we assume that:
+1. any endpoint belongs to an “organization”;
+2. the organization consists of an internetwork;
+3. the organization is connected to an Internet Service Provider (ISP);
+4. the connection between organization and ISP is implemented by means of two routers, one on the boundary of the organization and the other on the boundary of the ISP.</p>
+<h3 id="routing-within-an-organization">Routing within an organization</h3>
+<p>Routing within an organization is usually <em>static</em>, that is, routing tables are configured by network administrators and never modified.</p>
+<p>Administrators configure routing tables based on the knowledge of the network numbers internal to the organization and the corresponding topology. Packets addressed to network numbers not allocated to the organization will be routed toward the ISP, by properly using the default ranges described in the previous section.</p>
+<p>Since the path toward a destination is immutable, a destination might become unreachable in case of failures, even when alternative working paths toward that destination are available.</p>
+<h3 id="routing-outside-of-an-organization">Routing outside of an organization</h3>
+<p>A packet that has left the organization reaches its destination by means of a routing procedure that is not part of this course. We only sketch the basic idea below.</p>
+<p>The portion of the Internet that routes packets toward ISPs is subdivided in <em>autonomous systems</em>. An autonomous system (AS) is a portion of the Internet (an internetwork) with complete autonomy on the choice of routing policies and technologies to use within that portion. There are more than 60.000 ASes in the Internet.</p>
+<p>An AS is connected with one or more ASes, each connection being implemented by a pair of routers, one on each AS boundary. As AS exchange routing information with neighboring ASes by means of the <em>Border Gateway Protocol (BGP)</em>. BGP messages follow this pattern:
+* An AS informs its neighbors of the network numbers that have been allocated to it.
+* When AS-j becomes aware that network number N has been allocated to one of its neighbors, say AS-i, AS-j informs its neighbors that the path toward N is <AS-j,AS-i>;
+* neighbors of AS-j (e.g., AS-k) will then inform their neighbors that the path toward N is <AS-k,AS-j,AS-i> and so on.
+The corresponding information will eventually reach all ASes. Several complex algorithms are then applied by each AS for translating this information into rows for its routing tables. Note that an AS may receive multiple alternative paths toward a given network number.</p>
+<p>The above procedure is <em>dynamic</em>, that is, routing tables may be modified automatically as a result of the dynamically changing flow of BGP information. This dynamic flow is able to find alternative paths toward a given destination in case of failures.</p>
+<p>Thus, a packet that has left an organization will travel across ASes until reaching the ISP of the destination. The ISP will then route the packet toward the corresponding organization.</p>
+<h2 id="firewall">Firewall</h2>
+<p>A firewall is a software module that analyzes all packets and determines whether a packet can proceed toward its destination or must be discarded. A firewall is configured with a list of <em>filtering rules</em>: a packet can proceed only if it satisfies at least one of these rules. A firewall is thus a module that forbids all network traffic that has not been explicitly authorized.
+A firewall must be configured with <em>only </em>the rules that are <em>strictly necessary</em> for executing the applications that must be allowed. Any kind of traffic that is not strictly necessary must be forbidden (thus, rules must not be excessively permissive). This requirement is particularly important for security reasons not analyzed in this course.</p>
+<p>A firewall may be placed on a router or on an endpoint.</p>
+<p>Organizations usually have a firewall on the border router. This firewall thus controls all the inbound and outbound network traffic of the organization. An organization may place additional firewalls in internal routers. Network architectures with multiple levels of firewalls (segmented networks) are not very common but are particularly desirable for security reasons not analyzed in this course.</p>
+<p>Firewalls on endpoints are part of the operating system. These firewalls usually have a default set of rules that allow all the traffic required by common applications, in order to avoid users the burden of configuring firewalls themselves. The default set of rules is usually excessively permissive, because a default installation of the operating system must accommodate a broad set of applications. It follows that firewalls on endpoints provide very little security, unless their configuration is modified and made more restrictive.</p>
+<h2 id="firewall-rules">Firewall rules</h2>
+<p>Rules are boolean expressions with four operands: IP addresses (source and destination) and port numbers (source and destination). Usually, each operand is compared for equality to a constant (or for belonging to a range, or for equality to any constant in a list) and all comparisons are joined with AND operators. An expression need not use all operands. When an operand is not part of a rule, the value of that operand is irrelevant for that rule.</p>
+<p>When the firewall has to handle a packet, the firewall:
+1. Takes the IP addresses from the IP header and the port numbers from the TCP header (which is part of the IP payload);
+2. Computes each rule;
+3. If at least one rule is true, then the firewall allows the packet to proceed, otherwise it drops the packet.</p>
+<p>In principle, a firewall could have rules for inbound packets that are completely independent of those for outbound packets. In practice, for each rule that allows a certain kind of inbound packets there must be a rule allowing outbound packets of the same kind. Stated differently, there must be <em>two </em>rules for each kind of allowed TCP connection: one rule for inbound packets and another rule for outbound packets. If either of these rules is missing, then the corresponding TCP connection cannot even be open.</p>
+<p>The traffic to be allowed is often specified textually. A simple way for deriving the corresponding firewall rules is as follows:
+1. Analyze the textual specification and list the kind of operations to be allowed.
+2. For each kind of operation, list the required TCP connections.
+3. For each TCP connection:
+ 1. By using a diagram of the network architecture, try to place the two ends of the connection on the opposite sides with respect to the firewall.
+ 2. If the connection can never cross the firewall, then this connection does not need any firewall rule.
+ 3. Otherwise
+   1. Write as much information as possible on each end of the connection (IP address and port number at each end);
+   2. Use that information for writing a rule describing packets in one direction;
+   3. Use that information again for writing another rule describing packets in the opposite direction;</p>
+<p>When discussing about firewall rules, the terminology might be confusing. For example “allow DNS client traffic”: for a border firewall, the “client” is within the organization or outside of the organization?</p>
+<p>The terminology always refers to the entity protected by the firewall, as follows:
+* <em>Client traffic</em>: Client internal to the organization (border firewall) or endpoint acting as a client (endpoint firewall).
+* <em>Server traffic</em>: Server internal to the organization or endpoint acting as a server.
+* <em>Inbound connection</em>: Server internal to the organization or endpoint acting as a server.
+* <em>Outbound connection</em>: Client internal to the organization or endpoint acting as a client.</p>
+<p>Note that inbound and outbound connections must not be confused with inbound and outbound traffic. Inbound and outbound traffic are terms that refer to IP packets. A connection is bidirectional, thus a connection always requires both inbound (IP) traffic and outbound (IP) traffic.</p>
+<h2 id="practical-considerations">Practical considerations</h2>
+<p>Operands that may be used in real firewalls include the protocol transported by the IP packet, e.g., TCP, UDP, ICMP.</p>
+<p>Rule syntax and user interface depend on the firewall implementation.</p>
+<p>Windows has a firewall accessible in Control Panel, Windows Defender. The Windows firewall has several user interfaces, all of them quite different from the one described in the previous section (which is very close to the firewall implementation).</p>
+<p>The basic interface specifies a very broad set of “applications”. Most of them are enabled by default. When an application is enabled the corresponding network traffic is allowed and vice versa. The correspondence between applications and TCP connections is fully hidden. Specific constraints (e.g., “use application X only with remote node Y”) cannot be expressed.</p>
+<p>The interface available in Advanced Configuration is in terms of “connections”. It distinguishes between “inbound” and “outbound” connections: the former are those in which Windows acts as a server, the latter are those in which Windows acts as a client.</p>
+<p>There is a large set of predefined rules for inbound connections and a similar set for outbound connections. Each rule may be enabled or disabled. There are many operands available for writing rules. Operands may be modified and new rules may be added.</p>
+<p>By default, <em>all</em> outbound connections are allowed, even those that do not satisfy <em>any </em>rule.</p>
+<h2 id="appendix">Appendix</h2>
+<p>Let N be a network number and let 2^k be its length. Let IP-1 be an IP address in N.
+* IP-2 is in the same network number as IP-1 ⇔ IP-2 and IP-1 are identical in the 32-k leftmost bits.</p>
+<p>Proof:
+* ⇒ Trivial consequence of the definition of network number and the properties of binary representations.
+* ⇐ Let N1 and N2 be the network number of IP-1 and IP-2, respectively. Suppose by absurd that N1&lt;&gt;N2.
+ * If N2.length = 2^k then N1.start=N2.start, thus it must be N1=N2.
+ * If N2.length &gt; 2^k then N2.start &lt; N1.start (N2.start has k+j (j &gt;= 1) rightmost bits equal to 0). N2.end has k+j rightmost bits equal to 1 thus N2.end&gt;N1.start. If N1&lt;&gt;N2 then N1 and N2 partly overlap, but this violates the assumption about overlapping network numbers.
+ * If N2.length &lt; 2^k then N1.start &lt; N2.start (N2.start has k-j (j &gt;= 1) rightmost bits equal to 0). N1.end has k rightmost bits equal to 1 thus N1.end&gt;N2.start. If N1&lt;&gt;N2 then N1 and N2 partly overlap, but this violates the assumption about overlapping network numbers.</p>
+<p>Note that the proof of ⇐ is based on the assumption:
+1. <em>..</em>.
+2. <em>Assigned network numbers do not overlap</em>. about ove</p>
+<p>If assigned network numbers may overlap, thus, the property holds in only one direction:IP-2 is in the same network number as IP-1 ⇒ IP-2 and IP-1 are identical in the 32-k leftmost bits.the claim does not hold either</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>
