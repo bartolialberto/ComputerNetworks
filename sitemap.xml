@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bartolialberto.github.io/ComputerNetworks/Labs/Wireshark/</loc>
+         <lastmod>2023-07-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bartolialberto.github.io/ComputerNetworks/Letture%20utili%20per%20l%27esame/Come%20si%20deve%20svolgere%20un%20esame%20scritto/</loc>
          <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
