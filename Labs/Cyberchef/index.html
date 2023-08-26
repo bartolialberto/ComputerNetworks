@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/6%20-%20Network%20Security/Approfondimenti/">
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/Labs/Cyberchef/">
       
       
-        <link rel="prev" href="../../5%20-%20IP/Appunti_IP/">
+        <link rel="prev" href="../../6%20-%20Network%20Security/Appunti_Network_Security/">
       
       
-        <link rel="next" href="../Appunti_Network_Security/">
+        <link rel="next" href="../How%20Colab%20Notebooks%20Work/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.5">
     
     
       
-        <title>Approfondimenti - Reti di Calcolatori - University of Trieste</title>
+        <title>Cyberchef - Reti di Calcolatori - University of Trieste</title>
       
     
     
@@ -80,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cyberchef" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Approfondimenti
+              Cyberchef
             
           </span>
         </div>
@@ -523,16 +528,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
       
@@ -541,7 +544,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           6   Network Security
@@ -552,19 +555,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Approfondimenti/" class="md-nav__link">
         Approfondimenti
       </a>
-      
     </li>
   
 
@@ -576,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Appunti_Network_Security/" class="md-nav__link">
+      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security/" class="md-nav__link">
         Appunti - Network Security
       </a>
     </li>
@@ -596,14 +591,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
       
       
       
@@ -612,7 +609,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Labs
@@ -623,11 +620,161 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Labs/Cyberchef/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Cyberchef
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Cyberchef
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#url-encoding-form-data" class="md-nav__link">
+    URL Encoding (FORM data)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base64" class="md-nav__link">
+    Base64
+  </a>
+  
+    <nav class="md-nav" aria-label="Base64">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoding-and-decoding" class="md-nav__link">
+    Encoding and Decoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-basic-authentication-credentials" class="md-nav__link">
+    HTTP Basic Authentication Credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-attachments" class="md-nav__link">
+    Email attachments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-key-crypto" class="md-nav__link">
+    Private key crypto
+  </a>
+  
+    <nav class="md-nav" aria-label="Private key crypto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decryption" class="md-nav__link">
+    Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption-and-decryption" class="md-nav__link">
+    Encryption and Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-an-encrypted-message" class="md-nav__link">
+    Send an encrypted message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-key-crypto" class="md-nav__link">
+    Public key crypto
+  </a>
+  
+    <nav class="md-nav" aria-label="Public key crypto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption_1" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decryption_1" class="md-nav__link">
+    Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-and-verify-to-do" class="md-nav__link">
+    Sign and Verify TO DO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -639,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Labs/How%20Colab%20Notebooks%20Work/" class="md-nav__link">
+      <a href="../How%20Colab%20Notebooks%20Work/" class="md-nav__link">
         How Colab Notebooks work
       </a>
     </li>
@@ -653,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Labs/Web%20Server%20Tests/" class="md-nav__link">
+      <a href="../Web%20Server%20Tests/" class="md-nav__link">
         Web Server Tests
       </a>
     </li>
@@ -667,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Labs/Wireshark/" class="md-nav__link">
+      <a href="../Wireshark/" class="md-nav__link">
         Wireshark
       </a>
     </li>
@@ -852,6 +999,132 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#url-encoding-form-data" class="md-nav__link">
+    URL Encoding (FORM data)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base64" class="md-nav__link">
+    Base64
+  </a>
+  
+    <nav class="md-nav" aria-label="Base64">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoding-and-decoding" class="md-nav__link">
+    Encoding and Decoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-basic-authentication-credentials" class="md-nav__link">
+    HTTP Basic Authentication Credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-attachments" class="md-nav__link">
+    Email attachments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-key-crypto" class="md-nav__link">
+    Private key crypto
+  </a>
+  
+    <nav class="md-nav" aria-label="Private key crypto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decryption" class="md-nav__link">
+    Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption-and-decryption" class="md-nav__link">
+    Encryption and Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-an-encrypted-message" class="md-nav__link">
+    Send an encrypted message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-key-crypto" class="md-nav__link">
+    Public key crypto
+  </a>
+  
+    <nav class="md-nav" aria-label="Public key crypto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption_1" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decryption_1" class="md-nav__link">
+    Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-and-verify-to-do" class="md-nav__link">
+    Sign and Verify TO DO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -866,16 +1139,106 @@
                   
 
 
-  <h1>Approfondimenti</h1>
-
+<h1 id="cyberchef">Cyberchef</h1>
+<p><em>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</em> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
+<p>Open the <a href="https://gchq.github.io/CyberChef/">web app</a>. There are many "recipes" (i.e., predefined computations) available on the left part. One can select a recipe by double-clicking on it. Each recipe takes an input and, when executed, it produces an output. Each recipe also has a set of parameters. For example, recipes for encryption have the key as a parameter; the input is the cleartext while the output is the ciphertext.</p>
+<p>Recipes can be chained together so that the output of one is the input of the next one and so on.</p>
+<p>Deselect the "auto-bake" checkbox in the bottom-center part. This way, recipes will not run automatically but only when clicking the "bake" button. This configuration is simpler to handle, I think.</p>
+<h2 id="url-encoding-form-data">URL Encoding (FORM data)</h2>
+<p>Data inserted in an HTML Form and sent in an HTTP request is URL encoded.</p>
+<p>In brief (and oversimplifying), this encoding format makes sure that the encoded text contains only characters that can be part of an URL (for example, spaces cannot be part of an URL).</p>
+<p>Take a moment to realize the countless applications of HTML forms. For example, if you write an email on a webapp, the text of the email is part of an HTML form thus your text will be sent to the server URL encoded. If you buy something online, your home address for delivery is part of an HTML form thus it will be sent to the server URL encoded.</p>
 <ul>
-<li>Colab Notebook: <a href="https://drive.google.com/file/d/1INTQTi0bzOCs4U0hG2UJvc8ukZJb_vis/view?usp=sharing">Cryptography I</a></li>
-<li>Colab Notebook: <a href="https://drive.google.com/file/d/1INSEzXcZtCZ--cy-GAunL7ptjiwch-q2/view?usp=sharing">Cryptography II</a></li>
-<li>You may want to read <a href="../../Labs/How%20Colab%20Notebooks%20Work/">How Colab Notebooks Work</a></li>
-<li><a href="https://forms.gle/XnCuvMQMnZ2hK8An6">Test - HTTPS</a></li>
-<li><a href="https://forms.gle/2tSwMNL6A34dwoAC8">Test - Firma e Certificati</a></li>
-<li><a href="../../Labs/Cyberchef/">Cyberchef</a>: Private key encryption.</li>
+<li>Select the 'URL encoding' recipe.</li>
+<li>Write some text in the input field and have a look at the encoding.</li>
+<li>Copy the encoding and save it somewhere.</li>
+<li>Discard the recipe and select the 'URL decoding' recipe.</li>
+<li>Insert the previously saved encoding as input and verify that the output is the expected one.</li>
 </ul>
+<h2 id="base64">Base64</h2>
+<p>Username and password in HTTP Basic authentication are sent Base64-encoded and separated by a colon (':').</p>
+<p>Base64 is an encoding format that represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: 6 bit unencoded, 8 bit encoded). Certain predefined <em>padding rules</em> allow handling byte sequences whose length is not a multiple of 6 bits.</p>
+<h3 id="encoding-and-decoding">Encoding and Decoding</h3>
+<ul>
+<li>Select the 'To Base64' recipe.</li>
+<li>Encode an hypothetical username or mail address or password and have a look at the encoding.</li>
+<li>Copy the encoding and save it somewhere.</li>
+<li>Discard the recipe and select the 'From Base64' recipe.</li>
+<li>Insert the previously saved encoding as input and verify that the output is the expected one.</li>
+</ul>
+<h3 id="http-basic-authentication-credentials">HTTP Basic Authentication Credentials</h3>
+<ul>
+<li>Select some web site that requires HTTP Basic Authentication (e.g., the 'Intranet DIA' on the <a href="https://dia.units.it/">https://dia.units.it/</a> page).</li>
+<li>Insert a random username/password pair in the authentication form, but keep track of what you inserted.</li>
+<li>Capture the HTTP request carrying the credentials. On the website indicated above this cannot be done with the browser developer tools; it may be done, e.g., with Wireshark.</li>
+<li>Identify the HTTP header that carries the credentials; copy the credentials somewhere.</li>
+</ul>
+<p>If the above operations look too difficult, search "http basic authentication request example" or something similar in a search engine. Try to find somewhere an example of HTTP request carrying the credentials as above.</p>
+<p>Once you have the Base64 encoding of some credentials:
+- Select a "From Base64" recipe.
+- Insert the saved credentials as input.
+- Verify that the output has the expected content, i.e., username:password.</p>
+<p>Important observation: given a Base64-encoded snippet, the corresponding decoding is a mechanic operation that does not require the knowledge of any secret. In other words, anyone that observes a Base64-encoded snippet is able to reverse the encoding and obtain the original snippet. Encoding has thus nothing to do with "encryption".</p>
+<h3 id="email-attachments">Email attachments</h3>
+<p>This topic is out of scope, i.e., it is not part of the course.</p>
+<p>Files sent as email attachments are Base64-encoded before sending and inserted in the body of the email.</p>
+<p>The email must contain some information for:
+- enabling the receiver to realize that (part of) the email body is Base64-encoded, i.e., that it has to be Base64-decoded before being presented to the receiving user;
+- indicating the filename of the corresponding part;
+- indicating how the email body is to be split between attachments and normal text.</p>
+<p>Such information is usually provided by means of dedicated email headers.</p>
+<h2 id="private-key-crypto">Private key crypto</h2>
+<p>You can "play" with AES, Blowfish, DES, RC4 algorithms.</p>
+<p>Private key crypto algorithms require a configuration parameter called <em>initialization vector (IV)</em> for reasons beyond the scope of this course. This parameter must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</p>
+<h3 id="encryption">Encryption</h3>
+<ul>
+<li>Select a recipe for encryption.</li>
+<li>Choose a key and an IV.</li>
+<li>Encrypt a text of choice.</li>
+</ul>
+<p>Note that for a given encryption algorithm not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</p>
+<h3 id="decryption">Decryption</h3>
+<ul>
+<li>Copy on a file the encrypted text obtained as above.</li>
+<li>Copy on other files the key and IV.</li>
+<li>Select a recipe for decryption, with the same algorithm used above for encryption.</li>
+<li>Configure this recipe with the same key and IV (that you saved on a file).</li>
+<li>Verify that you can decrypt the ciphertext (that you also saved on a file) correctly.</li>
+</ul>
+<p>Now try to modify the decryption key: does decryption work?</p>
+<p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
+<h3 id="encryption-and-decryption">Encryption and Decryption</h3>
+<ul>
+<li>Chain two recipes, one for encryption and another for decryption (make sure they use the same algorithm).</li>
+<li>Configure the recipes in the same way (i.e., same key and same IV)</li>
+<li>Verify that the input of the first recipe (encryption) is equal to the output of the second recipe (decryption).</li>
+</ul>
+<h3 id="send-an-encrypted-message">Send an encrypted message</h3>
+<ul>
+<li>Generate a ciphertext as indicated above in the "Encryption" example.</li>
+<li>You want to send this ciphertext by email to another student. The recipient need to know the key you used for encrypting (and the IV).</li>
+</ul>
+<p>How can you give the key to that student? What could go wrong? What if the student was thousands of Kms away? What if you had to communicate with thousands of different students? Think carefully about these issues.</p>
+<h2 id="public-key-crypto">Public key crypto</h2>
+<p>You can "play" with RSA and PGP.</p>
+<p>You always start by generating a keypair. Save the private key in a file and the public key in another file. You will keep the private key secret and you will distribute your public key to all people that have to communicate with you.</p>
+<p>You may want to experiment with other students (in which case you will have to exchange the respective public keys) or alone (in which case you will have to generate two or more keypairs and pretend to impersonate multiple people).</p>
+<h3 id="encryption_1">Encryption</h3>
+<ul>
+<li>Select a recipe for RSA encryption.</li>
+<li>Configure the recipe with the public key of the recipient.</li>
+<li>Encrypt a text of choice and save it on a file.</li>
+</ul>
+<p>How do you obtain the public key of the recipient? What could go wrong? What if the recipient was thousands of Kms away? What if you had to communicate with thousands of different recipients? Think carefully about these issues.</p>
+<h3 id="decryption_1">Decryption</h3>
+<ul>
+<li>Select a recipe for RSA decryption.</li>
+<li>Configure the recipe with private key the one matching the public key used as above.</li>
+<li>Verify that you can decrypt the ciphertext (that you also saved on a file) correctly.</li>
+</ul>
+<p>Now try to modify the decryption key: does decryption work?</p>
+<p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
+<h3 id="sign-and-verify-to-do">Sign and Verify TO DO</h3>
 
 
   
