@@ -1188,8 +1188,8 @@
 - indicating how the email body is to be split between attachments and normal text.</p>
 <p>Such information is usually provided by means of dedicated email headers.</p>
 <h2 id="private-key-crypto">Private key crypto</h2>
-<p>You can "play" with AES, Blowfish, DES, RC4 algorithms.</p>
-<p>Private key crypto algorithms require a configuration parameter called <em>initialization vector (IV)</em> for reasons beyond the scope of this course. This parameter must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</p>
+<p>You can "play" with AES, Blowfish, DES. These are all block ciphers (see Approfondimenti in Network Security). In all the examples below, select GCM as mode of operation.</p>
+<p>Block ciphers require a configuration parameter called <em>initialization vector (IV)</em> for reasons beyond the scope of this course. This parameter must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</p>
 <h3 id="encryption">Encryption</h3>
 <ul>
 <li>Select a recipe for encryption.</li>

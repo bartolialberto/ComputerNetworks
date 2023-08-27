@@ -80,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#se-volete-fare-delle-prove" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -561,9 +566,51 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Approfondimenti
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Approfondimenti
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#se-volete-fare-delle-prove" class="md-nav__link">
+    Se volete fare delle prove
+  </a>
+  
+    <nav class="md-nav" aria-label="Se volete fare delle prove">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-key-cryptography" class="md-nav__link">
+    Private key cryptography
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -853,6 +900,34 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#se-volete-fare-delle-prove" class="md-nav__link">
+    Se volete fare delle prove
+  </a>
+  
+    <nav class="md-nav" aria-label="Se volete fare delle prove">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-key-cryptography" class="md-nav__link">
+    Private key cryptography
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -876,6 +951,16 @@
 <li><a href="https://forms.gle/2tSwMNL6A34dwoAC8">Test - Firma e Certificati</a></li>
 <li><a href="../../Labs/Cyberchef/">Cyberchef</a>: Private key encryption.</li>
 </ul>
+<h2 id="se-volete-fare-delle-prove">Se volete fare delle prove</h2>
+<h3 id="private-key-cryptography">Private key cryptography</h3>
+<p>In breve: se viene chiesto di specificare un "mode of operation", scegliere CCM oppure GCM. Il motivo è riassunto, in brevissimo ed in forma intuitiva, qui di seguito.</p>
+<p>Esistono molti algoritmi di crittografia a chiave privata. Quelli più comunemente usati sono detti <em>block ciphers</em> perché prendono in input una sequenza di byte di lunghezza fissa e forniscono in output una sequenza di byte della stessa lunghezza.</p>
+<p>Gli algoritmi block ciphers possono essere configurati per funzionare in vari <em>modes of operation</em> che differiscono nelle modalità con le quali i blocchi sono ottenuti dal plaintext. Ad esempio, nella modalità EBC ogni blocco è crittato in modo indipendente da tutti gli altri blocchi; nella modalità CBC invece ogni blocco di plaintext viene crittato dopo averne calcolato lo XOR con il precedente blocco di ciphertext (quindi ogni blocco di ciphertext dipende da tutti i blocchi di ciphertext precedenti).</p>
+<p>Le <em>proprietà di sicurezza</em> dei block ciphers nei confronti di un network attacker dipendono dal mode of operation usato:
+- Forniscono secrecy, authentication, integrity: CCM, CWC, EAX, GCM, IAPM, OCB.
+- Forniscono solo secrecy (quindi sono raramente usati in pratica): ECB, CBC, CFB, OFB, CTR.</p>
+<p>Authentication e integrity significano che se la decryption di una sequenza di byte B con chiave K ha successo, allora è certo che B è stata encrypted con K (è cioè autenticata la chiave) e che il ciphertext B non è stato modificato rispetto al ciphertext generato dal trasmittente.</p>
+<p>Nei mode of operation che <em>non</em> forniscono authentication ed integrity, non esiste il concetto di "decryption successful". Decrittando il ciphertext B con chiave K si ottiene sempre un plaintext P: non ci sono però garanzie che B sia stato costruito con la chiave K (quindi P potrebbe non essere il plaintext che il trasmittente intendeva trasmettere); non ci sono garanzie che B sia identico al ciphertext  che era stato generato dal trasmittente (idem). In pratica, i mode of operation che forniscono solo secrecy sono usati raramente.</p>
 
 
   
