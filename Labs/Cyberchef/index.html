@@ -1156,8 +1156,8 @@
 <li>Insert the previously saved encoding as input and verify that the output is the expected one.</li>
 </ul>
 <h2 id="base64">Base64</h2>
-<p>Username and password in HTTP Basic authentication are sent Base64-encoded and separated by a colon (':').</p>
-<p>Base64 is an encoding format that represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: 6 bit unencoded, 8 bit encoded). Certain predefined <em>padding rules</em> allow handling byte sequences whose length is not a multiple of 6 bits.</p>
+<p>Base64 is an encoding format that represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: 6 bit unencoded, 8 bit encoded). The encoding table is a standard that be found in many places, e.g., on <a href="https://en.wikipedia.org/wiki/Base64">Wikipedia</a>. Certain predefined <em>padding rules</em> allow handling byte sequences whose length is not a multiple of 6 bits.</p>
+<p>This encoding format is widely used, in particular, when binary data have to be used in contexts where text data is expected.</p>
 <h3 id="encoding-and-decoding">Encoding and Decoding</h3>
 <ul>
 <li>Select the 'To Base64' recipe.</li>
@@ -1167,6 +1167,7 @@
 <li>Insert the previously saved encoding as input and verify that the output is the expected one.</li>
 </ul>
 <h3 id="http-basic-authentication-credentials">HTTP Basic Authentication Credentials</h3>
+<p>Username and password in HTTP Basic authentication are sent Base64-encoded and separated by a colon (':').</p>
 <ul>
 <li>Select some web site that requires HTTP Basic Authentication (e.g., the 'Intranet DIA' on the <a href="https://dia.units.it/">https://dia.units.it/</a> page).</li>
 <li>Insert a random username/password pair in the authentication form, but keep track of what you inserted.</li>
