@@ -604,6 +604,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#cryptography-private-key-password" class="md-nav__link">
+    Cryptography: Private key password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#private-key-cryptography-mode-of-operation" class="md-nav__link">
     Private key cryptography: Mode of operation
   </a>
@@ -929,6 +936,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#cryptography-private-key-password" class="md-nav__link">
+    Cryptography: Private key password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#private-key-cryptography-mode-of-operation" class="md-nav__link">
     Private key cryptography: Mode of operation
   </a>
@@ -967,14 +981,29 @@
 </ul>
 <h2 id="se-volete-fare-delle-prove">Se volete fare delle prove</h2>
 <h3 id="cryptography-key-representation">Cryptography: Key representation</h3>
-<p>Esistono molti formati diversi per rappresentare una chiave crittografica. Alcuni di questi sono testuali, altri sono binari.</p>
+<p>Una chiave crittografica, in pratica, viene memorizzata in un file.</p>
+<p>Esistono molti formati diversi per rappresentare una chiave crittografica. Alcuni di questi formati sono testuali, altri sono binari.</p>
 <p>Quando si usa uno strumento crittografico, occorre verificare in quale formato esso si aspetta di ricevere la chiave. Tipicamente uno strumento accetta molti formati che possono essere specificati con un flag di input opportuno. Se la chiave che si ha a disposizione è rappresentata in un formato diverso da quelli attesi dallo strumento, allora la chiave deve essere convertita di formato con un software appropriato.</p>
 <p>Alcuni formati molto comuni sono:</p>
 <ul>
 <li>PEM Formato <em>testuale</em>. Usato spesso per la crittografia a chiave pubblica e per i certificati. Tipicamente inizia con una linea <code>BEGIN</code> e termina con una linea <code>END</code>. La chiave è rappresentata in formato Base64-encoded. I file che usano questo formato hanno tipicamente estensione <code>.pem</code>, <code>.crt</code>, <code>.key</code>.</li>
 <li>DER Formato <em>binario</em>. Usato spesso per certificati e per chiavi private. I file che usano questo formato hanno tipicamente estensione <code>.der</code>, <code>.cer</code>.</li>
 </ul>
-<p>Ci sono anche molti altri formati, ad esempio PKCS#8, PKCS#12, quelli usati dai software SSH, dai software GPG ed altri.</p>
+<p>Ci sono molti altri formati, ad esempio PKCS#8, PKCS#12, quelli usati dai software SSH, dai software GPG ed altri.</p>
+<h3 id="cryptography-private-key-password">Cryptography: Private key password</h3>
+<p>I file che memorizzano chiavi private di solito sono associati ad una <em>password</em>. 
+Per usare una chiave privata contenuta in file è necessario dimostrare la conoscenza della password corrispondente.</p>
+<p>Ad esempio, un software che deve usare una chiave privata deve ricevere in input il nome del file contenente la chiave privata e la password per quel file.</p>
+<p>I dettagli realizzativi di questo meccanismo di protezione non fanno parte di questo corso.</p>
+<p>Intuitivamente, e solo per avere un'idea, il meccanismo è indicato di seguito (per comprendere questo meccanismo è necessario conoscere gli operation mode e le proprietà di sicurezza corrispondenti, spiegate più sotto):</p>
+<ul>
+<li>Quando viene creato il file, viene scelta una password P.</li>
+<li>Dalla password P viene derivata una chiave crittografica KP con un algoritmo pubblico e deterministico.</li>
+<li>Il file viene crittato con la chiave KP utilizzata in un operation mode che garantisce secrecy, authentication e integrity.</li>
+</ul>
+<p>A questo punto il contenuto del file è incomprensibile in quanto crittato con una chiave derivata dalla password P.</p>
+<p>Per leggere il contenuto del file è necessario fornire una password, indichiamola con P1. Da P1 viene derivata una chiave KP1 ed il file viene decrittato con questa chiave KP1. Se la decrittazione ha successo allora è matematicamente certo che KP1=KP e P1=P, cioè la password P1 con la quale si sta accedendo al file è effettivamente la stessa password P con la quale è stato crittato il file.</p>
+<p>Notare che il meccanismo di protezione non richiede nessun "database delle credenziali" o funzionalità specifiche del sistema operativo. Notare anche che la password non è memorizzata da nessuna parte (quindi se ci si dimentica la password allora non c'è modo di utilizzare il file corrispondente; si può solo procedere per tentativi con tante password sperando di trovare la password corretta).</p>
 <h3 id="private-key-cryptography-mode-of-operation">Private key cryptography: Mode of operation</h3>
 <p>In breve: se viene chiesto di specificare un "mode of operation", scegliere CCM oppure GCM. Il motivo è riassunto in forma intuitiva qui di seguito.</p>
 <p>Esistono molti algoritmi di crittografia a chiave privata. Quelli più comunemente usati sono detti <em>block ciphers</em> perché operano su blocchi di byte, cioè prendono in input una sequenza di byte di lunghezza fissa e forniscono in output una sequenza di byte della stessa lunghezza.</p>
