@@ -1,0 +1,1638 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/6%20-%20Network%20Security/Appunti_Network_Security_2/">
+      
+      
+        <link rel="prev" href="../Appunti_Network_Security_1/">
+      
+      
+        <link rel="next" href="../../Labs/Cyberchef/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.5">
+    
+    
+      
+        <title>Appunti - Network Security II - Reti di Calcolatori - University of Trieste</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#appunti-network-security-ii" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://bartoli.inginf.units.it" title="Reti di Calcolatori - University of Trieste" class="md-header__button md-logo" aria-label="Reti di Calcolatori - University of Trieste" data-md-component="logo">
+      
+  <img src="../../bernabeu small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reti di Calcolatori - University of Trieste
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Appunti - Network Security II
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://bartoli.inginf.units.it" title="Reti di Calcolatori - University of Trieste" class="md-nav__button md-logo" aria-label="Reti di Calcolatori - University of Trieste" data-md-component="logo">
+      
+  <img src="../../bernabeu small.png" alt="logo">
+
+    </a>
+    Reti di Calcolatori - University of Trieste
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Il Corso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1   Introduction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1   Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Approfondimenti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approfondimenti
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Appunti_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appunti - Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2   DNS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2   DNS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Approfondimenti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approfondimenti
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti_DNS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appunti - DNS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3   Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3   Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Approfondimenti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approfondimenti
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Appunti_Web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appunti - Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/The%20Big%20Brother/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Big Brother
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4   Email
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4   Email
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Approfondimenti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approfondimenti
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Appunti_Email/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appunti - Email
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5   IP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            5   IP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Appunti_IP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appunti - IP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    6   Network Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            6   Network Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Approfondimenti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approfondimenti
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appunti_Network_Security_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appunti - Network Security I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Appunti - Network Security II
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Appunti - Network Security II
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#public-key-cryptography-with-certification-authorities" class="md-nav__link">
+    Public key cryptography with certification authorities
+  </a>
+  
+    <nav class="md-nav" aria-label="Public key cryptography with certification authorities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificates-and-certification-authorities" class="md-nav__link">
+    Certificates and certification authorities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyset-and-trustset" class="md-nav__link">
+    KeySet and TrustSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalset" class="md-nav__link">
+    PersonalSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-public-keys-on-an-untrusted-channel-solved" class="md-nav__link">
+    Sending public keys on an untrusted channel: Solved!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securing-the-insecure-channel-solved" class="md-nav__link">
+    Securing the insecure channel: Solved!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-transport-layer-security" class="md-nav__link">
+    TLS (Transport Layer Security)
+  </a>
+  
+    <nav class="md-nav" aria-label="TLS (Transport Layer Security)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-guarantees-and-implementation" class="md-nav__link">
+    Security guarantees and implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-server-authentication" class="md-nav__link">
+    Understanding server authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-with-mutual-authentication" class="md-nav__link">
+    TLS with mutual authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-considerations-on-public-key-cryptography" class="md-nav__link">
+    Practical considerations on public key cryptography
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical considerations on public key cryptography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certification-authorities" class="md-nav__link">
+    Certification authorities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-pair-generation" class="md-nav__link">
+    Key pair generation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-signed-certificates" class="md-nav__link">
+    Self-signed certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyset-and-trustset-actual-content" class="md-nav__link">
+    KeySet and TrustSet: Actual content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-storage-in-practice" class="md-nav__link">
+    Key storage in practice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/Cyberchef/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cyberchef
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/How%20Colab%20Notebooks%20Work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Colab Notebooks work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/Web%20Server%20Tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Server Tests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Labs/Wireshark/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wireshark
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Letture utili per l'esame
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Letture utili per l'esame
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Letture%20utili%20per%20l%27esame/Come%20si%20deve%20svolgere%20un%20esame%20scritto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Come si deve svolgere un esame scritto (e non solo)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Letture%20utili%20per%20l%27esame/Consigli%20da%20chi%20ha%20avuto%20problemi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigli di una studentessa che ha avuto difficoltà con l'esame di Reti di Calcolatori
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Letture%20utili%20per%20l%27esame/Consigli%20per%20chi%20non%20ha%20seguito%20le%20lezioni/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigli per chi non ha seguito le lezioni
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Letture%20utili%20per%20l%27esame/Tentare%20questo%20esame%20molte%20volte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tentare questo esame molte volte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Questo Corso
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Questo Corso
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Questo%20Corso/Come%20organizzo%20lo%20studio%20di%20Internet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Come organizzo lo studio di Internet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Questo%20Corso/slide%20summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Argomenti
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#public-key-cryptography-with-certification-authorities" class="md-nav__link">
+    Public key cryptography with certification authorities
+  </a>
+  
+    <nav class="md-nav" aria-label="Public key cryptography with certification authorities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificates-and-certification-authorities" class="md-nav__link">
+    Certificates and certification authorities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyset-and-trustset" class="md-nav__link">
+    KeySet and TrustSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalset" class="md-nav__link">
+    PersonalSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-public-keys-on-an-untrusted-channel-solved" class="md-nav__link">
+    Sending public keys on an untrusted channel: Solved!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#securing-the-insecure-channel-solved" class="md-nav__link">
+    Securing the insecure channel: Solved!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-transport-layer-security" class="md-nav__link">
+    TLS (Transport Layer Security)
+  </a>
+  
+    <nav class="md-nav" aria-label="TLS (Transport Layer Security)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-guarantees-and-implementation" class="md-nav__link">
+    Security guarantees and implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-server-authentication" class="md-nav__link">
+    Understanding server authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-with-mutual-authentication" class="md-nav__link">
+    TLS with mutual authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-considerations-on-public-key-cryptography" class="md-nav__link">
+    Practical considerations on public key cryptography
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical considerations on public key cryptography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certification-authorities" class="md-nav__link">
+    Certification authorities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-pair-generation" class="md-nav__link">
+    Key pair generation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-signed-certificates" class="md-nav__link">
+    Self-signed certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyset-and-trustset-actual-content" class="md-nav__link">
+    KeySet and TrustSet: Actual content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-storage-in-practice" class="md-nav__link">
+    Key storage in practice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="appunti-network-security-ii">Appunti - Network Security II</h1>
+<h2 id="public-key-cryptography-with-certification-authorities">Public key cryptography with certification authorities</h2>
+<p>We augment the considered scenario with three assumptions, described in  the next sections. The resulting scenario models <em>all</em> the practical applications of public key cryptography. In this augmented scenario:</p>
+<ul>
+<li>Any subject may securely send “its public key” to any other subject by communicating <em>only on C</em> (not on CS).</li>
+<li>Any two subjects may securely choose a key for private key cryptography by communicating <em>only</em> on C (not on CS).</li>
+</ul>
+<p>In other words, any two subjects may thus establish a secure channel on C by only communicating on C itself, that is, by communicating only on the channel that they do not trust.</p>
+<p>The two requirements that made the previous procedure impractical are no longer required:</p>
+<ul>
+<li>A secure channel CS should exist between <em>all </em>pairs of subjects.</li>
+<li>The time required for completing the key exchange on CS should be sufficiently short.</li>
+</ul>
+<p>Intuitively, communication on CS is required <em>only “at the beginning”</em> and <em>with a small set of subjects</em> (the certification authorities). Having executed this costly-but-secure interaction once, there is no need to communicate on CS again and all communications may occur on C.</p>
+<h3 id="certificates-and-certification-authorities">Certificates and certification authorities</h3>
+<p>A <em>certification authority</em> is a subject that attests (certifies) the public key of other subjects.</p>
+<p>We assume that each subject interacts with a certification authority for proving that it is associated with a specified name A (i.e., that it has the right to impersonate subject A) and a specified public key KPUB-A. The details of this procedure are irrelevant and depend on the specific certification authority.</p>
+<p>If the proof satisfies the certification authority, then the certification authority constructs a file <A, KPUB-A> and signs this file with its own private key. This file is called a <em>certificate</em> and contains an indication of the certification authority that constructed the file, that is, of the <em>issuer</em> of the certificate. We denote certificates as <code>&lt; Subject, KPUB, Issuer &gt;</code> (the signature is implicitly present), meaning that the certificate contains the association between the specified subject and specified public key, the association has been verified by the specified issuer and the issuer has signed the certificate with its own private key.</p>
+<p>Note that certificates contain public information and thus need not be confidential or secret. Any subject can have a copy of the certificate of any other subject. Clearly, for any certificate, there will be only one subject whose private key is the companion of the public key in the certificate.</p>
+<p>There are a few different standards for the format of certificates. The most important one is X.509. In this standard, subjects and issuers are described by means of a set of named strings: common name, organizational unit, organization, country and others. The rules for actually choosing these values are part of the protocol specification.</p>
+<p>For practical reasons, a certificate has an <em>expiration date</em> chosen and signed by the issuer. The certificate cannot be used after that date, i.e., no software will accept to use an expired certificate.</p>
+<p>For practical reasons, it may be necessary to <em>revoke</em> a certificate, i.e., the certification authority that issued a certain certificate might declare that certificate no longer valid even <em>before</em> its expiration date.
+The issues related to certificate revocation are very complex and not discussed in this course-</p>
+<h3 id="keyset-and-trustset">KeySet and TrustSet</h3>
+<p>We assume that each subject obtains on CS the association <code>&lt;Subject-i, KPUB-i&gt;</code> for a small set of certification authorities. We call the set of these associations <em>KeySet</em> of the subject.</p>
+<p>Let S be a subject whose KeySet contains <code>&lt; CA-X, KPUB-X &gt;</code>. S may verify signatures made by CA-X, thus S may verify authenticity and integrity of certificates issued by S. These properties are guaranteed even for certificates that S receive on C, i.e., on the insecure channel..</p>
+<p>Authenticity and integrity of a signed sequence of bytes do not imply that the sequence of bytes represents a true proposition or a real fact. In particular, “authenticity” does not mean “the signed content is true”: it means that the content has been signed with the private key companion of the public key used in verification.</p>
+<p>A certification authority could thus sign a false association between a subject and a public key. It follows that a certificate may contain a false association between a subject and a public key, even though the signature on the certificate is verified.</p>
+<p>We assume that each subject has a small set of subjects representing certification authorities that are <em>trusted</em> by that subject. A certificate issued by a trusted certification authority is assumed to contain real associations.</p>
+<p>In summary, we augment the considered scenario by assuming that each subject:</p>
+<ol>
+<li>Has a certificate for its public key.</li>
+<li>Obtains on CS the public keys of certification authorities (KeySet).</li>
+<li>Chooses a set of trusted certification authorities (TrustSet).</li>
+</ol>
+<p>The resulting scenario models <em>all</em> the practical applications of public key cryptography.</p>
+<p>The actual implementation of KeySet and TrustSet depends on the software that uses public key cryptography.
+In many cases, such sets are part of the operating system and every software uses those sets. In some cases a software could use its own KeySet and TrustSet, managed independently of those of the operating system. 
+In practice, KeySet and TrustSet exist with terminology and structure different from the one used in this document.</p>
+<h3 id="personalset">PersonalSet</h3>
+<p>A subject with a private-public key pair needs to store this information.</p>
+<p>The public key is always associated with the name of that subject, in a certificate issued by a certification authority. While the certificate may be read by any subject, the private key obviously must be readable only by the subject associated with that private key.
+In many implementation a private key is associated with a password: the private key can be used only by proving knowledge of the corresponding password.</p>
+<p>We denote by <em>PersonalSet</em> the set containing the private-public key pair of a subject. The content of this set must be carefully protected from fraudulent accesses. The actual implementation of the PersonalSet depends on the software that uses public key crytpography. In practice, this set appears with terminology and structure different from the one used in this document (much like KeySet and TrustSet). The corresponding storage may be a file stored in the device or in a smartcard.</p>
+<p>Note that the PersonalSet cannot be kept always offline: the private key must be accessible to the software that needs to sign documents or to decrypt messages encrypted with the matching public key.</p>
+<p>In most cases, the PersonalSet is empty: most users need not sign documents; most users need not authenticate with public key cryptography. Of course, web servers available on https must have a non-empty PersonalSet.</p>
+<p>In some cases a PersonalSet could contain multiple key pairs. This occurs when a device may impersonate multiple subjects or when a subject may use multiple key pairs (in practice, a key that can be used for signing documents cannot be used for authentication with public key cryptography; the reasons are not part of this course).</p>
+<h3 id="sending-public-keys-on-an-untrusted-channel-solved">Sending public keys on an untrusted channel: Solved!</h3>
+<p>In the augmented scenario, <em>any</em> subject may send “its public key” to <em>any other subject</em> by communicating <em>only on C</em> (not on CS!). The key distribution problem is thus solved in a practical way.</p>
+<p>The procedure is as follows. Let A be the sending subject. Let B the receiving subject and let KeySet-B, Trust-Set-B denote the corresponding KeySet and TrustSet.</p>
+<ol>
+<li>A sends “its certificate” to B: <code>&lt; S=A, KPUB=KPUB-A, I=CA-A&gt;</code></li>
+<li>B verifies that it can use the certificate:<ol>
+<li>CA-A belongs to TrustSet-B.</li>
+<li>CA-A belongs to KeySet-B</li>
+</ol>
+</li>
+<li>B validates the certificate:<ol>
+<li>verifies the signature on the received certificate with the public key of the issuer, obtained in KeySet-B (i.e., by using &lt; CA-A, KPUB-CA-A&gt;).</li>
+<li>verifies that the certificate has not expired.</li>
+</ol>
+</li>
+</ol>
+<p>If all the checks succeed, then B knows that the public key of A is the one in the received certificate.</p>
+<p>If any of the checks fails, then B cannot use the received certificate and thus does not know the public key of A (step 2-a: B does not assume that the association encoded by the certificate is real; step 2-b: B cannot verify the signature on the certificate; step 3-a: the certificate has no authentication and integrity guarantees).</p>
+<p>Necessary condition for using a certificate, thus, is that the issuer of the certificate belongs to both the KeySet and TrustSet of the subject willing to use that certificate.</p>
+<h3 id="securing-the-insecure-channel-solved">Securing the insecure channel: Solved!</h3>
+<p>Two subjects A and B may obtain secrecy, integrity, authentication <em>on C</em> easily, by exchanging their certificates on C (as discussed below). </p>
+<p>Any two subjects may thus establish a secure channel on C by only communicating <em>on C itself</em>, that is, by communicating <em>only on the channel that they do not trust</em>. All that is needed is a communication on CS “only at the beginning” and only for initializing the respective KeySet and TrustSet (in practice, this communication on CS corresponds to installing an operating system from a trusted source).</p>
+<p>The resulting procedure is as follows:</p>
+<ol>
+<li>Exchange the respective certificates on C</li>
+<li>Choose a key K-AB on C by means of public key cryptography</li>
+<li>Communicate on C using K-AB, i.e., send each message m as EK_AB(m),MACK-AB(m)</li>
+</ol>
+<p>An attacker could attempt to impersonate A as follows (the reasoning for the attempt of impersonating B is identical):</p>
+<ol>
+<li><em>Send the real certificate of A</em>. In this case the attacker cannot decrypt the key that B will choose and send encrypted with the public key of A (step 2).</li>
+<li><em>Modify the certificate of A by replacing KPUB-A with the attacker’s public key</em>. In this case when B will verify the signature on the certificate, the verification will fail because there is no integrity.</li>
+<li><em>Forge a certificate that associates A with the attacker’s public key</em>. In this case when B will verify the signature on the certificate, either the verification will fail because there is no authenticity (if the attacker forges a certificate whose issuer is in the KeySet of B) or the certificate cannot be verified (if the issuer is not in the KeySet of B).</li>
+</ol>
+<p>An attacker could attempt other attacks (for example on CS, or on the content of KeySets and TrustSets) but those attacks are based on a different threat model, that is, they require abilities different from those assumed here. The three attacks outlined above summarize all the attacks that can be done by a network attacker.</p>
+<h2 id="tls-transport-layer-security">TLS (Transport Layer Security)</h2>
+<h3 id="security-guarantees-and-implementation">Security guarantees and implementation</h3>
+<p>TLS provides secrecy, integrity and server authentication on top of TCP connections.</p>
+<p>These guarantees are obtained with the procedures based on public key cryptography with certification authorities. The key difference with the description in the previous sections is that in the default TLS configuration:</p>
+<ul>
+<li>The server has a private-public key pair and authenticates with public key cryptography.</li>
+<li>Clients need not have any private-public key pair and do not authenticate.</li>
+</ul>
+<p>The corresponding procedure is as follows (this is a much oversimplified description of the real TLS protocol):</p>
+<ol>
+<li>Client opens a TCP connection with Server.</li>
+<li>Client sends the name of the Server.</li>
+<li>Server sends its certificate &lt; S=ServerSubject, KPUB=KPUB-S, I=CA &gt;.</li>
+<li>Client validates received certificate.</li>
+<li>Client verifies that received certificate is for the expected subject (the one specified at step 1).</li>
+<li>Client chooses a key K and sends  <em>E</em>KPUB-S(K) to Server.</li>
+<li>Client and Server communicate using K, i.e., send each message m as EK(m),MACK(m)</li>
+</ol>
+<p>In principle, any application protocol based on TCP can be used on TLS. After executing steps 1-5, client and server will interact as specified by the application protocol. This is what happens, for example, in HTTPS.</p>
+<p>To understand the need for step 2 consider a scenario in which a given server has several names and hosts a websites for each such name. In this case the server must have a different keypair and certificate for each name. Without step 2, the server would not know which certificate to send at step 3.</p>
+<p>To understand the need for step 5, consider the following example. At step 1 the client contacts the DNS for obtaining the IP address of “server.com”; the network attacker could falsify the DNS response, thus the client would open a TCP connection with the attacker. Suppose the network attacker has a valid certificate. This certificate will be for a subject different from "server.com" because the attacker does not have the right to use that name, thus (by hypothesis) no certification authority will issue a certificate for that subject name to the attacker. Without step 4, steps 2-6 would complete successfully, irrespective of the subject contained in the certificate of the Attacker: thus the Client would believe to be connected to “server.com” while in fact it is connected to the Attacker.</p>
+<p>It is thus necessary to bind the Server identity as specified by the Client in step 1, to the server identity as contained in the certificate. In principle, the “subject” field of a certificate could be a DNS name. The certification authority would check that the subject requesting the certificate has the right to use that DNS name; and, clients would verify at step 5 that the subject in the received certificate matches the DNS name specified at step 1.</p>
+<p>In practice, the “subject” field of a certificate is not a DNS name. A certificate contains a name called “Subject Alternative Name” whose value is a list of DNS names. These names are used as described in the previous paragraph (more details can be found in <a href="https://bartoli-alberto.blogspot.com/2018/12/https-dettagli-sulla-autenticazione-del.html">this</a> blog post). In this course we may assume that the subject field of a certificate is a DNS name.</p>
+<h3 id="understanding-server-authentication">Understanding server authentication</h3>
+<p>Consider a website on server <code>goodsite.com</code> at address <code>IP-good</code>. Consider an attacker with a website on server <code>badsite.com</code> at address <code>IP-bad</code>. We explore the various options available to the attacker to impersonate <code>goodsite.com</code>, that is, to trick browsers that want to connect to <code>goodsite.com</code> to actually connect to the attacker’s website.</p>
+<p><strong>Case 1:</strong> The browser connects to <code>http://goodsite.com</code>.</p>
+<ol>
+<li>Browser sends DNS request for obtaining IP address of <code>goodsite.com</code></li>
+<li>Attacker spoofs DNS response and responds with <code>IP-bad</code>.</li>
+<li>Browser connects to <code>IP-bad, 80</code>.</li>
+<li>TCP connection opens.</li>
+<li>Browser sends HTTP request to Attacker and Attacker responds.</li>
+</ol>
+<p>The attack thus succeeds. The address bar on the browser will show <code>http://goodsite.com</code> but the content will be provided by the Attacker. This fact is not surprising because http does not provide server authentication.</p>
+<p>Note that many websites are available both on http and on https; when a browser attempts to connect on http, the website responds with a redirection to https. The above attack succeeds irrespective of whether <code>goodsite.com</code> is available only on https or on both http and https.</p>
+<p><strong>Case 2:</strong> The browser connects to <code>https://goodsite.com</code>.</p>
+<ol>
+<li>Browser sends DNS request for obtaining IP address of goodsite.com</li>
+<li>Attacker spoofs DNS response and responds with IP-bad.</li>
+<li>Browser connects to IP-bad, 443.</li>
+</ol>
+<p>At this point there are the following possibilities:</p>
+<ul>
+<li>Attacker does not have https site. The TCP connection will <em>not</em> open, because the Attacker web server is not listening on port 443.</li>
+<li>Attacker has a valid certificate for <code>badsite.com</code>. TCP Connection opens, Attacker sends certificate, Browser detects that the certificate is <em>not</em> for <code>goodsite.com</code> and closes the connection.</li>
+<li>Attacker has a copy of the certificate of <code>goodsite.com</code> (any subject may obtain a copy of this certificate, for example by connecting to the real <a href="https://goodsite.com">https://goodsite.com</a>). TCP Connection opens, Attacker sends certificate, Browser sends a private key encrypted with the public key in that certificate. Attacker <em>cannot decrypt</em>, thus communication will not proceed and the connection will close.</li>
+<li>Attacker obtains a certificate for <code>goodsite.com</code> from a certification authority in the KeySet and TrustSet of the browser. This fact <em>cannot</em> occur by hypothesis.</li>
+</ul>
+<p>Thus, if a browser follows an https URL then the browser is guaranteed that the web server is authentic. This means that:</p>
+<p><em>The content shown by the browser is indeed provided by the web server whose DNS name appears in the browser address bar.</em></p>
+<p>A big practical problem occurs because browsers often follow URLs received in email messages or found in other web pages. In these cases a browser may connect to an attacker-controlled website (<code>https://badsite.com</code>) whose appearance may be identical to that of another website (<code>https://goodsite.com</code>). In particular, the attacker-controlled website could replicate the login page of <code>https://goodsite.com</code>. Although the address bar of the browser will show <code>https://badsite.com</code>, users that forget to check the address bar or are not able to perform that check correctly will send their credentials for <code>goodsite.com</code> to <code>badsite.com</code>, i.e., to the attacker (phishing). Of course, the attacker could choose for its website an URL syntactically similar to the URL to attack.</p>
+<p>Note that an attacker-controlled website (<code>https://badsite.com</code>) may have an appearance identical to that of another website (<code>https://goodsite.com</code>) despite both sites being on https. This fact does <em>not</em> violate the server authentication property described above. The reason is because https does not provide any guarantee on “which data” will be sent within the TCP connection by the web server.</p>
+<h3 id="tls-with-mutual-authentication">TLS with mutual authentication</h3>
+<p><em>TLS with mutual authentication is not part of this course.</em></p>
+<p>In the default TLS configuration, client authentication is not provided. Clients may authenticate with the mechanisms specified by the application-level protocol. For example, in HTTPS, they may authenticate with BASIC or FORM authentication and the corresponding network traffic will have the security guarantees provided by TLS.</p>
+<p>Application-level authentication mechanisms involve the use of a client password. This fact introduces many practical problems because:</p>
+<ul>
+<li>The client can be tricked to send the password to an Attacker (phishing);</li>
+<li>The password of all the clients must be known to the server; an attacker could manage to steal all the passwords from the server.</li>
+</ul>
+<p>A TLS server may be configured with mutual authentication. In this case clients must have a private-public key pair. When the server sends its certificate, it specifies that mutual authentication is required. The resulting procedure is as follows:</p>
+<ol>
+<li>Client opens a TCP connection with Server.</li>
+<li>Server sends its certificate <code>&lt; S=ServerSubject, KPUB=KPUB-S, I=CA &gt;</code> and requires mutual authentication.</li>
+<li>Client validates received certificate.</li>
+<li>Client verifies that received certificate is for the expected subject.</li>
+<li>Client chooses a key K and sends  <em>E</em>_KPUB-S(K) to Server and sends its certificate<code>&lt; C = ClientSubject, KPUB=KPUB-C, I =CA-C&gt;</code>.</li>
+<li>Server validates received certificate.</li>
+<li>Server chooses a key K1 and sends  <em>E</em>_KPUB-C(K1) to Client</li>
+<li>Client and Server communicate using K concatenated with K1</li>
+</ol>
+<p>The client identity at the application protocol will be the subject in the client certificate and the application will consider the client as authenticated. The details for passing this information from TLS to the application are irrelevant.</p>
+<p>Using TLS with mutual authentication removes the password problems completely, because the client secret (its private key) never leaves the client device:</p>
+<ul>
+<li>The client cannot be tricked to send its private key to an Attacker (because the client never sends its private key);</li>
+<li>The private key of clients is not known to the server, thus the Attacker cannot steal all those keys from the server.</li>
+</ul>
+<p>In other words, a client authenticates to the server by demonstrating that it knows a secret. In the case of passwords, the server must know the secret and this fact leads to important practical problems. In the case of public key cryptography, the server need not know the secret thus the corresponding problems are eliminated. The reason why the server need not know the secret is this: the server constructs a problem that only the client can solve and such that the server can verify it has been solved (“decrypt this number: <em>E</em>_KPUB-C(K1)”)</p>
+<p>The reason why TLS with mutual authentication is rarely used despite its advantages is because managing the credential lifecycle when credentials are key pairs is much more costly and more difficult than when credentials are passwords.</p>
+<h2 id="practical-considerations-on-public-key-cryptography">Practical considerations on public key cryptography</h2>
+<h3 id="certification-authorities">Certification authorities</h3>
+<p>It cannot be proved with absolute (mathematical) certainty that a certification authority only certifies real associations.</p>
+<p>Certification authorities must use procedures that even in the presence of mistakes or attacks never end up in certifying false associations. However, it is impossible to <em>prove </em>that such events never occur. One can only obtain a high <em>degree of confidence</em> on the fact that a certification authority only certifies real associations.</p>
+<p>Once a subject considers that a certification authority is trusted, the subject assumes that all certificates with a valid signature issued by that authority describe real associations.</p>
+<h3 id="key-pair-generation">Key pair generation</h3>
+<p>In principle, a subject could generate a private-public key pair and then interact with a certification authority to have a certificate for his/her public key.</p>
+<p>In practice, key pairs are generated by certification authorities. A subject interacts with a certification authority not only for obtaining a certificate but also for obtaining a key pair. The certification authority thus provides every subject with a key pair and a certificate for the corresponding public key.</p>
+<p>This fact is a practical necessity because subjects usually do not have the required technical skills. Of course, certification authority must be trusted to not retain a copy of the private keys that they distribute.</p>
+<h3 id="self-signed-certificates">Self-signed certificates</h3>
+<p>A self-signed certificate is one in which subject and issuer are identical. The signature of a self-signed certificate is verified with the public key in the certificate.</p>
+<p>Any subject may construct a self-signed certificate for any other subject and such that the signature on the certificate is valid. To this end, the subject only needs to:</p>
+<ol>
+<li>Generate a new public-private key pair.</li>
+<li>Construct a certificate associating the newly-created public key with any arbitrary subject (i.e., specifying an arbitrary value for the fields “subject” and “issuer” to be written in the certificate).</li>
+<li>Sign the certificate with the newly-created private key.
+The key point is that <em>any </em>subject can be specified at step 2. The signature on the certificate will be valid, as long as the certificate is not modified. This fact is not surprising because a byte sequence with a valid signature may or may not contain a true proposition.</li>
+</ol>
+<p>A self-signed certificate, thus, does not provide any guarantee on whether it describes a real association. A valid signature on a self-signed certificate only provides authenticity and integrity, with authenticity meaning that the certificate was signed with the private key companion of the public key in the certificate. Authenticity does not mean that the content of the certificate contains a true proposition (i.e., a real association).</p>
+<p>Let S be a subject that receives a self-signed certificate. In practice:</p>
+<ul>
+<li>If the certificate was received on CS then the certificate is assumed to describe a real association.</li>
+<li>If the certificate was received on C, then the software asks the subject how to proceed (or may be configured to take on the choices below automatically):<ol>
+<li>Do not use the self-signed certificate.</li>
+<li>Use the self-signed certificate, only once.</li>
+<li>Use the self-signed certificate and store the certificate in the KeySet and TrustSet.</li>
+</ol>
+</li>
+</ul>
+<p>When receiving a self-signed certificate over an untrusted channel C, the subject should make a choice  based on its degree of confidence that the received self-signed certificate indeed contains a real association. Of course, such a degree of confidence will be much lower than what typically obtained on CS.</p>
+<h3 id="keyset-and-trustset-actual-content">KeySet and TrustSet: Actual content</h3>
+<p>The key exchange channel CS is an abstraction that models the transmission of public keys of certification authorities from each certification authority to devices. As observed above, it is impossible to mathematically <em>prove</em> that CS indeed provides the required security properties (i.e., that KeySet indeed contains the real public keys of certification authorities). One can only obtain a high degree of confidence that CS provides those properties even in the presence of attacks.</p>
+<p>Elements of the KeySet and of the TrustSet are self-signed certificates. This fact is due to technical reasons that are irrelevant to our discussion.</p>
+<p>KeySet and TrustSet are part of the operating system. Thus, CS includes the distribution, installation, configuration and maintenance of the operating system on the device. Furthermore, it is the operating system that specifies which certification authorities are trusted.</p>
+<p>The content of KeySet and TrustSet must be carefully protected from fraudulent modification: an attacker could modify the public key of a certification authority in the KeySet as well as insert other (attacker-controlled) certification authorities in the TrustStore. Attacks on these sets may occur during fabrication, installation, configuration, usage of the device. Those attacks correspond to a threat model different from a network attacker, however.</p>
+<p>The actual implementation of KeySet and TrustSet depend on the operating system. In practice, these sets appear with terminology and structure different from the one used in this document.</p>
+<h3 id="key-storage-in-practice">Key storage in practice</h3>
+<p>The actual implementation of KeySet, TrustSet, PersonalSet in practice is quite intricate. We provide this information only for completeness of discussion.</p>
+<p>In Windows, KeySet and TrustSet appear as a single set; this set can be accessed from Control Panel, Internet Options, Content, Certificates, in the tab named “Trusted Root Certification Authorities” (“Autorità di Certificazione Radice Attendibile”). The PersonalSet can be accessed in the same way, in the tab named “Personal”.</p>
+<p>In Java, KeySet and TrustSet can be kept separate. A Java program must be associated with a property called TrustStore whose value is the name of a file containing the TrustSet. This file must follow a Java-specific format called keystore. A Java program must be associated also with a property called KeyStore, whose value is the name of a keystore file containing the PersonalSet (if the PersonalSet is empty then the KeyStore property is never used).</p>
+<p>Certificates received on C that have been validated can be stored in the device, so that the public key of the corresponding subject will be always available locally. In Windows, these certificates are stored in the tab named “Other users”; in Java, these certificates must be stored in the file specified as KeyStore.</p>
+<p>In other words, in Java there is a set containing the public keys of trusted certification authorities (TrustStore) and a set containing the keypair(s) of the user and the public keys of other subjects (KeyStore). Certificates in the KeyStore must be signed by subjects in the TrustStore.
+PGP uses yet a different structure than either Windows or Java.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>

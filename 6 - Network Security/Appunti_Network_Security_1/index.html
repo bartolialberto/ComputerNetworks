@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/Labs/Cyberchef/">
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/6%20-%20Network%20Security/Appunti_Network_Security_1/">
       
       
-        <link rel="prev" href="../../6%20-%20Network%20Security/Appunti_Network_Security_2/">
+        <link rel="prev" href="../Approfondimenti/">
       
       
-        <link rel="next" href="../How%20Colab%20Notebooks%20Work/">
+        <link rel="next" href="../Appunti_Network_Security_2/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Cyberchef - Reti di Calcolatori - University of Trieste</title>
+        <title>Appunti - Network Security I - Reti di Calcolatori - University of Trieste</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cyberchef" class="md-skip">
+        <a href="#appunti-network-security-i" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cyberchef
+              Appunti - Network Security I
             
           </span>
         </div>
@@ -622,17 +622,19 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
@@ -645,7 +647,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             6   Network Security
@@ -658,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6%20-%20Network%20Security/Approfondimenti/" class="md-nav__link">
+      <a href="../Approfondimenti/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -676,9 +678,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security_1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Appunti - Network Security I
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -687,6 +709,155 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#communication-scenario" class="md-nav__link">
+    Communication scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-properties" class="md-nav__link">
+    Security properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Security properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-security-properties" class="md-nav__link">
+    Additional security properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threat-model" class="md-nav__link">
+    Threat model
+  </a>
+  
+    <nav class="md-nav" aria-label="Threat model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations-on-the-scenario" class="md-nav__link">
+    Practical considerations on the scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations-on-the-threat-model-i" class="md-nav__link">
+    Practical considerations on the threat model (I)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations-on-the-threat-model-ii" class="md-nav__link">
+    Practical considerations on the threat model (II)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insecure-communication-channel" class="md-nav__link">
+    Insecure communication channel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-exchange-channel" class="md-nav__link">
+    Key exchange channel
+  </a>
+  
+    <nav class="md-nav" aria-label="Key exchange channel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations-on-the-key-exchange-channel" class="md-nav__link">
+    Practical considerations on the key exchange channel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secure-communication-over-an-insecure-channel" class="md-nav__link">
+    Secure communication over an insecure channel
+  </a>
+  
+    <nav class="md-nav" aria-label="Secure communication over an insecure channel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-key-cryptography" class="md-nav__link">
+    Private key cryptography
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-key-cryptography" class="md-nav__link">
+    Public key cryptography
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-digital-signatures" class="md-nav__link">
+    Validating digital signatures
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hhmmmhow-to-distribute-keys" class="md-nav__link">
+    Hhmmm...how to distribute keys?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -698,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security_2/" class="md-nav__link">
+      <a href="../Appunti_Network_Security_2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,19 +894,17 @@
       
   
   
-    
-  
   
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
@@ -748,7 +917,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Labs
@@ -759,29 +928,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Cyberchef
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Labs/Cyberchef/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -790,149 +939,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#url-encoding-form-data" class="md-nav__link">
-    URL Encoding (FORM data)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#base64" class="md-nav__link">
-    Base64
-  </a>
-  
-    <nav class="md-nav" aria-label="Base64">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#encoding-and-decoding" class="md-nav__link">
-    Encoding and Decoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#http-basic-authentication-credentials" class="md-nav__link">
-    HTTP Basic Authentication Credentials
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#email-attachments" class="md-nav__link">
-    Email attachments
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#private-key-crypto" class="md-nav__link">
-    Private key crypto
-  </a>
-  
-    <nav class="md-nav" aria-label="Private key crypto">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    Encryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decryption" class="md-nav__link">
-    Decryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#encryption-and-decryption" class="md-nav__link">
-    Encryption and Decryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#send-an-encrypted-message" class="md-nav__link">
-    Send an encrypted message
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-key-crypto" class="md-nav__link">
-    Public key crypto
-  </a>
-  
-    <nav class="md-nav" aria-label="Public key crypto">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#encryption_1" class="md-nav__link">
-    Encryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decryption_1" class="md-nav__link">
-    Decryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sign-and-verify" class="md-nav__link">
-    Sign and Verify
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identity-in-public-key-cryptography" class="md-nav__link">
-    Identity in public key cryptography
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -944,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../How%20Colab%20Notebooks%20Work/" class="md-nav__link">
+      <a href="../../Labs/How%20Colab%20Notebooks%20Work/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Web%20Server%20Tests/" class="md-nav__link">
+      <a href="../../Labs/Web%20Server%20Tests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -984,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Wireshark/" class="md-nav__link">
+      <a href="../../Labs/Wireshark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1234,37 +1240,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#url-encoding-form-data" class="md-nav__link">
-    URL Encoding (FORM data)
+  <a href="#communication-scenario" class="md-nav__link">
+    Communication scenario
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#base64" class="md-nav__link">
-    Base64
+  <a href="#security-properties" class="md-nav__link">
+    Security properties
   </a>
   
-    <nav class="md-nav" aria-label="Base64">
+    <nav class="md-nav" aria-label="Security properties">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encoding-and-decoding" class="md-nav__link">
-    Encoding and Decoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#http-basic-authentication-credentials" class="md-nav__link">
-    HTTP Basic Authentication Credentials
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#email-attachments" class="md-nav__link">
-    Email attachments
+  <a href="#additional-security-properties" class="md-nav__link">
+    Additional security properties
   </a>
   
 </li>
@@ -1275,37 +1267,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#private-key-crypto" class="md-nav__link">
-    Private key crypto
+  <a href="#threat-model" class="md-nav__link">
+    Threat model
   </a>
   
-    <nav class="md-nav" aria-label="Private key crypto">
+    <nav class="md-nav" aria-label="Threat model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    Encryption
+  <a href="#practical-considerations-on-the-scenario" class="md-nav__link">
+    Practical considerations on the scenario
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#decryption" class="md-nav__link">
-    Decryption
+  <a href="#practical-considerations-on-the-threat-model-i" class="md-nav__link">
+    Practical considerations on the threat model (I)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#encryption-and-decryption" class="md-nav__link">
-    Encryption and Decryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#send-an-encrypted-message" class="md-nav__link">
-    Send an encrypted message
+  <a href="#practical-considerations-on-the-threat-model-ii" class="md-nav__link">
+    Practical considerations on the threat model (II)
   </a>
   
 </li>
@@ -1316,30 +1301,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#public-key-crypto" class="md-nav__link">
-    Public key crypto
+  <a href="#insecure-communication-channel" class="md-nav__link">
+    Insecure communication channel
   </a>
   
-    <nav class="md-nav" aria-label="Public key crypto">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-exchange-channel" class="md-nav__link">
+    Key exchange channel
+  </a>
+  
+    <nav class="md-nav" aria-label="Key exchange channel">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encryption_1" class="md-nav__link">
-    Encryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decryption_1" class="md-nav__link">
-    Decryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sign-and-verify" class="md-nav__link">
-    Sign and Verify
+  <a href="#practical-considerations-on-the-key-exchange-channel" class="md-nav__link">
+    Practical considerations on the key exchange channel
   </a>
   
 </li>
@@ -1350,8 +1328,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identity-in-public-key-cryptography" class="md-nav__link">
-    Identity in public key cryptography
+  <a href="#secure-communication-over-an-insecure-channel" class="md-nav__link">
+    Secure communication over an insecure channel
+  </a>
+  
+    <nav class="md-nav" aria-label="Secure communication over an insecure channel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-key-cryptography" class="md-nav__link">
+    Private key cryptography
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-key-cryptography" class="md-nav__link">
+    Public key cryptography
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-digital-signatures" class="md-nav__link">
+    Validating digital signatures
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hhmmmhow-to-distribute-keys" class="md-nav__link">
+    Hhmmm...how to distribute keys?
   </a>
   
 </li>
@@ -1371,129 +1383,130 @@
                   
 
 
-<h1 id="cyberchef">Cyberchef</h1>
-<p><em>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</em> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
-<p>Open the <a href="https://gchq.github.io/CyberChef/">web app</a>. There are many "recipes" (i.e., predefined computations) available on the left part. One can select a recipe by double-clicking on it. Each recipe takes an input and, when executed, it produces an output. Each recipe also has a set of parameters. For example, recipes for encryption have the key as a parameter; the input is the cleartext while the output is the ciphertext.</p>
-<p>Recipes can be chained together so that the output of one is the input of the next one and so on.</p>
-<p>Deselect the "auto-bake" checkbox in the bottom-center part. This way, recipes will not run automatically but only when clicking the "bake" button. This configuration is simpler to handle, I think.</p>
-<h2 id="url-encoding-form-data">URL Encoding (FORM data)</h2>
-<p>Data inserted in an HTML Form and sent in an HTTP request is URL encoded.</p>
-<p>In brief (and oversimplifying), this encoding format makes sure that the encoded text contains only characters that can be part of an URL (for example, spaces cannot be part of an URL).</p>
-<p>Take a moment to realize the countless applications of HTML forms. For example, if you write an email on a webapp, the text of the email is part of an HTML form thus your text will be sent to the server URL encoded. If you buy something online, your home address for delivery is part of an HTML form thus it will be sent to the server URL encoded.</p>
+<h1 id="appunti-network-security-i">Appunti - Network Security I</h1>
+<h2 id="communication-scenario">Communication scenario</h2>
+<p>We consider a large set of <em>subjects</em> communicating among themselves. Each subject has a <em>name</em> in the form of a string. A <em>message </em>is a sequence of bytes associated with the subject that constructed the sequence. The association may be encoded in the message either explicitly or implicitly. We say that a sequence of bytes contains a subject to mean that it contains the name of that subject.</p>
+<p>In practical scenarios, a subject may be an organization, an individual, a computer and so on. Messages may be frames, packets, byte streams, application messages, emails, files and so on. The communication channel may be a network, a file system, a person carrying a memory pen and so on.  A subject name may be an Ethernet address, an IP address, a DNS name, an email address, a username, a fiscal code, an X509 tuple and so on.</p>
+<p>The nature of subjects, of the communication channel, of messages and the format of names are irrelevant and depend on the specific application.</p>
+<p>Subjects may be distributed worldwide and may belong to many different organizations. We assume that the set of subjects is “very large”; the composition of this set may vary dynamically and is not known to any entity.</p>
+<h2 id="security-properties">Security properties</h2>
+<p>We aim at obtaining one or more of the <em>security properties</em> described below, despite the presence of an adversary (an <em>attacker</em>) that actively attempts to deny these properties. The actions that can be executed by the adversary (<em>threat model</em>) are described in a later section.</p>
 <ul>
-<li>Select the 'URL encoding' recipe.</li>
-<li>Write some text in the input field and have a look at the encoding.</li>
-<li>Copy the encoding and save it somewhere.</li>
-<li>Discard the recipe and select the 'URL decoding' recipe.</li>
-<li>Insert the previously saved encoding as input and verify that the output is the expected one.</li>
+<li><em>Secrecy</em> (also called <em>Confidentiality</em>). A message can be understood only by its intended recipient.</li>
+<li><em>Integrity</em>. Let m be a message constructed at time t1 and used at time t2. Any difference between the content of m at t1 and its content at t2 is detected.</li>
+<li><em>Authentication</em>. Let m be a message carrying an explicit or implicit indication that has been constructed by subject S. If the subject that constructed m is not S, this discrepancy is detected.</li>
 </ul>
-<h2 id="base64">Base64</h2>
-<p>Base64 is an encoding format that represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: 6 bit unencoded, 8 bit encoded). The encoding table is a standard that be found in many places, e.g., on <a href="https://en.wikipedia.org/wiki/Base64">Wikipedia</a>. Certain predefined <em>padding rules</em> allow handling byte sequences whose length is not a multiple of 6 bits.</p>
-<p>This encoding format is widely used, in particular, when binary data have to be used in contexts where text data is expected.</p>
-<h3 id="encoding-and-decoding">Encoding and Decoding</h3>
+<h3 id="additional-security-properties">Additional security properties</h3>
+<p>Other security properties very important in practice are the following.</p>
 <ul>
-<li>Select the 'To Base64' recipe.</li>
-<li>Encode an hypothetical username or mail address or password and have a look at the encoding.</li>
-<li>Copy the encoding and save it somewhere.</li>
-<li>Discard the recipe and select the 'From Base64' recipe.</li>
-<li>Insert the previously saved encoding as input and verify that the output is the expected one.</li>
+<li><em>Non repudiation</em>. Let m be a message constructed by subject S. Assume that S claims to not have constructed m, or to have constructed m with a different content. Any subject can detect that the claim is false.</li>
+<li><em>Timestamp</em>. Integrity, augmented with the ability for any subject to determine that m indeed existed at any specified instant t1.</li>
+<li><em>Availability</em>. When two subjects need to communicate they are indeed able to communicate.</li>
 </ul>
-<h3 id="http-basic-authentication-credentials">HTTP Basic Authentication Credentials</h3>
-<p>Username and password in HTTP Basic authentication are sent Base64-encoded and separated by a colon (':').</p>
+<p>Non-repudiation and timestamp are essential properties for any commercial and/or legally binding operation. Availability is an essential property in any scenario.</p>
+<p>These properties are not considered in this course.</p>
+<h2 id="threat-model">Threat model</h2>
+<p>Whenever one has to reason about security properties, it is always necessary to specify the assumed <em>threat model</em>, i.e., the set of actions that the attacker can execute.</p>
+<p>We consider a threat model that we call <em>network attacker</em>. A network attacker is a subject with the ability to observe, modify, discard any message at any time instant. The network attacker is also able to construct a sequence of bytes and transmit it as a message at any time instant.</p>
+<p>How a subject may acquire the ability to operate as a network attacker is irrelevant.</p>
+<p>It is simple to realize that <em>none</em> of the protocols analyzed so far in this course provide <em>any</em> security property with this threat model.</p>
 <ul>
-<li>Select some web site that requires HTTP Basic Authentication (e.g., the 'Intranet DIA' on the <a href="https://dia.units.it/">https://dia.units.it/</a> page).</li>
-<li>Insert a random username/password pair in the authentication form, but keep track of what you inserted.</li>
-<li>Capture the HTTP request carrying the credentials. On the website indicated above this cannot be done with the browser developer tools; it may be done, e.g., with Wireshark.</li>
-<li>Identify the HTTP header that carries the credentials; copy the credentials somewhere.</li>
+<li>Secrecy (the attacker may observe any message);</li>
+<li>Integrity (the attacker may modify any message and the modification will be undetected by the recipient);</li>
+<li>Authentication (the attacker may forge a message and associate it with any subject; the attacker may modify a message that carries an explicit association with a subject and replace that subject with any subject).</li>
 </ul>
-<p>If the above operations look too difficult, search "http basic authentication request example" or something similar in a search engine. Try to find somewhere an example of HTTP request carrying the credentials as above.</p>
-<p>Once you have the Base64 encoding of some credentials:
-- Select a "From Base64" recipe.
-- Insert the saved credentials as input.
-- Verify that the output has the expected content, i.e., username:password.</p>
-<p>Important observation: given a Base64-encoded snippet, the corresponding decoding is a mechanic operation that does not require the knowledge of any secret. In other words, anyone that observes a Base64-encoded snippet is able to reverse the encoding and obtain the original snippet. Encoding has thus nothing to do with "encryption".</p>
-<h3 id="email-attachments">Email attachments</h3>
-<p>This topic is out of scope, i.e., it is not part of the course.</p>
-<p>Files sent as email attachments are Base64-encoded before sending and inserted in the body of the email.</p>
-<p>The email must contain some information for:
-- enabling the receiver to realize that (part of) the email body is Base64-encoded, i.e., that it has to be Base64-decoded before being presented to the receiving user;
-- indicating the filename of the corresponding part;
-- indicating how the email body is to be split between attachments and normal text.</p>
-<p>Such information is usually provided by means of dedicated email headers.</p>
-<h2 id="private-key-crypto">Private key crypto</h2>
-<p>You can "play" with AES, Blowfish, DES. These are all <em>block ciphers</em> (see Approfondimenti in Network Security). In all the examples below, select GCM as <em>mode of operation</em>.</p>
-<p>Block ciphers require a configuration parameter called <em>initialization vector (IV)</em> for reasons beyond the scope of this course. This parameter must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</p>
-<h3 id="encryption">Encryption</h3>
+<p>Note that the above considerations apply to protocols at all levels: network, internetwork, application</p>
+<p>Unless specified otherwise, in the following we will use the term attacker as a synonym for network attacker.</p>
+<h3 id="practical-considerations-on-the-scenario">Practical considerations on the scenario</h3>
+<p>There is a myriad of different protocols and applications that use cryptographic techniques for obtaining security properties.</p>
+<p>Some of those protocols and applications are: HTTPS, TLS, SSH (a protocol for remote login and remote network access), digital signatures on executable files, legally binding digital signatures on documents, DKIM (a protocol for detecting falsified sender email addresses), “Posta Elettronica Certificata”, Kerberos (a protocol used in enterprise networks based on Windows), NTLM (a protocol used in networks based on Windows), DNSSEC (a protocol for digitally signing DNS records), IPSEC, VPN, WPA Personal (the protocol for secure wi-fi communication used in our homes and in all public locations in which all devices connect with the same password), WPA Enterprise (the protocol for secure wi-fi communication used in enterprise networks including eduroam), Windows Update, Android PlayStore, WhatsApp,  WhatsApp Web, chip-and-pin bancomat cards, SIM authentication in cellular phone networks, disk encryption, PGP, and so on, and so on.</p>
+<p>We will analyze in detail only HTTPS and TLS. <em>The fundamental concepts that we describe for these protocols apply to all the other cases</em>.</p>
+<h3 id="practical-considerations-on-the-threat-model-i">Practical considerations on the threat model (I)</h3>
+<p>A network attacker may operate <em>only </em>on the communication channel. The endpoints are thus assumed to be outside of the reach of the attacker.</p>
+<p>In practical scenarios this assumption is often not verified (for example when a node has a malware or an attacker knows a password). In those cases, the protocols and mechanisms described here will <em>not</em> provide the desired security properties. For example, if the attacker can read information on the communicating endpoints, then the attacker can obtain keys of private key cryptography and private keys of public key cryptography: it is simple to realize from the discussions below that in those cases secrecy and authentication will not be provided (the attacker can decrypt messages and construct messages whose authorship will be attributed to the subject from which the private key has been stolen).</p>
+<p>The fact that, in practice, attackers may operate on the endpoints is a huge practical problem that will not be considered in this course.</p>
+<h3 id="practical-considerations-on-the-threat-model-ii">Practical considerations on the threat model (II)</h3>
+<p>In practical scenarios, a network attacker could have a <em>subset </em>of the abilities assumed here. </p>
 <ul>
-<li>Select a recipe for encryption.</li>
-<li>Choose a key and an IV.</li>
-<li>Encrypt a text of choice.</li>
+<li>It could perform a subset of actions (for example only observe and not modify or discard). </li>
+<li>It could operate on a subset of messages (for example only those between specific subjects, or only in one direction, or only those of a specific application protocol). </li>
+<li>It could operate only at some time instants or time intervals.</li>
 </ul>
-<p>Note that for a given encryption algorithm not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</p>
-<h3 id="decryption">Decryption</h3>
+<p>On the other hand, subjects do not know whether a network attacker is present and what he can do. Furthermore, the presence of a network attacker is detected, if at all, after a long time.</p>
+<p>It is easy to realize, thus, that secrecy, integrity and authentication guarantees can only be obtained by assuming that a network attacker with full capabilities is indeed present.</p>
+<h2 id="insecure-communication-channel">Insecure communication channel</h2>
+<p>Let C denote a communication channel where an attacker may be present. We aim at obtaining security properties on C by using cryptographic techniques.</p>
+<p>Consider two subjects A and B that can communicate <em>only</em> through C.</p>
+<p>Suppose A and B want to agree on a key K-AB for private key cryptography. There is no way for them to agree on a key without making that key potentially known to the attacker (C does not provide secrecy). Once the attacker knows K-AB, no security property can be obtained based on that K-AB.</p>
+<p>Suppose B has a private-public key pair for public key cryptography and wants to “send its public key” to A (i.e., to send the association <code>&lt; B , KPUB-B &gt;</code>). There is no way to make sure that A receives the real association <code>&lt;B , KPUB-B&gt;</code> rather than a false association <code>&lt;B, KPUB-Attacker&gt;</code> (C does not provide integrity).</p>
+<p>Once the attacker has convinced A that KPUB-Attacker is the public key of B, the attacker can:</p>
 <ul>
-<li>Copy on a file the encrypted text obtained as above.</li>
-<li>Copy on other files the key and IV.</li>
-<li>Select a recipe for decryption, with the same algorithm used above for encryption.</li>
-<li>Configure this recipe with the same key and IV (that you saved on a file).</li>
-<li>Verify that you can decrypt the ciphertext (that you also saved on a file) correctly.</li>
+<li>Sign documents that A will validate as having been signed by B; </li>
+<li>Decrypt messages that A will believe can be decrypted only by B;</li>
 </ul>
-<p>Now try to modify the decryption key: does decryption work?</p>
-<p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
-<h3 id="encryption-and-decryption">Encryption and Decryption</h3>
+<p>In summary, obtaining security properties by communicating only on a channel that does not have these properties already is <strong>impossible</strong>, even by using cryptographic techniques.</p>
+<h2 id="key-exchange-channel">Key exchange channel</h2>
+<p>We assume the existence of an <em>additional</em> communication channel CS with the following properties:</p>
 <ul>
-<li>Chain two recipes, one for encryption and another for decryption (make sure they use the same algorithm).</li>
-<li>Configure the recipes in the same way (i.e., same key and same IV)</li>
-<li>Verify that the input of the first recipe (encryption) is equal to the output of the second recipe (decryption).</li>
+<li>CS provides guarantees of secrecy, integrity, authentication.</li>
+<li>CS may be used <em>only</em> for secure communication of keys.</li>
 </ul>
-<h3 id="send-an-encrypted-message">Send an encrypted message</h3>
+<p>Intuitively, CS is a channel that is secure but very costly. Thus, CS cannot be a replacement for C (of course, if subjects could exchange messages on CS then there would be no need of adding security guarantees to C: subjects would use CS).</p>
+<p>The nature of CS is irrelevant and need not be the same for all pairs of subjects. In practical scenarios, CS could be a face to face meeting, a diplomatic courier or other forms of secure by definition channel.</p>
+<h3 id="practical-considerations-on-the-key-exchange-channel">Practical considerations on the key exchange channel</h3>
+<p>An implementation of the key exchange channel CS cannot provide secrecy, integrity, authentication with <em>absolute</em> and <em>provable</em> certainty against <em>every possible threat model</em>.</p>
+<p>For example, CS could be implemented with a face to face meeting in which one of the two parties delivers to the other party a memory pen containing a key. An attacker that is capable of reading the content of the memory pen (either through a malware, or through a malware on some device of the company that fabricated the pen and so on) would be able to read that key thereby violating secrecy of CS.</p>
+<p>CS must be implemented so that attacks are very costly for a broad and "pessimistic" range of threat models, i.e., even for very powerful attackers. However, it is impossible to <em>prove</em> that CS indeed provides the required security properties. One can only obtain a high <em>degree of confidence</em> on the fact that CS provides those properties even in the presence of attacks. The notion of degree of confidence cannot be quantified and is intrinsically different from a mathematical proof.</p>
+<p>Once an implementation of CS is used in practice, CS is <em>assumed</em> to provide the required security properties: it provides secrecy, integrity and authentication <em>by hypothesis</em>.</p>
+<h2 id="secure-communication-over-an-insecure-channel">Secure communication over an insecure channel</h2>
+<p>Let C and CS denote the communication channels described above. We aim at obtaining security properties on C by means of cryptographic techniques and keys exchanged on CS.</p>
+<p>The protocols for key exchange and secure communication described below are strong oversimplifications of what needs to be done in real protocols. The corresponding issues are not considered in this course.</p>
+<h3 id="private-key-cryptography">Private key cryptography</h3>
+<p>Two subjects A and B could obtain secrecy, integrity, authentication on C as follows:</p>
+<ol>
+<li>Choose a key K-AB on CS</li>
+<li>Communicate on C using K-AB, i.e., send each message m as EK-AB(m),MACK-AB(m).</li>
+</ol>
+<p>Procedures of this kind are impractical because of step 1:</p>
 <ul>
-<li>Generate a ciphertext as indicated above in the "Encryption" example.</li>
-<li>You want to send this ciphertext by email to another student. The recipient need to know the key you used for encrypting (and the IV).</li>
+<li>CS should exist between <em>all </em>pairs of subjects.</li>
+<li>The time required for completing the key exchange on CS should be sufficiently short.</li>
 </ul>
-<p>How can you give the key to that student? What could go wrong? What if the student was thousands of Kms away? What if you had to communicate with thousands of different students? Think carefully about these issues.</p>
-<h2 id="public-key-crypto">Public key crypto</h2>
-<p>You can "play" with RSA and PGP (the examples below outline the usage of RSA, usage of PGP is analogous).</p>
-<p>You always start by generating a <em>keypair</em>. Save the private key in a file and the public key in another file. You will keep the private key secret and you will distribute your public key to anyone who needs to communicate with you.</p>
-<p>You may want to experiment with other students (in which case you will have to exchange the respective public keys) or alone (in which case you will have to generate two or more keypairs and pretend to impersonate multiple people).</p>
-<h3 id="encryption_1">Encryption</h3>
-<ul>
-<li>Select the recipe for RSA encryption.</li>
-<li>Configure the recipe with the public key of the recipient.</li>
-<li>Encrypt a text of choice and save it on a file.</li>
-</ul>
-<p>How do you obtain the public key of the recipient? What could go wrong? What if the recipient was thousands of Kms away? What if you had to communicate with thousands of different recipients? Think carefully about these issues.</p>
-<h3 id="decryption_1">Decryption</h3>
-<ul>
-<li>Select the recipe for RSA decryption.</li>
-<li>Configure the recipe with private key the one matching the public key used as above.</li>
-<li>Verify that you can decrypt the ciphertext (that you also saved on a file) correctly.</li>
-</ul>
-<p>Now try to modify the decryption key: does decryption work?</p>
-<p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
-<h3 id="sign-and-verify">Sign and Verify</h3>
-<ul>
-<li>Select the recipe for RSA Sign.</li>
-<li>Configure the recipe with a private key.</li>
-<li>Write some message in the input field. The output field will contain the digital signature for that message, generated with the inserted private key.</li>
-<li>Save the message in a file and the digital signature in another file.</li>
-</ul>
-<p>Now imagine to have sent or distributed somehow message, digital signature and public key (the one associated with the private key used for signing).
-Any entity with these pieces of information can verify the digital signature:</p>
-<ul>
-<li>Select the recipe for RSA Verify</li>
-<li>Configure the recipe with the public key associated with the private key used for signing and with the message.</li>
-<li>Write the digital signature in the input field. The output field will tell that the verification succeeded.</li>
-</ul>
-<p>Now try to modify something in the message or in the digital signature. Does verification succeed? Try to use a different public key. Does verification succeed?</p>
-<h2 id="identity-in-public-key-cryptography">Identity in public key cryptography</h2>
-<p>(All the considerations below apply to private key cryptography as well; we refer to public key because it is simpler and more common)</p>
-<p>Note that in the above procedures for encryption, decryption, sign and verify <em>there is no notion of identity whatsoever</em>.</p>
-<p>For example, in the case of sign, there is <em>no</em> specification of <em>"who"</em> signed the message. This notion is <em>not</em> required by the mathematical procedures for signing and verifying: such procedures work at the keypair level: you sign with a number called private key, you verify with another number called public key.</p>
-<p>In practical applications of public key cryptography, one has to reason in terms of people, organizations, websites and alike. For this reason, keypairs have to be associated with a <em>subject</em>.
-The subject is a <em>string</em> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
-The identification mechanism (what that entity actually "is" and how it is identified by that string) is completely independent of public key cryptography.
-The only requirements are that the private key must be really private (i.e., known only to the entity identified by the associated subject) and that the association be real (this is subtle and difficult to explain precisely: the entity identified by the subject string must be really the entity that everyone would associate with that subject string).</p>
+<p>Satisfying these fundamental requirements in a scenario characterized by a very large and geographically distributed set of subjects is virtually impossible.</p>
+<p>Procedures of this kind were the norm before the Internet and now are only used in very specific settings, usually characterized by a small set of subjects.</p>
+<p>The Kerberos protocol is based on private key cryptography, allows handling large sets of subjects and is widely used in practice (it is the basis of Windows enterprise networks). Kerberos is not structured as above and is not studied in this course.</p>
+<h3 id="public-key-cryptography">Public key cryptography</h3>
+<p>We assume that each subject has a public-private key pair and that different subjects have different key pairs.</p>
+<p>Two subjects A and B could obtain secrecy, integrity, authentication on C as follows:</p>
+<ol>
+<li>Exchange the respective associations <Subject, KPUB> on CS</li>
+<li>Choose a key K-AB on C by means of public key cryptography (italic font indicates an encryption with public key cryptography):<ol>
+<li>A selects half-key K1 and sends <em>E</em>_KPUB-B(K1) to B</li>
+<li>B selects half-key K2 and sends <em>E</em>_KPUB-A(K2) to A</li>
+<li>Each party decrypts the received message with the respective private key (i.e., the one of the public-private key pair) and constructs K-AB as the concatenation of K1 and K2.</li>
+</ol>
+</li>
+<li>Communicate on C using K-AB, i.e., send each message m as E_K-AB(m),MAC_K-AB(m).</li>
+</ol>
+<p>Note that step 1 must be executed on CS although it involves the exchange of public data. The reason is because the exchanged information must have integrity and authentication guarantees. If this step was executed on C, then the attacker could convince subjects to use wrong associations between subjects and public keys (the attacker could send <code>&lt;A, KPUB-Attacker&gt;</code> to B or <code>&lt;B, KPUB-Attacker&gt;</code> to A). At steps 2 and 3, thus, the attacker could communicate with A by pretending to be B and/or the other way around.</p>
+<p>At step 2, each party proves to the other the knowledge of a private key: A proves to B that it is able to decrypt <em>E</em>_KPUB-A(K2); B proves to A that it is able to decrypt <em>E</em>_KPUB-B(K1). Thus, this step ensures <em>mutual authentication</em> based on public key cryptography.</p>
+<p>This procedure is impractical because of step 1, for the same reasons discussed above with respect to private key cryptography: CS should exist between any pair of subjects; communication on CS should be sufficiently fast.</p>
+<p><strong>Remark:</strong> TLS in its default configuration assumes that <em>only one</em> of the two subjects has a private-public keypair. Here we have assumed instead that <em>both </em>subjects have a keypair. TLS is discussed in a later section in this document. The scenario assumed in this section corresponds to TLS with mutual authentication, i.e., both the client and the server authenticate the respective identity with cryptographic means. This configuration of TLS is non default and used rarely.</p>
+<h3 id="validating-digital-signatures">Validating digital signatures</h3>
+<p>A document is a sequence of bytes. A <em>signed</em> document is a document associated with a signature (a sequence of bytes of fixed length) and with the name of the signing subject. In practice, these three pieces of information are usually represented as a single byte sequence, for example a file. The corresponding protocol is irrelevant.</p>
+<p>Let A be a subject that receives a signed document &lt; D, F, Signed by=B&gt;, where F denotes the signature. A validates the digital signature as follows:</p>
+<ol>
+<li>Obtain the public key of the signing subject B from CS (i.e., the association &lt; B, KPUB-B&gt;)</li>
+<li>Validate the signature with  &lt; D, F, KPUB-B&gt;</li>
+</ol>
+<p>Note that A receives the signed document on the insecure channel C.</p>
+<p>Note that step 1 must be executed on CS although it involves the exchange of public data. The reason is because the exchanged information must have integrity and authentication guarantees. If this step was executed on C, then the attacker could convince A to use the association <B, KPUB-Attacker>. The attacker could thus sign documents that A will believe have been signed by B: the attacker will sign with KPRIV-Attacker and the signature validation at step 2 will succeed.</p>
+<p>This procedure is impractical because of step 1, for the same reasons discussed above: CS should exist between any pair of subjects; communication on CS should be sufficiently fast.</p>
+<h2 id="hhmmmhow-to-distribute-keys">Hhmmm...how to distribute keys?</h2>
+<p>We have a very large and dynamic set of subjects, distributed worldwide and that may belong to many different organizations.</p>
+<p>If each pair of subjects (that need to communicate between themselves) had a private key then the problem of secure communication over an insecure channel would be solved. But we do not know how to distribute such a private key.</p>
+<p>If each subject knew the public key of every other subject (with which it needs to communicate) then the problem of secure communication over an insecure channel would be solved. And, authentication and integrity verifiable by any subject and over "long" time periods (digital signature) would be feasible. But we do not know how to distribute such public keys.</p>
+<p>In the next document we will see how an additional assumption on the scenario allows solving the above problems.</p>
 
 
   
