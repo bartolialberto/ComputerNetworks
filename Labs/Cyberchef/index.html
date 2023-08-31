@@ -28,6 +28,9 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
       
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
       
 
 
@@ -65,11 +68,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
   
     
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -118,6 +124,8 @@
         </div>
       </div>
     </div>
+    
+      
     
     
     
@@ -929,6 +937,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hmac" class="md-nav__link">
+    HMAC
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1356,6 +1371,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hmac" class="md-nav__link">
+    HMAC
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1389,7 +1411,8 @@
 </ul>
 <h2 id="base64">Base64</h2>
 <p>Base64 is an encoding format that represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: 6 bit unencoded, 8 bit encoded). The encoding table is a standard that be found in many places, e.g., on <a href="https://en.wikipedia.org/wiki/Base64">Wikipedia</a>. Certain predefined <em>padding rules</em> allow handling byte sequences whose length is not a multiple of 6 bits.</p>
-<p>This encoding format is widely used, in particular, when binary data have to be used in contexts where text data is expected.</p>
+<p>This encoding format is widely used, in particular, when binary data have to be used in contexts where text data is expected.
+Important examples are given below (HTTP Basic Authentication credentials and email attachments).</p>
 <h3 id="encoding-and-decoding">Encoding and Decoding</h3>
 <ul>
 <li>Select the 'To Base64' recipe.</li>
@@ -1487,13 +1510,22 @@ Any entity with these pieces of information can verify the digital signature:</p
 </ul>
 <p>Now try to modify something in the message or in the digital signature. Does verification succeed? Try to use a different public key. Does verification succeed?</p>
 <h2 id="identity-in-public-key-cryptography">Identity in public key cryptography</h2>
-<p>(All the considerations below apply to private key cryptography as well; we refer to public key because it is simpler and more common)</p>
+<p><em>(All the considerations below apply to private key cryptography as well; we refer to public key because it is simpler and more common in practice)</em></p>
 <p>Note that in the above procedures for encryption, decryption, sign and verify <em>there is no notion of identity whatsoever</em>.</p>
 <p>For example, in the case of sign, there is <em>no</em> specification of <em>"who"</em> signed the message. This notion is <em>not</em> required by the mathematical procedures for signing and verifying: such procedures work at the keypair level: you sign with a number called private key, you verify with another number called public key.</p>
 <p>In practical applications of public key cryptography, one has to reason in terms of people, organizations, websites and alike. For this reason, keypairs have to be associated with a <em>subject</em>.
-The subject is a <em>string</em> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
+The subject has a name in form of a <em>string</em> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
 The identification mechanism (what that entity actually "is" and how it is identified by that string) is completely independent of public key cryptography.
 The only requirements are that the private key must be really private (i.e., known only to the entity identified by the associated subject) and that the association be real (this is subtle and difficult to explain precisely: the entity identified by the subject string must be really the entity that everyone would associate with that subject string).</p>
+<p>In some cases the string that acts as a name for the subject is called subject, i.e., in some cases there is no explicit distinction between a subject and its name.</p>
+<h2 id="hmac">HMAC</h2>
+<ul>
+<li>Select the recipe for HMAC.</li>
+<li>Configure the recipe with a key (in this case the key can be of any length, unlike in algorithms for private key cryptography) and with one of the available "hashing functions".</li>
+<li>Insert a text snippet as input and have a look at the output.</li>
+<li>Try to modify a single character in input: does the modification provoke a small and localized change in the output? Or is the new output completely differente from the previous one?</li>
+<li>Insert a much longer input: does the output length change?</li>
+</ul>
 
 
   
