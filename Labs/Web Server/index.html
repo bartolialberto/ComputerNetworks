@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/Labs/Web%20Server%20Tests/">
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/Labs/Web%20Server/">
       
       
         <link rel="prev" href="../How%20Colab%20Notebooks%20Work/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Web Server Tests - Reti di Calcolatori - University of Trieste</title>
+        <title>Web Server - Reti di Calcolatori - University of Trieste</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#browser-locale-web-server-locale-localhost" class="md-skip">
+        <a href="#browser-locale-web-server-locale-sito-localhost" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Web Server Tests
+              Web Server
             
           </span>
         </div>
@@ -901,7 +901,7 @@
           
   
   <span class="md-ellipsis">
-    Web Server Tests
+    Web Server
   </span>
   
 
@@ -912,7 +912,7 @@
         
   
   <span class="md-ellipsis">
-    Web Server Tests
+    Web Server
   </span>
   
 
@@ -932,11 +932,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browser-locale-web-server-locale-localhost" class="md-nav__link">
-    Browser locale - Web server locale - localhost
+  <a href="#browser-locale-web-server-locale-sito-localhost" class="md-nav__link">
+    Browser locale - Web server locale - Sito localhost
   </a>
   
-    <nav class="md-nav" aria-label="Browser locale - Web server locale - localhost">
+    <nav class="md-nav" aria-label="Browser locale - Web server locale - Sito localhost">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1039,6 +1039,13 @@
   
     <nav class="md-nav" aria-label="Contenuto dinamico">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cosa-accade-sul-web-server" class="md-nav__link">
+    Cosa accade sul web server
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#riferimento-utile_3" class="md-nav__link">
@@ -1234,11 +1241,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browser-locale-web-server-locale-localhost" class="md-nav__link">
-    Browser locale - Web server locale - localhost
+  <a href="#browser-locale-web-server-locale-sito-localhost" class="md-nav__link">
+    Browser locale - Web server locale - Sito localhost
   </a>
   
-    <nav class="md-nav" aria-label="Browser locale - Web server locale - localhost">
+    <nav class="md-nav" aria-label="Browser locale - Web server locale - Sito localhost">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1343,6 +1350,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cosa-accade-sul-web-server" class="md-nav__link">
+    Cosa accade sul web server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#riferimento-utile_3" class="md-nav__link">
     Riferimento utile
   </a>
@@ -1369,14 +1383,15 @@
                   
 
 
-  <h1>Web Server Tests</h1>
+  <h1>Web Server</h1>
 
-<h2 id="browser-locale-web-server-locale-localhost">Browser locale - Web server locale - localhost</h2>
+<p>Gli esempi qui indicati fanno riferimento al contenuto del folder Esempi Web disponibile nel folder delle slides. Scaricare l'intero folder sul proprio PC.</p>
+<h2 id="browser-locale-web-server-locale-sito-localhost">Browser locale - Web server locale - Sito localhost</h2>
 <p>L'ambiente di programmazione Python contiene un semplice web server.</p>
 <ul>
-<li>Installare Python</li>
-<li>Lanciare un interprete di comandi (shell)</li>
-<li>Spostare la shell nella directory in cui si trovano i file html di esempio</li>
+<li>Installare Python.</li>
+<li>Lanciare un interprete di comandi (<em>shell</em>).</li>
+<li>Spostare la shell nella directory in cui si trovano i file html di esempio.</li>
 <li>Lanciare il web server Python <code>python -m http.server</code>. Di default questo web server è in ascolto sulla porta 8000. Il web server rimane in esecuzione fino a quando è in esecuzione la shell dalla quale lo si è lanciato.</li>
 <li>Lanciare un'altra shell. Eseguire <code>netstat -an</code> per elencare l'insieme di porte attualmente utilizzate. Deve comparire nell'elenco la porta <code>8000</code> associata al protocollo <code>TCP</code> e nello stato <code>LISTENING</code>, cioè in attesa di richieste di connessione. Ciò conferma che il web server è effettivamente in esecuzione.</li>
 <li>
@@ -1422,22 +1437,32 @@
 <h3 id="connessioni-tcp-e-numeri-di-porta">Connessioni TCP e numeri di porta</h3>
 <ul>
 <li>
-<p>Eseguire <code>netstat -an</code> mentre il browser sta visualizzando il documento. L'elenco dovrebbe contenere almeno una connessione con protocollo <code>TCP</code> nello stato <code>ESTABLISHED</code> e numero di porta <code>8000</code> ad una delle due estremità (quella che corrisponde al web server):</p>
+<p>Eseguire <code>netstat -an</code> mentre il browser sta visualizzando il documento. L'elenco dovrebbe contenere almeno una connessione con protocollo <code>TCP</code> nello stato <code>ESTABLISHED</code> e numero di porta <code>8000</code> ad una delle due estremità. Questa è la connessione che il browser ha con il web server; il numero di porta <code>8000</code> è all'estremità che corrisponde al web server:</p>
 <ul>
-<li>Qual è il numero di porta all'altra estremità (quella che corrisponde al browser)? E' <code>80</code>? Oppure è un numero diverso, "molto grande"_</li>
+<li>Qual è il numero di porta all'altra estremità, cioè a quella che corrisponde al browser? E' <code>8000</code>, cioè uguale a quello sull'estremità del web server? Oppure è un numero <strong>diverso</strong>, "molto grande"?</li>
 </ul>
 </li>
 <li>
-<p>Se l'elenco non contiene nessuna connessione con queste caratteristiche, il motivo è che il browser o il server hanno deciso di chiudere la connessione TCP ed al momento in cui è stato eseguito <code>netstat</code> la connessione era già stata chiusa. In questo caso, premere il tasto di reload sul browser e generare l'elenco nuovamente. L'elenco dovrebbe adesso contenere la connessione.</p>
+<p>Se l'elenco non contiene nessuna connessione con le caratteristiche sopra indicate, il motivo è che il browser o il server hanno deciso di chiudere la connessione TCP ed al momento in cui è stato eseguito <code>netstat</code> la connessione era già stata chiusa. In questo caso, premere il tasto di reload sul browser e generare l'elenco nuovamente. L'elenco dovrebbe adesso contenere la connessione.</p>
 </li>
 </ul>
-<p>Ripetere più volte quanto segue:
-- Premere reload sul browser, eseguire <code>netstat -an</code>, cercare il numero di porta all'estremità del browser.
-- <strong><em>Stamparsi in testa che quel numero di porta non è 80</em></strong>: è un numero "molto grande" ed "ogni volta diverso"</p>
+<p>Ripetere quanto segue fino a che non lo si è capito:</p>
+<ul>
+<li>Premere reload sul browser, eseguire <code>netstat -an</code>, identificare la connessione tra browser e web server,cercare il numero di porta all'estremità del browser.</li>
+<li><strong><em>Stamparsi in testa che quel numero di porta è diverso da quello all'estremità del server</em></strong>: è un numero "molto grande" ed "ogni volta diverso"</li>
+<li>Stamparsi in testa che il punto precedente non è qualcosa da imparare a memoria. E' stato detto a lezione: cercare nelle slide il punto in cui è stato detto.</li>
+</ul>
 <h4 id="osservazione">Osservazione</h4>
-<p>Le connessioni tra browser e server non sono di facile interpretazione, per due motivi:
-- Il browser può usare più connessioni in parallelo verso lo stesso web server (se il browser si accorge che deve prelevare più risorse dallo stesso web server, allora il browser può decidere di aprire più connessioni verso quel web server ed inviare più richieste in parallelo, una su ogni connessioni).
-- Quando il browser è collegato ad un web server in esecuzione sulla stessa macchina in cui è in esecuzione il browser, come in questo caso, l'esecuzione di <code>netstat -an</code> mostrerà <em>due</em> righe per ogni connessione esistente invece di una: una riga in cui considera il browser locale ed il server remoto, un'altra in cui considera il server locale ed il browser remoto.</p>
+<p>Le connessioni tra browser e server non sono di facile interpretazione, per due motivi:</p>
+<ol>
+<li>Quando il browser è collegato ad un web server in esecuzione sulla stessa macchina in cui è in esecuzione il browser, come in questo caso, l'esecuzione di <code>netstat -an</code> mostrerà <em>due</em> righe per ogni connessione esistente invece di una: una riga in cui considera il browser locale ed il server remoto, un'altra in cui considera il server locale ed il browser remoto.</li>
+<li>Il browser può usare <em>più connessioni in parallelo verso lo stesso web server</em>: se il browser si accorge che deve prelevare più risorse dallo stesso web server, allora il browser può decidere di aprire più connessioni verso quel web server ed inviare più richieste in parallelo, una su ogni connessioni.</li>
+</ol>
+<p>Negli esercizi, per semplicità, assumeremo sempre che il punto 2 non accade mai: ad ogni istante:</p>
+<ul>
+<li>un browser può avere più connessioni aperte, ma verso web server diversi;</li>
+<li>un browser non ha più connessioni aperte in parallelo verso lo stesso web server.</li>
+</ul>
 <h2 id="browser-locale-web-server-locale-sito-con-nome">Browser locale - Web server locale - Sito con nome</h2>
 <ul>
 <li>Modificare il file <code>hosts</code> sul proprio PC in modo da assegnare l'indirizzo IP locale cosiddetto loopback (<code>127.0.0.1</code>) ad un nome a piacere.</li>
@@ -1493,20 +1518,28 @@ implica che nel PC nel cui file <code>hosts</code> è stata aggiunta quella riga
 <li>Lanciare il web server Python e mandarlo nuovamente in esecuzione con l'opzione "esegui programmi specificati con lo standard CGI": <code>python -m http.server --cgi</code> (se era già in esecuzione, fermarlo con ctrl-C o chiudendo la shell).</li>
 <li>Visualizzare con il browser il documento <code>http://localhost:8000/cgi-bin/hello.py</code></li>
 </ul>
-<p>Verificata la corretta visualizzazione:
-- Premere il pulsante reload del browser più volte. Ogni volta sfondo e testo del documento visualizzato saranno diversi, nonostante ogni volta il browser richieda lo stesso URL. 
-- Cliccare con il tasto destro del mouse sul documento e selezionare "inspect page source". Dare un'occhiata al codice HTML. I file nei folder accessibili al web server contengono un file HTML con quel contenuto?
-- Aprire i Developer tools del browser e localizzare la funzione per vedere l'elenco delle risorse prelevate dal browser.</p>
-<pre><code>* Quante sono?
-* Quali sono?
-* Cosa cambia tra un prelievo ed il successivo?
-</code></pre>
-<p>Dare un'occhiata al contenuto di <code>hello.py</code> per cercare di avere un'idea di ciò che è accaduto (spiegato in estrema sintesi più sotto). La programmazione Python non è parte di questo corso. La scrittura di programmi per web server nemmeno. Ci basta solo avere un'idea molto a grandi linee di cosa sia accaduto.</p>
-<p>In questo caso il web server ha capito dalla forma dell'URL richiesto (<code>/cgi-bin/hello.py</code>) che <em>non</em> deve costruire una risposta HTTP che trasporta il file identificato da quell'URL. Deve invece:
-- mandare in esecuzione il programma <code>python hello.py</code>, permettendo al programma di accedere al contenuto della HTTP Request che ne ha provocato l'esecuzione (funzioni <code>os.getenv()</code>);
-- trasformare l'output dell'esecuzione del programma (stringa stampata con <code>print()</code>) in una HTTP Response da tornare al browser.</p>
+<p>Verificata la corretta visualizzazione:</p>
+<ul>
+<li>Premere il pulsante reload del browser più volte. Ogni volta sfondo e testo del documento visualizzato saranno diversi, nonostante ogni volta il browser richieda lo stesso URL. </li>
+<li>Cliccare con il tasto destro del mouse sul documento e selezionare "inspect page source". Dare un'occhiata al codice HTML. I file nei folder accessibili al web server contengono un file HTML con quel contenuto?</li>
+<li>
+<p>Aprire i Developer tools del browser e localizzare la funzione per vedere l'elenco delle risorse prelevate dal browser.</p>
+<ul>
+<li>Quante sono?</li>
+<li>Quali sono?</li>
+<li>Cosa cambia tra un prelievo ed il successivo?</li>
+</ul>
+</li>
+</ul>
+<h3 id="cosa-accade-sul-web-server">Cosa accade sul web server</h3>
+<p>Dare un'occhiata al contenuto di <code>hello.py</code> per cercare di avere un'idea di ciò che accade (spiegato in estrema sintesi più sotto). La programmazione Python non è parte di questo corso. La scrittura di programmi per web server nemmeno. Ci basta solo avere un'idea molto a grandi linee di cosa sia accaduto.</p>
+<p>In questo caso il web server ha capito dalla forma dell'URL richiesto (<code>/cgi-bin/hello.py</code>) che <em>non</em> deve costruire una risposta HTTP che trasporta il file identificato da quell'URL. Deve invece:</p>
+<ol>
+<li>mandare in esecuzione il programma <code>python hello.py</code>, permettendo al programma di accedere al contenuto della HTTP Request che ne ha provocato l'esecuzione (funzioni <code>os.getenv()</code>);</li>
+<li>trasformare l'output dell'esecuzione del programma (stringa stampata con <code>print()</code>) in una HTTP Response da tornare al browser.</li>
+</ol>
 <p>La regola con la quale il web server ha preso questa decisione è, in parole povere, questa: la terza parte dell'URL inizia con <code>cgi-bin</code> e il web server è stato mandato in esecuzione con l'opzione <code>--cgi</code>.</p>
-<h4 id="riferimento-utile_3">Riferimento utile</h4>
+<h3 id="riferimento-utile_3">Riferimento utile</h3>
 <ul>
 <li><a href="https://realpython.com/python-http-server/">How to Launch an HTTP Server in One Line of Python Code</a></li>
 </ul>
