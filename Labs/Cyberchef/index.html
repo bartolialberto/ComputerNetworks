@@ -1039,13 +1039,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#sign-and-verify" class="md-nav__link">
-    Sign and Verify
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1392,13 +1385,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#sign-and-verify" class="md-nav__link">
-    Sign and Verify
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1521,43 +1507,31 @@ Important examples are given below (HTTP Basic Authentication credentials and em
 <p>You may want to experiment with other students (in which case you will have to exchange the respective public keys) or alone (in which case you will have to generate two or more keypairs and pretend to impersonate multiple people).</p>
 <h3 id="encryption_1">Encryption</h3>
 <ul>
+<li>Choose a recipient.</li>
 <li>Select the recipe for RSA encryption.</li>
-<li>Configure the recipe with the public key of the recipient.</li>
-<li>Encrypt a text of choice and save it on a file.</li>
+<li>Configure the recipe with the public key of the chosen recipient.</li>
+<li>Encrypt a text of choice (cleartext) and save it on a file (ciphertext).</li>
 </ul>
 <p>How do you obtain the public key of the recipient? What could go wrong? What if the recipient was thousands of Kms away? What if you had to communicate with thousands of different recipients? Think carefully about these issues.</p>
 <h3 id="decryption_1">Decryption</h3>
 <ul>
+<li>Use the file constructed as above (ciphertext).</li>
 <li>Select the recipe for RSA decryption.</li>
-<li>Configure the recipe with private key the one matching the public key used as above.</li>
-<li>Verify that you can decrypt the ciphertext (that you also saved on a file) correctly.</li>
+<li>Configure the recipe with the private key matching the public key used for constructing the ciphertext.</li>
+<li>Verify that you can decrypt the ciphertext.</li>
 </ul>
 <p>Now try to modify the decryption key: does decryption work?</p>
 <p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
-<h3 id="sign-and-verify">Sign and Verify</h3>
-<ul>
-<li>Select the recipe for RSA Sign.</li>
-<li>Configure the recipe with a private key.</li>
-<li>Write some message in the input field. The output field will contain the digital signature for that message, generated with the inserted private key.</li>
-<li>Save the message in a file and the digital signature in another file.</li>
-</ul>
-<p>Now imagine to have sent or distributed somehow message, digital signature and public key (the one associated with the private key used for signing).
-Any entity with these pieces of information can verify the digital signature:</p>
-<ul>
-<li>Select the recipe for RSA Verify</li>
-<li>Configure the recipe with the public key associated with the private key used for signing and with the message.</li>
-<li>Write the digital signature in the input field. The output field will tell that the verification succeeded.</li>
-</ul>
-<p>Now try to modify something in the message or in the digital signature. Does verification succeed? Try to use a different public key. Does verification succeed?</p>
 <h2 id="identity-in-public-key-cryptography">Identity in public key cryptography</h2>
-<p><em>(All the considerations below apply to private key cryptography as well; we refer to public key because it is simpler and more common in practice)</em></p>
-<p>Note that in the above procedures for encryption, decryption, sign and verify <em>there is no notion of identity whatsoever</em>.</p>
-<p>For example, in the case of sign, there is <em>no</em> specification of <em>"who"</em> signed the message. This notion is <em>not</em> required by the mathematical procedures for signing and verifying: such procedures work at the keypair level: you sign with a number called private key, you verify with another number called public key.</p>
+<p><em>(All the considerations below apply to private key cryptography with very little modifications; we refer to public key because it is simpler and more common in practice)</em></p>
+<p>Note that in the above procedures for encryption and decryption <em>there is no notion of identity whatsoever</em>.</p>
+<p>There is <em>no</em> specification of <em>"who"</em> sent the message nor of <em>"who"</em> can decrypt the ciphertext. This notion is <em>not</em> required by the mathematical procedures for encryption and decryption: such procedures work at the keypair level: you encrypt with a number called public key, you decrypt with another number called private key.</p>
 <p>In practical applications of public key cryptography, one has to reason in terms of people, organizations, websites and alike. For this reason, keypairs have to be associated with a <em>subject</em>.
 The subject has a name in form of a <em>string</em> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
 The identification mechanism (what that entity actually "is" and how it is identified by that string) is completely independent of public key cryptography.
 The only requirements are that the private key must be really private (i.e., known only to the entity identified by the associated subject) and that the association be real (this is subtle and difficult to explain precisely: the entity identified by the subject string must be really the entity that everyone would associate with that subject string).</p>
 <p>In some cases the string that acts as a name for the subject is called subject, i.e., in some cases there is no explicit distinction between a subject and its name.</p>
+<p>Associations between public keys and subjects are based on <em>certificates</em> and on <em>certification authorities</em>. These are seemingly simple but very complex notions discussed later in this course.</p>
 <h2 id="hmac">HMAC</h2>
 <ul>
 <li>Select the recipe for HMAC.</li>
