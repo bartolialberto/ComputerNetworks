@@ -295,6 +295,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Modello_OSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualcuno si ricorda del modello ISO/OSI ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -740,6 +760,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crittografia-nella-storia" class="md-nav__link">
+    Crittografia nella storia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duemila-morti-a-causa-di-una-trasmissione-di-prova-con-enigma" class="md-nav__link">
+    Duemila morti a causa di una trasmissione di prova con Enigma
+  </a>
   
 </li>
       
@@ -1200,6 +1234,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#crittografia-nella-storia" class="md-nav__link">
+    Crittografia nella storia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duemila-morti-a-causa-di-una-trasmissione-di-prova-con-enigma" class="md-nav__link">
+    Duemila morti a causa di una trasmissione di prova con Enigma
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1224,12 +1272,6 @@
 <li><a href="https://forms.gle/XnCuvMQMnZ2hK8An6">Test - HTTPS</a></li>
 <li><a href="https://forms.gle/2tSwMNL6A34dwoAC8">Test - Firma e Certificati</a></li>
 <li><a href="../../Labs/Cyberchef/">Cyberchef</a>: Private key encryption.</li>
-</ul>
-<p>Come è facile immaginare, esistono moltissimi aneddoti e riferimenti sull'uso della crittografia nella storia. Ne riporto qui solo alcuni secondo me molto interessanti:</p>
-<ul>
-<li><a href="https://it.wikipedia.org/wiki/Codici_%26_segreti">Codici e Segreti di Simon Singh</a> Testo divulgativo bellissimo e molto appassionante. Consigliatissimo per chi è interessato a questi argomenti.</li>
-<li><a href="https://en.wikipedia.org/wiki/Enigma_(novel)">Enigma</a> Romanzo di spionaggio che si svolge a Bletchley Park durante la seconda guerra mondiale, nel gruppo di persone impegnate a tentare di decrittare le trasmissioni di Enigma. Da questo romanzo è stato tratto un <a href="https://en.wikipedia.org/wiki/Enigma_(2001_film)">film</a>, ma il romanzo è infinitamente migliore. <em>Da non confondere con il film <a href="https://en.wikipedia.org/wiki/The_Imitation_Game">The Imitation Game</a></em>.</li>
-<li><a href="Duemila morti.md">Duemila morti a causa di una trasmissione di prova con Enigma</a> Aneddoto molto triste sulla seconda guerra mondiale.</li>
 </ul>
 <h2 id="se-volete-fare-delle-prove">Se volete fare delle prove</h2>
 <h3 id="cryptography-key-representation">Cryptography: Key representation</h3>
@@ -1271,6 +1313,19 @@ Per usare una chiave privata contenuta in file è necessario dimostrare la conos
 <p>Nei mode of operation che forniscono solo secrecy, invece, non è matematicamente certo che KR=KT e che BR=BT. Anche se la decryption con KR ha avuto successo, è cioè possibile che BR sia stato generato con una chiave diversa da KT (non è garantito che la chiave sia autentica) o che BR sia diverso da BT (non è garantito che il ciphertext sia integro).</p>
 <p>Ulteriore complicazione. Se provate ad usare un mode of operation che garantisce solo secrecy ed a modificare il ciphertext, vedrete che la decryption fallisce quasi sempre. Ciò non è in contraddizione con quanto sopra descritto: "molte modifiche" al ciphertext sono rilevate in fase di decryption; è però sempre possibile trovare modifiche al ciphertext che non sono rilevate in fase di decryption. Trovarle può essere più o meno facile. E' molto facile usando il mode of operation ECB (quello sopra descritto, in cui ogni blocco di plaintext è crittato in modo indipendente da tutti gli altri blocchi). Se fate qualche prova con ECB vedrete infatti che non è difficile applicare modifiche al ciphertext che non provocano errore in decryption.</p>
 <p>Ulteriore, finale complicazione. Le modifiche al ciphertext in ECB che non provocano errore in decryption forniscono un plaintext difficile da prevedere a priori: talvolta un plaintext composto da un solo carattere o qualcosa di analogo. Un network attacker tipicamente vorrebbe modificare il ciphertext in modo che il plaintext sia esattamente una sequenza di byte scelta dall'attacker stesso. Trovare la modifica al ciphertext che oltre a non provocare errore in decryption fornisce un "chosen plaintext" è ancora più complicato (ma nei mode of operation che forniscono solo secrecy la possibilità di riuscirci non può essere esclusa matematicamente).</p>
+<h2 id="crittografia-nella-storia">Crittografia nella storia</h2>
+<p>Come è facile immaginare, esistono moltissimi aneddoti e riferimenti sull'uso della crittografia nella storia. Ne riporto qui solo alcuni secondo me molto interessanti:</p>
+<ul>
+<li><a href="https://it.wikipedia.org/wiki/Codici_%26_segreti">Codici e Segreti di Simon Singh</a> Testo divulgativo bellissimo e molto appassionante. Consigliatissimo per chi è interessato a questi argomenti.</li>
+<li><a href="https://en.wikipedia.org/wiki/Enigma_(novel)">Enigma</a> Romanzo di spionaggio che si svolge a Bletchley Park durante la seconda guerra mondiale, nel gruppo di persone impegnate a tentare di decrittare le trasmissioni di Enigma. Da questo romanzo è stato tratto un <a href="https://en.wikipedia.org/wiki/Enigma_(2001_film)">film</a>, ma il romanzo è infinitamente migliore. _Da non confondere con il film <a href="https://en.wikipedia.org/wiki/The_Imitation_Game">The Imitation Game</a></li>
+</ul>
+<h2 id="duemila-morti-a-causa-di-una-trasmissione-di-prova-con-enigma">Duemila morti a causa di una trasmissione di prova con Enigma</h2>
+<p><em>(mio blog post del 2013)</em></p>
+<p>Quando parlo di crittografia a Reti di Calcolatori I descrivo in modo intuitivo ed informale un requisito di base di ogni algoritmo: <em>la conoscenza del testo cifrato non deve fornire nessuna informazione sul corrispondente testo in chiaro o sulla chiave utilizzata</em>.</p>
+<p>La macchina cifrante <a href="https://www.101computing.net/enigma-machine-emulator/">Enigma</a> non aveva questa proprietà. Anche per questo motivo gli Alleati hanno vinto la seconda guerra mondiale. Ed anche per questo motivo, i padri ed i nonni di alcuni di noi sono andati incontro ad una tragedia terribile, la battaglia navale di <a href="https://it.wikipedia.org/wiki/Battaglia_di_Capo_Matapan">Capo Matapan</a>.</p>
+<p>Immaginate di essere a bordo di una nave militare in tempo di guerra, in mezzo alle acque gelide del Mar Mediterraneo. Su di una nave impossibilitata a muoversi. Di notte e al buio. Immaginate poi di attendere per ore i soccorsi, senza sapere se arriveranno prima i soccorsi o il nemico. Immaginate poi di sentire arrivare un convoglio navale e di vedere la vostra nave che lancia un razzo di segnalazione pensando che siano i soccorsi. Immaginate poi di rendervi conto che si tratta del nemico. Poi arrivano le cannonate. Cannonate che pochi minuti dopo arrivano anche verso il convoglio di soccorso. <em>Totale di morti stimato circa duemilatrecentotrenta</em>.</p>
+<p>Cosa c'entra Capo Matapan con il requisito di cui sopra ? Enigma non aveva quella proprietà. Gli Inglesi intercettevano continuamente il traffico radio Enigma ed erano quindi in grado di estrarre informazioni sulla chiave utilizzata. Ciò non assicurava automaticamente la possibilità di decrittare il traffico: l'estrazione di informazioni era manuale, osservando le trascrizioni senza senso del traffico cifrato; il traffico era tantissimo; la chiave cambiava ogni giorno. Quando andava bene (per loro) riuscivano a ridurre molto il numero delle chiavi possibili in base alla mera analisi manuale e poi le provavano tutte, usando a tale scopo il primo calcolatore mai realizzato ("<a href="https://en.wikipedia.org/wiki/Colossus_computer">Colossus</a>").</p>
+<p><a href="http://www.telegraph.co.uk/news/obituaries/military-obituaries/special-forces-obituaries/10447712/Mavis-Batey-obituary.html">Una crittoanalista inglese</a>, analizzando il traffico intercettato del giorno, si accorse che quasi certamente era la cifratura del testo <code>"LLLLLLLLLLLLLLL"</code>: una trasmissione di prova da parte di operatori italiani che stavano provando Enigma. Ciò le permise di restringere grandemente l'insieme di chiavi del giorno---proprio perché il traffico cifrato Enigma forniva informazioni sul testo in chiaro e sulla chiave. Il che permise agli Inglesi di decrittare i messaggi crittati in quella chiave. Il che portò alla terribile tragedia di Capo Matapan.</p>
 
 
   
