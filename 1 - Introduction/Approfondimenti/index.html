@@ -309,6 +309,19 @@
     Altro
   </a>
   
+    <nav class="md-nav" aria-label="Altro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qualcuno-si-ricorda-del-modello-isoosi" class="md-nav__link">
+    Qualcuno si ricorda del modello ISO/OSI ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -331,26 +344,6 @@
   
   <span class="md-ellipsis">
     Appunti - Introduction
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Modello_OSI/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Qualcuno si ricorda del modello ISO/OSI ?
   </span>
   
 
@@ -1114,6 +1107,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Letture%20utili%20per%20l%27esame/Email%20vs%20whatsapp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Un email NON è un whatsapp!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Letture%20utili%20per%20l%27esame/Tentare%20questo%20esame%20molte%20volte/" class="md-nav__link">
         
   
@@ -1164,6 +1177,19 @@
     Altro
   </a>
   
+    <nav class="md-nav" aria-label="Altro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qualcuno-si-ricorda-del-modello-isoosi" class="md-nav__link">
+    Qualcuno si ricorda del modello ISO/OSI ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1200,10 +1226,25 @@
 <li><a href="https://chat.openai.com/share/6a1e1977-6b07-4f9d-bdc3-f19ad5a30920">Suggerimenti di ChatGPT</a> per Android (non ne ho verificato la correttezza).</li>
 </ul>
 </li>
-<li>
-<p><a href="../Modello_OSI/">Qualcuno si ricorda del modello OSI ?</a></p>
-</li>
 </ul>
+<h3 id="qualcuno-si-ricorda-del-modello-isoosi">Qualcuno si ricorda del modello ISO/OSI ?</h3>
+<p><em>(questo è un mio blog post del 2013)</em></p>
+<p>Fino a qualche anno fa ogni testo o corso di Reti di Calcolatori iniziava immancabilmente con la descrizione del cosiddetto "<a href="https://it.wikipedia.org/wiki/Modello_OSI">modello ISO/OSI</a>". Per molti, molti anni chiunque avesse a che fare con il networking si trovava a che fare con la cosiddetta "<a href="https://it.wikipedia.org/wiki/Modello_OSI#Elenco_protocolli_per_livello">pila dei 7 livelli ISO/OSI</a>".</p>
+<p>Oggi del modello OSI non se ne parla più, giustamente. Quando ho iniziato a tenere il corso di Reti ne ho parlato anch'io molto brevemente, se non ricordo male solo per le prime due edizioni. Poi ho smesso completamente di farlo---e devo dire di sentirmi orgoglioso per avere smesso di trattarlo così presto. Un articolo su IEEE Spectrum racconta la storia del modello OSI in modo molto ameno e leggibile ("<a href="https://ieeexplore.ieee.org/document/6565559?arnumber=6565559">The Internet that wasn't</a>", accessibile solo dalla rete di ateneo).</p>
+<p>Io sono, diciamo così, passato attraverso tutte le fasi del modello. Quando ero uno studente dell'ultimo anno di Ingegneria Elettronica (1988/89) il modello OSI ci veniva presentato come un mondo <em>fantastico</em> ed <em>inevitabile</em>, <em>appena dietro l'angolo</em>---non esisteva ancora ma sarebbe esistito molto presto ed ovunque.</p>
+<p>Per capire perché OSI avrebbe creato un mondo fantastico, occorre tenere presente che a quei tempi Internet era praticamente inesistente:</p>
+<ol>
+<li>Pochissime organizzazioni avevano una network. C'erano solo i minicomputer (macchine con una decina di terminali a caratteri) ed i primissimi PC o Mac. Quasi mai erano collegati ad una network.</li>
+<li>Inoltre, network diverse erano quasi sempre isolate tra loro.</li>
+</ol>
+<p>L'invio di messaggi da una network ad un'altra era complicatissimo perché era difficile trovare un protocollo adatto ad entrambe le network e del quale esistessero due implementazioni (una per ogni network) in grado di essere eseguite sul nodo gateway (oggi lo chiamiamo router).</p>
+<p>Inoltre, perché mai uno doveva fare una cosa così complicata e costosa ? La comunicazione tra nodi è utile solo se i nodi eseguono applicazioni in grado di cooperare tra di loro, il che richiede altri protocolli ed altre implementazioni. A quei tempi non c'era nulla di tutto questo. In pratica, il massimo che si riusciva a fare era trasferire un file da un nodo all'altro. Qualcosa che si riusciva a fare anche con i floppy disk.</p>
+<p>OSI era la promessa di un mondo fantastico, in cui magicamente tutte le network avrebbero potuto essere collegate tra di loro ed i relativi software avrebbero potuto cooperare a tutti i livelli di astrazione. Qualcosa che oggi è normalissimo ma a quei tempi era, appunto, una sorta di sogno.</p>
+<p>Una precisazione: Internet esisteva, ma collegava solo alcune network di alcuni enti di ricerca. In questi enti, erano pochissimi i calcolatori collegati ad Internet, tipicamente solo alcuni minicomputer. L'uso pratico di Internet non era neanche paragonabile a quello odierno, serviva solo per trasferire file, leggere le news USENET ed inviare mail. La mail non era neanche paragonabile a quella odierna: pochissimi avevano un account mail e trovare l'indirizzo mail di qualcuno che non si conosceva personalmente era un'impresa---il web non esisteva.</p>
+<p>Il sogno di OSI, questo mondo fantastico appena dietro l'angolo, è rimasto tale per anni. Ormai ci siamo, ormai ci siamo...ma non accadeva mai. Nel frattempo, Internet ed i protocolli TCP/IP prosperavano e si diffondevano. I libri di testo ed i corsi continuavano a parlare di OSI. Ma nessuno lo vedeva in pratica. Nessuno capiva quasi nulla di OSI, anche perché chi aveva una qualche esperienza pratica aveva usato ftp o la email su Internet; chi aveva più esperienza conosceva gli indirizzi IP, Ethernet ed un pò di routing IP. Mettere in corrispondenza queste entità con il modello OSI era un'impresa.</p>
+<p>In estrema sintesi, ed in modo impreciso: il modello OSI era un elenco di <em>funzionalità</em> da implementare ad ognuno dei 7 livelli di astrazione definiti dal modello; ed un elenco di <em>protocolli</em> che implementavano quelle funzionalità. Internet invece era un piccolo insieme di protocolli molto semplici, senza alcun "modello". Il modello OSI non si diffondeva perché, molto banalmente, le <em>implementazioni</em> dei protocolli erano poche, complicate, inefficienti e costose. Le implementazioni dei protocolli Internet invece erano molte, semplici, rapide e gratuite.</p>
+<p>Quando, nel 2000/2001, ho tenuto per la prima volta il corso di Reti di Calcolatori era ormai chiaro che Internet aveva sconfitto definitivamente OSI. Non ho avuto il coraggio di omettere completamente OSI perché se ne parlava ancora molto nei libri di testo. Mi sembra di averlo cassato completamente nella terza edizione.</p>
+<p>Concludo con un aneddoto (divertente solo per chi conosce i docenti coinvolti, penso nessuno tra quelli che leggeranno questo blog). Quando ero studente del quinto anno, il docente del corso di "Macchine per l'elaborazione dell'informazione" (corso che verteva sull'hardware dei sistemi multiprocessore...le reti non erano parte dei programmi) organizzò dei seminari tenuti da una persona coinvolta nella definizione del modello OSI. I seminari erano quasi incomprensibili perché il modello OSI era, appunto, un "modello" e nessuno di noi sapeva nulla di reti. L'unica cosa che capivamo era l'enfasi sulla interoperabilità tra i sistemi. La cosa era divertente (e, ripeto, lo possono capire solo quelli che conoscono i due docenti) perché il docente del seminario pomeridiano ci esaltava il fantastico modello OSI, poi la mattina successiva il docente a lezione ci diceva "<em>tanto di OSI non è vero nulla...se avete un computer Digital vi servono i protocolli Digital e se avete un IBM vi servono i protocolli IBM...fra loro non si parlano..non c'è niente da fare, OSI non funziona...</em>"</p>
 
 
   
