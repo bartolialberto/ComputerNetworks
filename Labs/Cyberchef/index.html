@@ -864,15 +864,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#identity-in-public-key-cryptography" class="md-nav__link">
     Identity in public key cryptography
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1175,15 +1175,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#identity-in-public-key-cryptography" class="md-nav__link">
     Identity in public key cryptography
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1312,16 +1312,16 @@ Important examples are given below (HTTP Basic Authentication credentials and em
 </ul>
 <p>Now try to modify the decryption key: does decryption work?</p>
 <p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
-<h2 id="identity-in-public-key-cryptography">Identity in public key cryptography</h2>
+<h3 id="identity-in-public-key-cryptography">Identity in public key cryptography</h3>
 <p><em>(All the considerations below apply to private key cryptography with very little modifications; we refer to public key because it is simpler and more common in practice)</em></p>
 <p>Note that in the above procedures for encryption and decryption <em>there is no notion of identity whatsoever</em>.</p>
 <p>There is <em>no</em> specification of <em>"who"</em> sent the message nor of <em>"who"</em> can decrypt the ciphertext. This notion is <em>not</em> required by the mathematical procedures for encryption and decryption: such procedures work at the keypair level: you encrypt with a number called public key, you decrypt with another number called private key.</p>
-<p>In practical applications of public key cryptography, one has to reason in terms of people, organizations, websites and alike. For this reason, keypairs have to be associated with a <em>subject</em>.
-The subject has a name in form of a <em>string</em> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
+<p>In practical applications of public key cryptography, one has to reason in terms of people, organizations, websites and alike, i.e., in terms of entities that are external to a computer. For this reason, keypairs have to be associated with a <em>subject</em>.
+A subject has a <em>name</em> in form of a <em>string</em> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
 The identification mechanism (what that entity actually "is" and how it is identified by that string) is completely independent of public key cryptography.
 The only requirements are that the private key must be really private (i.e., known only to the entity identified by the associated subject) and that the association be real (this is subtle and difficult to explain precisely: the entity identified by the subject string must be really the entity that everyone would associate with that subject string).</p>
-<p>In some cases the string that acts as a name for the subject is called subject, i.e., in some cases there is no explicit distinction between a subject and its name.</p>
-<p>Associations between public keys and subjects are based on <em>certificates</em> and on <em>certification authorities</em>. These are seemingly simple but very complex notions discussed later in this course.</p>
+<p>In some cases the string that acts as a name for the subject is also called a "subject", i.e., in some cases there is no explicit distinction between a subject and its name.</p>
+<p>Associations between public keys and subjects are based on <em>certificates</em> and on <em>certification authorities</em>. These are complex notions discussed later in this course.</p>
 <h2 id="hmac">HMAC</h2>
 <ul>
 <li>Select the recipe for HMAC.</li>
