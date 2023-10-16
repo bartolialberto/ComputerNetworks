@@ -837,6 +837,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hmac" class="md-nav__link">
+    HMAC
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -873,13 +880,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hmac" class="md-nav__link">
-    HMAC
-  </a>
   
 </li>
       
@@ -1148,6 +1148,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hmac" class="md-nav__link">
+    HMAC
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1184,13 +1191,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hmac" class="md-nav__link">
-    HMAC
-  </a>
   
 </li>
       
@@ -1291,6 +1291,14 @@ Important examples are given below (HTTP Basic Authentication credentials and em
 <li>You want to send this ciphertext by email to another student. The recipient need to know the key you used for encrypting (and the IV).</li>
 </ul>
 <p>How can you give the key to that student? What could go wrong? What if the student was thousands of Kms away? What if you had to communicate with thousands of different students? Think carefully about these issues.</p>
+<h3 id="hmac">HMAC</h3>
+<ul>
+<li>Select the recipe for HMAC.</li>
+<li>Configure the recipe with a key (in this case the key can be of any length, unlike in algorithms for private key cryptography) and with one of the available "hashing functions".</li>
+<li>Insert a text snippet as input and have a look at the output.</li>
+<li>Try to modify a single character in input: does the modification provoke a small and localized change in the output? Or is the new output completely different from the previous one?</li>
+<li>Insert a much longer input: does the output length change?</li>
+</ul>
 <h2 id="public-key-crypto">Public key crypto</h2>
 <p>You can "play" with RSA and PGP (the examples below outline the usage of RSA, usage of PGP is analogous).</p>
 <p>You always start by generating a <em>keypair</em>. Save the private key in a file and the public key in another file. You will keep the private key secret and you will distribute your public key to anyone who needs to communicate with you.</p>
@@ -1322,14 +1330,6 @@ The identification mechanism (what that entity actually "is" and how it is ident
 The only requirements are that the private key must be really private (i.e., known only to the entity identified by the associated subject) and that the association be real (this is subtle and difficult to explain precisely: the entity identified by the subject string must be really the entity that everyone would associate with that subject string).</p>
 <p>In some cases the string that acts as a name for the subject is also called a "subject", i.e., in some cases there is no explicit distinction between a subject and its name.</p>
 <p>Associations between public keys and subjects are based on <em>certificates</em> and on <em>certification authorities</em>. These are complex notions discussed later in this course.</p>
-<h2 id="hmac">HMAC</h2>
-<ul>
-<li>Select the recipe for HMAC.</li>
-<li>Configure the recipe with a key (in this case the key can be of any length, unlike in algorithms for private key cryptography) and with one of the available "hashing functions".</li>
-<li>Insert a text snippet as input and have a look at the output.</li>
-<li>Try to modify a single character in input: does the modification provoke a small and localized change in the output? Or is the new output completely differente from the previous one?</li>
-<li>Insert a much longer input: does the output length change?</li>
-</ul>
 
 
   
