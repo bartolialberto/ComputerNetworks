@@ -766,11 +766,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6%20-%20Network%20Security/Approfondimenti/" class="md-nav__link">
+      <a href="../../6%20-%20Network%20Security/Approfondimenti_Network_Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Approfondimenti
+    Approfondimenti Network Security
   </span>
   
 
@@ -1036,6 +1036,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-cyberchef-works" class="md-nav__link">
+    How Cyberchef works
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#url-encoding-form-data" class="md-nav__link">
     URL Encoding (FORM data)
   </a>
@@ -1108,6 +1115,13 @@
           <li class="md-nav__item">
   <a href="#send-an-encrypted-message" class="md-nav__link">
     Send an encrypted message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    WARNING
   </a>
   
 </li>
@@ -1402,6 +1416,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-cyberchef-works" class="md-nav__link">
+    How Cyberchef works
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#url-encoding-form-data" class="md-nav__link">
     URL Encoding (FORM data)
   </a>
@@ -1479,6 +1500,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    WARNING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hmac" class="md-nav__link">
     HMAC
   </a>
@@ -1541,9 +1569,18 @@
 
 <h1 id="cyberchef">Cyberchef</h1>
 <p><em>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</em> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
-<p>Open the <a href="https://gchq.github.io/CyberChef/">web app</a>. There are many "recipes" (i.e., predefined computations) available on the left part. One can select a recipe by double-clicking on it. Each recipe takes an input and, when executed, it produces an output. Each recipe also has a set of parameters. For example, recipes for encryption have the key as a parameter; the input is the cleartext while the output is the ciphertext.</p>
+<h2 id="how-cyberchef-works">How Cyberchef works</h2>
+<p>Open the <a href="https://gchq.github.io/CyberChef/">web app</a>. There are many "recipes" (i.e., predefined computations) available on the left part.</p>
+<p>One can select a recipe by double-clicking on it or by drag-and-drop. Each recipe takes an <em>input</em> and, when executed, it produces an <em>output</em>. Deselect the "auto-bake" checkbox in the bottom-center part. This way, recipes will not run automatically but only when clicking the "bake" button. This configuration is simpler to handle, I think.</p>
+<p>Each recipe also has a set of <em>parameters</em>. For example, recipes for encryption have the key as a parameter; the input is the cleartext while the output is the ciphertext.</p>
 <p>Recipes can be chained together so that the output of one is the input of the next one and so on.</p>
-<p>Deselect the "auto-bake" checkbox in the bottom-center part. This way, recipes will not run automatically but only when clicking the "bake" button. This configuration is simpler to handle, I think.</p>
+<p>Input, output and parameters can be represented in several ways, including:</p>
+<ul>
+<li><strong>HEX</strong> each character represents an hexadecimal digit; thus, two characters represent one byte and characters different from 0-9,A-E (upper or lower case) are incorrect.</li>
+<li><strong>RAW</strong> each character is handled as it is, the internal representation of the character is passed to the code that implements the recipe.</li>
+<li><strong>UTF-8</strong> the UTF-8 representation of each character is passed to the code that implements the recipe.</li>
+</ul>
+<p>In practice, one will typically use either HEX or RAW, just make sure to use them coherently (e.g., if the encryption output is HEX then the decryption input must be HEX as well).</p>
 <h2 id="url-encoding-form-data">URL Encoding (FORM data)</h2>
 <p>Data inserted in an HTML Form and sent in an HTTP request is URL encoded.</p>
 <p>In brief (and oversimplifying), this encoding format makes sure that the encoded text contains only characters that can be part of an URL (for example, spaces cannot be part of an URL).</p>
@@ -1590,8 +1627,9 @@ Important examples are given below (HTTP Basic Authentication credentials and em
 - indicating how the email body is to be split between attachments and normal text.</p>
 <p>Such information is usually provided by means of dedicated email headers.</p>
 <h2 id="private-key-crypto">Private key crypto</h2>
-<p>You can "play" with AES, Blowfish, DES. These are all <em>block ciphers</em> (see Approfondimenti in Network Security). In all the examples below, select GCM as <em>mode of operation</em>.</p>
-<p>Block ciphers require a configuration parameter called <em>initialization vector (IV)</em> for reasons beyond the scope of this course. This parameter must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</p>
+<p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will not discuss what these additional parameters are for.</p>
+<p>You can "play" with AES, Blowfish, DES. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../../6%20-%20Network%20Security/Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>). In all the examples below, select a <em>mode of operation</em> different from GCM (see also the Warning section below).</p>
+<p>Block ciphers require a configuration parameter called <em>initialization vector (IV)</em>. This parameter must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</p>
 <h3 id="encryption">Encryption</h3>
 <ul>
 <li>Select a recipe for encryption.</li>
@@ -1621,6 +1659,10 @@ Important examples are given below (HTTP Basic Authentication credentials and em
 <li>You want to send this ciphertext by email to another student. The recipient need to know the key you used for encrypting (and the IV).</li>
 </ul>
 <p>How can you give the key to that student? What could go wrong? What if the student was thousands of Kms away? What if you had to communicate with thousands of different students? Think carefully about these issues.</p>
+<h3 id="warning">WARNING</h3>
+<p>AES, Blowfish, DES support several modes of operation. GCM is the only one of those that provides integrity.</p>
+<p>The reason why it is suggested here to <em>not</em> use GCM is because the decryption recipe requires an additional parameter (GCM Tag) that I do not know how to extract from the encryption recipe automatically, so that the two recipes (encryption and decryption) can be chained together. I am not even sure they can be chained together in this Cyberchef implementation.</p>
+<p>The reason why the previous examples, made with modes of operation different from GCM and that do <em>not</em> support integrity, <em>seem</em> to support integrity (i.e., changing the ciphertext or using the wrong key provokes a decryption error) is for a subtle reason. Informally and oversimplifying, those modes of operation do not support integrity in the sense that it is always possible to find some modification that does not lead to a decryption error; on the other hand, "most" modifications will be detected (for any given modification the probability that this modification will be undetected is very, very small). </p>
 <h3 id="hmac">HMAC</h3>
 <ul>
 <li>Select the recipe for HMAC.</li>
