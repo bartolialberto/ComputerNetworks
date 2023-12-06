@@ -1386,13 +1386,13 @@
 <p>Si basa su un grande insieme di server chiamati Tor relays.</p>
 <ul>
 <li>Il browser Tor invia ad un relay scelto a caso un messaggio contenente una richiesta HTTPS ed una sequenza di step da seguire tra i Tor relay.</li>
-<li>Il messaggio usa livelli multipli di crittografia in modo da garantire che ogni relay conosca solo il relay precedente ed il relay successivo. Nessun relay è quindi in grado di determinare origine e destinazione della richiesta (richiesta HTTPS e quindi comprensibile solo al server a cui sarà consegnata).</li>
+<li>Il messaggio usa livelli annidati di crittografia in modo da garantire che ogni relay conosca solo il relay precedente ed il relay successivo. Nessun relay è quindi in grado di determinare origine e destinazione della richiesta (richiesta HTTPS e quindi comprensibile solo al server a cui sarà consegnata).</li>
 <li>Alla fine della sequenza ci sarà un Tor relay che agisce da exit point ed invierà la richiesta HTTPS al web server di destinazione, il quale invierà la propria risposta HTTPS allo stesso Tor relay.</li>
 <li>Quel Tor relay dovrà fare in modo che la risposta arrivi al Tor browser corrispondente (che non conosce), ancora con livelli multipli di crittografia e con la garanzia che ogni Tor relay conosca solo il relay precedente ed il relay successivo.</li>
 </ul>
 <p>Questa <a href="https://chat.openai.com/share/7fbe5e72-2b5b-438c-94ea-75cce2b3c5e6">chat con ChatGPT</a> fornisce vari dettagli in più (compreso un cenno sulla differenza tra i nomi DNS ed i nomi onion; il cosiddetto "dark web" usato tipicamente per attività illegali consiste, in estrema sintesi, dei web server accessibili solo con Tor; il nome di questi web server non è presente nel DNS ed è ottenibile solo tramite Tor).</p>
 <p>Questo <a href="https://cacm.acm.org/magazines/2015/10/192387-seeking-anonymity-in-an-internet-panopticon/fulltext">articolo scientifico</a> (non banale da leggere) fornisce una descrizione pressoché completa del funzionamento di Tor e delle azioni che può eseguire un Network Attacker per tentare di deanonimizzare il traffico osservato.</p>
-<p>Da notare che il solo fatto di usare Tor può essere sufficiente per allertare alcune tipologie di avversari, in determinati contesti.</p>
+<p>Da notare che il solo fatto di usare Tor può essere sufficiente per allertare alcune tipologie di avversari, in determinati contesti (<em>"hhmmm...da questo indirizzo IP viene originato molto traffico Tor...questo ha certamente qualcosa da nascondere!!!"</em>). </p>
 
 
   
