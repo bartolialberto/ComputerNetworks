@@ -838,6 +838,33 @@
     Protezione del contenuto di un file basata su password
   </a>
   
+    <nav class="md-nav" aria-label="Protezione del contenuto di un file basata su password">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisito-e-motivazione" class="md-nav__link">
+    Requisito e Motivazione
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realizzazione" class="md-nav__link">
+    Realizzazione
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ed-i-server" class="md-nav__link">
+    Ed i Server?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1324,6 +1351,33 @@
     Protezione del contenuto di un file basata su password
   </a>
   
+    <nav class="md-nav" aria-label="Protezione del contenuto di un file basata su password">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisito-e-motivazione" class="md-nav__link">
+    Requisito e Motivazione
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realizzazione" class="md-nav__link">
+    Realizzazione
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ed-i-server" class="md-nav__link">
+    Ed i Server?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1358,16 +1412,19 @@
 <h1 id="approfondimenti-network-security-appendice">Approfondimenti Network Security - Appendice</h1>
 <p><em>Questa pagina contiene approfondimenti credo "molto interessanti" ma che non sono parte del programma di esame.</em></p>
 <h2 id="protezione-del-contenuto-di-un-file-basata-su-password">Protezione del contenuto di un file basata su password</h2>
-<p>E' spesso necessario proteggere l'accesso in lettura ad un file tramite <em>password</em>.</p>
-<p>Più precisamente:</p>
+<h3 id="requisito-e-motivazione">Requisito e Motivazione</h3>
+<p>E' spesso necessario proteggere l'accesso in lettura ad un file tramite <em>password</em> (ad esempio quando il file contiene una chiave crittografica).</p>
+<p>Più precisamente, dato un file <em>F</em> su cui l'utente autenticato <em>U</em> ha permesso di lettura, si desidera imporre un vincolo aggiuntivo:</p>
 <ul>
-<li>Il sistema operativo permette all'utente <em>U</em> l'accesso in lettura al file <em>F</em>.</li>
-<li>Anche se <em>U</em> è già stato autenticato dal sistema operativo, si desidera imporre un vincolo aggiuntivo: <em>U</em> può comprendere il contenuto di <em>F</em> solo se dimostra la conoscenza di una password <em>P(F)</em> (password del tutto indipendente da quella che ha usato per autenticarsi con il sistema operativo e che è specifica di <em>F</em>, cioè è usata solo per accedere ad <em>F</em>).</li>
+<li><em>U</em> può comprendere il contenuto di <em>F</em> solo se dimostra la conoscenza di una password <em>P(F)</em> (password del tutto indipendente da quella che <em>U</em> ha usato per autenticarsi con il sistema operativo e che è specifica di <em>F</em>, cioè è usata solo per accedere ad <em>F</em>).</li>
 </ul>
+<p>Questo meccanismo difensivo è un esempio di un principio più generale ed estremamente importante (non solo in Cybersecurity) chiamato <em>Defense In Depth</em>. In parole poverissime, la difesa non deve mai basarsi su un singolo meccanismo; deve basarsi sempre su meccanismi multipli ed <em>indipendenti</em>: la tecnica per superare un meccanismo non permette di superare il meccanismo successivo. In questo modo, se un attaccante riesce a superare una difesa, deve ripetere lo sforzo per superare la difesa successiva (ed eventualmente quella ancora successiva).</p>
+<p>Nel caso specifico, un attaccante può riuscire ad impersonare <em>U</em> (ad esempio perché ha ottenuto la password con cui U si autentica nei confronti del sistema operativo). Lo sforzo di attacco con cui l'attaccante ha impersonato <em>U</em> non è però sufficiente per per permettergli di accedere ad <em>F</em>.</p>
+<h3 id="realizzazione">Realizzazione</h3>
 <p>Ogni accesso ad <em>F</em> deve essere mediato da un software di verifica <em>S</em> che deve ricevere tra i propri parametri di input <em>F</em> e <em>P(F)</em>.</p>
-<p>Ad esempio, per accedere tramite openssl ad un file contenente una chiave privata occorre passare ad <em>openssl</em> il nome del file e la password corrispondente.</p>
-<p>I dettagli realizzativi di questo meccanismo di protezione non fanno parte di questo corso. Non sono banali: come fa S a conoscere la password corretta? Tentativo di risposta: la memorizza in F; ciò non funzionerebbe perché in tal caso chi ha diritto di accesso in lettura al file potrebbe leggerne il contenuto e quindi ottenere la password. </p>
-<p>Intuitivamente, e solo per avere un'idea, il meccanismo è indicato di seguito (per comprendere questo meccanismo è necessario conoscere gli operation mode e le proprietà di sicurezza corrispondenti, spiegate più sotto):</p>
+<p>Ad esempio, per accedere tramite openssl ad un file contenente una chiave privata occorre passare ad openssl il nome del file e la password corrispondente.</p>
+<p>I dettagli realizzativi di questo meccanismo di protezione non fanno parte di questo corso. Non sono banali: come fa <em>S</em> a conoscere la password corretta? Tentativo di risposta: la memorizza in <em>F</em>; ciò non funzionerebbe perché in tal caso chi ha diritto di accesso in lettura al file potrebbe leggerne il contenuto e quindi ottenere la password. </p>
+<p>Intuitivamente, e solo per avere un'idea, il meccanismo è indicato di seguito (per comprendere questo meccanismo è necessario conoscere gli operation mode e le proprietà di sicurezza corrispondenti, spiegate in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>):</p>
 <ul>
 <li>Quando viene creato <em>F</em>, viene scelta una password <em>P(F)</em>.</li>
 <li>Dalla password <em>P(F)</em> viene derivata una chiave crittografica <em>KP(F)</em> con un algoritmo pubblico, deterministico e tale che password diverse generano password diverse.</li>
@@ -1381,10 +1438,14 @@
 <li><em>La password non è memorizzata da nessuna parte</em> (quindi se ci si dimentica la password allora non c'è modo di utilizzare il file corrispondente; si può solo procedere per tentativi con tante password sperando di trovare la password corretta).</li>
 <li>Accedere al file in lettura, cioè bypassando il software di verifica che richiede l'uso della password, è inutile in quanto il contenuto del file è crittato quindi incomprensibile.</li>
 </ul>
+<h3 id="ed-i-server">Ed i Server?</h3>
 <p>Rimane un ulteriore problema, molto importante.</p>
-<p>Se <em>S</em> viene usato solo quando un utente sta usando il calcolatore in modo interattivo, allora l'inserimento della pasword è semplice: l'utente la scrive da tastiera. Ma se <em>S</em>  deve poter accedere al contenuto di <em>F</em> anche senza la presenza di un utente (ad esempio quando <em>S</em> è invocato da un web server) allora il problema è complicato: chi inserisce la password? Non può farlo l'utente perché non c'è nessun utente. Quindi la password deve essere memorizzata in un file ed <em>S</em> deve ricevere come input il nome del file contenente la password.</p>
-<p>A questo punto però torniamo esattamente allo stesso problema iniziale: come si protegge il contenuto del file contenente la password? Come si permette l'accesso a quel file in assenza di un utente?</p>
-<p>La soluzione a questo problema non è discussa qui.</p>
+<p>Se <em>S</em> viene usato solo quando un operatore sta usando il calcolatore in modo interattivo, allora l'inserimento della password è semplice: l'utente la scrive da tastiera. Ma se <em>S</em>  deve poter accedere al contenuto di <em>F</em> anche senza la presenza fisica di un operatore (ad esempio quando <em>S</em> è invocato da un web server) allora il problema è complicato: chi inserisce la password? Non può farlo nessun operatore, perché l'operatore non c'è.</p>
+<p>Tentativo: La password potrebbe essere memorizzata in un altro file <em>FP</em> ed <em>S</em> potrebbe ricevere come input il nome del file <em>FP</em> da cui leggere la password.</p>
+<p>A questo punto però torniamo esattamente allo stesso problema iniziale: <em>FP</em> deve essere accessibile in lettura all'utente <em>U</em> associato al server; quindi un attaccante che impersona <em>U</em> può leggere la password contenuta in <em>FP</em>; occorre quindi una ulteriore password per proteggere <em>FP</em>: ma chi inserisce questa ulteriore password in assenza di operatore?</p>
+<p>Altro tentativo: la password potrebbe essere specificata come parametro di ingresso di <em>S</em>.</p>
+<p>In questo caso per mandare in esecuzione <em>S</em> occorre codificarne l'invocazione in uno script che sarà lanciato automaticamente dal sistema operativo. Questo script deve essere leggibile dall'utente <em>U</em> associato al server: stesso problema!</p>
+<p>Il modo con il quale devono essere memorizzati i segreti nei programmi (ad esempio le password)non è discusso qui.</p>
 <h2 id="tor">Tor</h2>
 <p>Domanda di uno studente:</p>
 <p><em>Come funziona il browser "Tor"? mi spiego meglio, come permette una maggiore privacy (a loro dire) rispetto ad altri browser? Perché per quanto ho visto assomiglia molto ad una pagina in incognito di un browser generico.</em></p>

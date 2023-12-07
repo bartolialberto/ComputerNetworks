@@ -824,30 +824,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#se-volete-fare-delle-prove" class="md-nav__link">
-    Se volete fare delle prove
+  <a href="#crittografia-in-pratica-qualche-dettaglio" class="md-nav__link">
+    Crittografia in pratica - Qualche dettaglio
   </a>
   
-    <nav class="md-nav" aria-label="Se volete fare delle prove">
+    <nav class="md-nav" aria-label="Crittografia in pratica - Qualche dettaglio">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cryptography-key-representation" class="md-nav__link">
-    Cryptography: Key representation
+  <a href="#rappresentazione-e-memorizzazione-delle-chiavi" class="md-nav__link">
+    Rappresentazione e memorizzazione delle chiavi
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cryptography-private-key-password" class="md-nav__link">
-    Cryptography: Private key password
+  <a href="#protezione-chiavi-con-password" class="md-nav__link">
+    Protezione chiavi con password
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#private-key-cryptography-mode-of-operation" class="md-nav__link">
-    Private key cryptography: Mode of operation
+  <a href="#mode-of-operation" class="md-nav__link">
+    Mode of operation
   </a>
   
 </li>
@@ -1382,30 +1382,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#se-volete-fare-delle-prove" class="md-nav__link">
-    Se volete fare delle prove
+  <a href="#crittografia-in-pratica-qualche-dettaglio" class="md-nav__link">
+    Crittografia in pratica - Qualche dettaglio
   </a>
   
-    <nav class="md-nav" aria-label="Se volete fare delle prove">
+    <nav class="md-nav" aria-label="Crittografia in pratica - Qualche dettaglio">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cryptography-key-representation" class="md-nav__link">
-    Cryptography: Key representation
+  <a href="#rappresentazione-e-memorizzazione-delle-chiavi" class="md-nav__link">
+    Rappresentazione e memorizzazione delle chiavi
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cryptography-private-key-password" class="md-nav__link">
-    Cryptography: Private key password
+  <a href="#protezione-chiavi-con-password" class="md-nav__link">
+    Protezione chiavi con password
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#private-key-cryptography-mode-of-operation" class="md-nav__link">
-    Private key cryptography: Mode of operation
+  <a href="#mode-of-operation" class="md-nav__link">
+    Mode of operation
   </a>
   
 </li>
@@ -1469,18 +1469,19 @@
 <li><a href="https://forms.gle/XnCuvMQMnZ2hK8An6">Test - HTTPS</a></li>
 <li><a href="https://forms.gle/2tSwMNL6A34dwoAC8">Test - Firma e Certificati</a></li>
 </ul>
-<h2 id="se-volete-fare-delle-prove">Se volete fare delle prove</h2>
-<h3 id="cryptography-key-representation">Cryptography: Key representation</h3>
+<h2 id="crittografia-in-pratica-qualche-dettaglio">Crittografia in pratica - Qualche dettaglio</h2>
+<p>L'uso "pratico" della crittografia si basa su molti dettagli non presentati nel corso. In questa sezione sono discussi alcuni di questi molto brevemente ed in maniera molto semplificata. Possono essere utili se qualcuno vuole "provare ad usare" qualche strumento software.</p>
+<h3 id="rappresentazione-e-memorizzazione-delle-chiavi">Rappresentazione e memorizzazione delle chiavi</h3>
 <p>Una chiave crittografica, in pratica, viene memorizzata in un file.</p>
 <p>Esistono molti formati diversi per rappresentare una chiave crittografica. Alcuni di questi formati sono testuali, altri sono binari.</p>
 <p>Quando si usa uno strumento crittografico, occorre verificare in quale formato esso si aspetta di ricevere la chiave. Tipicamente uno strumento accetta molti formati che possono essere specificati con un flag di input opportuno. Se la chiave che si ha a disposizione è rappresentata in un formato diverso da quelli attesi dallo strumento, allora la chiave deve essere convertita di formato con un software appropriato.</p>
 <p>Alcuni formati molto comuni sono:</p>
 <ul>
-<li>PEM Formato <em>testuale</em>. Usato spesso per la crittografia a chiave pubblica e per i certificati. Tipicamente inizia con una linea <code>BEGIN</code> e termina con una linea <code>END</code>. La chiave è rappresentata in formato Base64-encoded. I file che usano questo formato hanno tipicamente estensione <code>.pem</code>, <code>.crt</code>, <code>.key</code>.</li>
-<li>DER Formato <em>binario</em>. Usato spesso per certificati e per chiavi private. I file che usano questo formato hanno tipicamente estensione <code>.der</code>, <code>.cer</code>.</li>
+<li>PEM Formato <em>testuale</em> (file con questo formato hanno tipicamente estensione <code>.pem</code>, <code>.crt</code>, <code>.key</code>). Usato spesso per la crittografia a chiave pubblica e per i certificati. Tipicamente inizia con una linea <code>BEGIN</code> e termina con una linea <code>END</code>. La chiave è rappresentata in formato Base64-encoded.</li>
+<li>DER Formato <em>binario</em> (file con questo formato hanno tipicamente estensione <code>.der</code>, <code>.cer</code>). Usato spesso per certificati e per chiavi private.</li>
 </ul>
 <p>Ci sono molti altri formati, ad esempio PKCS#8, PKCS#12, quelli usati dai software SSH, dai software GPG ed altri.</p>
-<h3 id="cryptography-private-key-password">Cryptography: Private key password</h3>
+<h3 id="protezione-chiavi-con-password">Protezione chiavi con password</h3>
 <p>I file che memorizzano chiavi private di solito sono associati ad una <em>password</em>. 
 Per usare una chiave privata contenuta in file è necessario dimostrare la conoscenza della password corrispondente. Il solo diritto di accesso in lettura al file, quindi, non è sufficiente per usare la chiave contenuta nel file.</p>
 <p>Ad esempio, un software che deve usare una chiave privata deve ricevere in input:</p>
@@ -1488,21 +1489,29 @@ Per usare una chiave privata contenuta in file è necessario dimostrare la conos
 <li>il nome del file contenente la chiave privata; e,</li>
 <li>la password per quel file.</li>
 </ol>
-<p>I dettagli realizzativi di questo meccanismo di protezione non fanno parte di questo corso. Non sono banali: come fa il software di verifica a conoscere la password corretta? Tentativo di risposta: la memorizza nello stesso file; ciò non funzionerebbe perché in tal caso chi ha diritto di accesso in lettura al file potrebbe leggerne il contenuto e quindi ottenere la password. Chi è interessato trova alcune note in <a href="../Approfondimenti_Network_Security_Appendice/">questa pagina</a>.</p>
-<h3 id="private-key-cryptography-mode-of-operation">Private key cryptography: Mode of operation</h3>
-<p>In breve: se viene chiesto di specificare un "mode of operation", scegliere CCM oppure GCM. Il motivo è riassunto in forma intuitiva qui di seguito.</p>
+<p>I dettagli realizzativi di questo meccanismo di protezione non fanno parte di questo corso. Non sono banali: come fa il software di verifica a conoscere la password corretta?</p>
+<p>Tentativo di risposta: la memorizza nello stesso file. Ciò non avrebbe senso: chi ha diritto di accesso in lettura al file potrebbe leggerne il contenuto e quindi ottenere la password; pertanto la protezione del file con password sarebbe inutile.</p>
+<p>Chi è interessato trova alcune note in <a href="../Approfondimenti_Network_Security_Appendice/">questa pagina</a>.</p>
+<h3 id="mode-of-operation">Mode of operation</h3>
+<p>In breve: se viene chiesto di specificare un "mode of operation" in una operazione crittografica, scegliere CCM oppure GCM. Il motivo è riassunto in forma intuitiva qui di seguito.</p>
 <p>Esistono molti algoritmi di crittografia a chiave privata. Quelli più comunemente usati sono detti <em>block ciphers</em> perché operano su blocchi di byte, cioè prendono in input una sequenza di byte di lunghezza fissa e forniscono in output una sequenza di byte della stessa lunghezza.</p>
-<p>Gli algoritmi block ciphers possono essere configurati per funzionare in vari <em>modes of operation</em> che differiscono nelle modalità con le quali i blocchi di ciphertext sono ottenuti dai blocchi di plaintext. Ad esempio, nella modalità EBC ogni blocco di plaintext è crittato in modo indipendente da tutti gli altri blocchi; nella modalità CBC invece ogni blocco di plaintext viene crittato dopo averne calcolato lo XOR con il precedente blocco di ciphertext (quindi ogni blocco di ciphertext dipende da tutti i blocchi di ciphertext precedenti).</p>
+<p>Gli algoritmi block ciphers possono essere configurati per funzionare in vari <em>modes of operation</em> che differiscono nelle modalità con le quali i blocchi di ciphertext sono ottenuti dai blocchi di plaintext. Ad esempio:</p>
+<ul>
+<li>nel mode of operation EBC ogni blocco di plaintext è crittato in modo indipendente da tutti gli altri blocchi;</li>
+<li>nel mode of operation CBC ogni blocco di plaintext viene crittato dopo averne calcolato lo XOR con il precedente blocco di ciphertext (quindi ogni blocco di ciphertext dipende da tutti i blocchi di ciphertext precedenti).</li>
+</ul>
 <p>Le <em>proprietà di sicurezza</em> dei block ciphers nei confronti di un network attacker dipendono dal mode of operation usato:</p>
 <ul>
 <li>Forniscono secrecy, authentication, integrity: CCM, CWC, EAX, GCM, IAPM, OCB.</li>
 <li>Forniscono solo secrecy (quindi sono raramente usati in pratica): ECB, CBC, CFB, OFB, CTR.</li>
 </ul>
-<p>Per comprendere cosa significano esattamente authentication e integrity, indichiamo con PT, KT e BT il plaintext, la chiave, il ciphertext sul lato trasmittente e PR, KR, BR quelli sul lato ricevente.</p>
-<p>Immaginiamo che l'operazione di decryption abbia avuto successo, cioè il ricevente ha BR, lo decritta con KR ed ottiene PR senza nessuna indicazione di errore.</p>
-<p>Authentication e integrity significano che è matematicamente certo che KR=KT e che BR=BT. In altre parole, la chiave usata dal ricevente è identica alla chiave usata dal trasmittente (la chiave è autentica) ed il ciphertext ricevuto è identico al ciphertext trasmesso (il ciphertext è integro). Un network attacker quindi non può generare un ciphertext che sarà accettato dal ricevente (perché non conosce la chiave KR che il ricevente userà in decryption) e non può modificare il ciphertext trasmesso senza che il ricevente rilevi la modifica in decryption.</p>
-<p>Nei mode of operation che forniscono solo secrecy, invece, non è matematicamente certo che KR=KT e che BR=BT. Anche se la decryption con KR ha avuto successo, è cioè possibile che BR sia stato generato con una chiave diversa da KT (non è garantito che la chiave sia autentica) o che BR sia diverso da BT (non è garantito che il ciphertext sia integro).</p>
-<p>Ulteriore complicazione. Se provate ad usare un mode of operation che garantisce solo secrecy ed a modificare il ciphertext, vedrete che la decryption fallisce quasi sempre. Ciò non è in contraddizione con quanto sopra descritto: "molte modifiche" al ciphertext sono rilevate in fase di decryption; è però sempre possibile trovare modifiche al ciphertext che non sono rilevate in fase di decryption. Trovarle può essere più o meno facile. E' molto facile usando il mode of operation ECB (quello sopra descritto, in cui ogni blocco di plaintext è crittato in modo indipendente da tutti gli altri blocchi). Se fate qualche prova con ECB vedrete infatti che non è difficile applicare modifiche al ciphertext che non provocano errore in decryption.</p>
+<p>Per comprendere cosa significano esattamente authentication e integrity, indichiamo con <code>PT</code>, <code>KT</code> e <code>BT</code> il plaintext, la chiave, il ciphertext sul lato trasmittente e con <code>PR</code>, <code>KR</code>, <code>BR</code> quelli sul lato ricevente.</p>
+<p>Immaginiamo che l'operazione di decryption abbia avuto successo, cioè il ricevente ha <code>BR</code>, lo decritta con <code>KR</code> ed ottiene <code>PR</code> senza nessuna indicazione di errore.</p>
+<p>Authentication e integrity significano che è matematicamente certo che <code>KR=KT</code> e che <code>BR=BT</code>. In altre parole, la chiave usata dal ricevente è identica alla chiave usata dal trasmittente (la chiave è autentica) ed il ciphertext ricevuto è identico al ciphertext trasmesso (il ciphertext è integro). Un network attacker quindi non può generare un ciphertext che sarà accettato dal ricevente (perché non conosce la chiave <code>KR</code> che il ricevente userà in decryption) e non può modificare il ciphertext trasmesso senza che il ricevente rilevi la modifica in decryption.</p>
+<p>Nei mode of operation che forniscono solo secrecy, invece, non è matematicamente certo che <code>KR=KT</code> e che <code>BR=BT</code>. Anche se la decryption con <code>KR</code> ha avuto successo, è cioè possibile che <code>BR</code> sia stato generato con una chiave diversa da <code>KT</code> (non è garantito che la chiave sia autentica) o che <code>BR</code> sia diverso da <code>BT</code> (non è garantito che il ciphertext sia integro).</p>
+<p>Ulteriore complicazione.</p>
+<p>Se provate ad usare un mode of operation che garantisce solo secrecy ed a modificare il ciphertext, vedrete che la decryption fallisce quasi sempre, nonostante il mode of operation non garantisca integrity.</p>
+<p>Ciò non è in contraddizione con quanto sopra descritto: "molte modifiche" al ciphertext sono rilevate in fase di decryption; è però sempre possibile trovare modifiche al ciphertext che non sono rilevate in fase di decryption. Trovarle può essere più o meno facile. E' molto facile usando il mode of operation ECB (quello sopra descritto, in cui ogni blocco di plaintext è crittato in modo indipendente da tutti gli altri blocchi). Se fate qualche prova con ECB vedrete infatti che non è difficile applicare modifiche al ciphertext che non provocano errore in decryption.</p>
 <p>Ulteriore, finale complicazione. Le modifiche al ciphertext in ECB che non provocano errore in decryption forniscono un plaintext difficile da prevedere a priori: talvolta un plaintext composto da un solo carattere o qualcosa di analogo. Un network attacker tipicamente vorrebbe modificare il ciphertext in modo che il plaintext sia esattamente una sequenza di byte scelta dall'attacker stesso. Trovare la modifica al ciphertext che oltre a non provocare errore in decryption fornisce un "chosen plaintext" è ancora più complicato (ma nei mode of operation che forniscono solo secrecy la possibilità di riuscirci non può essere esclusa matematicamente).</p>
 <h2 id="crittografia-nella-storia">Crittografia nella storia</h2>
 <p>Come è facile immaginare, esistono moltissimi aneddoti e riferimenti sull'uso della crittografia nella storia. Ne riporto qui solo alcuni secondo me molto interessanti:</p>
