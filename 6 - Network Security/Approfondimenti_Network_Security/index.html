@@ -878,9 +878,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    HTTPS
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#attacco-mitm-su-http-ad-un-candidato-presidenziale-in-egitto" class="md-nav__link">
     Attacco MITM su HTTP ad un candidato presidenziale in Egitto
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1436,9 +1449,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    HTTPS
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#attacco-mitm-su-http-ad-un-candidato-presidenziale-in-egitto" class="md-nav__link">
     Attacco MITM su HTTP ad un candidato presidenziale in Egitto
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1526,7 +1552,12 @@ Per usare una chiave privata contenuta in file è necessario dimostrare la conos
 <p>Immaginate di essere a bordo di una nave militare in tempo di guerra, in mezzo alle acque gelide del Mar Mediterraneo. Su di una nave impossibilitata a muoversi. Di notte e al buio. Immaginate poi di attendere per ore i soccorsi, senza sapere se arriveranno prima i soccorsi o il nemico. Immaginate poi di sentire arrivare un convoglio navale e di vedere la vostra nave che lancia un razzo di segnalazione pensando che siano i soccorsi. Immaginate poi di rendervi conto che si tratta del nemico. Poi arrivano le cannonate. Cannonate che pochi minuti dopo arrivano anche verso il convoglio di soccorso. <em>Totale di morti stimato circa duemilatrecentotrenta</em>.</p>
 <p>Cosa c'entra Capo Matapan con il requisito di cui sopra ? Enigma non aveva quella proprietà. Gli Inglesi intercettevano continuamente il traffico radio Enigma ed erano quindi in grado di estrarre informazioni sulla chiave utilizzata. Ciò non assicurava automaticamente la possibilità di decrittare il traffico: l'estrazione di informazioni era manuale, osservando le trascrizioni senza senso del traffico cifrato; il traffico era tantissimo; la chiave cambiava ogni giorno. Quando andava bene (per loro) riuscivano a ridurre molto il numero delle chiavi possibili in base alla mera analisi manuale e poi le provavano tutte, usando a tale scopo il primo calcolatore mai realizzato ("<a href="https://en.wikipedia.org/wiki/Colossus_computer">Colossus</a>").</p>
 <p><a href="http://www.telegraph.co.uk/news/obituaries/military-obituaries/special-forces-obituaries/10447712/Mavis-Batey-obituary.html">Una crittoanalista inglese</a>, analizzando il traffico intercettato del giorno, si accorse che quasi certamente era la cifratura del testo <code>"LLLLLLLLLLLLLLL"</code>: una trasmissione di prova da parte di operatori italiani che stavano provando Enigma. Ciò le permise di restringere grandemente l'insieme di chiavi del giorno---proprio perché il traffico cifrato Enigma forniva informazioni sul testo in chiaro e sulla chiave. Il che permise agli Inglesi di decrittare i messaggi crittati in quella chiave. Il che portò alla terribile tragedia di Capo Matapan.</p>
-<h2 id="attacco-mitm-su-http-ad-un-candidato-presidenziale-in-egitto">Attacco MITM su HTTP ad un candidato presidenziale in Egitto</h2>
+<h2 id="https">HTTPS</h2>
+<ul>
+<li><a href="https://radar.cloudflare.com/adoption-and-usage/it">HTTP vs HTTPS Statistics</a></li>
+<li><a href="https://www.cloudshark.org/captures/26fa735868c1">TLS 1.2 capture</a> (no need to install Wireshark).</li>
+</ul>
+<h3 id="attacco-mitm-su-http-ad-un-candidato-presidenziale-in-egitto">Attacco MITM su HTTP ad un candidato presidenziale in Egitto</h3>
 <p>Gli esempi reali di attacchi MITM sono tantissimi. Nel corso viene mostrato che HTTP non offre nessuna difesa nei confronti di questi attacchi.</p>
 <p>Un esempio recente e molto rilevante è stato reso pubblico da Google Threat Analysis Group in collaborazione con <a href="https://citizenlab.ca/2023/09/predator-in-the-wires-ahmed-eltantawy-targeted-with-predator-spyware-after-announcing-presidential-ambitions/">The Citizen Lab</a> (Settembre 2023). E' stato installato un malware per sorvegliare le attività di un candidato alle elezioni presidenziali in Egitto (mai dimenticare cosa è accaduto in Egitto a <a href="https://it.wikipedia.org/wiki/Omicidio_di_Giulio_Regeni">Giulio Regeni</a>). L'installazione del malware avviene con un meccanismo non discusso in questo corso, cioè lo sfruttamento di vulnerabilità nei browser (tema analizzato nel corso di <a href="https://bartolialberto.github.io/CybersecurityCourse/">Cybersecurity</a> nella Laurea Magistrale). Ci basti sapere che il procedimento di attacco si basa su quanto segue:</p>
 <ol>
