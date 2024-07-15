@@ -473,13 +473,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#registrants-and-registrars" class="md-nav__link">
-    Registrants and registrars
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#real-identity-of-registrars-and-whois" class="md-nav__link">
     Real identity of registrars and WHOIS
   </a>
@@ -1404,13 +1397,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#registrants-and-registrars" class="md-nav__link">
-    Registrants and registrars
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#real-identity-of-registrars-and-whois" class="md-nav__link">
     Real identity of registrars and WHOIS
   </a>
@@ -1468,11 +1454,10 @@ One has to understand from the context what the intended meaning is.</p>
 <h2 id="implementation">Implementation</h2>
 <p>Starting from 2024/2025, the DNS implementation (i.e., where RRs are actually located, how a name server obtains RRs and so on) is no longer part of this course).</p>
 <h2 id="creating-and-managing-a-domain">Creating and managing a domain</h2>
-<h3 id="registrants-and-registrars">Registrants and registrars</h3>
-<p>The entity (person, company or organization) that owns a domain name is called <em>registrant</em>. The registrant has the right to choose types and values of RRs in the domain, as well as the right to create subdomains of that domain.</p>
-<p>The entity that actually creates domain names upon requests by registrants is called <em>registrar</em>. A registrar can only create domains in a set of predefined zones with which it has established technical and business relationships. A registrar may allow other organizations, called <em>resellers</em>, to sell domain names on its behalf. For the purpose of this discussion, resellers are equivalent to registrars.</p>
-<p>The technical and business interactions between registrant and registrar are not part of the DNS protocol. The technical means for ensuring that a domain name can only be managed by its registrant are not part of the DNS protocol. Usually a registrant interacts with a registrar and operates on the RRs it owns by means of a web application.</p>
-<p>As observed above, a registrar can only create domains in a set of predefined zones with which it has established technical and business relationships. Usually, those zones are top-level domains (TLD). A registrant may thus create only domains that are second level (i.e., children of a TLD).</p>
+<p>If you want to "create a domain" under a certain TLD, you have to contact a "DNS provider" able to create domains below that TLD, e.g., <a href="https://misterdomain.eu/en/">Misterdomain</a> is able to create domains below <code>.it</code>, <code>.eu</code>, <code>.com</code> and several other TLDs. </p>
+<p>In DNS parlance, domain creation is done by <em>registrars</em>. A DNS provider is a registrar or a <em>reseller</em> of a registrar. The owner of the newly created domain is called <em>registrant</em>. The organization that manages the TLD is called <em>registry</em>. A broader definition of these terms is given in <a href="https://chat.openai.com/share/5538a2c0-03d7-4377-9531-19bfa8493040">this ChatGPT interaction</a>.</p>
+<p>The registry for <code>.it</code> is "<em>Registro .it - Istituto di Informatica e Telematica del CNR - Via G. Moruzzi, 1 - 56124 Pisa</em>" (i.e., this organization manages the <code>.it</code> zone).</p>
+<p>The Registro.it web site contains a <a href="https://www.nic.it/en/registrar/list">list of all the registrars</a> of <code>.it</code>, as well as a detailed description of all the requirements  for <a href="https://www.nic.it/en/registrars/becoming-registrar">becoming a registrar</a> (costs included). </p>
 <p>A TLD often introduces some TLD-specific constraints on the domains that can be created. For example, there could be certain domain names that cannot be bought by any registrar (e.g., internet.it) or domain names that can be bought only by certain registrars (e.g., parlamento.it). These constraints are of normative nature and have no underlying technical reason.</p>
 <p>In general, there can be no delegations  “below” a domain created by a registrant. Creation of new delegations in a subtree rooted at a domain created by a registrant requires specific business arrangements with registrars. The University of Trieste (registrant of domain units.it) has one of those arrangements with the .it registrar (i.e., it is possible to create zones “below” units.it, such as inginf.units.it).</p>
 <h3 id="real-identity-of-registrars-and-whois">Real identity of registrars and WHOIS</h3>
