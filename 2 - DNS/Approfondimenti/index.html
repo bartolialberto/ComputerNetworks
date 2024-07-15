@@ -448,6 +448,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#appunti-anni-precedenti-al-20242025" class="md-nav__link">
+    Appunti (anni precedenti al 2024/2025)
+  </a>
+  
+    <nav class="md-nav" aria-label="Appunti (anni precedenti al 2024/2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zones" class="md-nav__link">
+    Zones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterative-name-resolution" class="md-nav__link">
+    Iterative name resolution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replication" class="md-nav__link">
+    Replication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching" class="md-nav__link">
+    Caching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glue-information" class="md-nav__link">
+    Glue information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1383,6 +1431,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#appunti-anni-precedenti-al-20242025" class="md-nav__link">
+    Appunti (anni precedenti al 2024/2025)
+  </a>
+  
+    <nav class="md-nav" aria-label="Appunti (anni precedenti al 2024/2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zones" class="md-nav__link">
+    Zones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterative-name-resolution" class="md-nav__link">
+    Iterative name resolution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replication" class="md-nav__link">
+    Replication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching" class="md-nav__link">
+    Caching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glue-information" class="md-nav__link">
+    Glue information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1443,6 +1539,97 @@ In this paper we examine the dependence of a large set of public administration 
 <li>How many websites could be affected, whether in name resolution or web server access, by an attack on a single zone, nameserver, network?</li>
 <li>How prevalent is the usage of groups of IP addresses, networks for providing redundancy? How many websites could be affected by an attack to one of those groups?</li>
 </ul>
+<h3 id="appunti-anni-precedenti-al-20242025">Appunti (anni precedenti al 2024/2025)</h3>
+<h4 id="zones">Zones</h4>
+<p>The name table does not exist in its entirety anywhere. Each name server contains a set of RRs of the name table, i.e., the name table is <em>distributed</em>. The distribution of the name table is based on the domain tree, as follows.</p>
+<p>The domain tree is partitioned in <em>zones</em>. All domains of the same zone are stored on the same name server, that is the <em>name server of the zone</em>.</p>
+<p>A zone is a partition of the domain tree rooted at a domain and that extends below that domain, either until leaf nodes of the domain tree or until the root of another zone. The root of the domain tree is a zone. All the children of the root (top level domains, TLD) are also zones.</p>
+<p>Intuitively, one may think of a zone as of a subtree of the domain tree. This definition is not fully precise because the mathematical definition of a subtree consists of <em>all </em>the descendants of the root of the subtree, while in this case one or more of those descendants could be root of other zones.</p>
+<p>The domain that is the root of a zone must contain a RR of type NS. A RR of this type maps the <em>name of a zone</em> to the <em>name of the name server of that zone</em>. The name of the name server of a zone may or may not be in that zone.</p>
+<p>In order to contact the name server of a zone Z1, it is necessary to have two RRs: the RR of type NS mapping the name of Z1 to the name of a name server; and, the RR of type A mapping the name of that name server to the corresponding IP address.</p>
+<p>Notes:</p>
+<ul>
+<li>The domain tree representation does not include its partitioning in zones (the fact that a domain is the root of a zone is described by the existence of a RR of type NS within that domain, but RRs are not part of a domain tree representation).</li>
+<li>The domain tree representation does not include name servers.</li>
+<li>A name server may be name server of one or more different zones.</li>
+</ul>
+<p>As already observed, all domains of a zone are stored on the name server of that zone. Certain RRs must be stored also on other name servers, as follows:</p>
+<ol>
+<li>The pair of RRs of types NS/A for the root zone must be stored on every name server.</li>
+<li>The pair of RRs of types NS/A for zone Z1 must be stored on the name server of the zone above Z1 (actually, in case the name of the name server is not in Z1, then this constraint applies only to the NS RR and it does not apply to the A RR; <em>this special case is beyond the scope of the course: we may forget about this special case and assume that NS/A pairs for Z1 are always stored in the zone above Z1;</em> <em>more details in the appendix of this page</em>).</li>
+</ol>
+<p>RRs specified in 2 are called <em>glue information</em>. These requirements must be satisfied to guarantee that, for any possible name, it is always possible to contact the server that is certainly able to respond to a request for that name.</p>
+<h4 id="iterative-name-resolution">Iterative name resolution</h4>
+<p>A common configuration for organizations that have a name server N is as follows:</p>
+<ol>
+<li>N acts as the default name server for <em>all</em> the hosts internal to the organization.</li>
+<li>Any DNS outbound traffic not originated by N is blocked at the organization boundary.</li>
+<li>Any DNS inbound traffic not directed to N is blocked at the organization boundary.</li>
+<li>All hosts in the organization (i.e., all processes that have to translate a domain name) send their requests to N and ask it to perform a <em>recursive resolution</em>. This means that, in case N does not know the required RR, N locates the server where the required RR is stored, obtains the RR and responds with the required RR.</li>
+<li>N executes recursive resolutions only for DNS requests originated by hosts internal to its organization.</li>
+</ol>
+<p>Configurations of this kind allow organizations to centralize the monitoring of all name resolutions originated within the organization, as well as the blocking of selected name resolutions. Rules 2 and 3 are implemented at the IP networking layer.</p>
+<p>The procedure executed at step 4 above by N for obtaining a RR that is not locally available is called <em>iterative name resolution</em>. This procedure consists in navigating along name servers starting from the name server of the root zone, based on the domain name itself (one label at a time, right to left) and using the glue information appropriately. (we omit the details). The name resolution procedure, thus, is guaranteed to complete after contacting a very small number of name servers.</p>
+<p>Note that iterative name resolution is performed <em>only</em> by name servers. It is <em>never</em> performed by hosts (that are not name servers): such hosts <em>always</em> send requests to their respective default name server; that name server will <em>always</em> obtain the required RRs as needed, in case it does not have them locally available then the default name server will navigate in the domain tree starting from the root zone (i.e., the default name server will execute an iterative resolution).</p>
+<h4 id="replication">Replication</h4>
+<p>The name server of a zone must be <em>replicated</em>. That is, each zone must have multiple name servers each storing a copy of all RRs of that zone. This requirement ensures that failure or unreachability of a name server does not make a full zone, and all zones below that zone, not accessible.</p>
+<p>One of the name servers of a zone is called <em>primary</em>; the other name servers are called <em>secondary</em>. When a RR has to be modified, it is modified only at the primary by the zone administrator; secondary name servers contact the primary name server periodically to be notified of all changes to RRs of the zone (including creation and deletion).</p>
+<p>At a given instant, thus, different replicas for a zone could have different RRs for that zone. This feature is intrinsic into the DNS functioning. When a response contains a RR, the content of that RR does not have any information enabling to tell whether that RR is the most up-to-date copy.</p>
+<p>All name servers of a zone must be described by NS/A pairs, that is, there must be one such pair for each name server replica; the NS RR will have the same name in all pairs (because they all describe the same zone) but different value (because each RR identifies a different name server for that zone). The requirements for the glue information apply to all these RRs.</p>
+<p>Replicas of a zone are equivalent among themselves in the sense that RRs of type NS describing the name servers of that zone do not tell which name server is the primary.</p>
+<h4 id="caching">Caching</h4>
+<p>Each name server maintains a local copy of all RRs that has seen in the past. This local copy is called <em>cache. </em>The cache is used for constructing responses. When a name server receives a request, it first analyzes the cache; the name server sends a request to a name server only in case the cache does not allow answering the request.</p>
+<p>A RR may not remain in a cache indefinitely but it must be deleted after a time interval whose length is contained in the RR itself, in a column called <em>TimeToLive (TTL)</em>.</p>
+<p>A response obtained from a cache is called <em>non authoritative</em> and is flagged as such. In this case, the TTL of the returned RR is decremented of the time interval already spent in the cache. A response obtained from one of the name servers of the corresponding zone is called <em>authoritative</em>.</p>
+<p>Notes:</p>
+<ul>
+<li>The name server of a zone does not know how many copies of the RRs of that zone exist in the DNS caches distributed across the Internet.</li>
+<li>When a RR is updated, the update is not immediately reflected to the copies of that RR possibly stored in DNS caches.</li>
+<li>If the TTL value for a RR at the primary is T seconds, then it is guaranteed that all copies of that RRs will disappear everywhere after at most T seconds.</li>
+</ul>
+<h4 id="glue-information">Glue information</h4>
+<p>This section elaborates on the following sentence from the "Zones" section:</p>
+<p><em>The pair of RRs of types NS/A for zone Z1 must be stored on the name server of the zone above Z1 (actually, in case the name of the name server is not in Z1, then this constraint applies only to the NS RR and it does not apply to the A RR; this special case is beyond the scope of the course: we may forget about this special case and assume that NS/A pairs for Z1 are always stored in the zone above Z1).</em></p>
+<p>I iterate that <strong>the content of this appendix is beyond the scope of the course</strong>.</p>
+<p>Let us consider the following example. The name server of zone <code>acm.org</code> is named <code>ns.yale.edu</code> (i.e., the name server of a zone Z1 is not in Z1). According to our lectures, the name server of zone <code>org</code> must contain both of the following RRs (glue information):</p>
+<ul>
+<li><code>acm.org NS ns.yale.edu</code></li>
+<li><code>ns.yale.edu A IP-ns-y</code></li>
+</ul>
+<p>This requirement guarantees that every iterative name resolution for a name whose suffix is <code>acm.org</code> and "passes through" the name server of zone <code>org</code> may continue with the next step, i.e., with the name server of zone <code>acm.org</code>.</p>
+<p>Now suppose that <em>only</em> the first RR is stored in the name server of zone <code>org</code>. Would the above name resolution fail?</p>
+<p>Let us consider a domain tree navigation for resolving a name whose suffix is <code>acm.org</code>, e.g., <code>pippo.acm.org A ?</code>. When the name server of zone <code>org</code> receives the request, it will now respond only with the first RR (as that name server does not have the second RR locally available in its glue information). The receiving name server, i.e., the name server that is executing the domain tree navigation would thus reason this way:</p>
+<ol>
+<li>The name server of zone <code>org</code> does not have the requested RR;</li>
+<li>however, it does know that <code>acm.org</code> is a zone and that the name server of this zone is <code>ns.yale.edu</code>;</li>
+<li>I thus have to continue the domain tree navigation by sending <code>pippo.acm.org A ?</code> to <code>ns.yale.edu</code>;</li>
+<li>I do not have the IP address of <code>ns.yale.edu</code> thus I have to execute <em>another</em> domain tree navigation for resolving <code>ns.yale.edu A ?</code>; having found this RR I will continue the navigation for resolving <code>pippo.acm.org A ?</code></li>
+</ol>
+<p>That is, the name resolution would <em>not</em> fail: the second domain tree navigation will pass through the name servers of the root zone, of zone <code>edu</code>, of zone <code>yale.edu</code> and will succeed. It follows that, in this case, the presence of <code>ns.yale.edu A IP-ns-y</code> is <em>not</em> needed in the glue information of zone <code>org</code>.</p>
+<p>Now suppose that the name server of zone <code>acm.org</code> is named instead <code>ns.acm.org</code> (i.e., the name server of a zone Z1 is in Z1). According to our lectures, the name server of zone <code>org</code> must contain both of the following RRs (glue information):</p>
+<ul>
+<li><code>acm.org NS ns.acm.org</code></li>
+<li><code>ns.acm.org A IP-ns-o</code></li>
+</ul>
+<p>Now suppose that <em>only</em> the first RR is stored in the name server of zone <code>org</code>. In this case, as explained in the following, the above name resolution will fail:</p>
+<ol>
+<li>The name server of zone <code>org</code> does not have the requested RR;</li>
+<li>however, it does know that <code>acm.org</code> is a zone and that the name server of this zone is <code>ns.acm.org</code>;</li>
+<li>I thus have to continue the domain tree navigation by sending <code>pippo.acm.org A ?</code> to <code>ns.acm.org</code>;</li>
+<li>I do not have the IP address of <code>ns.acm.org</code> thus I have to execute <em>another</em> domain tree navigation for resolving <code>ns.acm.org A ?</code>; having found this RR I will continue the navigation for resolving <code>pippo.acm.org A ?</code></li>
+</ol>
+<p>It is simple to realize that the domain tree navigation for <code>ns.acm.org A ?</code> will fail (or execute and endless loop):</p>
+<ol>
+<li>The name server of zone <code>org</code> does not have the requested RR;</li>
+<li>however, it does know that <code>acm.org</code> is a zone and that the name server of this zone is <code>ns.acm.org</code>;</li>
+<li>I thus have to continue the domain tree navigation <strong>by sending <code>ns.acm.org A ?</code> to <code>ns.acm.org</code></strong> (endless loop!);</li>
+</ol>
+<p>In summary:</p>
+<ol>
+<li>If the name server of a zone Z1 has a name in Z1 then the glue information for Z1 <em>must</em> contain two RRs (NS/A)</li>
+<li>If the name server of a zone Z1 has a name that is not in Z1 then the glue information for Z1 <em>may</em> contain only one RR (NS)</li>
+<li>To make things easier to understand and to remember, we assume that the glue information for Z1 <em>always</em> contain two RR (NS/A).</li>
+</ol>
 
 
   
