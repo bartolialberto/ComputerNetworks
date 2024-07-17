@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#browser-locale-web-server-locale-sito-localhost" class="md-skip">
+        <a href="#installazione-web-server-locale" class="md-skip">
           Skip to content
         </a>
       
@@ -1092,19 +1092,12 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browser-locale-web-server-locale-sito-localhost" class="md-nav__link">
-    Browser locale - Web server locale - Sito localhost
+  <a href="#installazione-web-server-locale" class="md-nav__link">
+    Installazione Web server locale
   </a>
   
-    <nav class="md-nav" aria-label="Browser locale - Web server locale - Sito localhost">
+    <nav class="md-nav" aria-label="Installazione Web server locale">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#troubleshooting-possibili-problemi" class="md-nav__link">
-    Troubleshooting (possibili problemi)
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#riferimento-utile" class="md-nav__link">
@@ -1112,6 +1105,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accesso-a-sito-web-localhost" class="md-nav__link">
+    Accesso a sito web localhost
+  </a>
+  
+    <nav class="md-nav" aria-label="Accesso a sito web localhost">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#risorse-prelevate-dal-browser" class="md-nav__link">
@@ -1146,8 +1152,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#browser-locale-web-server-locale-sito-con-nome" class="md-nav__link">
-    Browser locale - Web server locale - Sito con nome
+  <a href="#accesso-a-sito-web-con-nome" class="md-nav__link">
+    Accesso a sito web con nome
   </a>
   
 </li>
@@ -1421,19 +1427,12 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browser-locale-web-server-locale-sito-localhost" class="md-nav__link">
-    Browser locale - Web server locale - Sito localhost
+  <a href="#installazione-web-server-locale" class="md-nav__link">
+    Installazione Web server locale
   </a>
   
-    <nav class="md-nav" aria-label="Browser locale - Web server locale - Sito localhost">
+    <nav class="md-nav" aria-label="Installazione Web server locale">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#troubleshooting-possibili-problemi" class="md-nav__link">
-    Troubleshooting (possibili problemi)
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#riferimento-utile" class="md-nav__link">
@@ -1441,6 +1440,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accesso-a-sito-web-localhost" class="md-nav__link">
+    Accesso a sito web localhost
+  </a>
+  
+    <nav class="md-nav" aria-label="Accesso a sito web localhost">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#risorse-prelevate-dal-browser" class="md-nav__link">
@@ -1475,8 +1487,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#browser-locale-web-server-locale-sito-con-nome" class="md-nav__link">
-    Browser locale - Web server locale - Sito con nome
+  <a href="#accesso-a-sito-web-con-nome" class="md-nav__link">
+    Accesso a sito web con nome
   </a>
   
 </li>
@@ -1565,8 +1577,8 @@
 
   <h1>Web Server</h1>
 
-<p>Gli esempi qui indicati fanno riferimento al contenuto del folder Esempi Web disponibile nel folder delle slides. Scaricare l'intero folder sul proprio PC.</p>
-<h2 id="browser-locale-web-server-locale-sito-localhost">Browser locale - Web server locale - Sito localhost</h2>
+<p>Gli esempi qui indicati fanno riferimento al contenuto del folder <code>Esempi Web</code> disponibile nel folder delle slides. Scaricare l'intero folder sul proprio PC.</p>
+<h2 id="installazione-web-server-locale">Installazione Web server locale</h2>
 <p>L'ambiente di programmazione Python contiene un semplice web server.</p>
 <ul>
 <li>Installare Python.</li>
@@ -1574,6 +1586,14 @@
 <li>Spostare la shell nella directory in cui si trovano i file html di esempio.</li>
 <li>Lanciare il web server Python <code>python -m http.server</code>. Di default questo web server è in ascolto sulla porta 8000. Il web server rimane in esecuzione fino a quando è in esecuzione la shell dalla quale lo si è lanciato.</li>
 <li>Lanciare un'altra shell. Eseguire <code>netstat -an</code> per elencare l'insieme di porte attualmente utilizzate. Deve comparire nell'elenco la porta <code>8000</code> associata al protocollo <code>TCP</code> e nello stato <code>LISTENING</code>, cioè in attesa di richieste di connessione. Ciò conferma che il web server è effettivamente in esecuzione.</li>
+</ul>
+<h3 id="riferimento-utile">Riferimento utile</h3>
+<p>Il riferimento indicato più sotto suggerisce di lanciare il web server con il comando <code>python3</code> e di collegare il browser all'URL <code>http:0.0.0.0:8000</code>. A seconda della configurazione e dell'ambiente specifico, questi "dettagli" non funzionano, nel mio ambiente funzionano <code>python</code> e <code>localhost</code>. Provate e non vi arrendete.</p>
+<ul>
+<li><a href="https://realpython.com/python-http-server/">How to Launch an HTTP Server in One Line of Python Code</a></li>
+</ul>
+<h2 id="accesso-a-sito-web-localhost">Accesso a sito web localhost</h2>
+<ul>
 <li>
 <p>Lanciare un browser e scrivere nella barra degli URL <code>http://localhost:8000</code>.</p>
 <ul>
@@ -1583,14 +1603,6 @@
 <li>
 <p>Il browser deve mostrare l'elenco dei file presenti nella directory del web server. Cliccare su un file html di esempio e verificarne la corretta visualizzazione.</p>
 </li>
-</ul>
-<h4 id="troubleshooting-possibili-problemi">Troubleshooting (possibili problemi)</h4>
-<ul>
-<li>Il riferimento indicato più sotto suggerisce di lanciare il web server con il comando <code>python3</code> e di collegare il browser all'URL <code>http:0.0.0.0:8000</code>. A seconda della configurazione e dell'ambiente specifico, questi "dettagli" non funzionano, nel mio ambiente funzionano <code>python</code> e <code>localhost</code>. Provate e non vi arrendete.</li>
-</ul>
-<h4 id="riferimento-utile">Riferimento utile</h4>
-<ul>
-<li><a href="https://realpython.com/python-http-server/">How to Launch an HTTP Server in One Line of Python Code</a></li>
 </ul>
 <h3 id="risorse-prelevate-dal-browser">Risorse prelevate dal browser</h3>
 <ul>
@@ -1643,26 +1655,29 @@
 <li>un browser può avere più connessioni aperte, ma verso web server diversi;</li>
 <li>un browser non ha più connessioni aperte in parallelo verso lo stesso web server.</li>
 </ul>
-<h2 id="browser-locale-web-server-locale-sito-con-nome">Browser locale - Web server locale - Sito con nome</h2>
+<h2 id="accesso-a-sito-web-con-nome">Accesso a sito web con nome</h2>
 <ul>
-<li>Modificare il file <code>hosts</code> sul proprio PC in modo da assegnare l'indirizzo IP locale cosiddetto loopback (<code>127.0.0.1</code>) ad un nome a piacere.</li>
 <li>
-<p>Ad esempio, su Windows aggiungere al file <code>hosts</code> la riga 
+<p>Modificare il file <code>hosts</code> sul proprio PC in modo da assegnare l'indirizzo IP locale cosiddetto loopback (<code>127.0.0.1</code>) ad un nome a piacere.</p>
+<ul>
+<li>Ad esempio, su Windows aggiungere al file <code>hosts</code> la riga 
 <code>127.0.0.1 parlamento.it</code>
-implica che nel PC nel cui file <code>hosts</code> è stata aggiunta quella riga il nome <code>parlamento.it</code> sarà tradotto in <code>127.0.0.1</code>.</p>
+implica che nel PC nel cui file <code>hosts</code> è stata aggiunta quella riga il nome <code>parlamento.it</code> sarà tradotto in <code>127.0.0.1</code>. </li>
+<li>Notare che la sintassi del file <code>hosts</code> è diversa da quella dei RR DNS.</li>
+<li><a href="https://chat.openai.com/share/fcd8ce5b-ae73-4bd7-b433-4c2a6beb5d71">Questa conversazione con ChatGPT</a> dovrebbe riassumere le operazioni da fare su Windows, Linux, Mac per modificare il file <code>hosts</code>.</li>
+</ul>
 </li>
 <li>
-<p>Notare che la sintassi del file <code>hosts</code> è diversa da quella dei RR DNS.</p>
+<p>Scrivere nella barra degli URL del browser <code>http://parlamento.it:8000</code> e verificare la corretta visualizzazione.</p>
 </li>
-<li><a href="https://chat.openai.com/share/fcd8ce5b-ae73-4bd7-b433-4c2a6beb5d71">Questa conversazione con ChatGPT</a> dovrebbe riassumere le operazioni da fare su Windows, Linux, Mac per modificare il file <code>hosts</code>.</li>
-<li>Scrivere nella barra degli URL del browser <code>http://parlamento.it:8000</code> e verificare la corretta visualizzazione.</li>
 </ul>
 <p>E' possibile aggiungere più righe al file <code>hosts</code> che mappino <strong>più</strong> nomi sullo <strong>stesso</strong> indirizzo IP locale. In questo modo tutti i nomi aggiunti saranno associati allo stesso web server locale.</p>
-<p>Il web server Python non è in grado di ospitare più siti web diversi e fornire contenuti diversi a seconda del sito web richiesto dal browser.</p>
+<p>Il web server Python però non è in grado di ospitare più siti web diversi e fornire contenuti diversi a seconda del sito web richiesto dal browser.</p>
 <ul>
 <li>Ad esempio, se <code>parlamento.it</code> e <code>realmadrid.es</code> fossero associati a quel web server, richieste per http://parlamento.it/index.html e http://realmadrid.es otterrebbero la <strong>stessa</strong> risposta, cioè il contenuto del file <code>index.html</code> nella directory del web server.</li>
 </ul>
-<p>Per gestire più siti web con un unico web server occorre un web server leggermente più complesso, ad esempio <a href="https://aprelium.com/abyssws/">Abyss</a> o <a href="https://httpd.apache.org/">Apache</a>. Il primo è un web server "molto completo", relativamente semplice da installare e configurare. Il secondo è un web server professionale tra i più diffusi, più complesso da installare e configurare. ATTENZIONE VirusTotal segnala che Abyss ha al proprio interno del malware. Questa indicazione di VirusTotal potrebbe essere un falso positivo (cioè avvisa della presenza di un malware ma non c'è effettivamente un malware) ma non ne ho la certezza quindi non posso consigliarne l'uso.</p>
+<p>Per gestire più siti web con un unico web server occorre un web server leggermente più complesso, ad esempio <a href="https://aprelium.com/abyssws/">Abyss</a> o <a href="https://httpd.apache.org/">Apache</a>. Il primo è un web server "molto completo", relativamente semplice da installare e configurare. Il secondo è un web server professionale tra i più diffusi, più complesso da installare e configurare.</p>
+<p>ATTENZIONE VirusTotal segnala che Abyss ha al proprio interno del malware. Questa indicazione di VirusTotal potrebbe essere un falso positivo (cioè avvisa della presenza di un malware ma non c'è effettivamente un malware) ma non ne ho la certezza quindi non posso consigliarne l'uso.</p>
 <h2 id="css">CSS</h2>
 <ul>
 <li>Lancia il web server locale come indicato sopra e preleva il documento <code>esempio_1-css.html</code> (con il nome di sito <code>localhost</code> o con il nome di sito eventualmente inserito nel file <code>hosts</code>)</li>
