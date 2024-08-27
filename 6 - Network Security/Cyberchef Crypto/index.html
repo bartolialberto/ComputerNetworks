@@ -1,0 +1,1382 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/6%20-%20Network%20Security/Cyberchef%20Crypto/">
+      
+      
+        <link rel="prev" href="../Appunti_Network_Security_2/">
+      
+      
+        <link rel="next" href="../Crypto%20in%20pratica/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>Lab - Cyberchef Crypto - Reti di Calcolatori - University of Trieste</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cyberchef-crypto-optional" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://bartoli.inginf.units.it" title="Reti di Calcolatori - University of Trieste" class="md-header__button md-logo" aria-label="Reti di Calcolatori - University of Trieste" data-md-component="logo">
+      
+  <img src="../../bernabeu small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reti di Calcolatori - University of Trieste
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab - Cyberchef Crypto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://bartoli.inginf.units.it" title="Reti di Calcolatori - University of Trieste" class="md-nav__button md-logo" aria-label="Reti di Calcolatori - University of Trieste" data-md-component="logo">
+      
+  <img src="../../bernabeu small.png" alt="logo">
+
+    </a>
+    Reti di Calcolatori - University of Trieste
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Il Corso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          1   Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          1   Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Appunti_Introduction/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Il%20modello%20ISO-OSI/" class="md-nav__link">
+        Extra - Il modello ISO-OSI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          2   DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2   DNS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti_DNS/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti%20DNS%20impl/" class="md-nav__link">
+        Extra - Come funziona
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          3   Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          3   Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Appunti_Web/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Pagine%20web%20con%20FORM/" class="md-nav__link">
+        Pagine web con FORM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Web%20Server/" class="md-nav__link">
+        Lab - Web Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Cyberchef%20encoding/" class="md-nav__link">
+        Lab - Cyberchef Encoding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/The%20Big%20Brother/" class="md-nav__link">
+        Extra - The Big Brother I
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/The%20Big%20Brother%20II/" class="md-nav__link">
+        Extra - The Big Brother II
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          4   Email
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          4   Email
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Appunti_Email/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Email%20Studenti%20Universit%C3%A0%20Trieste/" class="md-nav__link">
+        Extra - Email Studenti UniTS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          5   IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          5   IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Appunti_IP/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          6   Network Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          6   Network Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Approfondimenti_Network_Security/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appunti_Network_Security_1/" class="md-nav__link">
+        Appunti 1 (crypto)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appunti_Network_Security_2/" class="md-nav__link">
+        Appunti 2 (certificati, TLS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lab - Cyberchef Crypto
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Lab - Cyberchef Crypto
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-representation-in-cyberchef" class="md-nav__link">
+    Data representation in Cyberchef
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-key-crypto" class="md-nav__link">
+    Private key crypto
+  </a>
+  
+    <nav class="md-nav" aria-label="Private key crypto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decryption" class="md-nav__link">
+    Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption-and-decryption" class="md-nav__link">
+    Encryption and Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-an-encrypted-message" class="md-nav__link">
+    Send an encrypted message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    WARNING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmac" class="md-nav__link">
+    HMAC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-key-crypto" class="md-nav__link">
+    Public key crypto
+  </a>
+  
+    <nav class="md-nav" aria-label="Public key crypto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption_1" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decryption_1" class="md-nav__link">
+    Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-in-public-key-cryptography" class="md-nav__link">
+    Identity in public key cryptography
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Crypto%20in%20pratica/" class="md-nav__link">
+        Extra - Crittografia in pratica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Protezione%20file%20con%20password/" class="md-nav__link">
+        Extra - Protezione file con password
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tor/" class="md-nav__link">
+        Extra - Tor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Altri dettagli sul Corso
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Altri dettagli sul Corso
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altri%20dettagli%20sul%20Corso/ChatGPT/" class="md-nav__link">
+        ChatGPT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altri%20dettagli%20sul%20Corso/Come%20organizzo%20lo%20studio%20di%20Internet/" class="md-nav__link">
+        Come organizzo lo studio di Internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altri%20dettagli%20sul%20Corso/Sito%20web%20per%20esame/" class="md-nav__link">
+        Requisiti sito web per partecipare all’esame
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altri%20dettagli%20sul%20Corso/slide%20summary/" class="md-nav__link">
+        Argomenti
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Consigli vari
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Consigli vari
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Come%20si%20deve%20svolgere%20un%20esame%20scritto/" class="md-nav__link">
+        Come si deve svolgere un esame scritto (e non solo)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Consigli%20da%20chi%20ha%20avuto%20problemi/" class="md-nav__link">
+        Consigli di una studentessa che ha avuto difficoltà con l'esame di Reti di Calcolatori
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Consigli%20per%20chi%20non%20ha%20seguito%20le%20lezioni/" class="md-nav__link">
+        Consigli per chi non ha seguito le lezioni
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Email%20vs%20whatsapp/" class="md-nav__link">
+        Un email NON è un whatsapp!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Tentare%20questo%20esame%20molte%20volte/" class="md-nav__link">
+        Tentare questo esame molte volte
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bartoli.inginf.units.it/home" class="md-nav__link">
+        Il Docente
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-representation-in-cyberchef" class="md-nav__link">
+    Data representation in Cyberchef
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-key-crypto" class="md-nav__link">
+    Private key crypto
+  </a>
+  
+    <nav class="md-nav" aria-label="Private key crypto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decryption" class="md-nav__link">
+    Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption-and-decryption" class="md-nav__link">
+    Encryption and Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-an-encrypted-message" class="md-nav__link">
+    Send an encrypted message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warning" class="md-nav__link">
+    WARNING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmac" class="md-nav__link">
+    HMAC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-key-crypto" class="md-nav__link">
+    Public key crypto
+  </a>
+  
+    <nav class="md-nav" aria-label="Public key crypto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption_1" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decryption_1" class="md-nav__link">
+    Decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-in-public-key-cryptography" class="md-nav__link">
+    Identity in public key cryptography
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="cyberchef-crypto-optional">Cyberchef Crypto - OPTIONAL</h1>
+<p>Make sure you read and understood the <a href="../../3%20-%20Web/Cyberchef%20encoding/">Cyberchef page in this web site</a>.</p>
+<h3 id="data-representation-in-cyberchef">Data representation in Cyberchef</h3>
+<p>Input, output and parameters can be represented in several ways, including:</p>
+<ul>
+<li><strong>HEX</strong> each character represents an hexadecimal digit; thus, two characters represent one byte and characters different from 0-9,A-E (upper or lower case) are incorrect.</li>
+<li><strong>RAW</strong> the ASCII representation of the character is passed to the code that implements the recipe.</li>
+<li><strong>UTF-8</strong> the UTF-8 representation of each character is passed to the code that implements the recipe.</li>
+</ul>
+<p>In practice, one will typically use either HEX or RAW, just make sure to use them coherently (e.g., if the encryption output is HEX then the decryption input must be HEX as well).</p>
+<h2 id="private-key-crypto">Private key crypto</h2>
+<p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will not discuss what these additional parameters are for.</p>
+<p>You can "play" with AES, Blowfish, DES. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>). In all the examples below, select a <em>mode of operation</em> different from GCM (see also the Warning section below).</p>
+<p>Block ciphers require a configuration parameter called <em>initialization vector (IV)</em>. This parameter must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</p>
+<h3 id="encryption">Encryption</h3>
+<ul>
+<li>Select a recipe for encryption.</li>
+<li>Choose a key and an IV.</li>
+<li>Encrypt a text of choice.</li>
+</ul>
+<p>Note that for a given encryption algorithm not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</p>
+<h3 id="decryption">Decryption</h3>
+<ul>
+<li>Copy on a file the encrypted text obtained as above.</li>
+<li>Copy on other files the key and IV.</li>
+<li>Select a recipe for decryption, with the same algorithm used above for encryption.</li>
+<li>Configure this recipe with the same key and IV (that you saved on a file).</li>
+<li>Verify that you can decrypt the ciphertext (that you also saved on a file) correctly.</li>
+</ul>
+<p>Now try to modify the decryption key: does decryption work?</p>
+<p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
+<h3 id="encryption-and-decryption">Encryption and Decryption</h3>
+<ul>
+<li>Chain two recipes, one for encryption and another for decryption (make sure they use the same algorithm).</li>
+<li>Configure the recipes in the same way (i.e., same key and same IV)</li>
+<li>Verify that the input of the first recipe (encryption) is equal to the output of the second recipe (decryption).</li>
+</ul>
+<h3 id="send-an-encrypted-message">Send an encrypted message</h3>
+<ul>
+<li>Generate a ciphertext as indicated above in the "Encryption" example.</li>
+<li>You want to send this ciphertext by email to another student. The recipient need to know the key you used for encrypting (and the IV).</li>
+</ul>
+<p>How can you give the key to that student? What could go wrong? What if the student was thousands of Kms away? What if you had to communicate with thousands of different students? Think carefully about these issues.</p>
+<h3 id="warning">WARNING</h3>
+<p>AES, Blowfish, DES support several modes of operation. GCM is the only one of those that provides integrity.</p>
+<p>The reason why it is suggested here to <em>not</em> use GCM is because the decryption recipe requires an additional parameter (GCM Tag) that I do not know how to extract from the encryption recipe automatically, so that the two recipes (encryption and decryption) can be chained together. I am not even sure they can be chained together in this Cyberchef implementation.</p>
+<p>The reason why the previous examples, made with modes of operation different from GCM and that do <em>not</em> support integrity, <em>seem</em> to support integrity (i.e., changing the ciphertext or using the wrong key provokes a decryption error) is for a subtle reason. Informally and oversimplifying, those modes of operation do not support integrity in the sense that it is always possible to find some modification that does not lead to a decryption error; on the other hand, "most" modifications will be detected (for any given modification the probability that this modification will be undetected is very, very small). </p>
+<h3 id="hmac">HMAC</h3>
+<ul>
+<li>Select the recipe for HMAC.</li>
+<li>Configure the recipe with a key (in this case the key can be of any length, unlike in algorithms for private key cryptography) and with one of the available "hashing functions".</li>
+<li>Insert a text snippet as input and have a look at the output.</li>
+<li>Try to modify a single character in input: does the modification provoke a small and localized change in the output? Or is the new output completely different from the previous one?</li>
+<li>Insert a much longer input: does the output length change?</li>
+</ul>
+<h2 id="public-key-crypto">Public key crypto</h2>
+<p>You can "play" with RSA and PGP (the examples below outline the usage of RSA, usage of PGP is analogous).</p>
+<p>You always start by generating a <em>keypair</em>. Save the private key in a file and the public key in another file. You will keep the private key secret and you will distribute your public key to anyone who needs to communicate with you.</p>
+<p>You may want to experiment with other students (in which case you will have to exchange the respective public keys) or alone (in which case you will have to generate two or more keypairs and pretend to impersonate multiple people).</p>
+<h3 id="encryption_1">Encryption</h3>
+<ul>
+<li>Choose a recipient.</li>
+<li>Select the recipe for RSA encryption.</li>
+<li>Configure the recipe with the public key of the chosen recipient.</li>
+<li>Encrypt a text of choice (cleartext) and save it on a file (ciphertext).</li>
+</ul>
+<p>How do you obtain the public key of the recipient? What could go wrong? What if the recipient was thousands of Kms away? What if you had to communicate with thousands of different recipients? Think carefully about these issues.</p>
+<h3 id="decryption_1">Decryption</h3>
+<ul>
+<li>Use the file constructed as above (ciphertext).</li>
+<li>Select the recipe for RSA decryption.</li>
+<li>Configure the recipe with the private key matching the public key used for constructing the ciphertext.</li>
+<li>Verify that you can decrypt the ciphertext.</li>
+</ul>
+<p>Now try to modify the decryption key: does decryption work?</p>
+<p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
+<h3 id="identity-in-public-key-cryptography">Identity in public key cryptography</h3>
+<p><em>(All the considerations below apply to private key cryptography with very little modifications; we refer to public key because it is simpler and more common in practice)</em></p>
+<p>Note that in the above procedures for encryption and decryption <em>there is no notion of identity whatsoever</em>.</p>
+<p>There is <em>no</em> specification of <em>"who"</em> sent the message nor of <em>"who"</em> can decrypt the ciphertext. This notion is <em>not</em> required by the mathematical procedures for encryption and decryption: such procedures work at the keypair level: you encrypt with a number called public key, you decrypt with another number called private key.</p>
+<p>In practical applications of public key cryptography, one has to reason in terms of people, organizations, websites and alike, i.e., in terms of entities that are external to a computer. For this reason, keypairs have to be associated with a <em>subject</em>.
+A subject has a <em>name</em> in form of a <em>string</em> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
+The identification mechanism (what that entity actually "is" and how it is identified by that string) is completely independent of public key cryptography.
+The only requirements are that the private key must be really private (i.e., known only to the entity identified by the associated subject) and that the association be real (this is subtle and difficult to explain precisely: the entity identified by the subject string must be really the entity that everyone would associate with that subject string).</p>
+<p>In some cases the string that acts as a name for the subject is also called a "subject", i.e., in some cases there is no explicit distinction between a subject and its name.</p>
+<p>Associations between public keys and subjects are based on <em>certificates</em> and on <em>certification authorities</em>. These are complex notions discussed later in this course.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>

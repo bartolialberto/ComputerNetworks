@@ -1,0 +1,1529 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/3%20-%20Web/Web%20Server/">
+      
+      
+        <link rel="prev" href="../Pagine%20web%20con%20FORM/">
+      
+      
+        <link rel="next" href="../Cyberchef%20encoding/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>Lab - Web Server - Reti di Calcolatori - University of Trieste</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installazione-web-server-locale" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://bartoli.inginf.units.it" title="Reti di Calcolatori - University of Trieste" class="md-header__button md-logo" aria-label="Reti di Calcolatori - University of Trieste" data-md-component="logo">
+      
+  <img src="../../bernabeu small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reti di Calcolatori - University of Trieste
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab - Web Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://bartoli.inginf.units.it" title="Reti di Calcolatori - University of Trieste" class="md-nav__button md-logo" aria-label="Reti di Calcolatori - University of Trieste" data-md-component="logo">
+      
+  <img src="../../bernabeu small.png" alt="logo">
+
+    </a>
+    Reti di Calcolatori - University of Trieste
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Il Corso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          1   Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          1   Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Appunti_Introduction/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Il%20modello%20ISO-OSI/" class="md-nav__link">
+        Extra - Il modello ISO-OSI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          2   DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2   DNS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti_DNS/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti%20DNS%20impl/" class="md-nav__link">
+        Extra - Come funziona
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          3   Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          3   Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appunti_Web/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pagine%20web%20con%20FORM/" class="md-nav__link">
+        Pagine web con FORM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lab - Web Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Lab - Web Server
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installazione-web-server-locale" class="md-nav__link">
+    Installazione Web server locale
+  </a>
+  
+    <nav class="md-nav" aria-label="Installazione Web server locale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riferimento-utile" class="md-nav__link">
+    Riferimento utile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accesso-a-sito-web-localhost" class="md-nav__link">
+    Accesso a sito web localhost
+  </a>
+  
+    <nav class="md-nav" aria-label="Accesso a sito web localhost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risorse-prelevate-dal-browser" class="md-nav__link">
+    Risorse prelevate dal browser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connessioni-tcp-e-numeri-di-porta" class="md-nav__link">
+    Connessioni TCP e numeri di porta
+  </a>
+  
+    <nav class="md-nav" aria-label="Connessioni TCP e numeri di porta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osservazione" class="md-nav__link">
+    Osservazione
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accesso-a-sito-web-con-nome" class="md-nav__link">
+    Accesso a sito web con nome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riferimento-utile_1" class="md-nav__link">
+    Riferimento utile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riferimento-utile_2" class="md-nav__link">
+    Riferimento utile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenuto-dinamico" class="md-nav__link">
+    Contenuto dinamico
+  </a>
+  
+    <nav class="md-nav" aria-label="Contenuto dinamico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cosa-accade-sul-web-server" class="md-nav__link">
+    Cosa accade sul web server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riferimento-utile_3" class="md-nav__link">
+    Riferimento utile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cyberchef%20encoding/" class="md-nav__link">
+        Lab - Cyberchef Encoding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The%20Big%20Brother/" class="md-nav__link">
+        Extra - The Big Brother I
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The%20Big%20Brother%20II/" class="md-nav__link">
+        Extra - The Big Brother II
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          4   Email
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          4   Email
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Appunti_Email/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Email%20Studenti%20Universit%C3%A0%20Trieste/" class="md-nav__link">
+        Extra - Email Studenti UniTS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          5   IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          5   IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Appunti_IP/" class="md-nav__link">
+        Appunti
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          6   Network Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          6   Network Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Approfondimenti_Network_Security/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security_1/" class="md-nav__link">
+        Appunti 1 (crypto)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Appunti_Network_Security_2/" class="md-nav__link">
+        Appunti 2 (certificati, TLS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Cyberchef%20Crypto/" class="md-nav__link">
+        Lab - Cyberchef Crypto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Crypto%20in%20pratica/" class="md-nav__link">
+        Extra - Crittografia in pratica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Protezione%20file%20con%20password/" class="md-nav__link">
+        Extra - Protezione file con password
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Tor/" class="md-nav__link">
+        Extra - Tor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Altri dettagli sul Corso
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Altri dettagli sul Corso
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altri%20dettagli%20sul%20Corso/ChatGPT/" class="md-nav__link">
+        ChatGPT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altri%20dettagli%20sul%20Corso/Come%20organizzo%20lo%20studio%20di%20Internet/" class="md-nav__link">
+        Come organizzo lo studio di Internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altri%20dettagli%20sul%20Corso/Sito%20web%20per%20esame/" class="md-nav__link">
+        Requisiti sito web per partecipare all’esame
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altri%20dettagli%20sul%20Corso/slide%20summary/" class="md-nav__link">
+        Argomenti
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Consigli vari
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Consigli vari
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Come%20si%20deve%20svolgere%20un%20esame%20scritto/" class="md-nav__link">
+        Come si deve svolgere un esame scritto (e non solo)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Consigli%20da%20chi%20ha%20avuto%20problemi/" class="md-nav__link">
+        Consigli di una studentessa che ha avuto difficoltà con l'esame di Reti di Calcolatori
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Consigli%20per%20chi%20non%20ha%20seguito%20le%20lezioni/" class="md-nav__link">
+        Consigli per chi non ha seguito le lezioni
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Email%20vs%20whatsapp/" class="md-nav__link">
+        Un email NON è un whatsapp!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli%20vari/Tentare%20questo%20esame%20molte%20volte/" class="md-nav__link">
+        Tentare questo esame molte volte
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bartoli.inginf.units.it/home" class="md-nav__link">
+        Il Docente
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installazione-web-server-locale" class="md-nav__link">
+    Installazione Web server locale
+  </a>
+  
+    <nav class="md-nav" aria-label="Installazione Web server locale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riferimento-utile" class="md-nav__link">
+    Riferimento utile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accesso-a-sito-web-localhost" class="md-nav__link">
+    Accesso a sito web localhost
+  </a>
+  
+    <nav class="md-nav" aria-label="Accesso a sito web localhost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risorse-prelevate-dal-browser" class="md-nav__link">
+    Risorse prelevate dal browser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connessioni-tcp-e-numeri-di-porta" class="md-nav__link">
+    Connessioni TCP e numeri di porta
+  </a>
+  
+    <nav class="md-nav" aria-label="Connessioni TCP e numeri di porta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osservazione" class="md-nav__link">
+    Osservazione
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accesso-a-sito-web-con-nome" class="md-nav__link">
+    Accesso a sito web con nome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    CSS
+  </a>
+  
+    <nav class="md-nav" aria-label="CSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riferimento-utile_1" class="md-nav__link">
+    Riferimento utile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riferimento-utile_2" class="md-nav__link">
+    Riferimento utile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contenuto-dinamico" class="md-nav__link">
+    Contenuto dinamico
+  </a>
+  
+    <nav class="md-nav" aria-label="Contenuto dinamico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cosa-accade-sul-web-server" class="md-nav__link">
+    Cosa accade sul web server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riferimento-utile_3" class="md-nav__link">
+    Riferimento utile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Lab - Web Server</h1>
+
+<p>Gli esempi qui indicati fanno riferimento al contenuto del folder <code>Esempi Web</code> disponibile nel folder delle slides. Scaricare l'intero folder sul proprio PC.</p>
+<h2 id="installazione-web-server-locale">Installazione Web server locale</h2>
+<p>L'ambiente di programmazione Python contiene un semplice web server.</p>
+<ul>
+<li>Installare Python.</li>
+<li>Lanciare un interprete di comandi (<em>shell</em>).</li>
+<li>Spostare la shell nella directory in cui si trovano i file html di esempio.</li>
+<li>Lanciare il web server Python <code>python -m http.server</code>. Di default questo web server è in ascolto sulla porta 8000. Il web server rimane in esecuzione fino a quando è in esecuzione la shell dalla quale lo si è lanciato.</li>
+<li>Lanciare un'altra shell. Eseguire <code>netstat -an</code> per elencare l'insieme di porte attualmente utilizzate. Deve comparire nell'elenco la porta <code>8000</code> associata al protocollo <code>TCP</code> e nello stato <code>LISTENING</code>, cioè in attesa di richieste di connessione. Ciò conferma che il web server è effettivamente in esecuzione.</li>
+</ul>
+<h3 id="riferimento-utile">Riferimento utile</h3>
+<p>Il riferimento indicato più sotto suggerisce di lanciare il web server con il comando <code>python3</code> e di collegare il browser all'URL <code>http:0.0.0.0:8000</code>. A seconda della configurazione e dell'ambiente specifico, questi "dettagli" non funzionano, nel mio ambiente funzionano <code>python</code> e <code>localhost</code>. Provate e non vi arrendete.</p>
+<ul>
+<li><a href="https://realpython.com/python-http-server/">How to Launch an HTTP Server in One Line of Python Code</a></li>
+</ul>
+<h2 id="accesso-a-sito-web-localhost">Accesso a sito web localhost</h2>
+<ul>
+<li>
+<p>Lanciare un browser e scrivere nella barra degli URL <code>http://localhost:8000</code>.</p>
+<ul>
+<li>La parte <code>:8000</code> è una componente opzionale nella sintassi degli URL; se presente, indica il numero di porta del server al quale dovrà collegarsi il browser (il codice del browser non eseguirà <code>connect(IP-server, 80)</code> bensì <code>connect(IP-server, 8000)</code>, dove <code>IP-server</code> sarà stato ottenuto traducendo il nome contenuto nella seconda parte dell'URL, in questo caso <code>localhost</code>)</li>
+</ul>
+</li>
+<li>
+<p>Il browser deve mostrare l'elenco dei file presenti nella directory del web server. Cliccare su un file html di esempio e verificarne la corretta visualizzazione.</p>
+</li>
+</ul>
+<h3 id="risorse-prelevate-dal-browser">Risorse prelevate dal browser</h3>
+<ul>
+<li>
+<p>Aprire i Developer tools del browser e localizzare la funzione per vedere l'elenco delle risorse prelevate dal browser:</p>
+<ul>
+<li>quante sono?</li>
+<li>quali sono?</li>
+<li>il nome dei file sul disco è identico alla terza parte dell'URL o no? Che legame c'è tra nomi di file e terza parte degli URL?</li>
+</ul>
+</li>
+<li>
+<p>Modificare il file <code>html</code> (o crearne uno identico e lavorare su quest'ultimo) in modo da:</p>
+<ul>
+<li>aggiungere un'immagine (scaricata da Internet e memorizzata nella directory del file di esempio);</li>
+<li>modificare lo <code>IFRAME</code> inserendovi un URL diverso.</li>
+</ul>
+</li>
+<li>
+<p>Visualizzare nuovamente il documento html con il browser ed analizzare le risorse prelevate dal browser, come sopra.</p>
+</li>
+<li>Provare a modificare nuovamente il documento <code>html</code> aggiungendovi una immagine <strong>non</strong> scaricata da Internet. Occorre cercare una immagine su Internet, trovarne l'URL (tasto destro del mouse) ed usarlo come attributo <code>src</code> del nuovo elemento <code>img</code>.</li>
+</ul>
+<h3 id="connessioni-tcp-e-numeri-di-porta">Connessioni TCP e numeri di porta</h3>
+<ul>
+<li>
+<p>Eseguire <code>netstat -an</code> mentre il browser sta visualizzando il documento. L'elenco dovrebbe contenere almeno una connessione con protocollo <code>TCP</code> nello stato <code>ESTABLISHED</code> e numero di porta <code>8000</code> ad una delle due estremità. Questa è la connessione che il browser ha con il web server; il numero di porta <code>8000</code> è all'estremità che corrisponde al web server:</p>
+<ul>
+<li>Qual è il numero di porta all'altra estremità, cioè a quella che corrisponde al browser? E' <code>8000</code>, cioè uguale a quello sull'estremità del web server? Oppure è un numero <strong>diverso</strong>, "molto grande"?</li>
+</ul>
+</li>
+<li>
+<p>Se l'elenco non contiene nessuna connessione con le caratteristiche sopra indicate, il motivo è che il browser o il server hanno deciso di chiudere la connessione TCP ed al momento in cui è stato eseguito <code>netstat</code> la connessione era già stata chiusa. In questo caso, premere il tasto di reload sul browser e generare l'elenco nuovamente. L'elenco dovrebbe adesso contenere la connessione.</p>
+</li>
+</ul>
+<p>Ripetere quanto segue fino a che non lo si è capito:</p>
+<ul>
+<li>Premere reload sul browser, eseguire <code>netstat -an</code>, identificare la connessione tra browser e web server,cercare il numero di porta all'estremità del browser.</li>
+<li><strong><em>Stamparsi in testa che quel numero di porta è diverso da quello all'estremità del server</em></strong>: è un numero "molto grande" ed "ogni volta diverso"</li>
+<li>Stamparsi in testa che il punto precedente non è qualcosa da imparare a memoria. E' stato detto a lezione: cercare nelle slide il punto in cui è stato detto.</li>
+</ul>
+<h4 id="osservazione">Osservazione</h4>
+<p>Le connessioni tra browser e server non sono di facile interpretazione, per due motivi:</p>
+<ol>
+<li>Quando il browser è collegato ad un web server in esecuzione sulla stessa macchina in cui è in esecuzione il browser, come in questo caso, l'esecuzione di <code>netstat -an</code> mostrerà <em>due</em> righe per ogni connessione esistente invece di una: una riga in cui considera il browser locale ed il server remoto, un'altra in cui considera il server locale ed il browser remoto.</li>
+<li>Il browser può usare <em>più connessioni in parallelo verso lo stesso web server</em>: se il browser si accorge che deve prelevare più risorse dallo stesso web server, allora il browser può decidere di aprire più connessioni verso quel web server ed inviare più richieste in parallelo, una su ogni connessioni.</li>
+</ol>
+<p>Negli esercizi, per semplicità, assumeremo sempre che il punto 2 non accade mai: ad ogni istante:</p>
+<ul>
+<li>un browser può avere più connessioni aperte, ma verso web server diversi;</li>
+<li>un browser non ha più connessioni aperte in parallelo verso lo stesso web server.</li>
+</ul>
+<h2 id="accesso-a-sito-web-con-nome">Accesso a sito web con nome</h2>
+<ul>
+<li>
+<p>Modificare il file <code>hosts</code> sul proprio PC in modo da assegnare l'indirizzo IP locale cosiddetto loopback (<code>127.0.0.1</code>) ad un nome a piacere.</p>
+<ul>
+<li>Ad esempio, su Windows aggiungere al file <code>hosts</code> la riga 
+<code>127.0.0.1 parlamento.it</code>
+implica che nel PC nel cui file <code>hosts</code> è stata aggiunta quella riga il nome <code>parlamento.it</code> sarà tradotto in <code>127.0.0.1</code>. </li>
+<li>Notare che la sintassi del file <code>hosts</code> è diversa da quella dei RR DNS.</li>
+<li><a href="https://chat.openai.com/share/fcd8ce5b-ae73-4bd7-b433-4c2a6beb5d71">Questa conversazione con ChatGPT</a> dovrebbe riassumere le operazioni da fare su Windows, Linux, Mac per modificare il file <code>hosts</code>.</li>
+</ul>
+</li>
+<li>
+<p>Scrivere nella barra degli URL del browser <code>http://parlamento.it:8000</code> e verificare la corretta visualizzazione.</p>
+</li>
+</ul>
+<p>E' possibile aggiungere più righe al file <code>hosts</code> che mappino <strong>più</strong> nomi sullo <strong>stesso</strong> indirizzo IP locale. In questo modo tutti i nomi aggiunti saranno associati allo stesso web server locale.</p>
+<p>Il web server Python però non è in grado di ospitare più siti web diversi e fornire contenuti diversi a seconda del sito web richiesto dal browser.</p>
+<ul>
+<li>Ad esempio, se <code>parlamento.it</code> e <code>realmadrid.es</code> fossero associati a quel web server, richieste per http://parlamento.it/index.html e http://realmadrid.es otterrebbero la <strong>stessa</strong> risposta, cioè il contenuto del file <code>index.html</code> nella directory del web server.</li>
+</ul>
+<p>Per gestire più siti web con un unico web server occorre un web server leggermente più complesso, ad esempio <a href="https://aprelium.com/abyssws/">Abyss</a> o <a href="https://httpd.apache.org/">Apache</a>. Il primo è un web server "molto completo", relativamente semplice da installare e configurare. Il secondo è un web server professionale tra i più diffusi, più complesso da installare e configurare.</p>
+<p>ATTENZIONE VirusTotal segnala che Abyss ha al proprio interno del malware. Questa indicazione di VirusTotal potrebbe essere un falso positivo (cioè avvisa della presenza di un malware ma non c'è effettivamente un malware) ma non ne ho la certezza quindi non posso consigliarne l'uso.</p>
+<h2 id="css">CSS</h2>
+<ul>
+<li>Lancia il web server locale come indicato sopra e preleva il documento <code>esempio_1-css.html</code> (con il nome di sito <code>localhost</code> o con il nome di sito eventualmente inserito nel file <code>hosts</code>)</li>
+<li>Click con il tasto destro in una delle scritte colorate e seleziona <code>inspect</code>. Cerca di capire la descrizione delle proprietà CSS fornita dal browser.</li>
+<li>Prova a modificare il valore di qualche proprietà CSS direttamente nei developer tools del browser (ad esempio, modifica <code>color</code> o <code>font-family</code> di qualche regola CSS). Il browser modifica la visualizzazione.</li>
+<li>Al reload tornerà la visualizzazione specificata nelle risorse inviate dal web server.</li>
+</ul>
+<h4 id="riferimento-utile_1">Riferimento utile</h4>
+<ul>
+<li><a href="https://www.w3schools.com/css/">CSS Tutorial (W3 Schools)</a></li>
+</ul>
+<h2 id="javascript">JavaScript</h2>
+<ul>
+<li>Lancia il web server locale come indicato sopra e preleva il documento <code>esempio_javascript.html</code> (con il nome di sito <code>localhost</code> o con il nome di sito eventualmente inserito nel file <code>hosts</code>)</li>
+<li>Click sulle immagini come indicato nel documento visualizzato e verifica il cambio di visualizzazione.</li>
+<li>Click con il tasto destro e <code>View page source</code>. Cerca di farti un'idea di cosa accade cliccando sulle immagini.</li>
+<li>
+<p>Reload e apri i Developer tools del browser. Ripeti i click:</p>
+</li>
+<li>
+<p>Osserva le sezioni Sources e Network. Il browser genera traffico per modificare la visualizzazione? Sempre, mai, in qualche caso?</p>
+</li>
+<li>Osserva il Render tree (sezione <code>Elements</code> dei Developer tools). Cerca di individuare le parti modificate dall'esecuzione di JavaScript.</li>
+</ul>
+<h4 id="riferimento-utile_2">Riferimento utile</h4>
+<ul>
+<li><a href="https://www.w3schools.com/js/default.asp">JavaScript Tutorial (W3 Schools)</a></li>
+</ul>
+<h2 id="contenuto-dinamico">Contenuto dinamico</h2>
+<ul>
+<li>Crea una directory di nome <code>cgi-bin</code></li>
+<li>Crea in quella directory un file di nome <code>hello.py</code> e contenuto identico a quello del secondo esempio nella sezione "Execute a Script Remotely Through the Common Gateway Interface (CGI)" del riferimento indicato più sotto.</li>
+<li>Lanciare il web server Python e mandarlo nuovamente in esecuzione con l'opzione "esegui programmi specificati con lo standard CGI": <code>python -m http.server --cgi</code> (se era già in esecuzione, fermarlo con ctrl-C o chiudendo la shell).</li>
+<li>Visualizzare con il browser il documento <code>http://localhost:8000/cgi-bin/hello.py</code></li>
+</ul>
+<p>Verificata la corretta visualizzazione:</p>
+<ul>
+<li>Premere il pulsante reload del browser più volte. Ogni volta sfondo e testo del documento visualizzato saranno diversi, nonostante ogni volta il browser richieda lo stesso URL. </li>
+<li>Cliccare con il tasto destro del mouse sul documento e selezionare "inspect page source". Dare un'occhiata al codice HTML. I file nei folder accessibili al web server contengono un file HTML con quel contenuto?</li>
+<li>
+<p>Aprire i Developer tools del browser e localizzare la funzione per vedere l'elenco delle risorse prelevate dal browser.</p>
+<ul>
+<li>Quante sono?</li>
+<li>Quali sono?</li>
+<li>Cosa cambia tra un prelievo ed il successivo?</li>
+</ul>
+</li>
+</ul>
+<h3 id="cosa-accade-sul-web-server">Cosa accade sul web server</h3>
+<p>Dare un'occhiata al contenuto di <code>hello.py</code> per cercare di avere un'idea di ciò che accade (spiegato in estrema sintesi più sotto). La programmazione Python non è parte di questo corso. La scrittura di programmi per web server nemmeno. Ci basta solo avere un'idea molto a grandi linee di cosa sia accaduto.</p>
+<p>In questo caso il web server ha capito dalla forma dell'URL richiesto (<code>/cgi-bin/hello.py</code>) che <em>non</em> deve costruire una risposta HTTP che trasporta il file identificato da quell'URL. Deve invece:</p>
+<ol>
+<li>mandare in esecuzione il programma <code>python hello.py</code>, permettendo al programma di accedere al contenuto della HTTP Request che ne ha provocato l'esecuzione (funzioni <code>os.getenv()</code>);</li>
+<li>trasformare l'output dell'esecuzione del programma (stringa stampata con <code>print()</code>) in una HTTP Response da tornare al browser.</li>
+</ol>
+<p>La regola con la quale il web server ha preso questa decisione è, in parole povere, questa: la terza parte dell'URL inizia con <code>cgi-bin</code> e il web server è stato mandato in esecuzione con l'opzione <code>--cgi</code>.</p>
+<h3 id="riferimento-utile_3">Riferimento utile</h3>
+<ul>
+<li><a href="https://realpython.com/python-http-server/">How to Launch an HTTP Server in One Line of Python Code</a></li>
+</ul>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>
