@@ -650,6 +650,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#extra-dhcp" class="md-nav__link">
+    Extra - DHCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-statistics" class="md-nav__link">
+    Traffic statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lir-local-internet-registries" class="md-nav__link">
+    LIR - Local Internet Registries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ixp-internet-exchange-points" class="md-nav__link">
     IXP - Internet Exchange Points
   </a>
@@ -1083,6 +1104,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#extra-dhcp" class="md-nav__link">
+    Extra - DHCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-statistics" class="md-nav__link">
+    Traffic statistics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lir-local-internet-registries" class="md-nav__link">
+    LIR - Local Internet Registries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ixp-internet-exchange-points" class="md-nav__link">
     IXP - Internet Exchange Points
   </a>
@@ -1115,9 +1157,23 @@
 <li><a href="https://colab.research.google.com/drive/18pG36fx0yioDxzgd5dSLxGr71rzqO1dk?usp=sharing">IP - Internetwork.ipynb</a> In this notebook we will analyze traffic in several important cases: <code>curl</code> (file download with HTTP), ARP, ICMP ping, ICMP traceroute.</li>
 </ul>
 <h2 id="altro">Altro</h2>
+<h3 id="extra-dhcp">Extra - DHCP</h3>
+<p>Nel corso abbiamo presentato DHCP in maniera molto semplificata e molto diversa dalla realtà. Se qualcuno volesse avere un'idea del "DHCP vero", potrebbe dare un'occhiata con <code>tshark</code> ai packet capture con nome <code>dhcp_</code> di <a href="https://github.com/chrissanders/packets">Chris Sanders</a>.</p>
+<p>Nella realtà i messaggi DHCP non sono incapsulati nei frame (non esiste lo Ethernet type DHCP): sono incapsulati in UDP e trasportati da pacchetti IP. Per inviare una richiesta DHCP in broadcast senza avere ancora un indirizzo IP, si usa il mittente <code>0.0.0.0</code> ed il destinatario <code>255.255.255.255</code>.</p>
+<p>Inoltre, non è indispensabile che il server DHCP si trovi nella stessa network del nodo da configurare, è sufficiente che si trovi nello stesso "IP broadcast domain".</p>
+<p>Descrivere il "vero DHCP" richiederebbe molto più tempo di quello che gli abbiamo dedicato. Ho deciso da tempo di descrivere un DHCP "falso ma possibile", in modo da avere più tempo disponibile per altri argomenti.</p>
+<h3 id="traffic-statistics">Traffic statistics</h3>
 <ul>
-<li><a href="https://radar.cloudflare.com/traffic/it#mobile-vs-desktop">Cloudflare Radar - Traffic (Italy)</a> Interesting statistics on the type of traffic observed by Cloudflare in Italy (as well as n every other country...)</li>
+<li><a href="https://radar.cloudflare.com/traffic/it#mobile-vs-desktop">Cloudflare Radar - Traffic (Italy)</a> Interesting statistics on the type of traffic observed by Cloudflare in Italy (as well as in every other country...)</li>
 <li><a href="https://radar.cloudflare.com/quality/it">Cloudflare Radar - Performance (Italy)</a> this is about Internet performance (bandwidth, latency, DNS response time)</li>
+</ul>
+<h3 id="lir-local-internet-registries">LIR - Local Internet Registries</h3>
+<ul>
+<li><a href="https://www.nro.net/about/rirs/">Regional Internet Registries (RIR)</a>
+There are five RIRs in the world. RIRs manage, distribute, and register Internet number resources (IPv4 and IPv6 address space and Autonomous System (AS) Numbers) within their respective regions.</li>
+<li><a href="https://www.ripe.net/">RIPE NCC: Regional Internet Registry for Europe, Middle East and Central Asia</a>, we serve over 20,000 members in 76 countries.</li>
+<li><a href="https://www.ripe.net/manage-ips-and-asns/">RIPE IPs and ASNs management</a>
+We distribute Internet number resources to our members and provide tools to help them manage their allocations and assignments.</li>
 </ul>
 <h3 id="ixp-internet-exchange-points">IXP - Internet Exchange Points</h3>
 <ul>
