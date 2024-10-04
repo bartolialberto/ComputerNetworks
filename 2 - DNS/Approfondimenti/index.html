@@ -421,6 +421,26 @@
     Altro
   </a>
   
+    <nav class="md-nav" aria-label="Altro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interrogare-il-dns" class="md-nav__link">
+    Interrogare il DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-domini" class="md-nav__link">
+    Gestione domini
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1382,6 +1402,26 @@
     Altro
   </a>
   
+    <nav class="md-nav" aria-label="Altro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interrogare-il-dns" class="md-nav__link">
+    Interrogare il DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-domini" class="md-nav__link">
+    Gestione domini
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1433,17 +1473,30 @@
 </li>
 </ul>
 <h2 id="altro">Altro</h2>
+<h3 id="interrogare-il-dns">Interrogare il DNS</h3>
 <ul>
 <li><a href="https://linux.die.net/man/1/dig">dig Linux man page</a> Linux command for interacting with web servers, used in one of the Colab notebooks above.</li>
 <li><a href="https://www.digwebinterface.com/">Online DNS Lookup</a> Webapp for interacting with name servers (a sort of <em>dig on line</em>). Specify query (name and type) and name server IP address.</li>
+<li>The exact same operations of <code>dig</code> can be performed with <code>nslookup</code>, which is available in both Linux and Windows (with some differences between the two platforms). The syntax and output of <code>nslookup</code> is different from that of <code>dig</code>. <a href="https://www.google.com/search?q=nslookup+command">Search for a tutorial</a> if you are interested.</li>
+</ul>
+<h3 id="gestione-domini">Gestione domini</h3>
+<ul>
+<li><a href="https://dnib.com/dashboards/">Domain Name Industry Brief - Dashboards</a> Dati statistici sulla dimensione del DNS.</li>
 <li>
-<p>The exact same operations of <code>dig</code> can be performed with <code>nslookup</code>, which is available in both Linux and Windows (with some differences between the two platforms). The syntax and output of <code>nslookup</code> is different from that of <code>dig</code>. <a href="https://www.google.com/search?q=nslookup+command">Search for a tutorial</a> if you are interested.</p>
+<p><a href="https://www.netmeister.org/tldstats/">DNS Zone Stats</a> On this page you can find links to graphs displaying the total domain count per TLD zone. </p>
 </li>
 <li>
-<p><a href="https://dnib.com/dashboards/">Domain Name Industry Brief - Dashboards</a> Dati statistici sulla dimensione del DNS.</p>
+<p><em>Internet Corporation for Assigned Names and Numbers (ICANN)</em> is the organization that "coordinates" the DNS globally. Its website contains all the technical and procedural definitions related to how domains must be managed. A few relevant pages:</p>
+<ul>
+<li><a href="https://www.icann.org/registrants">Registrant</a> A domain name registrant is an individual or entity who registers a domain name. </li>
+<li><a href="https://www.icann.org/resources/pages/registrars-0d-2012-02-25-en">Registrar ("DNS provider")</a> An entity wishing to register a domain name under a generic top-level domain ("gTLD") may do so by using a registrar.</li>
+<li><a href="https://www.icann.org/resources/pages/registries/registries-en">Registry operator</a> The owner of a TLD (a TLD is a "registry").</li>
+<li><a href="https://www.nic.it/en/the-world-of-it/about-us">Registro.it</a> The owner of the <code>.it</code> domain (Consiglio Nazionale delle Ricerche, Pisa). <a href="https://www.nic.it/it/registrar/diventa-registrar">Come diventare</a> un <a href="https://www.nic.it/it/registrar">Registrar</a> (DNS provider) in grado di creare domini sotto <code>.it</code>.</li>
+</ul>
 </li>
-<li><a href="https://www.netmeister.org/tldstats/">DNS Zone Stats</a> On this page you can find links to graphs displaying the total domain count per TLD zone.</li>
-<li><a href="https://www.netmeister.org/blog/whois.html">WHOIS: Fragile, unparseable, obsolete... and universally relied upon</a> Detailed description of whois: how it works and some history.</li>
+<li>
+<p><a href="https://www.netmeister.org/blog/whois.html">WHOIS: Fragile, unparseable, obsolete... and universally relied upon</a> Detailed description of whois: how it works and some history.</p>
+</li>
 <li><a href="https://therecord.media/doj-microsoft-seize-domains-russian-intelligence">DOJ, Microsoft seize dozens of domains ‘used by Russian intelligence agents’</a> Uno dei numerosissimi casi di cronaca relativi al "sequestro" (disattivazione) di domini associati ad attività fraudolenta. In questo caso una campagna di <em>spear</em> phishing (cioè phishing mirato verso persone specifiche) attribuita ad una organizzazione associata al governo russo.</li>
 </ul>
 <h2 id="altri-link">Altri link</h2>
