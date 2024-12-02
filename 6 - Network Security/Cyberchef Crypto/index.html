@@ -949,6 +949,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#choice-of-the-encryption-key" class="md-nav__link">
+    Choice of the encryption key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#encryption" class="md-nav__link">
     Encryption
   </a>
@@ -1448,6 +1455,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#choice-of-the-encryption-key" class="md-nav__link">
+    Choice of the encryption key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#encryption" class="md-nav__link">
     Encryption
   </a>
@@ -1556,13 +1570,23 @@
 </ul>
 <p>Make sure to use them coherently (e.g., if the encryption output is HEX then the decryption input must be HEX as well).</p>
 <h2 id="private-key-crypto">Private key crypto</h2>
-<p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will not discuss what these additional parameters are for.</p>
+<p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will <em>not</em> discuss what these additional parameters are for.</p>
+<h3 id="choice-of-the-encryption-key">Choice of the encryption key</h3>
+<p>The algorithms suggested below support keys of different lengths, e.g., 16, 24, 32 bytes (128, 192, 256 bits).</p>
+<p>Which of these character sequences can be used as a 16-byte key? Why?</p>
+<ul>
+<li><code>f6041f627864c7b6a2cc259ee7cce4c8</code></li>
+<li><code>f6041f627864c7b6</code></li>
+<li><code>f6041f62</code></li>
+<li><code>f6041f627864c7b6a2cc259ee7cce4c8aabb5643</code></li>
+</ul>
+<p>In many practical applications, keys for private key cryptography are derived from a password (see section "Practical considerations 1" of <a href="https://colab.research.google.com/drive/1sgJWAxICko7Uha5GLeh9ZQZXKngM4LwS?usp=sharing">this Colab Notebook</a>. Cyberchef provides two recipes for doing that, <code>Derive EVP Key</code> and <code>Derive PBKDF2 key</code>. One of the keys above (the only one that can be used) has been obtained with the default configuration of <code>Derive PBKDF2 key</code> and password '<code>kakashevchenko</code>'.</p>
 <h3 id="encryption">Encryption</h3>
 <ol>
 <li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>).</li>
 <li>Insert parameters in the recipe:<ul>
 <li><em>Mode of operation</em>: select one <strong>different from GCM</strong> (see also the Warning section below).</li>
-<li><em>Initialization vector (IV)</em>: All block ciphers require this parameter. It must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</li>
+<li><em>Initialization vector (IV)</em>: All block ciphers require this parameter. It must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext. You may want to copy this sequence as many times as necessary: <code>1234567890123456</code></li>
 <li><em>Key</em>: You know what it is. Not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</li>
 </ul>
 </li>
@@ -1577,7 +1601,7 @@
 </ol>
 <p>Now try to modify the decryption key: does decryption work?</p>
 <p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
-<p>What you see may be surprising...this is explained in section "Practical considerations 2" of <a href="https://colab.research.google.com/drive/1sgJWAxICko7Uha5GLeh9ZQZXKngM4LwS?usp=sharing">this Colab Notebook</a>)</p>
+<p>What you see may be surprising...this is explained in section "Practical considerations 2" of <a href="https://colab.research.google.com/drive/1sgJWAxICko7Uha5GLeh9ZQZXKngM4LwS?usp=sharing">this Colab Notebook</a>.</p>
 <h3 id="encryption-and-decryption">Encryption and Decryption</h3>
 <ul>
 <li>
