@@ -957,28 +957,14 @@
         
           <li class="md-nav__item">
   <a href="#encryption-and-decryption-easy" class="md-nav__link">
-    Encryption and decryption (easy)
+    Encryption and decryption - Easy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    Encryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decryption" class="md-nav__link">
-    Decryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#encryption-and-decryption" class="md-nav__link">
-    Encryption and Decryption
+  <a href="#encryption-and-decryption-trickier" class="md-nav__link">
+    Encryption and decryption - Trickier
   </a>
   
 </li>
@@ -1018,14 +1004,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encryption_1" class="md-nav__link">
+  <a href="#encryption" class="md-nav__link">
     Encryption
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#decryption_1" class="md-nav__link">
+  <a href="#decryption" class="md-nav__link">
     Decryption
   </a>
   
@@ -1470,28 +1456,14 @@
         
           <li class="md-nav__item">
   <a href="#encryption-and-decryption-easy" class="md-nav__link">
-    Encryption and decryption (easy)
+    Encryption and decryption - Easy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#encryption" class="md-nav__link">
-    Encryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decryption" class="md-nav__link">
-    Decryption
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#encryption-and-decryption" class="md-nav__link">
-    Encryption and Decryption
+  <a href="#encryption-and-decryption-trickier" class="md-nav__link">
+    Encryption and decryption - Trickier
   </a>
   
 </li>
@@ -1531,14 +1503,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encryption_1" class="md-nav__link">
+  <a href="#encryption" class="md-nav__link">
     Encryption
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#decryption_1" class="md-nav__link">
+  <a href="#decryption" class="md-nav__link">
     Decryption
   </a>
   
@@ -1584,6 +1556,7 @@
 <li><strong>HEX</strong> the byte value corresponding to each character pair (hexadecimal digits) is passed to the code that implements the recipe.</li>
 </ul>
 <p>Use HEX for parameters and RAW for input/output.</p>
+<p>Note that copying and pasting RAW data may not work as expected (the webapp may discard some characters and modify others). In that case you may want to add recipe To Hex or From Hex for converting between RAW and HEX (HEX may be copy and pasted easily).</p>
 <h2 id="private-key-crypto">Private key crypto</h2>
 <p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will <em>not</em> discuss what these additional parameters are for.</p>
 <h3 id="choice-of-the-encryption-key">Choice of the encryption key</h3>
@@ -1596,10 +1569,19 @@
 <li><code>f6041f627864c7b6a2cc259ee7cce4c8aabb5643</code></li>
 </ul>
 <p>In many practical applications, keys for private key cryptography are derived from a password (see section "Practical considerations 1" of <a href="https://colab.research.google.com/drive/1sgJWAxICko7Uha5GLeh9ZQZXKngM4LwS?usp=sharing">this Colab Notebook</a>. Cyberchef provides two recipes for doing that, <code>Derive EVP Key</code> and <code>Derive PBKDF2 key</code>. One of the keys above (the only one that can be used) has been obtained with the default configuration of <code>Derive PBKDF2 key</code> and password '<code>kakashevchenko</code>'.</p>
-<h3 id="encryption-and-decryption-easy">Encryption and decryption (easy)</h3>
-<p>Copy the following string and paste it the URL bar of your browser.</p>
-<p>https://gchq.github.io/CyberChef/#recipe=AES_Encrypt(%7B'option':'Hex','string':'f6041f627864c7b6a2cc259ee7cce4c8'%7D,%7B'option':'Hex','string':'12345678901234561234567890123456'%7D,'CBC','Raw','Hex',%7B'option':'Hex','string':''%7D)From_Hex('Auto')AES_Decrypt(%7B'option':'Hex','string':'f6041f627864c7b6a2cc259ee7cce4c8'%7D,%7B'option':'Hex','string':'12345678901234561234567890123456'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)</p>
-<h3 id="encryption">Encryption</h3>
+<h3 id="encryption-and-decryption-easy">Encryption and decryption - Easy</h3>
+<p>Copy the following string in the URL bar of your browser. You should see Cyberchef with a recipe composed of 3 chained recipes already configured:</p>
+<ol>
+<li>AES Encrypt (with HEX output)</li>
+<li>From Hex (with RAW output)</li>
+<li>AES Decrypt (with RAW output).</li>
+</ol>
+<p>The meaning of each parameter is described in the next section. The key is the only correct one in the previous section.</p>
+<p>What you write in the input tab should be reflected in the output tab as it is. You cannot see the ciphertext (output of AES Encrypt).</p>
+<p>By executing "STEP" in the bottom part of the web app, you will step through the chained recipe and see the output of each individual recipe, including the output of AES Encryot.</p>
+<p><code>https://gchq.github.io/CyberChef/#recipe=AES_Encrypt(%7B'option':'Hex','string':'f6041f627864c7b6a2cc259ee7cce4c8'%7D,%7B'option':'Hex','string':'12345678901234561234567890123456'%7D,'CBC','Raw','Hex',%7B'option':'Hex','string':''%7D)From_Hex('Auto')AES_Decrypt(%7B'option':'Hex','string':'f6041f627864c7b6a2cc259ee7cce4c8'%7D,%7B'option':'Hex','string':'12345678901234561234567890123456'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)</code></p>
+<h3 id="encryption-and-decryption-trickier">Encryption and decryption - Trickier</h3>
+<p>For <em>encryption</em>:</p>
 <ol>
 <li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>).</li>
 <li>Insert parameters in the recipe:<ul>
@@ -1611,7 +1593,7 @@
 <li>Encrypt a text of choice (input tab, up right).</li>
 </ol>
 <p>Now copy encrypted text, IV and key somewhere (e.g., on a file).</p>
-<h3 id="decryption">Decryption</h3>
+<p>For <em>decryption</em>:</p>
 <ol>
 <li>Select a recipe for decryption, with the same algorithm used above for encryption.</li>
 <li>Insert in this recipe the same parameters as above (mode of operation, IV, key).</li>
@@ -1619,17 +1601,7 @@
 </ol>
 <p>Now try to modify the decryption key: does decryption work?</p>
 <p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
-<p>What you see may be surprising...this is explained in section "Practical considerations 2" of <a href="https://colab.research.google.com/drive/1sgJWAxICko7Uha5GLeh9ZQZXKngM4LwS?usp=sharing">this Colab Notebook</a>.</p>
-<h3 id="encryption-and-decryption">Encryption and Decryption</h3>
-<ul>
-<li>
-<p><em>Chain</em> two recipes, one for encryption and another for decryption.</p>
-<ul>
-<li>Make sure they use the same algorithm and they are configured in the same way.</li>
-<li>Verify that the input of the first recipe (encryption) is identical to the output of the second recipe (decryption).</li>
-</ul>
-</li>
-</ul>
+<p>What you see might be surprising...this is explained in section "Practical considerations 2" of <a href="https://colab.research.google.com/drive/1sgJWAxICko7Uha5GLeh9ZQZXKngM4LwS?usp=sharing">this Colab Notebook</a>.</p>
 <h3 id="send-an-encrypted-message">Send an encrypted message</h3>
 <ul>
 <li>Generate a ciphertext as indicated above in the "Encryption" example.</li>
@@ -1659,7 +1631,7 @@
 <p>You can "play" with <strong>RSA and PGP</strong> (the examples below outline the usage of RSA, usage of PGP is analogous).</p>
 <p>You always start by generating a <em>keypair</em>. Save the private key in a file and the public key in another file. You will keep the private key secret and you will distribute your public key to anyone who needs to communicate with you.</p>
 <p>You may want to experiment with other students (in which case you will have to exchange the respective public keys) or alone (in which case you will have to generate two or more keypairs and pretend to impersonate multiple people).</p>
-<h3 id="encryption_1">Encryption</h3>
+<h3 id="encryption">Encryption</h3>
 <ol>
 <li>Choose a recipient.</li>
 <li>Select the recipe for RSA encryption.</li>
@@ -1672,7 +1644,7 @@
 <li>What if the recipient was thousands of Kms away?</li>
 <li>What if you had to communicate with thousands of different recipients?</li>
 </ul>
-<h3 id="decryption_1">Decryption</h3>
+<h3 id="decryption">Decryption</h3>
 <ol>
 <li>Use the file constructed as above (ciphertext).</li>
 <li>Select the recipe for RSA decryption.</li>
