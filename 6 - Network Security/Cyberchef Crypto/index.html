@@ -1563,12 +1563,12 @@
 <h3 id="data-representation-in-cyberchef">Data representation in Cyberchef</h3>
 <p>The webapp expects (input) and displays (output) <em>characters</em>.</p>
 <p>These characters may be a recipe <em>input</em>, a recipe <em>output</em>, a recipe <em>parameters</em>.</p>
-<p>Always select HEX or RAW as <em>representation</em>:</p>
+<p>There are several <em>representations</em> available including:</p>
 <ul>
 <li><strong>RAW</strong> the ASCII representation of the character is passed to the code that implements the recipe.</li>
 <li><strong>HEX</strong> the byte value corresponding to each character pair (hexadecimal digits) is passed to the code that implements the recipe.</li>
 </ul>
-<p>Make sure to use them coherently (e.g., if the encryption output is HEX then the decryption input must be HEX as well).</p>
+<p>Use HEX for parameters and RAW for input/output.</p>
 <h2 id="private-key-crypto">Private key crypto</h2>
 <p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will <em>not</em> discuss what these additional parameters are for.</p>
 <h3 id="choice-of-the-encryption-key">Choice of the encryption key</h3>
