@@ -956,6 +956,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#encryption-and-decryption-easy" class="md-nav__link">
+    Encryption and decryption (easy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#encryption" class="md-nav__link">
     Encryption
   </a>
@@ -1462,6 +1469,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#encryption-and-decryption-easy" class="md-nav__link">
+    Encryption and decryption (easy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#encryption" class="md-nav__link">
     Encryption
   </a>
@@ -1560,6 +1574,7 @@
 <h1 id="cyberchef-crypto-optional">Cyberchef Crypto - OPTIONAL</h1>
 <p><em>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple <strong>encoding</strong> like XOR and Base64, more complex <strong>encryption</strong> like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</em> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
 <p>Make sure you read and understood the <a href="../../3%20-%20Web/Cyberchef%20encoding/">"How Cyberchef works" section</a>.</p>
+<p>Deselect the "autobake" cell in the bottom row (this way you have to click "BAKE!" in order to run the selected recipe on the inserted input, which is easier to understand).</p>
 <h3 id="data-representation-in-cyberchef">Data representation in Cyberchef</h3>
 <p>The webapp expects (input) and displays (output) <em>characters</em>.</p>
 <p>These characters may be a recipe <em>input</em>, a recipe <em>output</em>, a recipe <em>parameters</em>.</p>
@@ -1581,6 +1596,9 @@
 <li><code>f6041f627864c7b6a2cc259ee7cce4c8aabb5643</code></li>
 </ul>
 <p>In many practical applications, keys for private key cryptography are derived from a password (see section "Practical considerations 1" of <a href="https://colab.research.google.com/drive/1sgJWAxICko7Uha5GLeh9ZQZXKngM4LwS?usp=sharing">this Colab Notebook</a>. Cyberchef provides two recipes for doing that, <code>Derive EVP Key</code> and <code>Derive PBKDF2 key</code>. One of the keys above (the only one that can be used) has been obtained with the default configuration of <code>Derive PBKDF2 key</code> and password '<code>kakashevchenko</code>'.</p>
+<h3 id="encryption-and-decryption-easy">Encryption and decryption (easy)</h3>
+<p>Copy the following string and paste it the URL bar of your browser.</p>
+<p>https://gchq.github.io/CyberChef/#recipe=AES_Encrypt(%7B'option':'Hex','string':'f6041f627864c7b6a2cc259ee7cce4c8'%7D,%7B'option':'Hex','string':'12345678901234561234567890123456'%7D,'CBC','Raw','Hex',%7B'option':'Hex','string':''%7D)From_Hex('Auto')AES_Decrypt(%7B'option':'Hex','string':'f6041f627864c7b6a2cc259ee7cce4c8'%7D,%7B'option':'Hex','string':'12345678901234561234567890123456'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)</p>
 <h3 id="encryption">Encryption</h3>
 <ol>
 <li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>).</li>
