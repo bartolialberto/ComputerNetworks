@@ -1555,15 +1555,17 @@
 <p>In practice, one will typically use either HEX or RAW, just make sure to use them coherently (e.g., if the encryption output is HEX then the decryption input must be HEX as well).</p>
 <h2 id="private-key-crypto">Private key crypto</h2>
 <p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will not discuss what these additional parameters are for.</p>
-<p>You can "play" with AES, Blowfish, DES. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>). In all the examples below, select a <em>mode of operation</em> different from GCM (see also the Warning section below).</p>
-<p>Block ciphers require a configuration parameter called <em>initialization vector (IV)</em>. This parameter must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</p>
 <h3 id="encryption">Encryption</h3>
 <ul>
-<li>Select a recipe for encryption.</li>
-<li>Choose a key and an IV.</li>
-<li>Encrypt a text of choice.</li>
+<li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>).</li>
+<li>Insert parameters in the recipe:<ul>
+<li>Mode of operation: select one <strong>different from GCM</strong> (see also the Warning section below).</li>
+<li>Initialization vector (IV): All block ciphers require this parameter. It must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</li>
+<li>Key: You know what it is. Not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</li>
 </ul>
-<p>Note that for a given encryption algorithm not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</p>
+</li>
+<li>Encrypt a text of choice (input tab, up right).</li>
+</ul>
 <h3 id="decryption">Decryption</h3>
 <ul>
 <li>Copy on a file the encrypted text obtained as above.</li>
