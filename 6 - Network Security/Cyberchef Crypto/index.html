@@ -977,8 +977,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#warning" class="md-nav__link">
-    WARNING
+  <a href="#a-tricky-warning" class="md-nav__link">
+    A tricky warning
   </a>
   
 </li>
@@ -1476,8 +1476,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#warning" class="md-nav__link">
-    WARNING
+  <a href="#a-tricky-warning" class="md-nav__link">
+    A tricky warning
   </a>
   
 </li>
@@ -1544,81 +1544,99 @@
 
 
 <h1 id="cyberchef-crypto-optional">Cyberchef Crypto - OPTIONAL</h1>
-<p>Make sure you read and understood the <a href="../../3%20-%20Web/Cyberchef%20encoding/">Cyberchef page in this web site</a>.</p>
+<p><em>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple <strong>encoding</strong> like XOR and Base64, more complex <strong>encryption</strong> like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</em> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
+<p>Make sure you read and understood the <a href="../../3%20-%20Web/Cyberchef%20encoding/">"How Cyberchef works" section</a>.</p>
 <h3 id="data-representation-in-cyberchef">Data representation in Cyberchef</h3>
-<p>Input, output and parameters can be represented in several ways, including:</p>
+<p>The webapp expects (input) and displays (output) <em>characters</em>.</p>
+<p>These characters may be a recipe <em>input</em>, a recipe <em>output</em>, a recipe <em>parameters</em>.</p>
+<p>Always select HEX or RAW as <em>representation</em>:</p>
 <ul>
-<li><strong>HEX</strong> each character represents an hexadecimal digit; thus, two characters represent one byte and characters different from 0-9,A-E (upper or lower case) are incorrect.</li>
 <li><strong>RAW</strong> the ASCII representation of the character is passed to the code that implements the recipe.</li>
-<li><strong>UTF-8</strong> the UTF-8 representation of each character is passed to the code that implements the recipe.</li>
+<li><strong>HEX</strong> the byte value corresponding to each character pair (hexadecimal digits) is passed to the code that implements the recipe.</li>
 </ul>
-<p>In practice, one will typically use either HEX or RAW, just make sure to use them coherently (e.g., if the encryption output is HEX then the decryption input must be HEX as well).</p>
+<p>Make sure to use them coherently (e.g., if the encryption output is HEX then the decryption input must be HEX as well).</p>
 <h2 id="private-key-crypto">Private key crypto</h2>
 <p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will not discuss what these additional parameters are for.</p>
 <h3 id="encryption">Encryption</h3>
-<ul>
+<ol>
 <li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>).</li>
 <li>Insert parameters in the recipe:<ul>
-<li>Mode of operation: select one <strong>different from GCM</strong> (see also the Warning section below).</li>
-<li>Initialization vector (IV): All block ciphers require this parameter. It must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</li>
-<li>Key: You know what it is. Not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</li>
+<li><em>Mode of operation</em>: select one <strong>different from GCM</strong> (see also the Warning section below).</li>
+<li><em>Initialization vector (IV)</em>: All block ciphers require this parameter. It must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext.</li>
+<li><em>Key</em>: You know what it is. Not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</li>
 </ul>
 </li>
 <li>Encrypt a text of choice (input tab, up right).</li>
-</ul>
+</ol>
+<p>Now copy encrypted text, IV and key somewhere (e.g., on a file).</p>
 <h3 id="decryption">Decryption</h3>
-<ul>
-<li>Copy on a file the encrypted text obtained as above.</li>
-<li>Copy on other files the key and IV.</li>
+<ol>
 <li>Select a recipe for decryption, with the same algorithm used above for encryption.</li>
-<li>Configure this recipe with the same key and IV (that you saved on a file).</li>
-<li>Verify that you can decrypt the ciphertext (that you also saved on a file) correctly.</li>
-</ul>
+<li>Insert in this recipe the same parameters as above (mode of operation, IV, key).</li>
+<li>Decrypt the previously encrypted text and verify that you indeed obtained the original plaintext.</li>
+</ol>
 <p>Now try to modify the decryption key: does decryption work?</p>
 <p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
+<p>What you see may be surprising...this is explained in section "Practical considerations 2" of <a href="https://colab.research.google.com/drive/1sgJWAxICko7Uha5GLeh9ZQZXKngM4LwS?usp=sharing">this Colab Notebook</a>)</p>
 <h3 id="encryption-and-decryption">Encryption and Decryption</h3>
 <ul>
-<li>Chain two recipes, one for encryption and another for decryption (make sure they use the same algorithm).</li>
-<li>Configure the recipes in the same way (i.e., same key and same IV)</li>
-<li>Verify that the input of the first recipe (encryption) is equal to the output of the second recipe (decryption).</li>
+<li>
+<p><em>Chain</em> two recipes, one for encryption and another for decryption.</p>
+<ul>
+<li>Make sure they use the same algorithm and they are configured in the same way.</li>
+<li>Verify that the input of the first recipe (encryption) is identical to the output of the second recipe (decryption).</li>
+</ul>
+</li>
 </ul>
 <h3 id="send-an-encrypted-message">Send an encrypted message</h3>
 <ul>
 <li>Generate a ciphertext as indicated above in the "Encryption" example.</li>
-<li>You want to send this ciphertext by email to another student. The recipient need to know the key you used for encrypting (and the IV).</li>
+<li>You want to send this ciphertext by email to another student. </li>
 </ul>
-<p>How can you give the key to that student? What could go wrong? What if the student was thousands of Kms away? What if you had to communicate with thousands of different students? Think carefully about these issues.</p>
-<h3 id="warning">WARNING</h3>
-<p>AES, Blowfish, DES support several modes of operation. GCM is the only one of those that provides integrity.</p>
-<p>The reason why it is suggested here to <em>not</em> use GCM is because the decryption recipe requires an additional parameter (GCM Tag) that I do not know how to extract from the encryption recipe automatically, so that the two recipes (encryption and decryption) can be chained together. I am not even sure they can be chained together in this Cyberchef implementation.</p>
-<p>The reason why the previous examples, made with modes of operation different from GCM and that do <em>not</em> support integrity, <em>seem</em> to support integrity (i.e., changing the ciphertext or using the wrong key provokes a decryption error) is for a subtle reason. Informally and oversimplifying, those modes of operation do not support integrity in the sense that it is always possible to find some modification that does not lead to a decryption error; on the other hand, "most" modifications will be detected (for any given modification the probability that this modification will be undetected is very, very small). </p>
-<h3 id="hmac">HMAC</h3>
+<p>What information is necessary for the student to decrypt the ciphertext, in addition to the <em>key</em>?</p>
+<p>Regarding the key, think carefully about these issues:</p>
 <ul>
-<li>Select the recipe for HMAC.</li>
-<li>Configure the recipe with a key (in this case the key can be of any length, unlike in algorithms for private key cryptography) and with one of the available "hashing functions".</li>
-<li>Insert a text snippet as input and have a look at the output.</li>
-<li>Try to modify a single character in input: does the modification provoke a small and localized change in the output? Or is the new output completely different from the previous one?</li>
-<li>Insert a much longer input: does the output length change?</li>
+<li>How can you give the key to that student?</li>
+<li>What if the student was thousands of Kms away?</li>
+<li>What if you had to communicate with <em>thousands</em> of different students?</li>
 </ul>
+<h3 id="a-tricky-warning">A tricky warning</h3>
+<p>Each of the AES, Blowfish, DES encryption algorithms support several modes of operation. GCM is the only mode of operation that provides integrity.</p>
+<p>The previous examples use a mode of operation different from GCM, and thus correspond to configurations that <em>do not</em> support integrity. However, they do <em>seem</em> to support integrity (i.e. changing the ciphertext or using the wrong key provokes a decryption error). The reason is subtle. Informally and oversimplifying, these modes do not support integrity in the sense that it is always possible to find some modification that does not lead to a decryption error; on the other hand, "most" modifications will be detected (for any given modification, the probability that this modification will not be detected is very, very small). </p>
+<p>The previous examples use a different mode of operation to GCM</p>
+<p>The reason I suggested <em>not</em> using GCM is that the decryption recipe requires an additional parameter (GCM tag) which I do not know how to extract automatically from the encryption recipe so that the two recipes (encryption and decryption) can be chained together. I am not even sure if they can be chained together in this Cyberchef implementation.</p>
+<h3 id="hmac">HMAC</h3>
+<ol>
+<li>Select the recipe for HMAC.</li>
+<li>Configure the recipe with with one of the available "hashing functions" and with a key (in this case the key can be of any length, unlike in algorithms for private key cryptography).</li>
+<li>Insert a text snippet as input and have a look at the output.</li>
+</ol>
+<p>Try to modify a single character in input: does the modification provoke a small and localized change in the output? Or is the new output completely different from the previous one?</p>
+<p>Insert a much longer input: does the output length change?</p>
 <h2 id="public-key-crypto">Public key crypto</h2>
-<p>You can "play" with RSA and PGP (the examples below outline the usage of RSA, usage of PGP is analogous).</p>
+<p>You can "play" with <strong>RSA and PGP</strong> (the examples below outline the usage of RSA, usage of PGP is analogous).</p>
 <p>You always start by generating a <em>keypair</em>. Save the private key in a file and the public key in another file. You will keep the private key secret and you will distribute your public key to anyone who needs to communicate with you.</p>
 <p>You may want to experiment with other students (in which case you will have to exchange the respective public keys) or alone (in which case you will have to generate two or more keypairs and pretend to impersonate multiple people).</p>
 <h3 id="encryption_1">Encryption</h3>
-<ul>
+<ol>
 <li>Choose a recipient.</li>
 <li>Select the recipe for RSA encryption.</li>
 <li>Configure the recipe with the public key of the chosen recipient.</li>
 <li>Encrypt a text of choice (cleartext) and save it on a file (ciphertext).</li>
-</ul>
-<p>How do you obtain the public key of the recipient? What could go wrong? What if the recipient was thousands of Kms away? What if you had to communicate with thousands of different recipients? Think carefully about these issues.</p>
-<h3 id="decryption_1">Decryption</h3>
+</ol>
+<p>Regarding the public key, think carefully about these issues:</p>
 <ul>
+<li>How do you obtain the public key of the recipient?</li>
+<li>What if the recipient was thousands of Kms away?</li>
+<li>What if you had to communicate with thousands of different recipients?</li>
+</ul>
+<h3 id="decryption_1">Decryption</h3>
+<ol>
 <li>Use the file constructed as above (ciphertext).</li>
 <li>Select the recipe for RSA decryption.</li>
 <li>Configure the recipe with the private key matching the public key used for constructing the ciphertext.</li>
 <li>Verify that you can decrypt the ciphertext.</li>
-</ul>
+</ol>
 <p>Now try to modify the decryption key: does decryption work?</p>
 <p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
 <h3 id="identity-in-public-key-cryptography">Identity in public key cryptography</h3>
