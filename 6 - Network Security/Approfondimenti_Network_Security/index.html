@@ -720,15 +720,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#software-perfetto-e-validazione-certificati" class="md-nav__link">
-    "Software perfetto" e Validazione Certificati
+  <a href="#attacco-a-http-network-sniffing" class="md-nav__link">
+    Attacco a HTTP: Network sniffing
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#attacco-mitm-su-http-caso-reale" class="md-nav__link">
-    Attacco MITM su HTTP: caso reale
+  <a href="#attacco-a-http-mitm" class="md-nav__link">
+    Attacco a HTTP: MITM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-perfetto-e-validazione-certificati" class="md-nav__link">
+    "Software perfetto" e Validazione Certificati
   </a>
   
 </li>
@@ -1124,15 +1131,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#software-perfetto-e-validazione-certificati" class="md-nav__link">
-    "Software perfetto" e Validazione Certificati
+  <a href="#attacco-a-http-network-sniffing" class="md-nav__link">
+    Attacco a HTTP: Network sniffing
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#attacco-mitm-su-http-caso-reale" class="md-nav__link">
-    Attacco MITM su HTTP: caso reale
+  <a href="#attacco-a-http-mitm" class="md-nav__link">
+    Attacco a HTTP: MITM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-perfetto-e-validazione-certificati" class="md-nav__link">
+    "Software perfetto" e Validazione Certificati
   </a>
   
 </li>
@@ -1197,6 +1211,28 @@
 <li><a href="https://tlseminar.github.io/first-few-milliseconds/">The First Few Milliseconds of an TLS 1.2 Connection</a></li>
 <li><a href="https://tls12.xargs.org/">The Illustrated TLS 1.2 Connection Every byte explained and reproduced</a></li>
 </ul>
+<h3 id="attacco-a-http-network-sniffing">Attacco a HTTP: Network sniffing</h3>
+<p>Gli esempi reali di attacchi Network sniffing (attacker osserva e raccoglie il traffico trasmesso e ricevuto dal browser) sono tantissimi. HTTP non offre nessuna difesa nei confronti di questi attacchi.</p>
+<p>Un esempio molto rilevante è stato reso pubblico più di 10 anni fa, grazie alle informazioni trafugate e rese pubbliche da Edward Snowden (sistemista della NSA). In estrema sintesi, servizi segreti di alcuni paesi occidentali (USA e UK) che hanno accumulato traffico di tutti i clienti di Vodafone, British Telecom ed altri operatori telefonici sistematicamente e senza nessuna autorizzazione preventiva da parte dell'autorità giudiziaria. Queste notizie hanno avuto un ruolo molto rilevante nella diffusione di HTTPS.</p>
+<p>L'articolo qui sotto parla del <a href="https://www.gchq.gov.uk/">GCHQ</a>, cioè i servizi segreti inglesi:</p>
+<ul>
+<li><a href="https://www.theguardian.com/business/2013/aug/02/telecoms-bt-vodafone-cables-gchq">BT and Vodafone among telecoms companies passing details to GCHQ</a> - The Guardian, 2 Agosto 2013</li>
+</ul>
+<h3 id="attacco-a-http-mitm">Attacco a HTTP: MITM</h3>
+<p>Gli esempi reali di attacchi MITM (Man In The Middle: network attacker impersona il web server a cui si vuole collegare il browser) sono tantissimi. HTTP non offre nessuna difesa nei confronti di questi attacchi.</p>
+<p>Un esempio recente e molto rilevante è stato reso pubblico da Google Threat Analysis Group in collaborazione con <a href="https://citizenlab.ca/2023/09/predator-in-the-wires-ahmed-eltantawy-targeted-with-predator-spyware-after-announcing-presidential-ambitions/">The Citizen Lab</a> (Settembre 2023). E' stato installato un malware per sorvegliare le attività di un <strong>candidato alle elezioni presidenziali in Egitto</strong> (<strong>mai</strong> dimenticare cosa è accaduto in Egitto a <a href="https://it.wikipedia.org/wiki/Omicidio_di_Giulio_Regeni">Giulio Regeni</a>). L'installazione del malware avviene con un meccanismo non discusso in questo corso, cioè lo sfruttamento di vulnerabilità nei browser (tema analizzato nel corso di <a href="https://bartolialberto.github.io/CybersecurityCourse/">Cybersecurity</a> nella Laurea Magistrale). Ci basti sapere che il procedimento di attacco si basa su quanto segue:</p>
+<ol>
+<li>il browser segue un link HTTP;</li>
+<li>l'attaccante MITM effettua una redirect verso un sito web controllato dall'attaccante ed in grado di infettare il browser;</li>
+</ol>
+<p><em>"When Eltantawy (il candidato presidenziale) visited certain websites not using HTTPS, a device installed at the border of Vodafone Egypt’s network automatically redirected him to a malicious website to infect his phone with Cytrox’s Predator spyware."</em></p>
+<p>Il punto 2 è tecnicamente possibile perché il link è HTTP, quindi la comunicazione tra browser e web server non ha nessuna garanzia di autenticazione ed integrità (oltre che di riservatezza). Se il link fosse stato HTTPS allora questo meccanismo di attacco <strong>non</strong> avrebbe funzionato.</p>
+<p>Tutti i dettagli su:</p>
+<ul>
+<li><a href="https://blog.google/threat-analysis-group/0-days-exploited-by-commercial-surveillance-vendor-in-egypt/">0-days exploited by commercial surveillance vendor in Egypt</a></li>
+<li><a href="https://citizenlab.ca/2023/09/predator-in-the-wires-ahmed-eltantawy-targeted-with-predator-spyware-after-announcing-presidential-ambitions/">PREDATOR IN THE WIRES:
+Ahmed Eltantawy Targeted with Predator Spyware After Announcing Presidential Ambitions</a></li>
+</ul>
 <h3 id="software-perfetto-e-validazione-certificati">"Software perfetto" e Validazione Certificati</h3>
 <p>Quando abbiamo iniziato l'ultima parte del corso, ho detto che assumeremo software perfetto ma che gran parte dei "problemi reali" nascono dal fatto che questa ipotesi non è verificata.</p>
 <p>Esempio: <em>Cosa può accadere se la routine sw che valida un certificato ricevuto ha un errore?</em></p>
@@ -1215,21 +1251,6 @@
 <li>qBittorrent is a free, open-source client for downloading and sharing files over the BitTorrent protocol. </li>
 <li>qBittorrent has addressed a remote code execution flaw caused by the failure to validate SSL/TLS certificates in the application's DownloadManager, a component that manages downloads throughout the app...this component has ignored every SSL certificate validation error that has ever happened, on every platform. </li>
 <li>The flaw, introduced in a commit on April 6, 2010, was eventually fixed in the latest release, version 5.0.1, on October 28, 2024, <strong>more than 14 years later</strong>.</li>
-</ul>
-<h3 id="attacco-mitm-su-http-caso-reale">Attacco MITM su HTTP: caso reale</h3>
-<p>Gli esempi reali di attacchi MITM sono tantissimi. Nel corso viene mostrato che HTTP non offre nessuna difesa nei confronti di questi attacchi.</p>
-<p>Un esempio recente e molto rilevante è stato reso pubblico da Google Threat Analysis Group in collaborazione con <a href="https://citizenlab.ca/2023/09/predator-in-the-wires-ahmed-eltantawy-targeted-with-predator-spyware-after-announcing-presidential-ambitions/">The Citizen Lab</a> (Settembre 2023). E' stato installato un malware per sorvegliare le attività di un <strong>candidato alle elezioni presidenziali in Egitto</strong> (<strong>mai</strong> dimenticare cosa è accaduto in Egitto a <a href="https://it.wikipedia.org/wiki/Omicidio_di_Giulio_Regeni">Giulio Regeni</a>). L'installazione del malware avviene con un meccanismo non discusso in questo corso, cioè lo sfruttamento di vulnerabilità nei browser (tema analizzato nel corso di <a href="https://bartolialberto.github.io/CybersecurityCourse/">Cybersecurity</a> nella Laurea Magistrale). Ci basti sapere che il procedimento di attacco si basa su quanto segue:</p>
-<ol>
-<li>il browser segue un link HTTP;</li>
-<li>l'attaccante MITM effettua una redirect verso un sito web controllato dall'attaccante ed in grado di infettare il browser;</li>
-</ol>
-<p><em>"When Eltantawy (il candidato presidenziale) visited certain websites not using HTTPS, a device installed at the border of Vodafone Egypt’s network automatically redirected him to a malicious website to infect his phone with Cytrox’s Predator spyware."</em></p>
-<p>Il punto 2 è tecnicamente possibile perché il link è HTTP, quindi la comunicazione tra browser e web server non ha nessuna garanzia di autenticazione ed integrità (oltre che di riservatezza). Se il link fosse stato HTTPS allora questo meccanismo di attacco non avrebbe funzionato.</p>
-<p>Tutti i dettagli su:</p>
-<ul>
-<li><a href="https://blog.google/threat-analysis-group/0-days-exploited-by-commercial-surveillance-vendor-in-egypt/">0-days exploited by commercial surveillance vendor in Egypt</a></li>
-<li><a href="https://citizenlab.ca/2023/09/predator-in-the-wires-ahmed-eltantawy-targeted-with-predator-spyware-after-announcing-presidential-ambitions/">PREDATOR IN THE WIRES:
-Ahmed Eltantawy Targeted with Predator Spyware After Announcing Presidential Ambitions</a></li>
 </ul>
 <h2 id="crittografia-nella-storia">Crittografia nella storia</h2>
 <p>Come è facile immaginare, esistono moltissimi aneddoti e riferimenti sull'uso della crittografia nella storia. Ne riporto qui solo alcuni secondo me molto interessanti:</p>
