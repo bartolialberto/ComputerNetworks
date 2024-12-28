@@ -1,8 +1,4 @@
 
-echo "" > /tmp/my_function.sh
-
-cat <<'EOF' >> /tmp/my_function.sh
-
 function create_keypair_anonymous {
   if [[ $# != 1 ]]; then
     echo "create_keypair_anonymous - Usage:  \$1 = base filename for keypair"
@@ -250,5 +246,3 @@ function receive_TLS {
 
   rm received_ciphertext.enc received_hmac.bin computed_hmac.bin
 }
-
-EOF
