@@ -1,0 +1,1375 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/NotListed/MaterialeDidattico/">
+      
+      
+        <link rel="prev" href="../Esercizi/">
+      
+      
+        <link rel="next" href="../SlideSummary/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>Materiale didattico - Reti di Calcolatori e Principi di Cybersecurity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#materiale-didattico" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://bartoli.inginf.units.it" title="Reti di Calcolatori e Principi di Cybersecurity" class="md-header__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity" data-md-component="logo">
+      
+  <img src="../../bernabeusmall.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reti di Calcolatori e Principi di Cybersecurity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Materiale didattico
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://bartoli.inginf.units.it" title="Reti di Calcolatori e Principi di Cybersecurity" class="md-nav__button md-logo" aria-label="Reti di Calcolatori e Principi di Cybersecurity" data-md-component="logo">
+      
+  <img src="../../bernabeusmall.png" alt="logo">
+
+    </a>
+    Reti di Calcolatori e Principi di Cybersecurity
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Il Corso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bartoli.inginf.units.it/home" class="md-nav__link">
+        Il Docente
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          1   Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1   Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%20-%20Introduction/Il%20modello%20ISO-OSI/" class="md-nav__link">
+        Extra - Il modello ISO-OSI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          2   DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2   DNS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Wireshark%20DNS/" class="md-nav__link">
+        Extra - Wireshark DNS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%20-%20DNS/Appunti%20DNS%20impl/" class="md-nav__link">
+        Extra - Come funziona
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          3   Web
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3   Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Pagine%20web%20con%20FORM/" class="md-nav__link">
+        Pagine web con FORM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Web%20Server/" class="md-nav__link">
+        Lab - Web Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/Cyberchef%20encoding/" class="md-nav__link">
+        Lab - Cyberchef Encoding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/The%20Big%20Brother/" class="md-nav__link">
+        Extra - The Big Brother I
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%20-%20Web/The%20Big%20Brother%20II/" class="md-nav__link">
+        Extra - The Big Brother II
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          4   Email
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4   Email
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%20-%20Email/Email%20Studenti%20Universit%C3%A0%20Trieste/" class="md-nav__link">
+        Extra - Email Studenti UniTS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          5   IP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          5   IP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/Approfondimenti/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%20-%20IP/DHCP%20VPN%20IPv6/" class="md-nav__link">
+        Extra - DHCP VPN IPv6
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          6   Network Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          6   Network Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Approfondimenti_Network_Security/" class="md-nav__link">
+        Risorse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Cyberchef%20Crypto/" class="md-nav__link">
+        Lab - Cyberchef Crypto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Crypto%20in%20pratica/" class="md-nav__link">
+        Extra - Crittografia in pratica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Protezione%20file%20con%20password/" class="md-nav__link">
+        Extra - Protezione file con password
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%20-%20Network%20Security/Tor/" class="md-nav__link">
+        Extra - Tor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Consigli
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Consigli
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli/Come%20si%20deve%20svolgere%20un%20esame%20scritto/" class="md-nav__link">
+        Come si deve svolgere un esame scritto (e non solo)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli/Consigli%20da%20chi%20ha%20avuto%20problemi/" class="md-nav__link">
+        Consigli di una studentessa che ha avuto difficoltà con l'esame di Reti di Calcolatori
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli/Consigli%20per%20chi%20non%20ha%20seguito%20le%20lezioni/" class="md-nav__link">
+        Consigli per chi non ha seguito le lezioni
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli/Email%20vs%20whatsapp/" class="md-nav__link">
+        Un email NON è un whatsapp!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Consigli/Tentare%20questo%20esame%20molte%20volte/" class="md-nav__link">
+        Tentare questo esame molte volte
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Altro
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Altro
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altro/ChatGPT/" class="md-nav__link">
+        ChatGPT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altro/Colab/" class="md-nav__link">
+        Colab Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altro/Come%20organizzo%20lo%20studio%20di%20Internet/" class="md-nav__link">
+        Come organizzo lo studio di Internet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Altro/Sito%20web%20per%20esame/" class="md-nav__link">
+        Requisiti sito web per partecipare all’esame
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#100-processi-e-tcppdf" class="md-nav__link">
+    100 - Processi e TCP.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#120-protocolli-e-proprietapdf" class="md-nav__link">
+    120 - Protocolli e Proprieta.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#200-dns-uso-e-architetturapdf" class="md-nav__link">
+    200 - DNS Uso e Architettura.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#300-web-contenuti-1pdf" class="md-nav__link">
+    300 - Web - Contenuti 1.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-web-contenuti-2pdf" class="md-nav__link">
+    310 - Web - Contenuti 2.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#320-web-httppdf" class="md-nav__link">
+    320 - Web - HTTP.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#340-web-sessioni-authpdf" class="md-nav__link">
+    340 - Web - Sessioni Auth.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#350-web-trackingpdf" class="md-nav__link">
+    350 - Web - Tracking.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#400-email-arch-protopdf" class="md-nav__link">
+    400 - Email - Arch Proto.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#420-email-practical-issuespdf" class="md-nav__link">
+    420 - Email - Practical issues.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#500-networkpdf" class="md-nav__link">
+    500 - Network.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#510-ip-internetworkpdf" class="md-nav__link">
+    510 - IP - Internetwork.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#520-ip-netnumpdf" class="md-nav__link">
+    520 - IP - Netnum.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#540-ip-how-it-workspdf" class="md-nav__link">
+    540 - IP - How it works.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#560-ip-subnettingpdf" class="md-nav__link">
+    560 - IP - Subnetting.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#570-ip-privati-residenzialipdf" class="md-nav__link">
+    570 - IP - Privati Residenziali.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#580-ip-firewallpdf" class="md-nav__link">
+    580 - IP - Firewall.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#600-security-defs-cryptopdf" class="md-nav__link">
+    600 - Security - Defs Crypto.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#620-certificati-usopdf" class="md-nav__link">
+    620 - Certificati Uso.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#630-httpspdf" class="md-nav__link">
+    630 - HTTPS.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#640-firma-digitalepdf" class="md-nav__link">
+    640 - Firma Digitale.pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#660-certificati-implpdf" class="md-nav__link">
+    660 - Certificati Impl.pdf
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="materiale-didattico">Materiale didattico</h1>
+<h3 id="100-processi-e-tcppdf">100 - Processi e TCP.pdf</h3>
+<h3 id="120-protocolli-e-proprietapdf">120 - Protocolli e Proprieta.pdf</h3>
+<ul>
+<li>
+<p>Colab: <a href="https://drive.google.com/file/d/1IVWra5A96jAGiwPSbKNXyF9DccLFHGRn/view">121 - Intro - Binary vs Text protocols.ipynb</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1rt8wfNhdl_IzFo91tdqUh4o23toiaAcC0SWydKAkS0M/view">130 - Introduction - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1i3wbSrN6pYvNRtAJitc64NpADP8M4TUfAzCM6uHAMGY/view">130 - Introduction - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1I50hT4ljfK21L3Uo7QrQDLgNjRWuayuJccHLWzVVXAk/view">130 - Introduction - VeroFalso.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1as9UWg55sE-0uy4q6-B_p_3Fy1fDOMaybrPjXcUnqsg/view">130 - Introduction 2 - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1F2fRLTQtiwOhXFoiWJlqe0psGq9KzvpJvYUlh-Dl08w/view">130 - Introduction 2 - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1PcJHFg8nwXLdSqEQEO_NxpEJTK5O9Lo7v4fIySU2zHM/view">130 - Introduction 2 - VeroFalso.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1LcObBvjwzFBhlQg0bjjfRWURGMNVfYJ9CeBkskx__oI/view">130 - Introduction 3 - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/15BuMsx_2JHmHoqa-IbNk7JQtAeOddHf0YMPvS5y1dHY/view">130 - Introduction 3 - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/13BKgl_G9Okt4-WyYiaQ6APyGwslvQIX6ZPBS3iC5ehU/view">130 - Introduction 4 - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1NpHRTreJEtga8V_znFzGxgYJ-EhSYJ8x3gnvbh5vA8M/view">130 - Introduction 4 - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="200-dns-uso-e-architetturapdf">200 - DNS Uso e Architettura.pdf</h3>
+<ul>
+<li>
+<p>Colab: <a href="https://drive.google.com/file/d/1J7p6Ka1ppjTyZR531x9Wx1UAglMjqy7W/view">201 - DNS - Playing with dig - Client.ipynb</a></p>
+</li>
+<li>
+<p>Colab: <a href="https://drive.google.com/file/d/1sYcFjsSq3wFKe4t4ekEaVQxPqqPIMgCz/view">202 - DNS - Understanding traffic.ipynb</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1VlX10myO51RxXNN0ZGKgPP-BtkmqMnsbmqQ7AbkLhMo/view">220 - DNS Uso Arch - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/14JjprsvInmdJrOEfLb8hKHgHVrVxk4sNpX56b-Sjzhg/view">220 - DNS Uso Arch - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1cZZznSmqUg7BwKuwg5lbKsaRU-zLiH8KTUJxdU77Hbs/view">220 - DNS Uso Arch 2 - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/16vTi_Iq4Q8_DsqxQtckfYGa0xUwJlGZyE72s_Rgyr5g/view">220 - DNS Uso Arch 2 - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/19c4C1a-L8XbO3HIycVMWAIXv65aHIVNZO18wVKSU-Bo/view">220 - DNS Uso Arch 3 - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1I05ZqkbQgxp5SAGroFQl2O8Wih80ZPbEzNLRydkBVoY/view">220 - DNS Uso Arch 3 - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/17KRYM00wHpuaKH9ZTHQk_hF-6aBV6NNgaThC3L67kEc/view">260 - DNS Gestione Domini - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1Y0mbFcJIK4tD44_9zYdBZo3kC3EQvXc_PK2VuP6GORk/view">260 - DNS Gestione Domini - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1SywbKggk72A_eomRTT-A8SiXYZpIY7wM29QCkKVWccY/view">260 - DNS Gestione Domini - VeroFalso.gform</a></p>
+</li>
+</ul>
+<h3 id="300-web-contenuti-1pdf">300 - Web - Contenuti 1.pdf</h3>
+<h3 id="310-web-contenuti-2pdf">310 - Web - Contenuti 2.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1JZ_r8rKy-tlX5OfZSErnEKju-Hkgd-Q9mbIN9uwGADQ/view">315 - Web - Content - VeroFalso.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1bFSwSsoZnP9bn8rzC2Eu7MszLCcMp6-S_dPJLFkrkMs/view">315 - Web Content - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1bImdwpP-ZQWfR_ijxgGK5jHjnAZEs15IC3Z9o_ouVnw/view">315 - Web Content - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/15TsSu-ZbIfiK0gEuomwgSKC4FGHatvA4-GtMnldy20A/view">315 - Web Content 2 - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1bkC_5jBXa6z3Zl4kHKw69dM6dDsRt0ZgaDzRK47mbf4/view">315 - Web Content 2 - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="320-web-httppdf">320 - Web - HTTP.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1dlbfNyp2Ad1WMrHQh9FGLntPPa1XOQ3zRUVuc3FAdlI/view">325 - HTTP - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1GS_jn0vzEnDJCK4LwS1rxi2jBJtEX9ThDbtJ3Kk26Zg/view">325 - HTTP - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="340-web-sessioni-authpdf">340 - Web - Sessioni Auth.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1uCUvPJ5sU1w1FKLG5fY0IRSX_pixyGqDCsN2nQmFLF0/view">345 - Web Sessioni Auth - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/19WTveMf-qV2PY0yZhqSHJhHI8RjvzDdvt0SvEPbEtCg/view">345 - Web Sessioni Auth - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="350-web-trackingpdf">350 - Web - Tracking.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/13eVTW_iOaVNNlYcLUo749DyT4xxYbxq-QqHdej35ugU/view">355 - Web Tracking - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/10aROJPTS5xjGBN48qkqV9fwG16RXl-_34HDz81TlGkY/view">355 - Web Tracking - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="400-email-arch-protopdf">400 - Email - Arch Proto.pdf</h3>
+<h3 id="420-email-practical-issuespdf">420 - Email - Practical issues.pdf</h3>
+<ul>
+<li>
+<p>Colab: <a href="https://drive.google.com/file/d/1Izh153vdUq5l3ScfgVrjC_LOAbhQGe4K/view">421 - Email - Playing with swaks.ipynb</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1bRkBXR1EPd6CqGM6-vSdbqoVboeYtq4tAdTT_vW4b6Q/view">430 - EMail - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/17l0a3njQ_JbOoAbr1Fp7zk54MSOlZdWfGDscC9LCEMU/view">430 - EMail - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="500-networkpdf">500 - Network.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1rTw25dF4t_CAGSdke2cKwJYd53dL7-7yIDmglH12TkY/view">505 - Ethernet - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1QrqoePsFttVomoUVuDCjqb9RRRZ3qEXkPdApSWroBZY/view">505 - Ethernet - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="510-ip-internetworkpdf">510 - IP - Internetwork.pdf</h3>
+<ul>
+<li>Colab: <a href="https://drive.google.com/file/d/18pG36fx0yioDxzgd5dSLxGr71rzqO1dk/view">511 - IP - Internetwork.ipynb</a></li>
+</ul>
+<h3 id="520-ip-netnumpdf">520 - IP - Netnum.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1-cE9GBaF1pxt5Gkf0Jf-_XONbFhqgUJ1IOzr5O420g4/view">525 - IP - Netnum - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/10Z63LWVUrwqoyrloQTpHBr73KX5FNu8r4l6eS0pKwr4/view">525 - IP - Netnum - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="540-ip-how-it-workspdf">540 - IP - How it works.pdf</h3>
+<h3 id="560-ip-subnettingpdf">560 - IP - Subnetting.pdf</h3>
+<h3 id="570-ip-privati-residenzialipdf">570 - IP - Privati Residenziali.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/16N0F1hyr5jYeArzgaX8Md6b_HWoKYl9giylTScTSyKE/view">575 - IP - How it works - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1OmglWGE_K8jn8miGJJKOFHDMZG5WE9o-awc3Yt_8kfk/view">575 - IP - How it works - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/14J1mdVS49t6-7fGWJbr7ZdmjQwsiTVSUO9Cp5H1znWs/view">575 - IP - How it works - VeroFalso.gform</a></p>
+</li>
+</ul>
+<h3 id="580-ip-firewallpdf">580 - IP - Firewall.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1iBWpOgSe9voUiyM1Pt2hQhd9bwFTziuc0lotuHNaP6g/view">585 - IP - Firewall - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1lVjE5-ZgT9Phyf5Ou8KBD3seHZN-jtXssYExzm4OHl0/view">585 - IP - Firewall - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1CVNTxNsSYB-ObdIG6k9AUIo3tjusbRMZguPuEJySMqM/view">585 - IP - Firewall - VeroFalso.gform</a></p>
+</li>
+</ul>
+<h3 id="600-security-defs-cryptopdf">600 - Security - Defs Crypto.pdf</h3>
+<ul>
+<li>
+<p>Colab: <a href="https://drive.google.com/file/d/1CdsFdKXsmo2QimhwrWq15IOG8YV8FxQg/view">601 - OpenSSL.ipynb</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1WVKWJfDycU2sFH1o6C3vK3p7hvDBVoz51qBptKg6eAE/view">605 - Security - Defs Crypto - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1RDk6Al0GqNsdy8uzZ7upSyDzKfhl5BpajPu4_R9UItw/view">605 - Security - Defs Crypto - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="620-certificati-usopdf">620 - Certificati Uso.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1Xm10HZK3R0wHUCQhkeJrWLD9IUFpQzQXDXvxoZCSUYM/view">625 - Security - Certificati - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1dAMOhClez4SQ05Ob_BZI8mMzfRaqk2bnwowpZJstqUk/view">625 - Security - Certificati - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="630-httpspdf">630 - HTTPS.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1QNGTwFa7gOT3TpaYuUjYTfd7T8s6ZsOq0CHOEvvdSJo/view">635 - Security - HTTPS - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1NlT54MVAM0xoLtBR3FufgrduwEpNdGza60G5purLFb0/view">635 - Security - HTTPS - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1i1gjqRKm7crzR4xzl240NgPkQ79zY_x1jsSXRN8ay0I/view">635 - Security - HTTPS - VeroFalso.gform</a></p>
+</li>
+</ul>
+<h3 id="640-firma-digitalepdf">640 - Firma Digitale.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1xhHLzmWz_bHW0Sp-VZYxvXzRzwqhGyXEl6PNleyBIVs/view">645 - Security - Firma - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1ytwMOU9m42QkH-V2RRSx-Lm2piiGDpoxHjyMKyDNHSg/view">645 - Security - Firma - Quiz.gform</a></p>
+</li>
+</ul>
+<h3 id="660-certificati-implpdf">660 - Certificati Impl.pdf</h3>
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1Nin8jl_3sN8dD0RbXrNH2gdAntZpNUp5Htx7ZAlSj70/view">665 - Security - Cert Implementation - Open questions.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1mgFm0cMCkZ_xInS_lE3eGS_Wc9_fCfhtwmw04ol0GTE/view">665 - Security - Cert Implementation - Quiz.gform</a></p>
+</li>
+<li>
+<p><a href="https://drive.google.com/file/d/1orfgSLSclDjtjgsEQ4rwSrwFdtg7HGRRkByCD8Pc1NE/view">665 - Security - CertImplementation - VeroFalso.gform</a></p>
+</li>
+</ul>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>
