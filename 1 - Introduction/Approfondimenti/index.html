@@ -44,8 +44,6 @@
       
     
     
-      <link rel="stylesheet" href="../../css/custom.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -295,16 +293,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#processi-comunicanti" class="md-nav__link">
+    Processi Comunicanti
+  </a>
+  
+    <nav class="md-nav" aria-label="Processi Comunicanti">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#rfc" class="md-nav__link">
     RFC
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#applicativi-tcp" class="md-nav__link">
+    Applicativi TCP
+  </a>
+  
+    <nav class="md-nav" aria-label="Applicativi TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#elencare-le-connessioni-attive" class="md-nav__link">
     Elencare le connessioni attive
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -463,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3%20-%20Web/Pagine%20web%20con%20FORM/" class="md-nav__link">
+      <a href="../../Pagine web con FORM.md" class="md-nav__link">
         Lab - Pagine web con FORM
       </a>
     </li>
@@ -931,16 +955,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#processi-comunicanti" class="md-nav__link">
+    Processi Comunicanti
+  </a>
+  
+    <nav class="md-nav" aria-label="Processi Comunicanti">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#rfc" class="md-nav__link">
     RFC
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#applicativi-tcp" class="md-nav__link">
+    Applicativi TCP
+  </a>
+  
+    <nav class="md-nav" aria-label="Applicativi TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#elencare-le-connessioni-attive" class="md-nav__link">
     Elencare le connessioni attive
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -960,12 +1010,14 @@
 
 
 <h1 id="risorse">Risorse</h1>
-<h2 id="rfc">RFC</h2>
+<h2 id="processi-comunicanti">Processi Comunicanti</h2>
+<h3 id="rfc">RFC</h3>
 <ul>
 <li><a href="https://www.rfc-editor.org/">The RFC Series</a> Sito ufficiale con tutti gli RFC</li>
 <li><a href="https://notebooklm.google.com/notebook/cd2d864a-47cd-4479-a3f2-1a33c004dc0c">RFC per Reti di Calcolatori</a> Un NotebookLM in cui ho inserito tutti gli RFC usati in questo corso (NotebookLM è uno strumento basato sulla cosiddetta intelligenza artificiale; una specie di ChatGPT che però risponde solo sulla base dei documenti che ci sono stati inseriti). Utile per soddisfare curiosità o rispondere a dubbi molto specifici (non per superare l'esame).</li>
 </ul>
-<h2 id="elencare-le-connessioni-attive">Elencare le connessioni attive</h2>
+<h2 id="applicativi-tcp">Applicativi TCP</h2>
+<h3 id="elencare-le-connessioni-attive">Elencare le connessioni attive</h3>
 <p>Ogni sistema operativo ha dei comandi che permettono di <em>elencare le connessioni attive</em>. Uno molto comune è <code>netstat</code>.</p>
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netstat">netstat</a> Microsoft reference page per Windows. Il comando <code>netstat -a -n | find "ESTABLISHED"</code> elenca le sole connessioni TCP aperte.</li>
