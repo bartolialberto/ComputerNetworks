@@ -1095,7 +1095,7 @@
 <h2 id="security-introduzione">Security: Introduzione</h2>
 <h3 id="software-perfetto">"Software perfetto"</h3>
 <p>Ho detto che assumeremo software perfetto ma che gran parte dei "problemi reali" nascono dal fatto che questa ipotesi non è verificata.</p>
-<p>Esempio: <em>Cosa può accadere se la routine sw che valida un certificato ricevuto ha un errore?</em></p>
+<p>Esempio: <strong>Cosa può accadere se la routine sw che valida un certificato ricevuto ha un errore?</strong></p>
 <p>Qui c'è un esempio molto semplice, interessante ed istruttivo, relativo al sw di un dispositivo multimediale per le automobili: <a href="https://notcve.org/view.php?id=CVE-2024-23928">CVE-2024-23928 - Pioneer DMH-WT7600NEX Telematics Improper Certificate Validation Vulnerability</a>. La descrizione è molto sintetica ma in pratica significa questo:</p>
 <ol>
 <li>Un network attacker vicino al dispositivo può impersonare un server di cui quel dispositivo si fida (perché il dispositivo ha un errore nella routine di validazione dei certificati);</li>
@@ -1104,9 +1104,9 @@
 <p>Quale sia esattamente l'errore non è spiegato. Se lo si vuole capire bisogna cercare altrove.</p>
 <p>Ciò è molto comune. Quando viene resa pubblica una vulnerabilità (errore sw che può compromettere proprietà di sicurezza), viene infatti descritta la vulnerabilità in maniera estremamente sintetica:</p>
 <ul>
-<li><em>quali</em> sono i sistemi vulnerabili,</li>
-<li><em>come</em> si può sfruttare la vulnerabilità,</li>
-<li>quale <em>impatto</em> ha.</li>
+<li><strong>quali</strong> sono i sistemi vulnerabili,</li>
+<li><strong>come</strong> si può sfruttare la vulnerabilità,</li>
+<li>quale <strong>impatto</strong> ha.</li>
 </ul>
 <p>Questa informazione è infatti tutto ciò che serve a chi deve gestire il rischio conseguente. Capire quale sia esattamente l'errore commesso, come esattamente lo si può sfruttare è spesso molto, molto complicato. Chi deve gestire il rischio può non avere le competenze per capirlo e tipicamente non è nemmeno interessato a capirlo.</p>
 <p>Questo è anche un esempio legato a ciò che dico spesso, bisogna sempre distinguere nettamente tra funzionalità ed implementazione, tra cosa vede l'utente e come è realizzato internamente.</p>
@@ -1117,10 +1117,10 @@
 <li><a href="https://en.wikipedia.org/wiki/Enigma_(novel)">Enigma</a> Romanzo di spionaggio che si svolge a Bletchley Park durante la seconda guerra mondiale, nel gruppo di persone impegnate a tentare di decrittare le trasmissioni di Enigma. Da questo romanzo è stato tratto un <a href="https://en.wikipedia.org/wiki/Enigma_(2001_film)">film</a>, ma il romanzo è infinitamente migliore. Da non confondere con il film <a href="https://en.wikipedia.org/wiki/The_Imitation_Game">The Imitation Game</a>.</li>
 </ul>
 <h3 id="duemila-morti-a-causa-di-una-trasmissione-di-prova-con-enigma">Duemila morti a causa di una trasmissione di prova con Enigma</h3>
-<p><em>(mio blog post del 2013)</em></p>
-<p>Quando parlo di crittografia a Reti di Calcolatori I descrivo in modo intuitivo ed informale un requisito di base di ogni algoritmo: <em>la conoscenza del testo cifrato non deve fornire nessuna informazione sul corrispondente testo in chiaro o sulla chiave utilizzata</em>.</p>
+<p><strong>(mio blog post del 2013)</strong></p>
+<p>Quando parlo di crittografia a Reti di Calcolatori I descrivo in modo intuitivo ed informale un requisito di base di ogni algoritmo: <strong>la conoscenza del testo cifrato non deve fornire nessuna informazione sul corrispondente testo in chiaro o sulla chiave utilizzata</strong>.</p>
 <p>La macchina cifrante <a href="https://www.101computing.net/enigma-machine-emulator/">Enigma</a> non aveva questa proprietà. Anche per questo motivo gli Alleati hanno vinto la seconda guerra mondiale. Ed anche per questo motivo, i padri ed i nonni di alcuni di noi sono andati incontro ad una tragedia terribile, la battaglia navale di <a href="https://it.wikipedia.org/wiki/Battaglia_di_Capo_Matapan">Capo Matapan</a>.</p>
-<p>Immaginate di essere a bordo di una nave militare in tempo di guerra, in mezzo alle acque gelide del Mar Mediterraneo. Su di una nave impossibilitata a muoversi. Di notte e al buio. Immaginate poi di attendere per ore i soccorsi, senza sapere se arriveranno prima i soccorsi o il nemico. Immaginate poi di sentire arrivare un convoglio navale e di vedere la vostra nave che lancia un razzo di segnalazione pensando che siano i soccorsi. Immaginate poi di rendervi conto che si tratta del nemico. Poi arrivano le cannonate. Cannonate che pochi minuti dopo arrivano anche verso il convoglio di soccorso. <em>Totale di morti stimato circa duemilatrecentotrenta</em>.</p>
+<p>Immaginate di essere a bordo di una nave militare in tempo di guerra, in mezzo alle acque gelide del Mar Mediterraneo. Su di una nave impossibilitata a muoversi. Di notte e al buio. Immaginate poi di attendere per ore i soccorsi, senza sapere se arriveranno prima i soccorsi o il nemico. Immaginate poi di sentire arrivare un convoglio navale e di vedere la vostra nave che lancia un razzo di segnalazione pensando che siano i soccorsi. Immaginate poi di rendervi conto che si tratta del nemico. Poi arrivano le cannonate. Cannonate che pochi minuti dopo arrivano anche verso il convoglio di soccorso. <strong>Totale di morti stimato circa duemilatrecentotrenta</strong>.</p>
 <p>Cosa c'entra Capo Matapan con il requisito di cui sopra ? Enigma non aveva quella proprietà. Gli Inglesi intercettevano continuamente il traffico radio Enigma ed erano quindi in grado di estrarre informazioni sulla chiave utilizzata. Ciò non assicurava automaticamente la possibilità di decrittare il traffico: l'estrazione di informazioni era manuale, osservando le trascrizioni senza senso del traffico cifrato; il traffico era tantissimo; la chiave cambiava ogni giorno. Quando andava bene (per loro) riuscivano a ridurre molto il numero delle chiavi possibili in base alla mera analisi manuale e poi le provavano tutte, usando a tale scopo il primo calcolatore mai realizzato ("<a href="https://en.wikipedia.org/wiki/Colossus_computer">Colossus</a>").</p>
 <p><a href="http://www.telegraph.co.uk/news/obituaries/military-obituaries/special-forces-obituaries/10447712/Mavis-Batey-obituary.html">Una crittoanalista inglese</a>, analizzando il traffico intercettato del giorno, si accorse che quasi certamente era la cifratura del testo <code>"LLLLLLLLLLLLLLL"</code>: una trasmissione di prova da parte di operatori italiani che stavano provando Enigma. Ciò le permise di restringere grandemente l'insieme di chiavi del giorno---proprio perché il traffico cifrato Enigma forniva informazioni sul testo in chiaro e sulla chiave. Il che permise agli Inglesi di decrittare i messaggi crittati in quella chiave. Il che portò alla terribile tragedia di Capo Matapan.</p>
 <h2 id="https">HTTPS</h2>
@@ -1149,7 +1149,7 @@
 <li>il browser segue un link HTTP;</li>
 <li>l'attaccante MITM effettua una redirect verso un sito web controllato dall'attaccante ed in grado di infettare il browser;</li>
 </ol>
-<p><em>"When Eltantawy (il candidato presidenziale) visited certain websites not using HTTPS, a device installed at the border of Vodafone Egypt’s network automatically redirected him to a malicious website to infect his phone with Cytrox’s Predator spyware."</em></p>
+<p><strong>"When Eltantawy (il candidato presidenziale) visited certain websites not using HTTPS, a device installed at the border of Vodafone Egypt’s network automatically redirected him to a malicious website to infect his phone with Cytrox’s Predator spyware."</strong></p>
 <p>Il punto 2 è tecnicamente possibile perché il link è HTTP, quindi la comunicazione tra browser e web server non ha nessuna garanzia di autenticazione ed integrità (oltre che di riservatezza). Se il link fosse stato HTTPS allora questo meccanismo di attacco <strong>non</strong> avrebbe funzionato.</p>
 <p>Tutti i dettagli su:</p>
 <ul>

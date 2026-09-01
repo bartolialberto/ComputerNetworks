@@ -1110,14 +1110,14 @@
 <h3 id="interrogare-il-dns">Interrogare il DNS</h3>
 <ul>
 <li><a href="https://linux.die.net/man/1/dig">dig Linux man page</a> Linux command for interacting with web servers, used in one of the Colab notebooks above.</li>
-<li><a href="https://www.digwebinterface.com/">Online DNS Lookup</a> Webapp for interacting with name servers (a sort of <em>dig on line</em>). Specify query (name and type) and name server IP address.</li>
+<li><a href="https://www.digwebinterface.com/">Online DNS Lookup</a> Webapp for interacting with name servers (a sort of <strong>dig on line</strong>). Specify query (name and type) and name server IP address.</li>
 <li>The exact same operations of <code>dig</code> can be performed with <code>nslookup</code>, which is available in both Linux and Windows (with some differences between the two platforms). The syntax and output of <code>nslookup</code> is different from that of <code>dig</code>. <a href="https://www.google.com/search?q=nslookup+command">Search for a tutorial</a> if you are interested.</li>
 </ul>
 <h2 id="dns-architettura">DNS - Architettura</h2>
 <ul>
 <li><a href="https://www.internetsociety.org/resources/doc/2004/the-internet-domain-name-system-explained-for-non-experts-by-daniel-karrenberg/">The Internet Domain Name System Explained for Non-Experts</a> Una descrizione di come è realizzato il DNS (come interagiscono i name server tra loro e molto altro).</li>
 <li><a href="https://root-servers.org/">Root Name Servers</a> The 13 root name servers are operated by 12 independent organisations. <ul>
-<li>Each IP address used for root name servers actually corresponds to <em>many</em> different servers, thanks to a technology called <em>anycast</em> that we will not study in this course (thus the number of root name servers is much greater than 13). <a href="https://chat.openai.com/share/a587592b-9074-4d6d-bb0c-391b559a2a27">This interaction</a> with ChatGPT provides an overview of how anycast works.  </li>
+<li>Each IP address used for root name servers actually corresponds to <strong>many</strong> different servers, thanks to a technology called <strong>anycast</strong> that we will not study in this course (thus the number of root name servers is much greater than 13). <a href="https://chat.openai.com/share/a587592b-9074-4d6d-bb0c-391b559a2a27">This interaction</a> with ChatGPT provides an overview of how anycast works.  </li>
 </ul>
 </li>
 <li><a href="https://rssac002.root-servers.org/">Root Name Servers Traffic</a> Count of queries made to root name servers (daily averages): They are in the order of hundreds of billions queries every day.</li>
@@ -1147,7 +1147,7 @@
 <h2 id="creazione-di-domini">Creazione di domini</h2>
 <ul>
 <li>
-<p><em>Internet Corporation for Assigned Names and Numbers (ICANN)</em> is the organization that "coordinates" the DNS globally. Its website contains all the technical and procedural definitions related to how domains must be managed. A few relevant pages:</p>
+<p><strong>Internet Corporation for Assigned Names and Numbers (ICANN)</strong> is the organization that "coordinates" the DNS globally. Its website contains all the technical and procedural definitions related to how domains must be managed. A few relevant pages:</p>
 <ul>
 <li><a href="https://www.icann.org/registrants">Registrant</a> A domain name registrant is an individual or entity who registers a domain name. </li>
 <li><a href="https://www.icann.org/resources/pages/registrars-0d-2012-02-25-en">Registrar ("DNS provider")</a> An entity wishing to register a domain name under a generic top-level domain ("gTLD") may do so by using a registrar.</li>
@@ -1166,7 +1166,7 @@
 <h3 id="sequestri-di-domini">Sequestri di domini</h3>
 <ul>
 <li>
-<p><a href="https://therecord.media/doj-microsoft-seize-domains-russian-intelligence">DOJ, Microsoft seize dozens of domains ‘used by Russian intelligence agents’</a> Uno dei numerosissimi casi di cronaca relativi al "sequestro" (disattivazione) di domini associati ad attività fraudolenta. In questo caso una campagna di <em>spear</em> phishing (cioè phishing mirato verso persone specifiche) attribuita ad una organizzazione associata al governo russo.</p>
+<p><a href="https://therecord.media/doj-microsoft-seize-domains-russian-intelligence">DOJ, Microsoft seize dozens of domains ‘used by Russian intelligence agents’</a> Uno dei numerosissimi casi di cronaca relativi al "sequestro" (disattivazione) di domini associati ad attività fraudolenta. In questo caso una campagna di <strong>spear</strong> phishing (cioè phishing mirato verso persone specifiche) attribuita ad una organizzazione associata al governo russo.</p>
 </li>
 <li>
 <p><a href="https://arstechnica.com/gadgets/2025/03/italian-court-orders-google-to-block-iptv-pirate-sites-at-dns-level/">Italy demands Google poison DNS under strict Piracy Shield law</a> Italy is using its Piracy Shield law to go after Google, with a court ordering the Internet giant to immediately begin poisoning its public DNS servers. The goal is to prevent illegal football streams, but the effort has already caused collateral damage. </p>

@@ -1122,13 +1122,13 @@
 
 
 <h1 id="cyberchef-crypto-optional">Cyberchef Crypto - OPTIONAL</h1>
-<p><em>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple <strong>encoding</strong> like XOR and Base64, more complex <strong>encryption</strong> like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</em> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
+<p><strong>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple </strong>encoding<strong> like XOR and Base64, more complex </strong>encryption<strong> like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</strong> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
 <p>Make sure you read and understood the <a href="../../3%20-%20Web/Cyberchef%20encoding/">"How Cyberchef works" section</a>.</p>
 <p>Deselect the "autobake" cell in the bottom row (this way you have to click "BAKE!" in order to run the selected recipe on the inserted input, which is easier to understand).</p>
 <h3 id="data-representation-in-cyberchef">Data representation in Cyberchef</h3>
-<p>The webapp expects (input) and displays (output) <em>characters</em>.</p>
-<p>These characters may be a recipe <em>input</em>, a recipe <em>output</em>, a recipe <em>parameters</em>.</p>
-<p>There are several <em>representations</em> available including:</p>
+<p>The webapp expects (input) and displays (output) <strong>characters</strong>.</p>
+<p>These characters may be a recipe <strong>input</strong>, a recipe <strong>output</strong>, a recipe <strong>parameters</strong>.</p>
+<p>There are several <strong>representations</strong> available including:</p>
 <ul>
 <li><strong>RAW</strong> the ASCII representation of the character is passed to the code that implements the recipe.</li>
 <li><strong>HEX</strong> the byte value corresponding to each character pair (hexadecimal digits) is passed to the code that implements the recipe.</li>
@@ -1136,7 +1136,7 @@
 <p>Use HEX for parameters and RAW for input/output.</p>
 <p>Note that copying and pasting RAW data may not work as expected (the webapp may discard some characters and modify others). In that case you may want to add recipe To Hex or From Hex for converting between RAW and HEX (HEX may be copy and pasted easily).</p>
 <h2 id="private-key-crypto">Private key crypto</h2>
-<p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will <em>not</em> discuss what these additional parameters are for.</p>
+<p>Cyberchef supports many different algorithms for private key cryptography. Usage of each algorithm usually requires specifying many more parameters in addition to the key. Below we will <strong>not</strong> discuss what these additional parameters are for.</p>
 <h3 id="choice-of-the-encryption-key">Choice of the encryption key</h3>
 <p>The algorithms suggested below support keys of different lengths, e.g., 16, 24, 32 bytes (128, 192, 256 bits).</p>
 <p>Which of these character sequences can be used as a 16-byte key? Why?</p>
@@ -1159,19 +1159,19 @@
 <p>By executing "STEP" in the bottom part of the web app, you will step through the chained recipe and see the output of each individual recipe, including the output of AES Encryot.</p>
 <p><code>https://gchq.github.io/CyberChef/#recipe=AES_Encrypt(%7B'option':'Hex','string':'f6041f627864c7b6a2cc259ee7cce4c8'%7D,%7B'option':'Hex','string':'12345678901234561234567890123456'%7D,'CBC','Raw','Hex',%7B'option':'Hex','string':''%7D)From_Hex('Auto')AES_Decrypt(%7B'option':'Hex','string':'f6041f627864c7b6a2cc259ee7cce4c8'%7D,%7B'option':'Hex','string':'12345678901234561234567890123456'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)</code></p>
 <h3 id="encryption-and-decryption-trickier">Encryption and decryption - Trickier</h3>
-<p>For <em>encryption</em>:</p>
+<p>For <strong>encryption</strong>:</p>
 <ol>
-<li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <em>block ciphers</em> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>).</li>
+<li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <strong>block ciphers</strong> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>).</li>
 <li>Insert parameters in the recipe:<ul>
-<li><em>Mode of operation</em>: select one <strong>different from GCM</strong> (see also the Warning section below).</li>
-<li><em>Initialization vector (IV)</em>: All block ciphers require this parameter. It must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext. You may want to copy this sequence as many times as necessary: <code>1234567890123456</code></li>
-<li><em>Key</em>: You know what it is. Not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</li>
+<li><strong>Mode of operation</strong>: select one <strong>different from GCM</strong> (see also the Warning section below).</li>
+<li><strong>Initialization vector (IV)</strong>: All block ciphers require this parameter. It must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext. You may want to copy this sequence as many times as necessary: <code>1234567890123456</code></li>
+<li><strong>Key</strong>: You know what it is. Not every key length is allowed. How many characters do you have to insert for specifying a key of the required length, e.g., a 16-byte key? Why?</li>
 </ul>
 </li>
 <li>Encrypt a text of choice (input tab, up right).</li>
 </ol>
 <p>Now copy encrypted text, IV and key somewhere (e.g., on a file).</p>
-<p>For <em>decryption</em>:</p>
+<p>For <strong>decryption</strong>:</p>
 <ol>
 <li>Select a recipe for decryption, with the same algorithm used above for encryption.</li>
 <li>Insert in this recipe the same parameters as above (mode of operation, IV, key).</li>
@@ -1185,18 +1185,18 @@
 <li>Generate a ciphertext as indicated above in the "Encryption" example.</li>
 <li>You want to send this ciphertext by email to another student. </li>
 </ul>
-<p>What information is necessary for the student to decrypt the ciphertext, in addition to the <em>key</em>?</p>
+<p>What information is necessary for the student to decrypt the ciphertext, in addition to the <strong>key</strong>?</p>
 <p>Regarding the key, think carefully about these issues:</p>
 <ul>
 <li>How can you give the key to that student?</li>
 <li>What if the student was thousands of Kms away?</li>
-<li>What if you had to communicate with <em>thousands</em> of different students?</li>
+<li>What if you had to communicate with <strong>thousands</strong> of different students?</li>
 </ul>
 <h3 id="a-tricky-warning">A tricky warning</h3>
 <p>Each of the AES, Blowfish, DES encryption algorithms support several modes of operation. GCM is the only mode of operation that provides integrity.</p>
-<p>The previous examples use a mode of operation different from GCM, and thus correspond to configurations that <em>do not</em> support integrity. However, they do <em>seem</em> to support integrity (i.e. changing the ciphertext or using the wrong key provokes a decryption error). The reason is subtle. Informally and oversimplifying, these modes do not support integrity in the sense that it is always possible to find some modification that does not lead to a decryption error; on the other hand, "most" modifications will be detected (for any given modification, the probability that this modification will not be detected is very, very small). </p>
+<p>The previous examples use a mode of operation different from GCM, and thus correspond to configurations that <strong>do not</strong> support integrity. However, they do <strong>seem</strong> to support integrity (i.e. changing the ciphertext or using the wrong key provokes a decryption error). The reason is subtle. Informally and oversimplifying, these modes do not support integrity in the sense that it is always possible to find some modification that does not lead to a decryption error; on the other hand, "most" modifications will be detected (for any given modification, the probability that this modification will not be detected is very, very small). </p>
 <p>The previous examples use a different mode of operation to GCM</p>
-<p>The reason I suggested <em>not</em> using GCM is that the decryption recipe requires an additional parameter (GCM tag) which I do not know how to extract automatically from the encryption recipe so that the two recipes (encryption and decryption) can be chained together. I am not even sure if they can be chained together in this Cyberchef implementation.</p>
+<p>The reason I suggested <strong>not</strong> using GCM is that the decryption recipe requires an additional parameter (GCM tag) which I do not know how to extract automatically from the encryption recipe so that the two recipes (encryption and decryption) can be chained together. I am not even sure if they can be chained together in this Cyberchef implementation.</p>
 <h3 id="hmac">HMAC</h3>
 <ol>
 <li>Select the recipe for HMAC.</li>
@@ -1207,7 +1207,7 @@
 <p>Insert a much longer input: does the output length change?</p>
 <h2 id="public-key-crypto">Public key crypto</h2>
 <p>You can "play" with <strong>RSA and PGP</strong> (the examples below outline the usage of RSA, usage of PGP is analogous).</p>
-<p>You always start by generating a <em>keypair</em>. Save the private key in a file and the public key in another file. You will keep the private key secret and you will distribute your public key to anyone who needs to communicate with you.</p>
+<p>You always start by generating a <strong>keypair</strong>. Save the private key in a file and the public key in another file. You will keep the private key secret and you will distribute your public key to anyone who needs to communicate with you.</p>
 <p>You may want to experiment with other students (in which case you will have to exchange the respective public keys) or alone (in which case you will have to generate two or more keypairs and pretend to impersonate multiple people).</p>
 <h3 id="encryption">Encryption</h3>
 <ol>
@@ -1232,15 +1232,15 @@
 <p>Now try to modify the decryption key: does decryption work?</p>
 <p>Then insert again the correct key but modify the ciphertext: does decryption work?</p>
 <h3 id="identity-in-public-key-cryptography">Identity in public key cryptography</h3>
-<p><em>(All the considerations below apply to private key cryptography with very little modifications; we refer to public key because it is simpler and more common in practice)</em></p>
-<p>Note that in the above procedures for encryption and decryption <em>there is no notion of identity whatsoever</em>.</p>
-<p>There is <em>no</em> specification of <em>"who"</em> sent the message nor of <em>"who"</em> can decrypt the ciphertext. This notion is <em>not</em> required by the mathematical procedures for encryption and decryption: such procedures work at the keypair level: you encrypt with a number called public key, you decrypt with another number called private key.</p>
-<p>In practical applications of public key cryptography, one has to reason in terms of people, organizations, websites and alike, i.e., in terms of entities that are external to a computer. For this reason, keypairs have to be associated with a <em>subject</em>.
-A subject has a <em>name</em> in form of a <em>string</em> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
+<p><strong>(All the considerations below apply to private key cryptography with very little modifications; we refer to public key because it is simpler and more common in practice)</strong></p>
+<p>Note that in the above procedures for encryption and decryption <strong>there is no notion of identity whatsoever</strong>.</p>
+<p>There is <strong>no</strong> specification of <strong>"who"</strong> sent the message nor of <strong>"who"</strong> can decrypt the ciphertext. This notion is <strong>not</strong> required by the mathematical procedures for encryption and decryption: such procedures work at the keypair level: you encrypt with a number called public key, you decrypt with another number called private key.</p>
+<p>In practical applications of public key cryptography, one has to reason in terms of people, organizations, websites and alike, i.e., in terms of entities that are external to a computer. For this reason, keypairs have to be associated with a <strong>subject</strong>.
+A subject has a <strong>name</strong> in form of a <strong>string</strong> that identifies an entity external to the computer, e.g., a person, an organization, a DNS name and so on.
 The identification mechanism (what that entity actually "is" and how it is identified by that string) is completely independent of public key cryptography.
 The only requirements are that the private key must be really private (i.e., known only to the entity identified by the associated subject) and that the association be real (this is subtle and difficult to explain precisely: the entity identified by the subject string must be really the entity that everyone would associate with that subject string).</p>
 <p>In some cases the string that acts as a name for the subject is also called a "subject", i.e., in some cases there is no explicit distinction between a subject and its name.</p>
-<p>Associations between public keys and subjects are based on <em>certificates</em> and on <em>certification authorities</em>. These are complex notions discussed later in this course.</p>
+<p>Associations between public keys and subjects are based on <strong>certificates</strong> and on <strong>certification authorities</strong>. These are complex notions discussed later in this course.</p>
 
 
   

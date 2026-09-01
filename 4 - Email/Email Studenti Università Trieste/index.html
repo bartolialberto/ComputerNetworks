@@ -1024,7 +1024,7 @@
 
 
 <h1 id="email-studenti-ottobre-2023">Email studenti (Ottobre 2023)</h1>
-<p><em>Prima di scrivere questo documento ho dato agli studenti informazioni diverse e non accurate, anche e soprattutto perché alcuni studenti mi avevano dato (non per loro colpa) informazioni incomplete ed inaccurate che non avevo approfondito. Quanto segue "dovrebbe" essere corretto ed aggiornato ad Ottobre 2023.</em></p>
+<p><strong>Prima di scrivere questo documento ho dato agli studenti informazioni diverse e non accurate, anche e soprattutto perché alcuni studenti mi avevano dato (non per loro colpa) informazioni incomplete ed inaccurate che non avevo approfondito. Quanto segue "dovrebbe" essere corretto ed aggiornato ad Ottobre 2023.</strong></p>
 <p>L'architettura delle mailbox che l'Università di Trieste mette a disposizione di ogni studente è un pò intricata (non per "colpa" dei servizi informatici dell'Università: i sistemi di email delle grandi organizzazioni sono intrinsecamente complicati).</p>
 <p><strong>Quanto segue non è parte del programma di esame.</strong> E' solo per soddisfare eventuali curiosità e per capire che la realtà, come ormai sappiamo, è molto più complessa ed intricata di quanto vediamo a lezione. Leggere questa pagina, comunque, può essere utile perché contiene alcuni suggerimenti di interrogazioni DNS e Whois che credo siano esercizi interessanti.</p>
 <h2 id="visione-utente">Visione utente</h2>
@@ -1037,7 +1037,7 @@
 </ol>
 <p>Notare che:</p>
 <ul>
-<li>La struttura sintattica di 1 è quella di un indirizzo email ma 1 <em>non</em> è un indirizzo email.</li>
+<li>La struttura sintattica di 1 è quella di un indirizzo email ma 1 <strong>non</strong> è un indirizzo email.</li>
 <li>Gli indirizzi email 2 e 3 appartengono a domini email diversi (ma identificano la stessa mailbox).</li>
 </ul>
 <h2 id="identificatore-univoco">Identificatore univoco</h2>
@@ -1049,7 +1049,7 @@
 <p>In altre parole: l'utente scrive nel campo <code>To:</code> la stringa <code>5943@ds.units.it</code> (identificatore AD) ed Outlook sostituisce quella stringa automaticamente con:</p>
 <p><code>Alberto Bartoli &lt;bartoli.alberto@units.it&gt;</code></p>
 <h3 id="dettaglio-active-directory">Dettaglio Active Directory</h3>
-<p>Dettaglio che confonde le idee: l'insieme di tutte le identità Active Directory in una organizzazione (ad esempio l'Università di Trieste) si chiama <em>dominio</em>.</p>
+<p>Dettaglio che confonde le idee: l'insieme di tutte le identità Active Directory in una organizzazione (ad esempio l'Università di Trieste) si chiama <strong>dominio</strong>.</p>
 <p>Questo termine identifica una entità (cioè l'insieme di tutte le identità Active Directory in una stessa organizzazione) che non c'entra nulla con i domini DNS (insieme di tutti i RR con lo stesso nome). In altre parole, in AD il termine "dominio" identifica una lampada, nel DNS il termine "dominio" identifica un cucchiaio: entità di tipo radicalmente diverso.</p>
 <p>Per motivi interni ad Active Directory:</p>
 <ul>
@@ -1058,15 +1058,15 @@
 <li>ogni nome di dominio AD deve essere una zona DNS (provate a verificare l'esistenza di tale zona inviando una query "appropriata" al DNS, ad esempio con <a href="https://www.digwebinterface.com/">digonline</a>).</li>
 </ul>
 <h2 id="indirizzi-email-e-mailbox">Indirizzi email e mailbox</h2>
-<p>Gli indirizzi email 2 e 3 identificano <em>la stessa mailbox</em>. Ciò non si può dedurre dalla forma dell'indirizzo email o da interrogazioni al DNS. Lo si può verificare "sperimentalmente" inviando un email verso l'indirizzo 2 ed un altro email verso l'indirizzo 3: i due email arriveranno entrambi nella stessa mailbox.</p>
+<p>Gli indirizzi email 2 e 3 identificano <strong>la stessa mailbox</strong>. Ciò non si può dedurre dalla forma dell'indirizzo email o da interrogazioni al DNS. Lo si può verificare "sperimentalmente" inviando un email verso l'indirizzo 2 ed un altro email verso l'indirizzo 3: i due email arriveranno entrambi nella stessa mailbox.</p>
 <p>In dettaglio, interrogando il DNS (ad esempio con <a href="https://www.digwebinterface.com/">digonline</a>; esercizio utile) si osserva che entrambe le mailbox si trovano sullo stesso insieme di 7 mail server, sono cioè replicate su 7 mail server. Più precisamente:</p>
 <ul>
 <li>Dai RR MX si osserva che i due domini email si trovano su due mail server di nome diverso.</li>
 <li>Dai corrispondenti RR A si osserva che ognuno dei due mail server ha lo stesso insieme di 7 indirizzi IP.</li>
 </ul>
 <p>E' quindi ragionevole ipotizzare che i due mail server siano in realtà 7 repliche diverse dello stesso mail server (il modo con il quale sono replicate le informazioni non è parte di questo corso).</p>
-<p>Per determinare chi sia il proprietario di tali indirizzi IP si può interrogare un servizio Whois. I servizi Whois permettono di determinare il proprietario di un <em>dominio</em> (fino al secondo livello compreso) e anche di determinare il proprietario di un <em>indirizzo IP</em>. L'accesso pubblico a queste informazioni può avere delle limitazioni a seconda del dominio o indirizzo IP per motivi che non approfondiamo. In questo caso non ci sono limitazioni, vedi ad esempio <a href="https://www.whois.com/whois/52.101.73.8">https://www.whois.com/whois/52.101.73.8</a>.</p>
-<p>Per uno dei due domini email (<code>stud.units.it</code>) ci sono <em>due</em> RR di tipo MX. Ciò significa che per quel dominio email ci sono <em>due</em> mail server. I nomi dei due mail server sono preceduti da due numeri interi diversi:</p>
+<p>Per determinare chi sia il proprietario di tali indirizzi IP si può interrogare un servizio Whois. I servizi Whois permettono di determinare il proprietario di un <strong>dominio</strong> (fino al secondo livello compreso) e anche di determinare il proprietario di un <strong>indirizzo IP</strong>. L'accesso pubblico a queste informazioni può avere delle limitazioni a seconda del dominio o indirizzo IP per motivi che non approfondiamo. In questo caso non ci sono limitazioni, vedi ad esempio <a href="https://www.whois.com/whois/52.101.73.8">https://www.whois.com/whois/52.101.73.8</a>.</p>
+<p>Per uno dei due domini email (<code>stud.units.it</code>) ci sono <strong>due</strong> RR di tipo MX. Ciò significa che per quel dominio email ci sono <strong>due</strong> mail server. I nomi dei due mail server sono preceduti da due numeri interi diversi:</p>
 <ul>
 <li><code>25 stud-units-it.mail.protection.outlook.com.</code></li>
 <li><code>15 mx0ts.units.it.</code></li>
@@ -1081,9 +1081,9 @@
 <p>Per confermare l'ipotesi 1 si può interrogare un <a href="https://www.whois.com/">Whois</a> per verificare chi è il proprietario del dominio <code>units.it</code> e chi è il proprietario dell'indirizzo IP di <code>mx0ts.units.it</code>. Fatelo, è semplice.</p>
 <h3 id="chi-gestisce-il-mail-server">Chi gestisce il mail server?</h3>
 <p>Il mail server <code>stud-units-it.mail.protection.outlook.com.</code> è gestito da Microsoft.</p>
-<p>Derivare questa informazione tramite Whois è <em>molto complicato</em> e si possono ottenere solo conferme indirette.</p>
+<p>Derivare questa informazione tramite Whois è <strong>molto complicato</strong> e si possono ottenere solo conferme indirette.</p>
 <p>Più precisamente, determinare il proprietario dell'indirizzo IP tramite Whois è semplice (fatelo), determinare il proprietario del dominio è molto complicato, perché Whois ha informazioni solo sui domini fino al secondo livello (<code>outlook.com</code>).</p>
-<p>Abbiamo la <a href="https://www.whois.com/whois/outlook.com">conferma</a> che <code>outlook.com</code> è gestito da Microsoft ma <em>non sappiamo</em> a quale zona appartiene <code>stud-units-it.mail.protection.outlook.com.</code> e chi è il proprietario di quella zona.</p>
+<p>Abbiamo la <a href="https://www.whois.com/whois/outlook.com">conferma</a> che <code>outlook.com</code> è gestito da Microsoft ma <strong>non sappiamo</strong> a quale zona appartiene <code>stud-units-it.mail.protection.outlook.com.</code> e chi è il proprietario di quella zona.</p>
 <p>Effettuando una navigazione nel domain tree DNS (digonline in modalità trace, <a href="https://www.digwebinterface.com/?hostnames=stud-units-it.mail.protection.outlook.com.%0D%0A&amp;type=A&amp;trace=on&amp;ns=resolver&amp;useresolver=8.8.4.4&amp;nameservers=">ad esempio</a>) si osserva che:</p>
 <ul>
 <li><code>protection.outlook.com.</code> è una zona</li>

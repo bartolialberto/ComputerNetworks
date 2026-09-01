@@ -1198,7 +1198,7 @@
 <p>L'ambiente di programmazione Python contiene un semplice web server.</p>
 <ul>
 <li>Installare Python.</li>
-<li>Lanciare un interprete di comandi (<em>shell</em>).</li>
+<li>Lanciare un interprete di comandi (<strong>shell</strong>).</li>
 <li>Spostare la shell nella directory in cui si trovano i file html di esempio.</li>
 <li>Lanciare il web server Python <code>python -m http.server</code>. Di default questo web server è in ascolto sulla porta 8000. Il web server rimane in esecuzione fino a quando è in esecuzione la shell dalla quale lo si è lanciato.</li>
 <li>Lanciare un'altra shell. Eseguire <code>netstat -an</code> per elencare l'insieme di porte attualmente utilizzate. Deve comparire nell'elenco la porta <code>8000</code> associata al protocollo <code>TCP</code> e nello stato <code>LISTENING</code>, cioè in attesa di richieste di connessione. Ciò conferma che il web server è effettivamente in esecuzione.</li>
@@ -1264,7 +1264,7 @@
 <p>Le connessioni tra browser e server non sono di facile interpretazione, per due motivi:</p>
 <ol>
 <li>Quando il browser è collegato ad un web server in esecuzione sulla stessa macchina in cui è in esecuzione il browser, come in questo caso, l'esecuzione di <code>netstat -an</code> mostrerà <em>due</em> righe per ogni connessione esistente invece di una: una riga in cui considera il browser locale ed il server remoto, un'altra in cui considera il server locale ed il browser remoto.</li>
-<li>Il browser può usare <em>più connessioni in parallelo verso lo stesso web server</em>: se il browser si accorge che deve prelevare più risorse dallo stesso web server, allora il browser può decidere di aprire più connessioni verso quel web server ed inviare più richieste in parallelo, una su ogni connessioni.</li>
+<li>Il browser può usare <strong>più connessioni in parallelo verso lo stesso web server</strong>: se il browser si accorge che deve prelevare più risorse dallo stesso web server, allora il browser può decidere di aprire più connessioni verso quel web server ed inviare più richieste in parallelo, una su ogni connessioni.</li>
 </ol>
 <p>Negli esercizi, per semplicità, assumeremo sempre che il punto 2 non accade mai: ad ogni istante:</p>
 <ul>
@@ -1323,9 +1323,9 @@ implica che nel PC nel cui file <code>hosts</code> è stata aggiunta quella riga
 <li><a href="https://www.w3schools.com/js/default.asp">JavaScript Tutorial (W3 Schools)</a></li>
 </ul>
 <h2 id="contenuto-dinamico">Contenuto dinamico</h2>
-<p><em>Attenzione: gli esempi in questa sezione funzionano solo con versioni di Python precedenti alla 3.15. Per verificare la versione di Python sul proprio PC eseguire <code>python -V</code>.</em></p>
-<p><em>Con le versioni di Python successive dovrebbe essere sufficiente eseguire _pip install legacy-cgi</em>, ma non ho provato._</p>
-<p><em>Devo trovare il tempo per aggiornare questa parte ed usare WSGI.</em></p>
+<p><strong>Attenzione: gli esempi in questa sezione funzionano solo con versioni di Python precedenti alla 3.15. Per verificare la versione di Python sul proprio PC eseguire <code>python -V</code>.</strong></p>
+<p><em>Con le versioni di Python successive dovrebbe essere sufficiente eseguire <strong>pip install legacy-cgi</strong>, ma non ho provato.</em></p>
+<p><strong>Devo trovare il tempo per aggiornare questa parte ed usare WSGI.</strong></p>
 <ul>
 <li>Crea una directory di nome <code>cgi-bin</code></li>
 <li>Crea in quella directory un file di nome <code>hello.py</code> e contenuto identico a quello del secondo esempio nella sezione "Execute a Script Remotely Through the Common Gateway Interface (CGI)" del riferimento indicato più sotto.</li>

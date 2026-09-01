@@ -1038,11 +1038,11 @@
 
 
 <h1 id="cyberchef">Cyberchef</h1>
-<p><em>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple <strong>encoding</strong> like XOR and Base64, more complex <strong>encryption</strong> like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</em> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
+<p><strong>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple </strong>encoding<strong> like XOR and Base64, more complex </strong>encryption<strong> like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</strong> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
 <h2 id="how-cyberchef-works">How Cyberchef works</h2>
 <p>Open the <a href="https://gchq.github.io/CyberChef/">web app</a>. There are many "recipes" (i.e., predefined computations) available on the left part.</p>
-<p>One can select a recipe by double-clicking on it or by drag-and-drop. Each recipe takes an <em>input</em> and, when executed, it produces an <em>output</em>. Deselect the "auto-bake" checkbox in the bottom-center part. This way, recipes will not run automatically but only when clicking the "bake" button. This configuration is simpler to handle, I think.</p>
-<p>Each recipe also has a set of <em>parameters</em>. For example, recipes for encryption have the key as a parameter; the input is the cleartext while the output is the ciphertext.</p>
+<p>One can select a recipe by double-clicking on it or by drag-and-drop. Each recipe takes an <strong>input</strong> and, when executed, it produces an <strong>output</strong>. Deselect the "auto-bake" checkbox in the bottom-center part. This way, recipes will not run automatically but only when clicking the "bake" button. This configuration is simpler to handle, I think.</p>
+<p>Each recipe also has a set of <strong>parameters</strong>. For example, recipes for encryption have the key as a parameter; the input is the cleartext while the output is the ciphertext.</p>
 <p>Recipes can be chained together so that the output of one is the input of the next one and so on.</p>
 <h3 id="simple-application-base-conversion">Simple application: Base conversion</h3>
 <p>Conversion between different bases (binary, decimal, hex) can be done with recipes <code>To Base</code> / <code>From Base</code>. For example, <code>To Base (radix 2)</code> with input <code>7</code> will output <code>111</code>.</p>
@@ -1060,9 +1060,9 @@
 <li>Insert the previously saved encoding as input and verify that the output is the expected one.</li>
 </ul>
 <h2 id="base64">Base64</h2>
-<p>This encoding format is such that the (encoded) output consists of ASCII data. It is widely used, in particular, when <em>binary</em> data have to be used in contexts where <em>text</em> data is expected.
+<p>This encoding format is such that the (encoded) output consists of ASCII data. It is widely used, in particular, when <strong>binary</strong> data have to be used in contexts where <strong>text</strong> data is expected.
 Important examples are given below: HTTP Basic Authentication credentials and Email attachments.</p>
-<p>Base64 encoding represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: you need 8 bits for encoding 6 bits). The encoding table is a standard that be found in many places, e.g., on <a href="https://en.wikipedia.org/wiki/Base64">Wikipedia</a>. Certain predefined <em>padding rules</em> allow encoding byte sequences whose length is not a multiple of 6 bits.</p>
+<p>Base64 encoding represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: you need 8 bits for encoding 6 bits). The encoding table is a standard that be found in many places, e.g., on <a href="https://en.wikipedia.org/wiki/Base64">Wikipedia</a>. Certain predefined <strong>padding rules</strong> allow encoding byte sequences whose length is not a multiple of 6 bits.</p>
 <p>You may Base64 encode and Base64 decode with Cyberchef:</p>
 <ul>
 <li>Select the 'To Base64' recipe.</li>

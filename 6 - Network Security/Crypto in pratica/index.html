@@ -1056,50 +1056,50 @@
 <h1 id="crittografia-in-pratica-qualche-dettaglio">Crittografia in pratica - Qualche dettaglio</h1>
 <p>L'uso "pratico" della crittografia si basa su molti dettagli non presentati nel corso. In questa sezione sono discussi alcuni di questi molto brevemente ed in maniera molto semplificata. Possono essere utili se qualcuno vuole "provare ad usare" qualche strumento software.</p>
 <h2 id="rappresentazione-e-memorizzazione-delle-chiavi">Rappresentazione e memorizzazione delle chiavi</h2>
-<p>Una chiave crittografica, in pratica, viene memorizzata in un <em>file</em>.</p>
+<p>Una chiave crittografica, in pratica, viene memorizzata in un <strong>file</strong>.</p>
 <p>Esistono molti formati diversi per rappresentare una chiave crittografica. Alcuni di questi formati sono testuali, altri sono binari.</p>
 <p>Quando si usa uno strumento crittografico, occorre verificare in quale formato esso si aspetta di ricevere la chiave. Tipicamente uno strumento accetta molti formati che possono essere specificati con un flag di input opportuno. Se la chiave che si ha a disposizione è rappresentata in un formato diverso da quelli attesi dallo strumento, allora la chiave deve essere convertita di formato con un software appropriato.</p>
 <p>Alcuni formati molto comuni sono:</p>
 <ul>
-<li>PEM Formato <em>testuale</em> (file con questo formato hanno tipicamente estensione <code>.pem</code>, <code>.crt</code>, <code>.key</code>). Usato spesso per la crittografia a chiave pubblica e per i certificati. Tipicamente inizia con una linea <code>BEGIN</code> e termina con una linea <code>END</code>. La chiave è rappresentata in formato Base64-encoded.</li>
-<li>DER Formato <em>binario</em> (file con questo formato hanno tipicamente estensione <code>.der</code>, <code>.cer</code>). Usato spesso per certificati e per chiavi private.</li>
+<li>PEM Formato <strong>testuale</strong> (file con questo formato hanno tipicamente estensione <code>.pem</code>, <code>.crt</code>, <code>.key</code>). Usato spesso per la crittografia a chiave pubblica e per i certificati. Tipicamente inizia con una linea <code>BEGIN</code> e termina con una linea <code>END</code>. La chiave è rappresentata in formato Base64-encoded.</li>
+<li>DER Formato <strong>binario</strong> (file con questo formato hanno tipicamente estensione <code>.der</code>, <code>.cer</code>). Usato spesso per certificati e per chiavi private.</li>
 </ul>
 <p>Ci sono molti altri formati, ad esempio PKCS#8, PKCS#12, quelli usati dai software SSH, dai software GPG ed altri.</p>
 <h2 id="protezione-chiavi-con-password">Protezione chiavi con password</h2>
-<p>I file che memorizzano chiavi private di solito sono associati ad una <em>password</em>. 
+<p>I file che memorizzano chiavi private di solito sono associati ad una <strong>password</strong>. 
 Per usare una chiave privata contenuta in un file è necessario dimostrare la conoscenza della password corrispondente.
 Il diritto di accesso in lettura al file, quindi, non deve essere sufficiente per usare la chiave contenuta nel file.</p>
-<p>Ad esempio, un software <em>S</em> che deve usare una chiave privata deve ricevere in input:</p>
+<p>Ad esempio, un software <strong>S</strong> che deve usare una chiave privata deve ricevere in input:</p>
 <ol>
 <li>il nome del file contenente la chiave privata; e,</li>
 <li>la password per quel file.</li>
 </ol>
-<p>I dettagli realizzativi di questo meccanismo di protezione non fanno parte di questo corso. Non sono banali: come fa <em>S</em> a sapere se gli è stata fornita la password corretta?</p>
+<p>I dettagli realizzativi di questo meccanismo di protezione non fanno parte di questo corso. Non sono banali: come fa <strong>S</strong> a sapere se gli è stata fornita la password corretta?</p>
 <p>Tentativo di risposta: la memorizza nello stesso file. Ciò non avrebbe senso: chi ha diritto di accesso in lettura al file potrebbe leggerne il contenuto e quindi ottenere la password; pertanto la protezione del file con password sarebbe inutile.</p>
 <p>Chi è interessato trova alcune note in <a href="../Protezione%20file%20con%20password/">questa pagina</a>.</p>
 <h2 id="struttura-del-ciphertext">Struttura del ciphertext</h2>
 <h3 id="replay-attack">Replay attack</h3>
 <p>Un network attacker potrebbe osservare un ciphertext e ritrasmetterlo successivamente. Per quello che sappiamo noi, il ricevente accetterebbe il ciphertext in quanto è autentico ed integro. Ad esempio, in TLS, il ricevente riceverebbe un messaggio con un HMAC valido, quindi non avrebbe nessun motivo per scartarlo. Ovviamente non vogliamo che ciò accada.</p>
-<p>Nelle applicazioni pratiche della crittografia, a chiave privata e a chiave pubblica, è sempre presente una difesa nei confronti di questo <em>replay attack</em>.</p>
+<p>Nelle applicazioni pratiche della crittografia, a chiave privata e a chiave pubblica, è sempre presente una difesa nei confronti di questo <strong>replay attack</strong>.</p>
 <p>Intuitivamente, in ogni flusso di plaintext viene sempre inserito una specie di numero di sequenza, in modo che il ricevente non accetti mai duplicati di messaggi già ricevuti.</p>
 <h3 id="dictionary-attack">Dictionary attack</h3>
 <p>Supponiamo di riuscire a conoscere una coppia plaintext-ciphertext per una certa chiave <em>(p_x,c_x)</em>.</p>
-<p>Ad esempio, con la crittografia a chiave pubblica potrei crittare <em>p_x</em> con una chiave pubblica nota ed ottenere <em>c_x</em>. Con la crittografia a chiave privata potrei sapere che in ogni interazione con un server in ascolto su una certa porta il primo plaintext è noto, quindi osservando il primo testo cifrato <em>c_x</em> avrei la coppia <em>(p_x, c_x)</em>.</p>
-<p>Generalizzando, possiamo immaginare di avere a disposizione un dictionary con molte coppie <em>(p_x,c_x)</em>, tutte relative alla stessa chiave.</p>
+<p>Ad esempio, con la crittografia a chiave pubblica potrei crittare <em>p_x</em> con una chiave pubblica nota ed ottenere <em>c_x</em>. Con la crittografia a chiave privata potrei sapere che in ogni interazione con un server in ascolto su una certa porta il primo plaintext è noto, quindi osservando il primo testo cifrato <em>c_x</em> avrei la coppia _(p_x, c_x)**.</p>
+<p>Generalizzando, possiamo immaginare di avere a disposizione un dictionary con molte coppie **(p_x,c_x)_, tutte relative alla stessa chiave.</p>
 <p>In questo modo la secrecy potrebbe non essere garantita nei confronti di un network attacker in grado di osservare traffico in cui è usata la chiave per la quale ha un dictionary: ogni volta che osserva <em>c_x</em> nel flusso di ciphertext, infatti, il network attacker saprebbe che il flusso di plaintext contiene <em>p_x</em>.</p>
-<p>Nelle applicazioni pratiche della crittografia, a chiave privata e a chiave pubblica, è sempre presente una difesa nei confronti di questo <em>dictionary attack</em>.</p>
+<p>Nelle applicazioni pratiche della crittografia, a chiave privata e a chiave pubblica, è sempre presente una difesa nei confronti di questo <strong>dictionary attack</strong>.</p>
 <p>Intuitivamente, se critto più volte uno stesso plaintext con la stessa chiave, ottengo un ciphertext sempre diverso.</p>
 <p>Pertanto, anche se si riuscisse a costruire un dictionary come sopra, tale dictionary sarebbe inutile.</p>
 <p>Il modo con il quale è ottenuta questa proprietà, che non approfondiamo, è più o meno questo: si suddivide il plaintext in segmenti di dimensione fissa; si inseriscono dei byte random in coda ad ognuno di tali segmenti; si crittano i segmenti. Quando si decritta si buttano via i byte random, la cui quantità e posizione sono note.</p>
 <h3 id="mode-of-operation">Mode of operation</h3>
 <p>In breve: se viene chiesto di specificare un "mode of operation" in una operazione crittografica, scegliere CCM oppure GCM. Il motivo è riassunto in forma intuitiva qui di seguito.</p>
-<p>Esistono molti algoritmi di crittografia a chiave privata. Quelli più comunemente usati sono detti <em>block ciphers</em> perché operano su blocchi di byte, cioè prendono in input una sequenza di byte di lunghezza fissa e forniscono in output una sequenza di byte della stessa lunghezza.</p>
-<p>Gli algoritmi block ciphers possono essere configurati per funzionare in vari <em>modes of operation</em> che differiscono nelle modalità con le quali i blocchi di ciphertext sono ottenuti dai blocchi di plaintext. Ad esempio:</p>
+<p>Esistono molti algoritmi di crittografia a chiave privata. Quelli più comunemente usati sono detti <strong>block ciphers</strong> perché operano su blocchi di byte, cioè prendono in input una sequenza di byte di lunghezza fissa e forniscono in output una sequenza di byte della stessa lunghezza.</p>
+<p>Gli algoritmi block ciphers possono essere configurati per funzionare in vari <strong>modes of operation</strong> che differiscono nelle modalità con le quali i blocchi di ciphertext sono ottenuti dai blocchi di plaintext. Ad esempio:</p>
 <ul>
 <li>EBC: ogni blocco di plaintext è crittato in modo indipendente da tutti gli altri blocchi;</li>
 <li>CBC: ogni blocco di plaintext viene crittato dopo averne calcolato lo XOR con il precedente blocco di ciphertext (quindi ogni blocco di ciphertext dipende da tutti i blocchi di ciphertext precedenti).</li>
 </ul>
-<p>Le <em>proprietà di sicurezza</em> dei block ciphers nei confronti di un network attacker dipendono dal mode of operation usato:</p>
+<p>Le <strong>proprietà di sicurezza</strong> dei block ciphers nei confronti di un network attacker dipendono dal mode of operation usato:</p>
 <ul>
 <li>Forniscono secrecy, authentication, integrity: CCM, CWC, EAX, GCM, IAPM, OCB.</li>
 <li>Forniscono solo secrecy (quindi sono raramente usati in pratica): ECB, CBC, CFB, OFB, CTR.</li>
@@ -1121,12 +1121,12 @@ Il diritto di accesso in lettura al file, quindi, non deve essere sufficiente pe
 <li>non può generare un ciphertext che sarà accettato dal ricevente (perché non conosce la chiave che il ricevente userà in decryption):</li>
 <li>non può modificare il ciphertext trasmesso senza che il ricevente rilevi la modifica in decryption.</li>
 </ul>
-<p>Notare che a questo livello di astrazione <em>non c'è nessuna nozione di subject</em> o di subject fisico. Autenticazione significa conoscenza di una chiave.</p>
+<p>Notare che a questo livello di astrazione <strong>non c'è nessuna nozione di subject</strong> o di subject fisico. Autenticazione significa conoscenza di una chiave.</p>
 <h3 id="secrecy-senza-authentication-ed-integrity">Secrecy senza Authentication ed Integrity</h3>
 <p>Consideriamo un mode of operation che garantisce solo secrecy, cioè non garantisce authentication ed integrity (quindi un mode of operation di scarsa utilità pratica).</p>
 <p>In questo caso quando il ricevente effettua la decryption ottiene solo il flusso di byte decrittato, senza indicazione aggiuntiva "ok"/"not ok".</p>
 <p>Non c'è nessuna garanzia matematica che il ricevente abbia usato la stessa chiave del trasmittente; e nessuna garanzia matematica che il ciphertext ricevuto sia identico al ciphertext trasmesso.</p>
-<p>Ulteriore complicazione. Se provate ad usare un mode of operation che garantisce solo secrecy ed a modificare il ciphertext, ad esempio con Cyberchef, vedrete che la decryption fallisce quasi sempre. Ciò <em>sembra</em> garantire integrity ma non è in contraddizione con quanto sopra descritto: "molte modifiche" al ciphertext sono rilevate in fase di decryption; è però sempre possibile costruire modifiche al ciphertext che non sono rilevate in fase di decryption. Trovarle può essere più o meno facile. E' molto facile usando il mode of operation ECB (quello sopra descritto, in cui ogni blocco di plaintext è crittato in modo indipendente da tutti gli altri blocchi). Se fate qualche prova con ECB vedrete infatti che non è difficile applicare modifiche al ciphertext che non provocano errore in decryption.</p>
+<p>Ulteriore complicazione. Se provate ad usare un mode of operation che garantisce solo secrecy ed a modificare il ciphertext, ad esempio con Cyberchef, vedrete che la decryption fallisce quasi sempre. Ciò <strong>sembra</strong> garantire integrity ma non è in contraddizione con quanto sopra descritto: "molte modifiche" al ciphertext sono rilevate in fase di decryption; è però sempre possibile costruire modifiche al ciphertext che non sono rilevate in fase di decryption. Trovarle può essere più o meno facile. E' molto facile usando il mode of operation ECB (quello sopra descritto, in cui ogni blocco di plaintext è crittato in modo indipendente da tutti gli altri blocchi). Se fate qualche prova con ECB vedrete infatti che non è difficile applicare modifiche al ciphertext che non provocano errore in decryption.</p>
 <p>Ulteriore, finale complicazione. Le modifiche al ciphertext in ECB che non provocano errore in decryption forniscono un plaintext difficile da prevedere a priori: talvolta un plaintext composto da un solo carattere o qualcosa di analogo. Un network attacker tipicamente vorrebbe modificare il ciphertext in modo che il plaintext sia esattamente una sequenza di byte scelta dall'attacker stesso. Trovare la modifica al ciphertext che oltre a non provocare errore in decryption fornisce un "chosen plaintext" è ancora più complicato (ma nei mode of operation che forniscono solo secrecy la possibilità di riuscirci non può essere esclusa matematicamente).</p>
 
 
