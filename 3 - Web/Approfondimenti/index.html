@@ -57,7 +57,7 @@
   <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DPWZ1PTD0F"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DPWZ1PTD0F",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DPWZ1PTD0F",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 
   
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
   
 
     
@@ -468,11 +468,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trasmettere-dati-a-un-web-server" class="md-nav__link">
-    Trasmettere dati a un web server
+  <a href="#trasmettere-dati-form" class="md-nav__link">
+    Trasmettere dati (FORM)
   </a>
   
-    <nav class="md-nav" aria-label="Trasmettere dati a un web server">
+    <nav class="md-nav" aria-label="Trasmettere dati (FORM)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -519,6 +519,19 @@
     Sessioni HTTP
   </a>
   
+    <nav class="md-nav" aria-label="Sessioni HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#come-vedere-i-cookie" class="md-nav__link">
+    Come vedere i cookie
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -532,6 +545,19 @@
   <a href="#analytics-e-tracking" class="md-nav__link">
     Analytics e Tracking
   </a>
+  
+    <nav class="md-nav" aria-label="Analytics e Tracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracking-senza-third-party-cookies" class="md-nav__link">
+    Tracking senza third-party cookies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1053,11 +1079,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trasmettere-dati-a-un-web-server" class="md-nav__link">
-    Trasmettere dati a un web server
+  <a href="#trasmettere-dati-form" class="md-nav__link">
+    Trasmettere dati (FORM)
   </a>
   
-    <nav class="md-nav" aria-label="Trasmettere dati a un web server">
+    <nav class="md-nav" aria-label="Trasmettere dati (FORM)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1104,6 +1130,19 @@
     Sessioni HTTP
   </a>
   
+    <nav class="md-nav" aria-label="Sessioni HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#come-vedere-i-cookie" class="md-nav__link">
+    Come vedere i cookie
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1117,6 +1156,19 @@
   <a href="#analytics-e-tracking" class="md-nav__link">
     Analytics e Tracking
   </a>
+  
+    <nav class="md-nav" aria-label="Analytics e Tracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracking-senza-third-party-cookies" class="md-nav__link">
+    Tracking senza third-party cookies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1181,7 +1233,7 @@
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP headers</a> </li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP response status codes</a></li>
 </ul>
-<h2 id="trasmettere-dati-a-un-web-server">Trasmettere dati a un web server</h2>
+<h2 id="trasmettere-dati-form">Trasmettere dati (FORM)</h2>
 <h3 id="esempio-banalissimo">Esempio banalissimo</h3>
 <p>Il file <code>simpleform.html</code> (negli esempi di contenuti web) contiene un semplicissimo form in cui l'attributo <code>action</code> punta ad una pagina web pubblica che stampa il contenuto del form ricevuto. In altre parole, a quell'URL è in ascolto un web server che torna un documento dinamico contenente l'elenco dei parametri nel form ricevuto (provate a pensare a cosa deve fare quel programma).</p>
 <p>Quel file si può aprire con un browser anche senza farlo servire da un web server.</p>
@@ -1237,6 +1289,14 @@
 <ul>
 <li><a href="https://drive.google.com/file/d/14FmYvgV2vXHu5VnyXfgKFVDcV1EOfgKN/view?usp=drive_link">Shopping basket</a>: brevissimo esempio per ribadire l'importanza dei contenuti dinamici che dipendono dalle richieste <strong>precedenti</strong> inviate da uno specifico browser.</li>
 </ul>
+<h3 id="come-vedere-i-cookie">Come vedere i cookie</h3>
+<p>Quanto segue è per i browser Chromium-based (Chrome, Edge, Vivaldi).</p>
+<ul>
+<li><em>Preferenze del browser - Cookie values</em>: permette di vedere tutti i cookie memorizzati nel browser. Solo nome e valore di ognuno.</li>
+<li><em>Developer tools - Application - Cookies</em>: permette di vedere i cookie usati nel tab corrispondente. Tutti gli attributi (compresa scadenza).</li>
+</ul>
+<p><img alt="img_3.png" src="../img_3.png" /></p>
+<p><img alt="img_4.png" src="../img_4.png" /></p>
 <h2 id="authentication-vs-authorization">Authentication vs Authorization</h2>
 <ul>
 <li><a href="https://bartolialberto.github.io/CybersecurityCourse/Vulnerabilities/Vulnerability%20-%20Case%20studies/?h=">Vulnerabilità</a> analoghe a quelle di 18app (IDOR: Insecure Direct Object Reference).</li>
@@ -1245,6 +1305,26 @@
 <ul>
 <li><a href="https://kuber.studio/cookie/">Browser fingerprinting</a> Scoprite quante cose scopre del vostro browser questo sito web.</li>
 </ul>
+<h3 id="tracking-senza-third-party-cookies">Tracking senza third-party cookies</h3>
+<p>Most browsers today block third party cookies. Google Analytics bypasses third-party cookie restrictions primarily because it does not rely on third-party cookies for standard traffic measurement. Instead, it uses first-party cookies.</p>
+<p>For example, this website is built with <code>mkdocs</code>: static HTML and JavaScript files hosted on GitHub Pages. Each page has a small script in each page, inserted by <code>mkdocs</code> automatically (property <code>google_analytics</code> defined in <code>mkdocs.yml</code>):</p>
+<p><code>&lt;script id="__analytics"&gt;function __md_analytics()...</code></p>
+<p>This script contains a "GA_ID", constructed by Google Analytics and specified in the <code>google_analytics</code> property (<code>G-DPWZ1PTD0F</code>). The script runs upon each page loading and loads a Javascript library from Google Analytics (<code>gtag.js</code>). This library:</p>
+<ol>
+<li>checks for an existing <code>_ga</code> <strong>first-party cookie</strong> (i.e., on the domain <code>github.io</code>);  </li>
+<li>if this cookie does not exist, the library creates one whose value is GA_ID;  </li>
+<li>whenever a new page loads, the library assembles tracking information (GA_ID, page title, referrer and alike) and sends it to a Google Analytics endpoint; these values may be embedded in the HTTP request as a query string;  </li>
+<li>Google Analytics will group requests based on Client IDs, without any need for third-party cookies.</li>
+</ol>
+<p>The reason why <code>gtag.js</code> may handle first-party cookies even though it was fetched from a Google Analytics location is because the  <code>&lt;script src="..."&gt;</code> tag does not create a separate origin context. Once loaded, the script executes as part of the including page (the GitHub Pages document) and operates on that page's own <code>document</code> object.</p>
+<p>Upon expiration of the first-party cookie, the browser will be counted as a “new” browser (e.g., Apple so-called intelligent tracking prevention let cookies expire after 7 days).</p>
+<p>Browsers with “strict” blocking of ad/tracking will block the loading of <code>gtag.js</code> and the sending of the request at step 3, because the Google Analytics endpoint appears in the list of sites to block. <strong>Visits from those browsers, thus, will never be counted</strong>. In order to count those visits, a more complex structuring of the website is required.</p>
+<p><img alt="img_2.png" src="../img_2.png" />
+<em>Browser with "strict" blocking</em></p>
+<p><img alt="img.png" src="../img.png" />
+<em>Browser with "strict" blocking: network traffic.</em></p>
+<p><img alt="img_1.png" src="../img_1.png" />
+<em>Browser without any blocking: network traffic.</em></p>
 
 
   
@@ -1283,6 +1363,61 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>Utilizziamo i cookie per misurare l'efficacia della documentazione.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" >
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
