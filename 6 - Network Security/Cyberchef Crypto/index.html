@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://bartolialberto.github.io/ComputerNetworks/6%20-%20Network%20Security/Cyberchef%20Crypto/">
       
       
-        <link rel="prev" href="../Approfondimenti_Network_Security/">
+        <link rel="prev" href="../../5%20-%20IP/DHCP%20VPN%20IPv6/">
       
       
         <link rel="next" href="../Crypto%20in%20pratica/">
@@ -630,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Approfondimenti_Network_Security/" class="md-nav__link">
+      <a href="../../Approfondimenti_Network_Security.md" class="md-nav__link">
         Risorse
       </a>
     </li>
@@ -1161,7 +1161,7 @@
 <h3 id="encryption-and-decryption-trickier">Encryption and decryption - Trickier</h3>
 <p>For <strong>encryption</strong>:</p>
 <ol>
-<li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <strong>block ciphers</strong> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti_Network_Security/">Approfondimenti_Network_Security</a>).</li>
+<li>Select a recipe for encryption (left menu, drag to the middle). You can "play" with <strong>AES, Blowfish, DES</strong>. These are all <strong>block ciphers</strong> (see "Private key cryptography: Mode of operation" in <a href="../Approfondimenti/">Approfondimenti</a>).</li>
 <li>Insert parameters in the recipe:<ul>
 <li><strong>Mode of operation</strong>: select one <strong>different from GCM</strong> (see also the Warning section below).</li>
 <li><strong>Initialization vector (IV)</strong>: All block ciphers require this parameter. It must be identical for encryption and decryption and need not be secret (unlike the key). In practice, it is often chosen by the sender and sent along with the ciphertext. You may want to copy this sequence as many times as necessary: <code>1234567890123456</code></li>
