@@ -165,10 +165,49 @@ body,
     background: var(--page-bg);
   }
 }
-/* Table of contents: accent line on the current heading */
-.md-sidebar--secondary .md-nav__link--active {
+
+/* Left sidebar = pages: orange links, so they are not confused with the
+   right sidebar (sections of the current page, kept neutral grey) */
+.md-sidebar--primary .md-nav__item:not(.md-nav__item--nested) > .md-nav__link {
   color: var(--md-typeset-a-color);
+  font-weight: 500;
+}
+.md-sidebar--primary .md-nav__item:not(.md-nav__item--nested) > .md-nav__link--active {
+  font-weight: 700;
+}
+/* ...except the page TOC that phones show inside the left drawer */
+.md-sidebar--primary .md-nav--secondary .md-nav__item:not(.md-nav__item--nested) > .md-nav__link,
+.md-sidebar--primary .md-nav--secondary .md-nav__item > .md-nav__link {
+  color: var(--md-default-fg-color--light);
+  font-weight: 400;
+}
+.md-sidebar--primary .md-nav--primary .md-nav--secondary > .md-nav__title {
+  background: var(--page-bg);
+  color: var(--muted);
+}
+
+/* Right sidebar = sections of this page: neutral text, "Indice" label */
+.md-sidebar--secondary .md-nav__link {
+  color: var(--md-default-fg-color--light);
+}
+.md-sidebar--secondary .md-nav__link:hover {
+  color: var(--md-default-fg-color);
+}
+.md-sidebar--secondary .md-nav__link--active {
+  color: var(--md-default-fg-color);
   font-weight: 600;
+}
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--secondary .md-nav--secondary > .md-nav__title {
+    display: block;
+    background: var(--page-bg);
+    box-shadow: 0 0 .4rem .4rem var(--page-bg);
+    color: var(--muted);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
 }
 
 /* ==========================================================================
