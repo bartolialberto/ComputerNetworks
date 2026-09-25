@@ -1,3 +1,466 @@
+/* ==========================================================================
+   Custom theme for the course website (MkDocs Material)
+   Everything is driven by the variables below: to re-brand the site,
+   change only the "Brand palette" block.
+   ========================================================================== */
+
+/* ---------- Brand palette ---------------------------------------------- */
+:root {
+  --brand-900: #8a3200;   /* burnt orange      */
+  --brand-700: #e65100;   /* deep orange       */
+  --brand-500: #f57c00;   /* main orange       */
+  --brand-300: #ffa726;   /* light orange      */
+  --brand-accent: #ff9800;
+  --brand-link: #c24e00;  /* orange dark enough to be readable on white */
+  --header-gradient: linear-gradient(100deg, #e65100 0%, #f57c00 55%, #ff9800 100%);
+  --brand-radius: 12px;
+}
+
+/* ---------- Material colour mapping (light) ---------------------------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        var(--brand-700);
+  --md-primary-fg-color--light: var(--brand-500);
+  --md-primary-fg-color--dark:  var(--brand-900);
+  --md-primary-bg-color:        #ffffff;
+  --md-accent-fg-color:         var(--brand-500);
+  --md-typeset-a-color:         var(--brand-link);
+
+  --page-bg:      #faf6f2;
+  --card-bg:      #ffffff;
+  --item-bg:      #fffcf9;
+  --card-border:  #f0e4d8;
+  --card-shadow:  0 1px 2px rgba(120, 60, 10, .06), 0 4px 14px rgba(120, 60, 10, .06);
+  --card-shadow-hover: 0 4px 10px rgba(120, 60, 10, .10), 0 12px 28px rgba(120, 60, 10, .12);
+  --muted:        #7a6552;
+}
+
+/* ---------- Material colour mapping (dark) ----------------------------- */
+[data-md-color-scheme="slate"] {
+  --md-hue: 25;
+  --md-primary-fg-color:        var(--brand-900);
+  --md-primary-fg-color--light: var(--brand-700);
+  --md-primary-fg-color--dark:  #5c2100;
+  --md-primary-bg-color:        #ffffff;
+  --md-accent-fg-color:         var(--brand-accent);
+  --md-typeset-a-color:         var(--brand-300);
+  --md-default-bg-color:        #16130f;
+  --header-gradient: linear-gradient(100deg, #8a3200 0%, #c24e00 55%, #e65100 100%);
+
+  --page-bg:      #16130f;
+  --card-bg:      #1f1b16;
+  --item-bg:      #28221b;
+  --card-border:  #3a3128;
+  --card-shadow:  0 1px 2px rgba(0, 0, 0, .3);
+  --card-shadow-hover: 0 6px 22px rgba(0, 0, 0, .45);
+  --muted:        #b3a597;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+body,
+.md-main {
+  background: var(--page-bg);
+}
+
+/* Header + tabs: night-sky gradient */
+.md-header,
+.md-tabs {
+  background: var(--header-gradient);
+}
+.md-header {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .25);
+}
+.md-tabs {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+.md-tabs__link {
+  font-weight: 500;
+  opacity: .75;
+  transition: opacity .2s;
+}
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+}
+.md-tabs__item--active .md-tabs__link {
+  color: #fff;
+  box-shadow: inset 0 -3px 0 #ffffff;
+  padding-bottom: .35rem;
+}
+
+/* Round logo with a subtle neon ring */
+.md-header__button.md-logo img,
+.md-nav__button.md-logo img {
+  height: 1.9rem;
+  width: 1.9rem;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .85), 0 0 10px rgba(255, 255, 255, .6);
+}
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+/* Search box */
+.md-search__form {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .12);
+}
+.md-search__form:hover {
+  background: rgba(255, 255, 255, .2);
+}
+
+/* The page content becomes a floating card */
+.md-content__inner {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--brand-radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.2rem 1.8rem 1.8rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.md-content__inner::before {
+  display: none;     /* remove Material's top spacer */
+}
+
+/* Hide the redundant site title on top of the sidebar (existing rule) */
 .md-nav__title {
   display: none;
+}
+
+/* ---------- Sidebar navigation ----------------------------------------- */
+.md-sidebar--primary .md-nav__link {
+  border-radius: 8px;
+  padding: .3rem .6rem;
+  margin-top: .15rem;
+  transition: background-color .15s, color .15s;
+}
+.md-sidebar--primary .md-nav__link:hover {
+  background: color-mix(in srgb, var(--md-accent-fg-color) 10%, transparent);
+}
+.md-sidebar--primary .md-nav__link--active {
+  background: color-mix(in srgb, var(--md-accent-fg-color) 15%, transparent);
+  color: var(--md-typeset-a-color);
+  font-weight: 600;
+}
+/* Section label on top of the sidebar (with navigation.tabs) */
+@media screen and (min-width: 76.25em) {
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+    background: var(--page-bg);
+    box-shadow: 0 0 .4rem .4rem var(--page-bg);
+    color: var(--muted);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link:hover {
+    background: var(--page-bg);
+  }
+}
+/* Table of contents: accent line on the current heading */
+.md-sidebar--secondary .md-nav__link--active {
+  color: var(--md-typeset-a-color);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+.md-typeset {
+  font-size: .8rem;
+  line-height: 1.7;
+}
+
+.md-typeset h1 {
+  font-weight: 800;
+  color: var(--md-default-fg-color);
+  letter-spacing: -.02em;
+  margin-bottom: 1.2em;
+  padding-bottom: .4em;
+  position: relative;
+}
+.md-typeset h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 4rem;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--brand-500), var(--brand-accent));
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -.01em;
+  margin-top: 2em;
+  line-height: 1.3;
+}
+
+.md-typeset h3 {
+  font-weight: 650;
+  color: var(--md-typeset-a-color);
+}
+
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.md-typeset strong {
+  font-weight: 650;
+}
+
+/* ---------- Links ------------------------------------------------------- */
+.md-typeset a {
+  font-weight: 500;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .25s ease, color .15s;
+  overflow-wrap: anywhere;   /* long URLs never overflow on phones */
+}
+.md-typeset a:hover,
+.md-typeset a:focus {
+  background-size: 100% 1.5px;
+}
+/* no underline animation on header permalinks / buttons */
+.md-typeset .headerlink,
+.md-typeset .md-button {
+  background-image: none;
+}
+
+/* External-link marker */
+.md-content a[href^="http"]:not([href*="bartolialberto.github.io"])::after {
+  content: "";
+  display: inline-block;
+  width: .7em;
+  height: .7em;
+  margin-left: .22em;
+  vertical-align: .05em;
+  background-color: currentColor;
+  opacity: .55;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg>') center / contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg>') center / contain no-repeat;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+
+/* Custom bullets */
+.md-typeset ul li::marker {
+  color: var(--brand-accent);
+}
+
+/* Top-level list items that start with a link ("- [Title](url) description")
+   are rendered as resource cards. Pure CSS: no change to the markdown. */
+[dir] .md-typeset > ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+[dir] .md-typeset > ul > li {
+  position: relative;
+  margin-left: 0;
+  padding-left: 1.3rem;
+}
+.md-typeset > ul > li::before {
+  content: "";
+  position: absolute;
+  left: .2rem;
+  top: .72em;
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-500), var(--brand-accent));
+}
+
+.md-typeset > ul > li:has(> a:first-child),
+.md-typeset > ul > li:has(> p:first-child > a:first-child) {
+  background: var(--item-bg);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--brand-500);
+  border-radius: 10px;
+  padding: .7rem 1rem;
+  margin: .7rem 0;
+  box-shadow: var(--card-shadow);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
+}
+.md-typeset > ul > li:has(> a:first-child)::before,
+.md-typeset > ul > li:has(> p:first-child > a:first-child)::before {
+  display: none;
+}
+.md-typeset > ul > li:has(> a:first-child):hover,
+.md-typeset > ul > li:has(> p:first-child > a:first-child):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+  border-left-color: var(--brand-accent);
+}
+/* The title link of a card stands out */
+.md-typeset > ul > li > a:first-child,
+.md-typeset > ul > li > p:first-child > a:first-child {
+  font-weight: 650;
+}
+/* Nested lists inside cards */
+.md-typeset > ul > li ul {
+  margin-top: .4rem;
+  margin-bottom: .2rem;
+}
+.md-typeset > ul > li ul > li {
+  color: var(--muted);
+}
+.md-typeset > ul > li ul > li a {
+  color: var(--md-typeset-a-color);
+}
+
+/* Ordered lists: numbered badges */
+[dir] .md-typeset > ol {
+  counter-reset: item;
+  list-style: none;
+  margin-left: 0;
+}
+[dir] .md-typeset > ol > li {
+  counter-increment: item;
+  position: relative;
+  margin-left: 0;
+  padding-left: 2.1rem;
+}
+.md-typeset > ol > li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  top: .15em;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: .68rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand-500), var(--brand-accent));
+}
+
+/* ==========================================================================
+   Other content elements
+   ========================================================================== */
+.md-typeset blockquote {
+  border-left: 4px solid var(--brand-accent);
+  background: color-mix(in srgb, var(--brand-accent) 7%, transparent);
+  border-radius: 0 8px 8px 0;
+  padding: .4rem 1rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset code {
+  border-radius: 6px;
+}
+.md-typeset pre > code {
+  border-radius: 10px;
+}
+
+.md-typeset img {
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+.md-typeset table:not([class]) th {
+  background: var(--brand-700);
+  color: #fff;
+}
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--brand-500) 4%, transparent);
+}
+
+.md-typeset hr {
+  border-bottom: 2px dashed var(--card-border);
+  margin: 2em 0;
+}
+
+/* Footer */
+.md-footer,
+.md-footer-meta {
+  background: var(--brand-900);
+}
+
+/* Back-to-top button */
+.md-top {
+  background: var(--brand-500);
+  color: #fff;
+}
+.md-top:hover {
+  background: var(--brand-accent);
+  color: #fff;
+}
+
+/* ==========================================================================
+   Responsive tweaks
+   ========================================================================== */
+
+/* Tablets and phones: the drawer header uses the same gradient */
+@media screen and (max-width: 76.2344em) {
+  .md-nav--primary .md-nav__title[for="__drawer"] {
+    display: block;
+    background: var(--header-gradient);
+  }
+  .md-nav--primary .md-nav__title .md-nav__button.md-logo img {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+  .md-sidebar--primary .md-nav__link {
+    padding: .45rem .8rem;     /* bigger touch targets */
+  }
+}
+
+/* Phones */
+@media screen and (max-width: 44.9844em) {
+  .md-typeset {
+    font-size: .78rem;
+  }
+  .md-content__inner {
+    margin: .5rem .3rem 1rem;
+    padding: .4rem .8rem 1rem;
+    border-radius: 10px;
+  }
+  .md-typeset h1 {
+    font-size: 1.6em;
+  }
+  .md-typeset h2 {
+    font-size: 1.3em;
+  }
+  .md-typeset > ul > li:has(> a:first-child),
+  .md-typeset > ul > li:has(> p:first-child > a:first-child) {
+    padding: .6rem .8rem;
+  }
+  .md-typeset > ul > li ul,
+  .md-typeset > ul > li ol {
+    margin-left: .8rem;
+  }
+  /* no hover lift on touch screens */
+  .md-typeset > ul > li:hover {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset *,
+  .md-typeset *::before,
+  .md-typeset *::after {
+    transition: none !important;
+  }
 }
