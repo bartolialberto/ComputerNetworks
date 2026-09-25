@@ -126,9 +126,13 @@ body,
   display: none;     /* remove Material's top spacer */
 }
 
-/* Hide the redundant site title on top of the sidebar (existing rule) */
-.md-nav__title {
-  display: none;
+/* Hide the redundant site title on top of the sidebar (existing rule).
+   Desktop only: on phones/tablets .md-nav__title holds the drawer header
+   and the "back" arrow of each submenu, so it must stay visible. */
+@media screen and (min-width: 76.25em) {
+  .md-nav__title {
+    display: none;
+  }
 }
 
 /* ---------- Sidebar navigation ----------------------------------------- */
@@ -415,8 +419,12 @@ body,
 /* Tablets and phones: the drawer header uses the same gradient */
 @media screen and (max-width: 76.2344em) {
   .md-nav--primary .md-nav__title[for="__drawer"] {
-    display: block;
     background: var(--header-gradient);
+  }
+  /* Submenu header with the "back" arrow */
+  .md-nav--primary .md-nav .md-nav__title {
+    background: color-mix(in srgb, var(--brand-500) 12%, var(--md-default-bg-color));
+    color: var(--md-typeset-a-color);
   }
   .md-nav--primary .md-nav__title .md-nav__button.md-logo img {
     height: 2.8rem;
