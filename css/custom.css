@@ -103,6 +103,18 @@ body,
   letter-spacing: .01em;
 }
 
+/* Always show the site name: disable Material's swap to the page title
+   when scrolling */
+.md-header__title--active .md-header__topic {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  z-index: 0;
+}
+.md-header__title .md-header__topic + .md-header__topic {
+  display: none;
+}
+
 /* Search box */
 .md-search__form {
   border-radius: 999px;
