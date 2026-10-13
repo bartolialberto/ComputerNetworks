@@ -1974,15 +1974,15 @@
 
 
 <h1 id="cyberchef">Cyberchef</h1>
-<p><strong>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple </strong>encoding<strong> like XOR and Base64, more complex </strong>encryption<strong> like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</strong> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
+<p><em>Cyberchef is a simple, intuitive <a href="https://gchq.github.io/CyberChef/">web app</a> for carrying out all manner of "cyber" operations within a web browser. These operations include simple </em><em>encoding</em><em> like XOR and Base64, more complex </em><em>encryption</em><em> like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, ..., changing character encodings, and much more</em> (from the <a href="https://github.com/gchq/CyberChef">Github sources</a>).</p>
 <h2 id="how-cyberchef-works">How Cyberchef works</h2>
 <p>Open the <a href="https://gchq.github.io/CyberChef/">web app</a>. There are many "recipes" (i.e., predefined computations) available on the left part.</p>
-<p>One can select a recipe by double-clicking on it or by drag-and-drop. Each recipe takes an <strong>input</strong> and, when executed, it produces an <strong>output</strong>. Deselect the "auto-bake" checkbox in the bottom-center part. This way, recipes will not run automatically but only when clicking the "bake" button. This configuration is simpler to handle, I think.</p>
-<p>Each recipe also has a set of <strong>parameters</strong>. For example, recipes for encryption have the key as a parameter; the input is the cleartext while the output is the ciphertext.</p>
+<p>One can select a recipe by double-clicking on it or by drag-and-drop. Each recipe takes an <em>input</em> and, when executed, it produces an <em>output</em>. Deselect the "auto-bake" checkbox in the bottom-center part. This way, recipes will not run automatically but only when clicking the "bake" button. This configuration is simpler to handle, I think.</p>
+<p>Each recipe also has a set of <em>parameters</em>. For example, recipes for encryption have the key as a parameter; the input is the cleartext while the output is the ciphertext.</p>
 <p>Recipes can be chained together so that the output of one is the input of the next one and so on.</p>
 <h3 id="simple-application-base-conversion">Simple application: Base conversion</h3>
 <p>Conversion between different bases (binary, decimal, hex) can be done with recipes <code>To Base</code> / <code>From Base</code>. For example, <code>To Base (radix 2)</code> with input <code>7</code> will output <code>111</code>.</p>
-<p>Do <strong>not</strong> use <code>To Hex</code>, <code>To Octal</code>, <code>To Binary</code> and alike: those recipes operate on the internal representation of characters, not on characters considered as digits in a specified base of representation. For example, <code>To Decimal</code> with input <code>7</code> will output <code>55</code>, i.e., the ASCII encoding of that characters. Simialrly, <code>To Binary</code> with input <code>7</code> will output <code>00110111</code>, i.e., the binary representation of <code>55</code>.</p>
+<p>Do <em>not</em> use <code>To Hex</code>, <code>To Octal</code>, <code>To Binary</code> and alike: those recipes operate on the internal representation of characters, not on characters considered as digits in a specified base of representation. For example, <code>To Decimal</code> with input <code>7</code> will output <code>55</code>, i.e., the ASCII encoding of that characters. Simialrly, <code>To Binary</code> with input <code>7</code> will output <code>00110111</code>, i.e., the binary representation of <code>55</code>.</p>
 <h2 id="url-encoding-form-data">URL Encoding (FORM data)</h2>
 <p>This encoding format is such that the (encoded) output contains only characters that can be part of an URL (for example, <a href="https://www.google.com/search?q=url+rfc+allowed+characters">spaces cannot be part of an URL</a>).</p>
 <p>It is widely used in the web. In particular, data inserted in an HTML form and sent in an HTTP request is URL encoded.</p>
@@ -1996,9 +1996,9 @@
 <li>Insert the previously saved encoding as input and verify that the output is the expected one.</li>
 </ul>
 <h2 id="base64">Base64</h2>
-<p>This encoding format is such that the (encoded) output consists of ASCII data. It is widely used, in particular, when <strong>binary</strong> data have to be used in contexts where <strong>text</strong> data is expected.
+<p>This encoding format is such that the (encoded) output consists of ASCII data. It is widely used, in particular, when <em>binary</em> data have to be used in contexts where <em>text</em> data is expected.
 Important examples are given below: HTTP Basic Authentication credentials and Email attachments.</p>
-<p>Base64 encoding represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: you need 8 bits for encoding 6 bits). The encoding table is a standard that be found in many places, e.g., on <a href="https://en.wikipedia.org/wiki/Base64">Wikipedia</a>. Certain predefined <strong>padding rules</strong> allow encoding byte sequences whose length is not a multiple of 6 bits.</p>
+<p>Base64 encoding represents every sequence of 6 bits as an ASCII character (thus the encoded form will be longer than the original: you need 8 bits for encoding 6 bits). The encoding table is a standard that be found in many places, e.g., on <a href="https://en.wikipedia.org/wiki/Base64">Wikipedia</a>. Certain predefined <em>padding rules</em> allow encoding byte sequences whose length is not a multiple of 6 bits.</p>
 <p>You may Base64 encode and Base64 decode with Cyberchef:</p>
 <ul>
 <li>Select the 'To Base64' recipe.</li>
@@ -2009,7 +2009,7 @@ Important examples are given below: HTTP Basic Authentication credentials and Em
 </ul>
 <h3 id="http-basic-authentication-credentials">HTTP Basic Authentication Credentials</h3>
 <p>Username and password in HTTP Basic authentication are separated by a colon (<code>:</code>) and sent Base64-encoded.
-Search <a href="https://www.google.com/search?q=basic+auth+header+generator">basic auth header generator</a>: you will find several web sites that take an username and password as input and output the corresponding HTTP Authorization header (of course, do <strong>not</strong> insert your real credentials in any such site!).</p>
+Search <a href="https://www.google.com/search?q=basic+auth+header+generator">basic auth header generator</a>: you will find several web sites that take an username and password as input and output the corresponding HTTP Authorization header (of course, do <em>not</em> insert your real credentials in any such site!).</p>
 <p>Once you have the Base64 encoding of some credentials, try to decode them with Cyberchef:</p>
 <ul>
 <li>Select a "From Base64" recipe.</li>
@@ -2018,7 +2018,7 @@ Search <a href="https://www.google.com/search?q=basic+auth+header+generator">bas
 </ul>
 <p>Important observation: given a Base64-encoded snippet, the corresponding decoding is a mechanic operation that does not require the knowledge of any secret. In other words, anyone that observes a Base64-encoded snippet is able to reverse the encoding and obtain the original snippet. Encoding has thus nothing to do with "encryption".</p>
 <h3 id="email-attachments">Email attachments</h3>
-<p>This topic is out of scope, i.e., it is <strong>not</strong> part of the course.</p>
+<p>This topic is out of scope, i.e., it is <em>not</em> part of the course.</p>
 <p>Files sent as email attachments are Base64-encoded before sending and inserted in the body of the email.</p>
 <p>The email must contain some information for:
 - enabling the receiver to realize that (part of) the email body is Base64-encoded, i.e., that it has to be Base64-decoded before being presented to the receiving user;
@@ -2188,6 +2188,8 @@ Search <a href="https://www.google.com/search?q=basic+auth+header+generator">bas
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/reset-nav.js"></script>
+      
+        <script src="../../js/link-cards.js"></script>
       
     
   </body>

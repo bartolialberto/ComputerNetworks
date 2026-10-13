@@ -1868,30 +1868,30 @@
 <h2 id="considerazioni-della-studentessa">Considerazioni della studentessa</h2>
 <p>Premetto che l’esame di Reti di calcolatori ha costituito per me uno scoglio, sia per il fatto di non aver mai affrontato tale materia durante gli studi della laurea triennale in ... o in altri corsi che ho seguito, sia per il fatto che in generale, non ritengo di essere propriamente un’appassionata del settore.</p>
 <p>Nonostante questo, sono rimasta affascinata nel conoscere un sistema così complesso ed eccezionale nel suo funzionamento.</p>
-<p>Rispetto alle prove che ho sostenuto e che purtroppo hanno avuto esito negativo, penso che il problema più grande per me sia stato <strong>non avere una visione complessiva</strong> della dinamica di funzionamento del sistema. Ho avuto difficoltà nel <strong>collegare tra loro i vari argomenti</strong> trattati e <strong>inizialmente li ho inquadrati soltanto singolarmente</strong>.</p>
-<p>L’ atto di rifare gli esercizi già svolti forse mi aveva fatto entrare in un automatismo che <strong>considerava il tema dell’esercizio fine a sè stesso</strong>.</p>
-<p>Dal momento che il mio livello di preparazione si era dimostrato inadeguato, per prepararmi all’appello del ... ho innanzitutto <strong>ripreso bene dall'inizio la teoria</strong> (soltanto teoria!). Ho ripreso le slide e gli appunti delle lezioni e ho cercato di <strong>capire meglio il ragionamento alla base del funzionamento client – server</strong>. Successivamente, <strong>ho cercato di collegare ogni argomento successivo al primo, quindi ricollegandomi sempre al funzionamento client-server</strong>, ripetendo per ogni passaggio la sequenza di procedure invocate rispettivamente dal client e dal server.</p>
-<p>Anche per il DNS, ho cercato di ragionare partendo dai casi più semplici visti a lezione e facendo delle prove, simulando di creare nuove zone e configurando i rispettivi Name Server, cercando di condurre un ragionamento che andasse oltre all’assegnazione mnemonica dei RR per ciascun Name Server, ma <strong>cercando di capire come questi potessero assicurare il vero e proprio funzionamento corretto del sistema</strong>.</p>
-<p>Una volta studiato bene la teoria, ho applicato lo stesso metodo agli esercizi svolti, ragionando sui vari passaggi e ipotizzando di fare delle variazioni rispetto a quanto richiesto dal testo, proprio per non rischiare di ricadere nell'automatismo dello svolgimento di esercizi che ormai conoscevo. <strong>Per superare questo esame credo sia indispensabile avere una buona conoscenza teorica degli argomenti e, solo dopo aver capito il funzionamento complessivo del sistema, applicarlo agli esercizi facendo un ragionamento step-by step</strong>, immaginando di avere un sistema reale da far funzionare in modo corretto.</p>
+<p>Rispetto alle prove che ho sostenuto e che purtroppo hanno avuto esito negativo, penso che il problema più grande per me sia stato <em>non avere una visione complessiva</em> della dinamica di funzionamento del sistema. Ho avuto difficoltà nel <em>collegare tra loro i vari argomenti</em> trattati e <em>inizialmente li ho inquadrati soltanto singolarmente</em>.</p>
+<p>L’ atto di rifare gli esercizi già svolti forse mi aveva fatto entrare in un automatismo che <em>considerava il tema dell’esercizio fine a sè stesso</em>.</p>
+<p>Dal momento che il mio livello di preparazione si era dimostrato inadeguato, per prepararmi all’appello del ... ho innanzitutto <em>ripreso bene dall'inizio la teoria</em> (soltanto teoria!). Ho ripreso le slide e gli appunti delle lezioni e ho cercato di <em>capire meglio il ragionamento alla base del funzionamento client – server</em>. Successivamente, <em>ho cercato di collegare ogni argomento successivo al primo, quindi ricollegandomi sempre al funzionamento client-server</em>, ripetendo per ogni passaggio la sequenza di procedure invocate rispettivamente dal client e dal server.</p>
+<p>Anche per il DNS, ho cercato di ragionare partendo dai casi più semplici visti a lezione e facendo delle prove, simulando di creare nuove zone e configurando i rispettivi Name Server, cercando di condurre un ragionamento che andasse oltre all’assegnazione mnemonica dei RR per ciascun Name Server, ma <em>cercando di capire come questi potessero assicurare il vero e proprio funzionamento corretto del sistema</em>.</p>
+<p>Una volta studiato bene la teoria, ho applicato lo stesso metodo agli esercizi svolti, ragionando sui vari passaggi e ipotizzando di fare delle variazioni rispetto a quanto richiesto dal testo, proprio per non rischiare di ricadere nell'automatismo dello svolgimento di esercizi che ormai conoscevo. <em>Per superare questo esame credo sia indispensabile avere una buona conoscenza teorica degli argomenti e, solo dopo aver capito il funzionamento complessivo del sistema, applicarlo agli esercizi facendo un ragionamento step-by step</em>, immaginando di avere un sistema reale da far funzionare in modo corretto.</p>
 <h2 id="considerazioni-mie-successive-alla-provetta-1-novembre-2021">Considerazioni mie, successive alla provetta 1 (Novembre 2021)</h2>
-<p>Vediamo cosa diceva la studentessa che aveva avuto problemi: "<strong>...ho innanzitutto ripreso bene dall'inizio la teoria (soltanto teoria!). Ho ripreso le slide e gli appunti delle lezioni e ho cercato di capire meglio il ragionamento alla base del funzionamento client – server. Successivamente, ho cercato di collegare ogni argomento successivo al primo, quindi ricollegandomi sempre al funzionamento client-server, ripetendo per ogni passaggio la sequenza di procedure invocate rispettivamente dal client e dal server.</strong>"</p>
+<p>Vediamo cosa diceva la studentessa che aveva avuto problemi: "<em>...ho innanzitutto ripreso bene dall'inizio la teoria (soltanto teoria!). Ho ripreso le slide e gli appunti delle lezioni e ho cercato di capire meglio il ragionamento alla base del funzionamento client – server. Successivamente, ho cercato di collegare ogni argomento successivo al primo, quindi ricollegandomi sempre al funzionamento client-server, ripetendo per ogni passaggio la sequenza di procedure invocate rispettivamente dal client e dal server.</em>"</p>
 <p>Cerchiamo di applicare il suo metodo.</p>
 <p>Vediamo quali azioni esegue un nodo che invia una richiesta DNS al mail server:</p>
 <ul>
 <li>apro una connessione verso un server (il mail server) di cui devo conoscere indirizzo IP e numero di porta;</li>
 <li>devo inviare una richiesta in quella connessione;</li>
 </ul>
-<p><strong>hhhmmmm</strong>....l'indirizzo IP ce l'ho ma il numero di porta qual'è? un mail server sta in ascolto sulla porta SMTP (25) e sulla porta POP (110); come faccio ad inviargli una richiesta DNS (53)? Anche se non mi ricordo i valori numerici, è evidente che sono diversi.</p>
-<p><strong>hhhmmm</strong>....le richieste sono sequenze di byte; il server deve parlare il mio stesso protocollo altrimenti non ci intendiamo; come faccio ad inviare una richiesta nel protocollo DNS ad un server che parla il protocollo SMTP o POP?</p>
-<p>Facile rendersi conto che <strong>inviare richieste DNS ad un mail server non ha senso</strong>.</p>
+<p><em>hhhmmmm</em>....l'indirizzo IP ce l'ho ma il numero di porta qual'è? un mail server sta in ascolto sulla porta SMTP (25) e sulla porta POP (110); come faccio ad inviargli una richiesta DNS (53)? Anche se non mi ricordo i valori numerici, è evidente che sono diversi.</p>
+<p><em>hhhmmm</em>....le richieste sono sequenze di byte; il server deve parlare il mio stesso protocollo altrimenti non ci intendiamo; come faccio ad inviare una richiesta nel protocollo DNS ad un server che parla il protocollo SMTP o POP?</p>
+<p>Facile rendersi conto che <em>inviare richieste DNS ad un mail server non ha senso</em>.</p>
 <p>Applichiamolo ad una richiesta DNS inviata al proxy:</p>
 <ul>
 <li>apro una connessione verso un server (il proxy) di cui devo conoscere indirizzo IP e numero di porta;</li>
 <li>devo inviare una richiesta in quella connessione;</li>
 </ul>
-<p><strong>hhhmmmm</strong>....quale numero di porta? un proxy sta in ascolto su una porta che di default è 80 (infatti verso il browser si comporta da server HTTP); spesso è 8080; come faccio ad inviargli una richiesta DNS (53)? Anche se non mi ricordo i valori numerici, è evidente che sono diversi.</p>
-<p><strong>hhhmmm</strong>....le richieste sono sequenze di byte; il server deve parlare il mio stesso protocollo altrimenti non ci intendiamo; come faccio ad inviare una richiesta nel protocollo DNS ad un server che parla il protocollo HTTP?</p>
-<p>Facile rendersi conto che <strong>inviare richieste DNS a un proxy non ha senso</strong>.</p>
+<p><em>hhhmmmm</em>....quale numero di porta? un proxy sta in ascolto su una porta che di default è 80 (infatti verso il browser si comporta da server HTTP); spesso è 8080; come faccio ad inviargli una richiesta DNS (53)? Anche se non mi ricordo i valori numerici, è evidente che sono diversi.</p>
+<p><em>hhhmmm</em>....le richieste sono sequenze di byte; il server deve parlare il mio stesso protocollo altrimenti non ci intendiamo; come faccio ad inviare una richiesta nel protocollo DNS ad un server che parla il protocollo HTTP?</p>
+<p>Facile rendersi conto che <em>inviare richieste DNS a un proxy non ha senso</em>.</p>
 <p>Applichiamolo alle richieste DNS generate da un browser che naviga attraverso un proxy (una quantità deprimente di persone ha scritto che il browser risolve il nome del sito web).</p>
 <p>1) browser apre una connessione con il proxy;
 2) browser invia una richiesta HTTP al proxy in quella connessione;
@@ -1899,7 +1899,7 @@
 <p>per il punto 1 al browser serve indirizzo IP e numero di porta; l'indirizzo IP lo trova risolvendo il nome del proxy;</p>
 <p>per il punto 2 non si genera traffico DNS: il browser costruisce la richiesta e la spara nella connessione; </p>
 <p>per il punto 3 il proxy trova nella richiesta HTTP il nome del web server; al proxy serve indirizzo IP e numero di porta; l'indirizzo IP lo trova risolvendo il nome del web server, il numero di porta è 80;</p>
-<p>Facile rendersi conto che <strong>un browser che naviga attraverso proxy non risolve i nomi dei web server</strong>.</p>
+<p>Facile rendersi conto che <em>un browser che naviga attraverso proxy non risolve i nomi dei web server</em>.</p>
 
 
 
@@ -2063,6 +2063,8 @@
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/reset-nav.js"></script>
+      
+        <script src="../../js/link-cards.js"></script>
       
     
   </body>

@@ -1808,12 +1808,12 @@
 
 
 <h1 id="colab-notebooks">Colab Notebooks</h1>
-<p>A <a href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Colab Notebook</a> is a web page containing <strong>Python programs</strong> and <strong>Linux commands</strong> that can be executed interactively and run on a Google machine ("in the cloud").</p>
-<p>Colab is similar to <a href="https://www.google.com/search?q=jupyter+notebook+tutorial">Jupyter</a>, a tool for interactive execution of Python programs. Programs in a Jupyter notebook, however, are executed on the same machine that is accessing the notebook. Python and Jupyter must thus be installed on that machine. Colab can instead be used with a browser, <strong>without  installing anything.</strong></p>
+<p>A <a href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Colab Notebook</a> is a web page containing <em>Python programs</em> and <em>Linux commands</em> that can be executed interactively and run on a Google machine ("in the cloud").</p>
+<p>Colab is similar to <a href="https://www.google.com/search?q=jupyter+notebook+tutorial">Jupyter</a>, a tool for interactive execution of Python programs. Programs in a Jupyter notebook, however, are executed on the same machine that is accessing the notebook. Python and Jupyter must thus be installed on that machine. Colab can instead be used with a browser, <em>without  installing anything.</em></p>
 <h2 id="notebooks-for-this-course">Notebooks for this course</h2>
-<p>Each notebook is self-contained and briefly describes the code cells it contains. You are <strong>not</strong> required to learn or understand how that code works. Just execute the code cells and read the textual explanations in the notebook.</p>
+<p>Each notebook is self-contained and briefly describes the code cells it contains. You are <em>not</em> required to learn or understand how that code works. Just execute the code cells and read the textual explanations in the notebook.</p>
 <p>If you want, you may obtain a detailed explanation of code cells, either by asking Gemini (the Google AI assistant) on the right of the Colab window or by asking ChatGPT as in <a href="https://chat.openai.com/share/e31a4931-1e4a-41dd-afb2-af23b09696f1">this example</a>.</p>
-<p>Several notebooks analyze <strong>packet captures</strong>. These are files in a standard format (<code>.pcap</code> or <code>.pcapng</code>) containing the network traffic sent and received by a particular computer.</p>
+<p>Several notebooks analyze <em>packet captures</em>. These are files in a standard format (<code>.pcap</code> or <code>.pcapng</code>) containing the network traffic sent and received by a particular computer.</p>
 <p>Depending on the notebook, the analysis of a packet capture is done in two ways:</p>
 <ul>
 <li>
@@ -1824,16 +1824,16 @@
 </li>
 </ul>
 <h2 id="how-do-i-execute-a-notebook">How do I execute a Notebook?</h2>
-<p>A notebook is a sequence of text cells and of <strong>code</strong> cells. A code cell may contain either Python code or Linux commands. Linux commands must begin with the <code>!</code> character.</p>
-<p>To <strong>run</strong> a code cell just click on the triangle on the left. </p>
+<p>A notebook is a sequence of text cells and of <em>code</em> cells. A code cell may contain either Python code or Linux commands. Linux commands must begin with the <code>!</code> character.</p>
+<p>To <em>run</em> a code cell just click on the triangle on the left. </p>
 <p>Notebooks are meant to be read and executed from the beginning, in sequence. However, you can go back and forth as you want: you can execute (and re-execute) cells in any order.  While a cell is running, no other cell can be run.</p>
 <p>Usage of a notebook is possible only to users logged in on Google.</p>
 <h2 id="where-is-code-executed">Where is code executed?</h2>
-<p>Code cells are executed by a <strong>Linux virtual machine</strong> hosted on the Google cloud and <strong>private</strong> of the user that is using the notebook.</p>
-<p>Such a machine is <strong>volatile</strong>, i.e., once the notebook is closed all the state of the machine, including files, is lost (maybe not immediately). </p>
-<p>The machine is configured with several limitations. The most important one is that <strong>you cannot run any server</strong> (more precisely, you could run servers but those servers would not be reachable from other machines).</p>
+<p>Code cells are executed by a <em>Linux virtual machine</em> hosted on the Google cloud and <em>private</em> of the user that is using the notebook.</p>
+<p>Such a machine is <em>volatile</em>, i.e., once the notebook is closed all the state of the machine, including files, is lost (maybe not immediately). </p>
+<p>The machine is configured with several limitations. The most important one is that <em>you cannot run any server</em> (more precisely, you could run servers but those servers would not be reachable from other machines).</p>
 <h2 id="is-a-notebook-private">Is a notebook private?</h2>
-<p>Each user has a <strong>private</strong> execution environment, even if multiple users access the same notebook at the same time.</p>
+<p>Each user has a <em>private</em> execution environment, even if multiple users access the same notebook at the same time.</p>
 <p>You can modify the notebook (by adding/modifying text/code cells) as you want. The modified copy will be visible only to yourself. If you want to save the modified copy, the notebook will force you to save it with a different name.</p>
 
 
@@ -1998,6 +1998,8 @@
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/reset-nav.js"></script>
+      
+        <script src="../../js/link-cards.js"></script>
       
     
   </body>

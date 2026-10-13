@@ -802,17 +802,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#can-i-block-the-dns-in-an-entire-nation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can I block the DNS in an entire nation?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#name-server-dns4eu" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1963,17 +1952,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#can-i-block-the-dns-in-an-entire-nation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can I block the DNS in an entire nation?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#name-server-dns4eu" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2100,21 +2078,17 @@
 <ul>
 <li><a href="https://dnib.com/dashboards/">Domain Name Industry Brief - Dashboards</a> Dati statistici sulla dimensione del DNS.</li>
 <li><a href="https://www.netmeister.org/tldstats/">DNS Zone Stats</a> On this page you can find links to graphs displaying the total domain count per TLD zone.</li>
-<li><a href="https://kb.isc.org/docs/aa-00817">Nameserver Basics: What is an Authoritative Server? What is a Recursive Server?</a> Nameserver functionality can be divided into two main categories: authoritative service and recursive service....An <strong>authoritative</strong> nameserver is one that is configured to answer queries for a specified set of zones and satisfies queries from its own data without needing to reference another source. A <strong>recursive</strong> nameserver is one that answers queries by asking other nameservers for the answer.  It will satisfy queries from cache if possible, but otherwise it traverses the Internet...until it finds one that provides the answer(s) that it can return to its client.</li>
+<li><a href="https://kb.isc.org/docs/aa-00817">Nameserver Basics: What is an Authoritative Server? What is a Recursive Server?</a> Nameserver functionality can be divided into two main categories: authoritative service and recursive service....An <em>authoritative</em> nameserver is one that is configured to answer queries for a specified set of zones and satisfies queries from its own data without needing to reference another source. A <em>recursive</em> nameserver is one that answers queries by asking other nameservers for the answer.  It will satisfy queries from cache if possible, but otherwise it traverses the Internet...until it finds one that provides the answer(s) that it can return to its client.</li>
 <li><a href="https://www.internetsociety.org/resources/doc/2004/the-internet-domain-name-system-explained-for-non-experts-by-daniel-karrenberg/">The Internet Domain Name System Explained for Non-Experts</a> Una descrizione di come è realizzato il DNS (come interagiscono i name server tra loro e molto altro).</li>
 <li><a href="https://root-servers.org/">Root Name Servers</a> The 13 root name servers are operated by 12 independent organisations. <ul>
-<li>Each IP address used for root name servers actually corresponds to <strong>many</strong> different servers, thanks to a technology called <strong>anycast</strong> that we will not study in this course (thus the number of root name servers is much greater than 13). <a href="https://chat.openai.com/share/a587592b-9074-4d6d-bb0c-391b559a2a27">This interaction</a> with ChatGPT provides an overview of how anycast works.  </li>
+<li>Each IP address used for root name servers actually corresponds to <em>many</em> different servers, thanks to a technology called <em>anycast</em> that we will not study in this course (thus the number of root name servers is much greater than 13). <a href="https://chat.openai.com/share/a587592b-9074-4d6d-bb0c-391b559a2a27">This interaction</a> with ChatGPT provides an overview of how anycast works.  </li>
 </ul>
 </li>
 <li><a href="https://rssac002.root-servers.org/">Root Name Servers Traffic</a> Count of queries made to root name servers (daily averages): They are in the order of hundreds of billions queries every day.</li>
 </ul>
 <h2 id="importanza-strategica">Importanza strategica</h2>
-<h3 id="can-i-block-the-dns-in-an-entire-nation">Can I block the DNS in an entire nation?</h3>
-<p><a href="https://www.sciencedirect.com/science/article/pii/S0140366421003546">Robustness analysis of DNS paths and web access paths in public administration websites</a> <em>Computer Communications, Dec. 2021, Alberto Bartoli</em>.</p>
-<p>In this paper we examine the dependence of a large set of public administration websites on DNS entities for four different countries: Italy, Germany, UK and US. We collected the dependencies of those websites from DNS zones, nameservers, networks and assessed the potential <strong>global</strong> impact of <strong>localized</strong> <strong>attacks</strong> on those entities:</p>
 <ul>
-<li>How many websites could be affected, whether in name resolution or web server access, <strong>by an attack on a single</strong> zone, nameserver, network?</li>
-<li>How prevalent is the usage of groups of IP addresses, networks for providing redundancy? How many websites could be affected <strong>by an attack to one</strong> of those groups?</li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0140366421003546">Can I block the DNS in an entire nation?</a> <em>"Robustness analysis of DNS paths and web access paths in public administration websites - Computer Communications", Dec. 2021, Alberto Bartoli</em>. In this paper we examine the dependence of a large set of public administration websites on DNS entities for four different countries: Italy, Germany, UK and US. We collected the dependencies of those websites from DNS zones, nameservers, networks and assessed the potential <em>global</em> impact of <em>localized</em> <em>attacks</em> on those entities: How many websites could be affected, whether in name resolution or web server access, <em>by an attack on a single</em> zone, nameserver, network? How prevalent is the usage of groups of IP addresses, networks for providing redundancy? How many websites could be affected <em>by an attack to one</em> of those groups?</li>
 </ul>
 <h3 id="name-server-dns4eu">Name server DNS4EU</h3>
 <ul>
@@ -2129,19 +2103,21 @@
 <li><a href="https://www.bleepingcomputer.com/news/security/uk-domain-registry-nominet-confirms-breach-via-ivanti-zero-day-vulnerability/">UK domain registry Nominet confirms breach via Ivanti zero-day</a> Nominet, the official .UK domain registry and one of the largest country code registries, has confirmed that its network was breached two weeks ago using an Ivanti VPN zero-day vulnerability. The company manages and operates over 11 million .uk, .co.uk, and .gov .uk domain names and other top-level domains, including .cymru and .wales. It also ran the U.K.'s Protective Domain Name Service (PDNS) on behalf of the country's National Cyber Security Centre (NCSC) until September 2024, protecting over 1,200 organizations and over 7 million end users.</li>
 </ul>
 <h3 id="un-guasto-molto-importante">Un guasto molto importante</h3>
-<p>-<a href="https://www.theregister.com/off-prem/2025/10/20/aws-outage-exposes-achilles-heel-central-control-plane/1236001">AWS outage exposes Achilles heel: central control plane - Too many services depend not just on one cloud provider, but on one location</a> Il 20 ottobre 2025 molti servizi Internet usati da molti milioni di utenti in tutto il mondo si sono bloccati o sono diventati lentissimi. Tra questi Apple Music, Airbnb, Spotify, Reddit, Perplexity AI, Duolingo, Goodreads, Fortnite, Apple TV, Mc Donald's App, Signal e molti altri (compresi alcuni servizi della pubblica amministrazione UK). Tutti questi servizi dipendono in tutto o in parte da funzionalità software in Amazon Web Services (AWS), uno dei principali fornitori di servizi cloud al mondo. AWS è composto internamente da molti servizi software. Il motivo scatenante del blocco globale è stato un <strong>problema nella risoluzione DNS</strong> del nome di un particolare servizio usato internamente in AWS. (Avevo citato questo evento in uno dei miei blog post "<a href="https://bartoli-alberto.blogspot.com/2025/10/cose-che-racconto-nei-corsi-e-che-poi.html">Cose che racconto nei corsi - e che poi si verificano</a>").</p>
+<ul>
+<li><a href="https://www.theregister.com/off-prem/2025/10/20/aws-outage-exposes-achilles-heel-central-control-plane/1236001">AWS outage exposes Achilles heel: central control plane - Too many services depend not just on one cloud provider, but on one location</a> Il 20 ottobre 2025 molti servizi Internet usati da molti milioni di utenti in tutto il mondo si sono bloccati o sono diventati lentissimi. Tra questi Apple Music, Airbnb, Spotify, Reddit, Perplexity AI, Duolingo, Goodreads, Fortnite, Apple TV, Mc Donald's App, Signal e molti altri (compresi alcuni servizi della pubblica amministrazione UK). Tutti questi servizi dipendono in tutto o in parte da funzionalità software in Amazon Web Services (AWS), uno dei principali fornitori di servizi cloud al mondo. AWS è composto internamente da molti servizi software. Il motivo scatenante del blocco globale è stato un <em>problema nella risoluzione DNS</em> del nome di un particolare servizio usato internamente in AWS. (Avevo citato questo evento in uno dei miei blog post "<a href="https://bartoli-alberto.blogspot.com/2025/10/cose-che-racconto-nei-corsi-e-che-poi.html">Cose che racconto nei corsi - e che poi si verificano</a>").</li>
+</ul>
 <h2 id="resource-records">Resource Records</h2>
 <h3 id="interrogare-il-dns">Interrogare il DNS</h3>
 <ul>
 <li><a href="https://linux.die.net/man/1/dig">dig Linux man page</a> Linux command for interacting with web servers, used in one of the Colab notebooks above.</li>
-<li><a href="https://www.digwebinterface.com/">Online DNS Lookup</a> Webapp for interacting with name servers (a sort of <strong>dig on line</strong>). Specify query (name and type) and name server IP address.</li>
+<li><a href="https://www.digwebinterface.com/">Online DNS Lookup</a> Webapp for interacting with name servers (a sort of <em>dig on line</em>). Specify query (name and type) and name server IP address.</li>
 <li>The exact same operations of <code>dig</code> can be performed with <code>nslookup</code>, which is available in both Linux and Windows (with some differences between the two platforms). The syntax and output of <code>nslookup</code> is different from that of <code>dig</code>. <a href="https://www.google.com/search?q=nslookup+command">Search for a tutorial</a> if you are interested.</li>
 </ul>
 <h2 id="creazione-di-domini">Creazione di domini</h2>
 <ul>
 <li><a href="https://www.ovhcloud.com/en/domains/">OVHcloud - domains</a> Esempio di Registrant in cui acquistare un dominio, predisposto per "molti" TLD. E' anche un "DNS Provider" nel senso che i RR per il dominio saranno memorizzati nei suoi name server (non occorre cioè avere dei name server per gestire il dominio acquistato).</li>
 <li>
-<p><strong>Internet Corporation for Assigned Names and Numbers (ICANN)</strong> is the organization that "coordinates" the DNS globally. Its website contains all the technical and procedural definitions related to how domains must be managed. A few relevant pages:</p>
+<p><em>Internet Corporation for Assigned Names and Numbers (ICANN)</em> is the organization that "coordinates" the DNS globally. Its website contains all the technical and procedural definitions related to how domains must be managed. A few relevant pages:</p>
 <ul>
 <li><a href="https://www.icann.org/registrants">Registrant</a> A domain name registrant is an individual or entity who registers a domain name. </li>
 <li><a href="https://www.icann.org/resources/pages/registrars-0d-2012-02-25-en">Registrar ("DNS provider")</a> An entity wishing to register a domain name under a generic top-level domain ("gTLD") may do so by using a registrar.</li>
@@ -2155,19 +2131,19 @@
 </ul>
 <h2 id="identificare-il-proprietario-di-un-dominio">Identificare il proprietario di un dominio</h2>
 <p>Ci sono molti siti web gratuiti che offrono questo servizio (<code>whois</code>).</p>
-<p>Nei domini di <strong>secondo livello</strong> (SLD) l'identità del proprietario (<strong>Registrant</strong>) può essere disponibile o meno, a seconda delle normative legali del paese in cui opera il DNS Provider (<strong>Registrar</strong>) e del Registrar stesso. L'Autorità Giudiziara può obbligare il Registrar a fornire l'identità del Registrant. In alcuni paesi, il Registrar può rifiutarsi di fornire l'identità del Registrant. Ovviamente, i criminali informatici che hanno necessità di acquistare domini li acquistano da Registrar "noti" per essere refrattari alle richieste dell'Autorità Giudiziaria (cosiddetti "<strong>bulletproof</strong>").</p>
+<p>Nei domini di <em>secondo livello</em> (SLD) l'identità del proprietario (<em>Registrant</em>) può essere disponibile o meno, a seconda delle normative legali del paese in cui opera il DNS Provider (<em>Registrar</em>) e del Registrar stesso. L'Autorità Giudiziara può obbligare il Registrar a fornire l'identità del Registrant. In alcuni paesi, il Registrar può rifiutarsi di fornire l'identità del Registrant. Ovviamente, i criminali informatici che hanno necessità di acquistare domini li acquistano da Registrar "noti" per essere refrattari alle richieste dell'Autorità Giudiziaria (cosiddetti "<em>bulletproof</em>").</p>
 <ul>
 <li>Esempio in cui il Registrant è disponibile: <a href="https://who.is/whois/generali.it">https://who.is/whois/generali.it</a>.</li>
 <li>Esempio in cui il Registrant non è disponibile: <a href="https://who.is/whois/morganlaure.com">https://who.is/whois/morganlaure.com</a>.</li>
 </ul>
-<p>Nei domini di <strong>terzo livello</strong> il Registrant <strong>non</strong> è mai disponibile via <code>whois</code>. E' disponibile solo il Registrant del dominio di secondo livello corrispondente, con le limitazioni di cui sopra. Esempio: cercando <code>bartoli.inginf.units.it</code> su <a href="https://www.whois.com/whois/">https://www.whois.com/whois/</a> si ottiene <a href="https://www.whois.com/whois/units.it">https://www.whois.com/whois/units.it</a> come risposta.</p>
+<p>Nei domini di <em>terzo livello</em> il Registrant <em>non</em> è mai disponibile via <code>whois</code>. E' disponibile solo il Registrant del dominio di secondo livello corrispondente, con le limitazioni di cui sopra. Esempio: cercando <code>bartoli.inginf.units.it</code> su <a href="https://www.whois.com/whois/">https://www.whois.com/whois/</a> si ottiene <a href="https://www.whois.com/whois/units.it">https://www.whois.com/whois/units.it</a> come risposta.</p>
 <ul>
 <li><a href="https://www.netmeister.org/blog/whois.html">WHOIS: Fragile, unparseable, obsolete... and universally relied upon</a> Detailed description of <code>whois</code>: how it works and some history.</li>
 </ul>
 <h3 id="sequestri-di-domini">Sequestri di domini</h3>
 <ul>
 <li>
-<p><a href="https://therecord.media/doj-microsoft-seize-domains-russian-intelligence">DOJ, Microsoft seize dozens of domains ‘used by Russian intelligence agents’</a> Uno dei numerosissimi casi di cronaca relativi al "sequestro" (disattivazione) di domini associati ad attività fraudolenta. In questo caso una campagna di <strong>spear</strong> phishing (cioè phishing mirato verso persone specifiche) attribuita ad una organizzazione associata al governo russo.</p>
+<p><a href="https://therecord.media/doj-microsoft-seize-domains-russian-intelligence">DOJ, Microsoft seize dozens of domains ‘used by Russian intelligence agents’</a> Uno dei numerosissimi casi di cronaca relativi al "sequestro" (disattivazione) di domini associati ad attività fraudolenta. In questo caso una campagna di <em>spear</em> phishing (cioè phishing mirato verso persone specifiche) attribuita ad una organizzazione associata al governo russo.</p>
 </li>
 <li>
 <p><a href="https://arstechnica.com/gadgets/2025/03/italian-court-orders-google-to-block-iptv-pirate-sites-at-dns-level/">Italy demands Google poison DNS under strict Piracy Shield law</a> Italy is using its Piracy Shield law to go after Google, with a court ordering the Internet giant to immediately begin poisoning its public DNS servers. The goal is to prevent illegal football streams, but the effort has already caused collateral damage. </p>
@@ -2336,6 +2312,8 @@
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/reset-nav.js"></script>
+      
+        <script src="../../js/link-cards.js"></script>
       
     
   </body>

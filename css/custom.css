@@ -256,16 +256,21 @@ body,
   line-height: 1.3;
 }
 
+/* All headings share the text colour: levels differ only in size/weight */
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--md-default-fg-color);
+}
 .md-typeset h3 {
   font-weight: 650;
-  color: var(--md-typeset-a-color);
 }
-
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
   font-weight: 600;
-  color: var(--muted);
 }
 
 .md-typeset strong {
@@ -317,7 +322,9 @@ body,
 }
 
 /* Top-level list items that start with a link ("- [Title](url) description")
-   are rendered as resource cards. Pure CSS: no change to the markdown. */
+   are rendered as resource cards. The "link-card" class is added by
+   js/link-cards.js (no change to the markdown); every other item stays
+   plain text with a bullet. */
 [dir] .md-typeset > ul {
   list-style: none;
   margin-left: 0;
@@ -339,8 +346,7 @@ body,
   background: linear-gradient(135deg, var(--brand-500), var(--brand-accent));
 }
 
-.md-typeset > ul > li:has(> a:first-child),
-.md-typeset > ul > li:has(> p:first-child > a:first-child) {
+.md-typeset > ul > li.link-card {
   background: var(--item-bg);
   border: 1px solid var(--card-border);
   border-left: 4px solid var(--brand-500);
@@ -350,31 +356,23 @@ body,
   box-shadow: var(--card-shadow);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
 }
-.md-typeset > ul > li:has(> a:first-child)::before,
-.md-typeset > ul > li:has(> p:first-child > a:first-child)::before {
+.md-typeset > ul > li.link-card::before {
   display: none;
 }
-.md-typeset > ul > li:has(> a:first-child):hover,
-.md-typeset > ul > li:has(> p:first-child > a:first-child):hover {
+.md-typeset > ul > li.link-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--card-shadow-hover);
   border-left-color: var(--brand-accent);
 }
 /* The title link of a card stands out */
-.md-typeset > ul > li > a:first-child,
-.md-typeset > ul > li > p:first-child > a:first-child {
+.md-typeset > ul > li.link-card > a:first-child,
+.md-typeset > ul > li.link-card > p:first-child > a:first-child {
   font-weight: 650;
 }
-/* Nested lists inside cards */
+/* Nested lists (same font and colour as the rest of the text) */
 .md-typeset > ul > li ul {
   margin-top: .4rem;
   margin-bottom: .2rem;
-}
-.md-typeset > ul > li ul > li {
-  color: var(--muted);
-}
-.md-typeset > ul > li ul > li a {
-  color: var(--md-typeset-a-color);
 }
 
 /* Ordered lists: numbered badges */
@@ -423,9 +421,18 @@ body,
   border-radius: 10px;
 }
 
-.md-typeset img {
-  border-radius: 8px;
+/* Images: same rounded card as the link items */
+.md-content .md-typeset img:not(.twemoji):not(.emojione):not(.gemoji) {
+  box-sizing: border-box;      /* padding/border stay within max-width */
+  max-width: 100%;
+  height: auto;
+  padding: .5rem;
+  background: var(--item-bg);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--brand-500);
+  border-radius: 10px;
   box-shadow: var(--card-shadow);
+  margin: .4rem 0;
 }
 
 .md-typeset table:not([class]) {
@@ -502,8 +509,7 @@ body,
   .md-typeset h2 {
     font-size: 1.3em;
   }
-  .md-typeset > ul > li:has(> a:first-child),
-  .md-typeset > ul > li:has(> p:first-child > a:first-child) {
+  .md-typeset > ul > li.link-card {
     padding: .6rem .8rem;
   }
   .md-typeset > ul > li ul,

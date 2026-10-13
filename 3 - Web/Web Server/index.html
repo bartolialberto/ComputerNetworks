@@ -2198,7 +2198,7 @@
 <p>L'ambiente di programmazione Python contiene un semplice web server.</p>
 <ul>
 <li>Installare Python.</li>
-<li>Lanciare un interprete di comandi (<strong>shell</strong>).</li>
+<li>Lanciare un interprete di comandi (<em>shell</em>).</li>
 <li>Spostare la shell nella directory in cui si trovano i file html di esempio.</li>
 <li>Lanciare il web server Python <code>python -m http.server</code>. Di default questo web server è in ascolto sulla porta 8000. Il web server rimane in esecuzione fino a quando è in esecuzione la shell dalla quale lo si è lanciato.</li>
 <li>Lanciare un'altra shell. Eseguire <code>netstat -an</code> per elencare l'insieme di porte attualmente utilizzate. Deve comparire nell'elenco la porta <code>8000</code> associata al protocollo <code>TCP</code> e nello stato <code>LISTENING</code>, cioè in attesa di richieste di connessione. Ciò conferma che il web server è effettivamente in esecuzione.</li>
@@ -2240,14 +2240,14 @@
 <li>
 <p>Visualizzare nuovamente il documento html con il browser ed analizzare le risorse prelevate dal browser, come sopra.</p>
 </li>
-<li>Provare a modificare nuovamente il documento <code>html</code> aggiungendovi una immagine <strong>non</strong> scaricata da Internet. Occorre cercare una immagine su Internet, trovarne l'URL (tasto destro del mouse) ed usarlo come attributo <code>src</code> del nuovo elemento <code>img</code>.</li>
+<li>Provare a modificare nuovamente il documento <code>html</code> aggiungendovi una immagine <em>non</em> scaricata da Internet. Occorre cercare una immagine su Internet, trovarne l'URL (tasto destro del mouse) ed usarlo come attributo <code>src</code> del nuovo elemento <code>img</code>.</li>
 </ul>
 <h3 id="connessioni-tcp-e-numeri-di-porta">Connessioni TCP e numeri di porta</h3>
 <ul>
 <li>
 <p>Eseguire <code>netstat -an</code> mentre il browser sta visualizzando il documento. L'elenco dovrebbe contenere almeno una connessione con protocollo <code>TCP</code> nello stato <code>ESTABLISHED</code> e numero di porta <code>8000</code> ad una delle due estremità. Questa è la connessione che il browser ha con il web server; il numero di porta <code>8000</code> è all'estremità che corrisponde al web server:</p>
 <ul>
-<li>Qual è il numero di porta all'altra estremità, cioè a quella che corrisponde al browser? E' <code>8000</code>, cioè uguale a quello sull'estremità del web server? Oppure è un numero <strong>diverso</strong>, "molto grande"?</li>
+<li>Qual è il numero di porta all'altra estremità, cioè a quella che corrisponde al browser? E' <code>8000</code>, cioè uguale a quello sull'estremità del web server? Oppure è un numero <em>diverso</em>, "molto grande"?</li>
 </ul>
 </li>
 <li>
@@ -2257,14 +2257,14 @@
 <p>Ripetere quanto segue fino a che non lo si è capito:</p>
 <ul>
 <li>Premere reload sul browser, eseguire <code>netstat -an</code>, identificare la connessione tra browser e web server,cercare il numero di porta all'estremità del browser.</li>
-<li><strong><em>Stamparsi in testa che quel numero di porta è diverso da quello all'estremità del server</em></strong>: è un numero "molto grande" ed "ogni volta diverso"</li>
+<li><em>Stamparsi in testa che quel numero di porta è diverso da quello all'estremità del server</em>: è un numero "molto grande" ed "ogni volta diverso"</li>
 <li>Stamparsi in testa che il punto precedente non è qualcosa da imparare a memoria. E' stato detto a lezione: cercare nelle slide il punto in cui è stato detto.</li>
 </ul>
 <h4 id="osservazione">Osservazione</h4>
 <p>Le connessioni tra browser e server non sono di facile interpretazione, per due motivi:</p>
 <ol>
 <li>Quando il browser è collegato ad un web server in esecuzione sulla stessa macchina in cui è in esecuzione il browser, come in questo caso, l'esecuzione di <code>netstat -an</code> mostrerà <em>due</em> righe per ogni connessione esistente invece di una: una riga in cui considera il browser locale ed il server remoto, un'altra in cui considera il server locale ed il browser remoto.</li>
-<li>Il browser può usare <strong>più connessioni in parallelo verso lo stesso web server</strong>: se il browser si accorge che deve prelevare più risorse dallo stesso web server, allora il browser può decidere di aprire più connessioni verso quel web server ed inviare più richieste in parallelo, una su ogni connessioni.</li>
+<li>Il browser può usare <em>più connessioni in parallelo verso lo stesso web server</em>: se il browser si accorge che deve prelevare più risorse dallo stesso web server, allora il browser può decidere di aprire più connessioni verso quel web server ed inviare più richieste in parallelo, una su ogni connessioni.</li>
 </ol>
 <p>Negli esercizi, per semplicità, assumeremo sempre che il punto 2 non accade mai: ad ogni istante:</p>
 <ul>
@@ -2287,10 +2287,10 @@ implica che nel PC nel cui file <code>hosts</code> è stata aggiunta quella riga
 <p>Scrivere nella barra degli URL del browser <code>http://parlamento.it:8000</code> e verificare la corretta visualizzazione.</p>
 </li>
 </ul>
-<p>E' possibile aggiungere più righe al file <code>hosts</code> che mappino <strong>più</strong> nomi sullo <strong>stesso</strong> indirizzo IP locale. In questo modo tutti i nomi aggiunti saranno associati allo stesso web server locale.</p>
+<p>E' possibile aggiungere più righe al file <code>hosts</code> che mappino <em>più</em> nomi sullo <em>stesso</em> indirizzo IP locale. In questo modo tutti i nomi aggiunti saranno associati allo stesso web server locale.</p>
 <p>Il web server Python però non è in grado di ospitare più siti web diversi e fornire contenuti diversi a seconda del sito web richiesto dal browser.</p>
 <ul>
-<li>Ad esempio, se <code>parlamento.it</code> e <code>realmadrid.es</code> fossero associati a quel web server, richieste per http://parlamento.it/index.html e http://realmadrid.es otterrebbero la <strong>stessa</strong> risposta, cioè il contenuto del file <code>index.html</code> nella directory del web server.</li>
+<li>Ad esempio, se <code>parlamento.it</code> e <code>realmadrid.es</code> fossero associati a quel web server, richieste per http://parlamento.it/index.html e http://realmadrid.es otterrebbero la <em>stessa</em> risposta, cioè il contenuto del file <code>index.html</code> nella directory del web server.</li>
 </ul>
 <p>Per gestire più siti web con un unico web server occorre un web server leggermente più complesso, ad esempio <a href="https://aprelium.com/abyssws/">Abyss</a> o <a href="https://httpd.apache.org/">Apache</a>. Il primo è un web server "molto completo", relativamente semplice da installare e configurare. Il secondo è un web server professionale tra i più diffusi, più complesso da installare e configurare.</p>
 <p>ATTENZIONE VirusTotal segnala che Abyss ha al proprio interno del malware. Questa indicazione di VirusTotal potrebbe essere un falso positivo (cioè avvisa della presenza di un malware ma non c'è effettivamente un malware) ma non ne ho la certezza quindi non posso consigliarne l'uso.</p>
@@ -2323,9 +2323,9 @@ implica che nel PC nel cui file <code>hosts</code> è stata aggiunta quella riga
 <li><a href="https://www.w3schools.com/js/default.asp">JavaScript Tutorial (W3 Schools)</a></li>
 </ul>
 <h2 id="contenuto-dinamico">Contenuto dinamico</h2>
-<p><strong>Attenzione: gli esempi in questa sezione funzionano solo con versioni di Python precedenti alla 3.15. Per verificare la versione di Python sul proprio PC eseguire <code>python -V</code>.</strong></p>
-<p><em>Con le versioni di Python successive dovrebbe essere sufficiente eseguire <strong>pip install legacy-cgi</strong>, ma non ho provato.</em></p>
-<p><strong>Devo trovare il tempo per aggiornare questa parte ed usare WSGI.</strong></p>
+<p><em>Attenzione: gli esempi in questa sezione funzionano solo con versioni di Python precedenti alla 3.15. Per verificare la versione di Python sul proprio PC eseguire <code>python -V</code>.</em></p>
+<p><em>Con le versioni di Python successive dovrebbe essere sufficiente eseguire <em>pip install legacy-cgi</em>, ma non ho provato.</em></p>
+<p><em>Devo trovare il tempo per aggiornare questa parte ed usare WSGI.</em></p>
 <ul>
 <li>Crea una directory di nome <code>cgi-bin</code></li>
 <li>Crea in quella directory un file di nome <code>hello.py</code> e contenuto identico a quello del secondo esempio nella sezione "Execute a Script Remotely Through the Common Gateway Interface (CGI)" del riferimento indicato più sotto.</li>
@@ -2520,6 +2520,8 @@ implica che nel PC nel cui file <code>hosts</code> è stata aggiunta quella riga
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/reset-nav.js"></script>
+      
+        <script src="../../js/link-cards.js"></script>
       
     
   </body>
