@@ -2360,10 +2360,13 @@
 </ul>
 <h2 id="analytics-e-tracking">Analytics e Tracking</h2>
 <ul>
-<li><a href="https://kuber.studio/cookie/">Browser fingerprinting</a> Scoprite quante cose scopre del vostro browser questo sito web. Cose che scopre <em>senza usare cookie</em> (verificate l'elenco dei cookie del vostro browser: non ci troverete nessun cookie per quel sito --- forse ce lo troverete dopo, non so; ma non prima). </li>
+<li><a href="https://bartoli.inginf.units.it/talks">WEB TRACKING: PERCHE' SMARTPHONE E PC CI SORVEGLIANO</a> Mio seminario di un paio d'anni fa per una associazione studentesca. Credo sia molto utile ed interessante.</li>
 </ul>
 <h3 id="tracking-senza-third-party-cookies-1">Tracking senza third-party cookies 1</h3>
-<p>Considerare il punto precedente (browser fingerprinting). Spesso ciò che scopre il sito web è sufficiente per riconoscere un particolare browser in una grande insieme di browser. Ciò significa che un sito web che applica quelle tecniche è in grado di riconoscere lo stesso browser tra tutti quelli che lo contattano, anche senza usare cookie.</p>
+<ul>
+<li><a href="https://kuber.studio/cookie/">Browser fingerprinting</a> Scoprite quante cose scopre del vostro browser questo sito web. Cose che scopre <em>senza usare cookie</em> (verificate l'elenco dei cookie del vostro browser: non ci troverete nessun cookie per quel sito --- forse ce lo troverete dopo, non so; ma non prima). Spesso ciò che scopre il sito web (<em>"fingerprint del browser"</em>) è sufficiente per riconoscere un particolare browser in una grande insieme di browser. Ciò significa che un sito web che applica quelle tecniche è in grado di riconoscere lo stesso browser tra tutti quelli che lo contattano, anche senza usare cookie.</li>
+<li><a href="../The%20Big%20Brother/">The Big Brother</a> Materiale che non fa più parte del corso. Descrive in dettaglio tecniche per fare tracking e per utilizzare le informazioni corrispondenti. Un pò vecchio, ma utile per farsi un'idea.</li>
+</ul>
 <h3 id="tracking-senza-third-party-cookies-2">Tracking senza third-party cookies 2</h3>
 <p>Most browsers today block third party cookies. Google Analytics bypasses third-party cookie restrictions primarily because it does not rely on third-party cookies for standard traffic measurement. Instead, it uses first-party cookies.</p>
 <p>For example, this website is built with <code>mkdocs</code>: static HTML and JavaScript files hosted on GitHub Pages. Each page has a small script in each page, inserted by <code>mkdocs</code> automatically (property <code>google_analytics</code> defined in <code>mkdocs.yml</code>):</p>
@@ -2384,6 +2387,10 @@
 <em>Browser with "strict" blocking: network traffic.</em></p>
 <p><img alt="img_1.png" src="../img_1.png" />
 <em>Browser without any blocking: network traffic.</em></p>
+<h1 id="advertising">Advertising</h1>
+<p>Le pubblicità su web sono anche un metodo di attacco. Molti esperti di cybersecurity raccomandano l'uso di "ad blockers" come strumento difensivo nei confronti dei <em>malicious advertising</em> ("malvertising").
+- <a href="https://www.sophos.com/en-us/blog/tamperedchef-serves-bad-ads-with-infostealers-as-the-main-course">TamperedChef serves bad ads, with infostealers as the main course</a> Esempio di advertising che presenta all'utente un programma apparentemente utile. Se l'utente clicca sull'advertising ed installa quel programma, allora installa anche un malware (contenuto dentro a quel programma).
+- <a href="https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/">Exposing AdFection: How Discover-Tech Turned Targeted Ads Into a Pipeline for Zero-Click Mercenary Spyware</a> Esempio di advertising che installa direttamente un malware, senza nessun click sulla pubblicità o altre azioni da parte dell'utente. Questo esempio ha due differenze fondamentali rispetto al precedente: il malware viene installato automaticamente per il solo fatto di visualizzare la pubblicità (la risposta HTTP sfrutta una vulnerabilità del browser di tipo remote code execution); il malware viene inviato solo a determinati browser (<em>targeted</em>), non a tutti indiscriminatamente.</p>
 
 
 
